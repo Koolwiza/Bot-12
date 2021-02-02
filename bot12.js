@@ -3,7 +3,7 @@ const Discord = require('discord.js'),
     fs = require('fs'),
     Enmap = require('enmap')
 
-const Bot12 = require('./Base/base_bot12'),
+const Bot12 = require('./base/base_bot12'),
     client = new Bot12()
 
 async function main() {

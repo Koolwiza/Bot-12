@@ -1,0 +1,82 @@
+const Discord = require("discord.js");
+const Enmap = require('enmap')
+const {
+    defaultSettings,
+    defaultPlugins
+} = require('../data/config.json')
+
+module.exports = async (client, message) => {
+
+    if(message.author.bot) return
+
+    client.guildData.ensure(message.guild.id, defaultSettings)
+    client.plugins.ensure(message.guild.id, defaultPlugins)
+
+    const prefix = client.guildData.has(message.guild.id, "prefix") ? client.guildData.get(message.guild.id, "prefix") : client.config.defaultSettings.prefix
+
+    if (await client.resolveUser(message.content.split(" ")[0]) === client.user) message.channel.send(
+        new Discord.MessageEmbed()
+        .setDescription("👋 **Hello " + message.author.toString() + ", my prefix is `" + prefix + '`. \nUse the command `help` for all of my commands!**')
+        .setAuthor(message.author.tag, message.author.displayAvatarURL())
+        .setFooter(client.user.username, client.user.displayAvatarURL())
+        .setColor(client.colors.sky)
+    )
+
+    if (client.plugins.get(message.guild.id, "invites")) {
+        let inviteRegex = /discord(?:(?:app)?\.com\/invite|\.gg(?:\/invite)?)\/([\w-]{2,255})/gi
+        if (inviteRegex.test(message.content) /*&& !message.member.hasPermission("MANAGE_GUILD")*/ ) {
+            message.delete().catch(() => {})
+            message.channel.send(`${message.author.toString()}, ${client.emoji.misc.xmark} **You aren't allowed to send invites in this server**`).then(m => {
+                setTimeout(() => {
+                    m.delete().catch(() => {})
+                }, 5000)
+            })
+        }
+    } else if (client.plugins.get(message.guild.id, "links")) {
+        let urlReg = /^(?:(?:https?|ftp):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/ig
+        if (urlReg.test(message.content) /* && !message.member.hasPermission("MANAGE_GUILD")*/ ) {
+            message.delete().catch(() => {})
+            message.channel.send(`${message.author.toString()}, ${client.emoji.misc.xmark} **You aren't allowed to send links in this server**`).then(m => {
+                setTimeout(() => {
+                    m.delete().catch(() => {})
+                }, 5000)
+            })
+        }
+    } else if (client.plugins.get(message.guild.id, "spoilers")) {
+        let spoilerRegex = /\|\|.*?\|\|/gmi
+        const match = message.content.match(spoilerRegex)
+        if (typeof match === Array && match.length >= 3) {
+            message.delete().catch(() => {})
+            message.channel.send(`${message.author.toString()}, ${client.emoji.misc.xmark} **You aren't allowed to send multiple spoilers in this server**`).then(m => {
+                setTimeout(() => {
+                    m.delete().catch(() => {})
+                }, 5000)
+            })
+        }
+    }
+
+
+
+
+    let args = message.content.trim().slice(prefix.length).trim().split(/ +/g)
+    let commandName = args.shift().toLowerCase()
+
+    if (!message.content.startsWith(prefix)) return;
+
+    let command = message.client.commands.get(commandName) || message.client.commands.find(c => c.aliases && c.aliases.includes(commandName))
+
+    if (!command) return;
+    
+    if(client.plugins.get(message.guild.id, "deletemodcmds")) {
+        if(command.category.toLowerCase() === "administrator") message.delete()
+    }
+
+    try {
+        client.logger.cmd(`${message.author.username} used the command ${command.name}`)
+        command.execute(message, args, client)
+    } catch (e) {
+        client.logger.error(e)
+        client.error(message, e)
+    }
+
+}
