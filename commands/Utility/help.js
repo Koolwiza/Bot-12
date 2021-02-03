@@ -86,6 +86,7 @@ module.exports = {
             .setDescription(data.join('\n'))
             .setColor(client.colors.sky)
             .setFooter(message.client.user.username, message.client.user.avatarURL())
+            .addField('\u200b', '[Invite Me](https://discord.com/oauth2/authorize?client_id=800549820485599272&scope=bot&permissions=2080768255) ● Support Server coming Soon')
         message.channel.send(helpEmbed)
     }
 }
