@@ -19,7 +19,7 @@ module.exports = {
         let type = args[0].toLowerCase()
         if(type === "set") {
             let arr = args.slice(1).join(" ").split(/\s+/g)
-            const [prop, ...value] = arr
+            let [prop, ...value] = arr
 
             if(!prop) return client.error(message, "No property provided")
             if(value.length === 0) return client.error(message, "No value provided")
@@ -28,10 +28,12 @@ module.exports = {
                 return client.error(message, "Provided config property wasn't valid")
             }
 
-            client.guildData.set(message.guild.id, value.join(" "), prop)
+            if(message.mentions.roles.size) value = message.mentions.roles.first().id
+
+            client.guildData.set(message.guild.id, (Array.isArray(value) ? value.join(" ") : value), prop)
             message.channel.send(client.baseEmbed(message, {
                 title: "Success",
-                description: `Guild setting ${prop} has been set to: \`${value.join(" ").replace(/false/ig, "Disabled").replace(/true/ig, "Enabled")}\``,
+                description: `Guild setting ${prop} has been set to: \`${(Array.isArray(value) ? value.join(" ") : value).replace(/false/ig, "Disabled").replace(/true/ig, "Enabled")}\``,
                 color: client.colors.green
             }))
         } else if (type === "show") {

@@ -61,7 +61,7 @@ module.exports = {
                 }
 
             })
-            message.channel.send(output.replace(/false/ig, "Disabled").replace(/true/ig, "Enabled") + "Set plugins using plugins set <type> true/false```");
+            message.channel.send(output.replace(/false/ig, "Disabled").replace(/true/ig, "Enabled") + "Set plugins using plugins enable/disable <plugin>```");
         }
     }
 }
