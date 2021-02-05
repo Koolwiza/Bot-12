@@ -38,7 +38,7 @@ module.exports = {
         })
 
         message.channel.send(`${client.emoji.misc.check} **Are you sure you want to ban ${bannedCollection.map(mem => `${mem.toString()}`).join(", ")}?** \nPlease reply with \`y\`/\`yes\` or \`cancel\``)
-        collector.on("collect", msg => {
+        collector.on("collect", async msg => {
             if (['yes', 'y'].includes(msg.content.toLowerCase())) {
 
                 try {
@@ -48,7 +48,7 @@ module.exports = {
                             reason: banReason
                         })
                     })
-                    message.channel.send(client.baseEmbed(message, {
+                    await message.channel.send(client.baseEmbed(message, {
                         title: "Massban Successful",
                         description: `I have banned ${bannedCollection.map(m => `**${m.user.tag}**`).join(", ")} | ${banReason}`,
                         color: client.colors.discord

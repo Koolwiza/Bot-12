@@ -34,12 +34,13 @@ module.exports = {
         let muteRole = message.guild.roles.cache.find(c => c.name.toLowerCase() === "muted")
 
         if(a.roles.cache.has(muteRole.id)) {
-            a.roles.remove(muteRole).then(c => {
+            a.roles.remove(muteRole).then(async c => {
                 message.channel.send(client.baseEmbed(message,  {
                     title: "Success",
                     description: `I have unmuted **${a.user.tag}** | ${reason}`,
                     color: client.colors.green
                 }))
+                await user.send(`**${client.emoji.misc.xmark} You have been unmuted in ${message.guild.name} for ${reason}**`)
             }).catch(e => {
                 client.error(message, "An error occured unmuting this user")
                 client.logger.log("An error occured unmuting " + a.user.tag + "\n" + e, "error")

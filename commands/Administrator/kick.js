@@ -38,6 +38,8 @@ module.exports = {
                 description: `I have kicked ${user.tag} | ${reason}`,
                 color: client.colors.green
             }))
+
+            await user.send(`**${client.emoji.misc.xmark} You have been kicked in ${message.guild.name} for ${reason}**`)
         } catch (err) {
             client.logger.log(`There was an error kicking ${user.username}.\n${err}`, "error")
             client.error(message, "There was an error kicking this user, please try again")

@@ -71,7 +71,8 @@ module.exports = {
             title: "Success",
             description: `I have muted **${user.tag}** | ${reason}`,
             color: client.colors.green
-        })) 
+        }))
+        await user.send(`**${client.emoji.misc.xmark} You have been warned in ${message.guild.name} for ${reason}**`) 
         setTimeout(() => {
            if(a.roles.cache.has(muteR)) {
                a.roles.remove(muteR).catch(c => client.logger.log("An error occured removing mute role for " + a.user.username, "error"))

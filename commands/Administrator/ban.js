@@ -1,4 +1,4 @@
-const Discord = require('discord.js')
+  const Discord = require('discord.js')
 
 module.exports = {
     name: 'ban',
@@ -40,6 +40,8 @@ module.exports = {
                 description: `I have banned ${user.tag} | ${reason}`,
                 color: client.colors.green
             }))
+
+            await user.send(`**${client.emoji.misc.xmark} You have been banned from ${message.guild.name} for ${reason}**`)
         } catch (err) {
             client.logger.log(`There was an error banning ${user.username}.\n${err}`, "error")
             client.error(message, "There was an error banning this user, please try again")
