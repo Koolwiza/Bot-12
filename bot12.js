@@ -6,6 +6,7 @@ const Discord = require('discord.js'),
 const Bot12 = require('./base/base_bot12'),
     client = new Bot12()
 
+require('./Modules/extenders')
 async function main() {
     function getFile(dir = "") {
         return new Promise((resolve, reject) => {
