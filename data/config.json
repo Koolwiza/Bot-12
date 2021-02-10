@@ -1,0 +1,20 @@
+{
+    "token": "ODAwNTQ5ODIwNDg1NTk5Mjcy.YATwHg._fDbAK7GJ2Q_3fzPHFS2ftrjX44",
+		"google_api_key":"AIzaSyCbtj-nkM0sTjWXSyyPGoegCBtUQtAikwE",
+    "owners": ["774352602678558790"],
+    "defaultSettings": {
+        "prefix": "^",
+        "joinchannel": null,
+        "joinmessage": "Welcome to the server {user}! We are now at {membercount} members!",
+        "logChannel": null,
+        "modrole":null
+    },
+    "defaultPlugins": {
+        "weclomemessages": false,
+        "links": false,
+        "invites": false,
+        "spoilers":false,
+        "deletemodcmds":false,
+        "antibots":false
+    }
+}
