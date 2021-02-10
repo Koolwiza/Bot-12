@@ -58,7 +58,7 @@ class Bot12 extends Client {
       .setColor(this.colors.red)
       .setFooter(this.user.username, this.user.displayAvatarURL())
       .setAuthor(message.author.tag, message.author.displayAvatarURL())
-    message.channel.send(errorEmbed)
+    return message.channel.send(errorEmbed)
   }
 
   authorPerms(message, perms) {
@@ -70,7 +70,7 @@ class Bot12 extends Client {
       .setColor(this.colors.red)
       .setFooter(this.user.username, this.user.displayAvatarURL())
       .setAuthor(message.author.tag, message.author.displayAvatarURL())
-    message.channel.send(errorEmbed)
+    return message.channel.send(errorEmbed)
   }
 
   clientPerms(message, perms) {
@@ -82,7 +82,7 @@ class Bot12 extends Client {
       .setColor(this.colors.red)
       .setFooter(this.user.username, this.user.displayAvatarURL())
       .setAuthor(message.author.tag, message.author.displayAvatarURL())
-    message.channel.send(errorEmbed)
+    return message.channel.send(errorEmbed)
   }
 
   baseEmbed(msg, object) {
@@ -104,7 +104,7 @@ class Bot12 extends Client {
   }
 
   missingArgs(message, content) {
-    message.channel.send(
+    return message.channel.send(
       new Discord.MessageEmbed()
         .setAuthor(message.author.tag, message.author.displayAvatarURL())
         .setFooter(this.user.username, this.user.displayAvatarURL())
@@ -133,8 +133,7 @@ class Bot12 extends Client {
   async resolveUser(search) {
     let user = null;
     if (!search || typeof search !== "string") return;
-    // Try ID search
-    if (search.match(/^<@!?(\d+)>$/)) {
+	    if (search.match(/^<@!?(\d+)>$/)) {
       const id = search.match(/^<@!?(\d+)>$/)[1];
       user = this.users.fetch(id).catch(() => { });
       if (user) return user;

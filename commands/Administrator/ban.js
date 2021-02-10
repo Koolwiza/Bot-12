@@ -12,8 +12,8 @@ module.exports = {
     premium: false,
     guildOnly: false,
     async execute(message, args, client) {
-        if (!message.member.hasPermission("BAN_MEMBERS")) return client.authorPerms(message, ["BAN_MEMBERS"])
-        if (!message.guild.me.hasPermission("BAN_MEMBERS")) return client.clientPerms(message, ["BAN_MEMBERS"])
+        if (!message.member.permissions.has("BAN_MEMBERS")) return client.authorPerms(message, ["BAN_MEMBERS"])
+        if (!message.guild.me.permissions.has("BAN_MEMBERS")) return client.clientPerms(message, ["BAN_MEMBERS"])
 
 
         let user = await client.resolveUser(args[0])
@@ -25,7 +25,6 @@ module.exports = {
             color: client.colors.red
         }))
 
-       
         let a = await message.guild.members.fetch(user.id).catch(c => {})
         if(a.roles.highest.position >= message.guild.me.roles.highest.position) return client.error(message, "Provided member has equal or higher role than me.")
 

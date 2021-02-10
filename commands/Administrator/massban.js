@@ -12,8 +12,8 @@ module.exports = {
     premium: false,
     guildOnly: false,
     async execute(message, args, client) {
-        if (!message.member.hasPermission("BAN_MEMBERS")) return client.authorPerms(message, ["BAN_MEMBERS"])
-        if (!message.guild.me.hasPermission("BAN_MEMBERS")) return client.clientPerms(message, ["BAN_MEMBERS"])
+        if (!message.member.permissions.has("BAN_MEMBERS")) return client.authorPerms(message, ["BAN_MEMBERS"])
+        if (!message.guild.me.permissions.has("BAN_MEMBERS")) return client.clientPerms(message, ["BAN_MEMBERS"])
 
 
         let bannedCollection = message.mentions.members

@@ -22,7 +22,7 @@ module.exports = {
 	guildOnly: false,
 	async execute(message, args, client) {
 		let query = args.join("+")
-		if (!query) return await client.missingArgs(message, "Please provide a query")
+		if (!query) return client.missingArgs(message, "Please provide a query")
 
 
 		const request = await fetch(`https://www.googleapis.com/customsearch/v1?key=${client.config.google_api_key}&cx=017576662512468239146:omuauf_lfve&q=${query}`)
@@ -54,6 +54,6 @@ Suggestions:
 			`)
 		}
 
-		 return await message.channel.send(embed)
+		 return message.channel.send(embed)
 	}
 }

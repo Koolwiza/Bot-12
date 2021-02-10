@@ -12,7 +12,7 @@ module.exports = {
     premium: false,
     guildOnly: false,
     async execute(message, args, client) {
-        if (!message.member.hasPermission("MANAGE_GUILD")) return client.authorPerms(message, ["MANAGE_SERVER"])
+        if (!message.member.permissions.has("MANAGE_GUILD")) return client.authorPerms(message, ["MANAGE_SERVER"])
 
         if(!args[0]) return client.error(message, "No type provided\nset | show")
 

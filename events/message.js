@@ -85,7 +85,7 @@ module.exports = async (client, message) => {
 	if (globalCmd.some(cmd => cmd.command === command.name)) return message.channel.send(`${client.emoji.bot.disabled} **This command is disabled globally**`)
 
 	try {
-		console.log(command.execute(message, args, client))
+		command.execute(message, args, client)
 		client.logger.cmd(`${message.author.username} used the command ${command.name}`)
 
 	} catch (e) {

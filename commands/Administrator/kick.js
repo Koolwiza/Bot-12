@@ -12,8 +12,8 @@ module.exports = {
     premium: false,
     guildOnly: false,
     async execute(message, args, client) {
-        if (!message.member.hasPermission("KICK_MEMBERS")) return client.authorPerms(message, ["KICK_MEMBERS"])
-        if (!message.guild.me.hasPermission("KICK_MEMBERS")) return client.clientPerms(message, ["KICK_MEMBERS"])
+        if (!message.member.permissions.has("KICK_MEMBERS")) return client.authorPerms(message, ["KICK_MEMBERS"])
+        if (!message.guild.me.permissions.has("KICK_MEMBERS")) return client.clientPerms(message, ["KICK_MEMBERS"])
 
 
         let user = await client.resolveUser(args[0])
