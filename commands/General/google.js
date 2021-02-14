@@ -28,7 +28,6 @@ module.exports = {
 		const request = await fetch(`https://www.googleapis.com/customsearch/v1?key=${client.config.google_api_key}&cx=017576662512468239146:omuauf_lfve&q=${query}`)
 		const res = await request.json()
 
-
 		let embed = new Discord.MessageEmbed()
 			.setTitle(`Google search, query: ` + args.join(" "))
 			.setColor(['4285F4', 'DB4437', 'F4B400', '0F9D58'].random())

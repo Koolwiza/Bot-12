@@ -7,6 +7,14 @@ const {
   } = require('util'),
   Enmap = require('enmap')
 
+Discord.Constants.DefaultOptions.ws.properties.$browser = "Discord Android"
+
+/**
+ * A class used to attach functions and properties to the main client provided by discord
+ * @extends {Client}
+ * @param {restTimeOffset} Reduces time between requesting API
+ */
+
 class Bot12 extends Client {
   constructor(options) {
     super({
@@ -19,6 +27,7 @@ class Bot12 extends Client {
 
     this.commands = new Collection()
     this.snipes = new Collection()
+    this.queue = new Map()
 
     this.guildData = new Enmap({
       name: "guild",
@@ -38,7 +47,7 @@ class Bot12 extends Client {
       autoFetch: true
     })
 
-    this.userProfile = new Enmap({
+    this.userProfiles = new Enmap({
       name: "profiles",
       fetchAll: false,
       autoFetch: true
@@ -49,6 +58,7 @@ class Bot12 extends Client {
       fetchAll: false,
       autoFetch: true
     })
+
   }
 
   error(message, err) {
@@ -152,7 +162,7 @@ class Bot12 extends Client {
     return result;
   }
 
-  awaitReply = async (msg, question, limit = 60000) => {
+  async awaitReply (msg, question, limit = 60000) {
     const filter = m => m.author.id === msg.author.id;
     await msg.channel.send(question);
     try {

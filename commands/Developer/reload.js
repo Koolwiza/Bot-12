@@ -2,7 +2,8 @@ const Discord = require('discord.js'),
     ms = require('ms'),
     {
         inspect
-    } = require('util')
+    } = require('util'),
+    fs = require("fs")
 
 module.exports = {
     name: 'reload',
@@ -17,17 +18,23 @@ module.exports = {
     guildOnly: false,
     async execute(message, args, client) {
         if (!client.config.owners.includes(message.author.id)) return
-        if (!args.length) return client.missingArgs(message, "No command provided")
-        const commandName = args[0].toLowerCase();
+        if (!args.length) return client.missingArgs(message, "No command/event provided")
+        let type = args[0]
+
+        if(type.toLowerCase() === "event") {
+          if(!fs.existsSync(`../../events/${args[0]}`)) return client.error(message, "No event with that name")
+          delete require.cache[require.resolve(`../../events/${args[0]}`)]
+        }
+
         const command = message.client.commands.get(commandName) ||
-            message.client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+            client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
         if (!command) return client.error(message, "There is no command with that name/alias")
 
         delete require.cache[require.resolve(`../${command.category}/${command.name}.js`)];
         try {
             const newCommand = require(`../${command.category}/${command.name}.js`);
-            message.client.commands.set(newCommand.name, newCommand);
+            client.commands.set(newCommand.name, newCommand);
             message.channel.send(client.baseEmbed(message, {title: "Success!", description: `I have reloaded the command \`${command.name}\``, color: client.colors.green}))
         } catch (error) {
             client.logger.log("There was an error reloading the command\n" + error, "error")

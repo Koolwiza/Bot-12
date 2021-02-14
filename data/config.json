@@ -1,7 +1,7 @@
 {
-    "token": "ODAwNTQ5ODIwNDg1NTk5Mjcy.YATwHg._fDbAK7GJ2Q_3fzPHFS2ftrjX44",
+    "token": "ODAwNTQ5ODIwNDg1NTk5Mjcy.YATwHg.HZcsKZ2gWWjaiQP-IKzp9yfh3yU",
 		"google_api_key":"AIzaSyCbtj-nkM0sTjWXSyyPGoegCBtUQtAikwE",
-    "owners": ["774352602678558790"],
+    "owners": ["774352602678558790", "660552441166823462"],
     "defaultSettings": {
         "prefix": "^",
         "joinchannel": null,
@@ -10,7 +10,7 @@
         "modrole":null
     },
     "defaultPlugins": {
-        "weclomemessages": false,
+        "welcomemessages": false,
         "links": false,
         "invites": false,
         "spoilers":false,
