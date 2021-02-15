@@ -31,8 +31,11 @@ And even more commands coming soon!
 - ❌ Anti Bots - No bots will be able to be added to the server when the person who added doesn't have a certain role (mod role in config) when enabled
 - ✅ Configurable Prefix - A customizable prefix 
 
-### Common Errors
+### Support
 
+[Common Errors](https://github.com/Koolwiza/Bot-12/blob/main/support/common-errors.md)
+. . .
 
-
-Adding welcome/goodbye messages... 👀
+### Future Plans
+Adding welcome/goodbye messages... 
+Adding more commands obviously, this bot isn't finished o.O
