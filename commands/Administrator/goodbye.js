@@ -4,9 +4,9 @@ const Discord = require('discord.js'),
     } = require('../../data/config.json')
 
 module.exports = {
-    name: 'welcome',
-    description: 'Set the welcome channel/message for the server',
-    usage: 'welcome <type> [value]',
+    name: 'goodbye',
+    description: 'Set the goodbye channel/message for the server',
+    usage: 'goodbye <type> [value]',
     aliases: [],
     required: [],
     user: [],
@@ -24,24 +24,24 @@ module.exports = {
             let channel = await client.resolveChannel(args[1])
             if (!channel) return client.missingArgs(message, "Invalid channel provided/no channel provided")
 
-            client.guildData.set(message.guild.id, channel.id, "joinchannel")
+            client.guildData.set(message.guild.id, channel.id, "leavechannel")
 
             return message.channel.send(client.baseEmbed(message, {
                 title: "Success",
-                description: "Redirected join messages to " + channel.toString(),
+                description: "Redirected leave messages to " + channel.toString(),
                 color: client.colors.green
             }))
 
         } else if (type === "message") {
             let msg = args.slice(1).join(" ")
 
-            if (!msg) return client.missingArgs(message, "Please provide a join message")
+            if (!msg) return client.missingArgs(message, "Please provide a leave message")
 
-            client.guildData.set(message.guild.id, msg, "joinmessage")
+            client.guildData.set(message.guild.id, msg, "leavemessage")
 
             return message.channel.send(client.baseEmbed(message, {
                 title: "Success",
-                description: "Changed join message to ```" + msg + "```",
+                description: "Changed leave message to ```" + msg + "```",
                 color: client.colors.green
             }))
         } else if (type === "show") {
@@ -70,7 +70,7 @@ module.exports = {
                 .replace(/{server:members}/g, `${message.guild.memberCount}`)
 
             let embed = new Discord.MessageEmbed()
-                .setTitle("Welcome settings for " + message.guild.name)
+                .setTitle("Leave settings for " + message.guild.name)
                 .setDescription(variables)
                 .addField("Default Value", defaultSettings.joinmessage)
                 .addField("Current Value", client.guildData.get(message.guild.id).joinmessage)

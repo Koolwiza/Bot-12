@@ -9,7 +9,7 @@ module.exports = {
     required: ['MANAGE_ROLES'],
     user: ['MANAGE_ROLES'],
     category: __dirname.split("commands\\")[1],
-    args: false,
+    
     premium: false,
     guildOnly: false,
     async execute(message, args, client) {

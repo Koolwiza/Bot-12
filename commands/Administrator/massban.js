@@ -8,7 +8,7 @@ module.exports = {
     required: ['BAN_MEMBERS'],
     user: ['BAN_MEMBERS'],
     category: __dirname.split("commands\\")[1],
-    args: false,
+    
     premium: false,
     guildOnly: false,
     async execute(message, args, client) {
