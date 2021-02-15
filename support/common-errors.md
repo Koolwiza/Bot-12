@@ -13,7 +13,7 @@ If you are receiving an error saying you can't install quick.db, you might need 
 
 I am only familiar with using windows so if anyone else knows how to do so using mac/linux, let me know ;)
 
-- Open Windows Powershell using Administrator, and `cd` to your directory. 
+- Open Windows Powershell as Administrator, and `cd` to your directory. 
 - Type the command `npm install windows-build-tools --vs2015 --global`
 
 Afer this, you should be able to run the bot/install enmap
@@ -27,7 +27,7 @@ However running the command `npm rebuild` to uninstall all packages and to insta
 
 There's probably a more efficient way to do this, but the way I do this is:
 
-- Open Windows Powershell using Administrator, and `cd` to your directory. 
+- Open Windows Powershell as Administrator, and `cd` to your directory. 
 - Type the command `npm install windows-build-tools --vs2015 --global`
 
 Yea.... Same thing as installing enmap 😅
@@ -35,5 +35,15 @@ Yea.... Same thing as installing enmap 😅
 ### Cannot find module <module_name>
 
 Simple, install the module using `npm install <module_name>`
+
+### nodemon.ps1 cannot be loaded because running scripts is disabled on this system.
+
+This one, it's because the windows default system disables untrusted scrypts.
+Only do this if you're SURE of changing it.
+
+- Open Windows Powershell as Administrator, and you'd see something like `PS C:\windows\system32`.
+- Type the following `Set-ExecutionPolicy -ExecutionPolicy Unrestricted` and `Y` after.
+
+Then try nodemon again and it should work!
 
 **Other errors will be supported, let me know by DM'ing me on Discord: Kool#7867**
