@@ -40,7 +40,7 @@ module.exports = {
         .setColor(`${client.colors.green}`)
         .setAuthor(message.author.tag, message.author.displayAvatarURL())
         .setDescription(
-          `**Emoji Has Been Added!** | **Name:** \`${name}\` | **Preview:** [Click Me](${emoji})`
+          `**Emoji has been added!** | **Name:** \`${name}\` | **Preview:** [Click Me](${emoji})`
         )
         .setFooter(message.client.user.username, message.client.user.displayAvatarURL())
       return message.channel.send(a)

@@ -15,7 +15,7 @@ module.exports = {
   guildOnly: false,
   async execute(message, args, client) {
 
-    fetch('https://blockchain.info/ticker')
+    fetch(encodeURI('https://blockchain.info/ticker'))
       .then(res => res.json())
       .then(body => {
 

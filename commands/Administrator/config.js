@@ -1,5 +1,5 @@
 const Discord = require('discord.js')
-
+/*
 module.exports = {
     name: 'config',
     description: 'Display or set server settings',
@@ -53,4 +53,4 @@ module.exports = {
               message.channel.send(output.replace(/false/ig, "Disabled").replace(/true/ig, "Enabled") + "```");
         }
     }
-}
+}*/
