@@ -24,6 +24,18 @@ module.exports = {
             To configure it, run the command \`prefix [prefix]\` e.g \`prefix !\``,
                 color: client.colors.sky
             }))
+        } else {
+
+            let prefix = args.join(" ")
+            if (prefix.length > 5) return client.error(message, "Prefix can not be longer than 5 characters")
+
+            client.guildData.set(message.guild.id, prefix, "prefix")
+
+            return message.channel.send(client.baseEmbed(message, {
+                title: "Success",
+                description: "Changed prefix of this guild to `" + prefix + "`",
+                color: client.colors.green
+            }))
         }
 
     }
