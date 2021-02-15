@@ -5,7 +5,7 @@
     "defaultSettings": {
         "prefix": "^",
         "joinchannel": null,
-        "joinmessage": "Welcome to the server {user}! We are now at {membercount} members!",
+        "joinmessage": "Welcome to the server {member:mention}! We are now at {server:members} members!",
         "leavechannel":null,
         "leavemessage":"{member:mention} left the server... We are down to {server:members} members",
         "logChannel": null,
