@@ -8,7 +8,7 @@ module.exports = {
   required: ['MANAGE_GUILD'],
   user: ['MANAGE_GUILD'],
   category: __dirname.split("commands\\")[1],
-  
+
   premium: false,
   guildOnly: false,
   async execute(message, args, client) {

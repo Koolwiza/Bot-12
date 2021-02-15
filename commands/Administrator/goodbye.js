@@ -11,7 +11,7 @@ module.exports = {
     required: [],
     user: [],
     category: __dirname.split("commands\\")[1],
-    
+
     premium: false,
     guildOnly: false,
     async execute(message, args, client) {
@@ -58,7 +58,7 @@ module.exports = {
             > **Server**
             > \`{server:name}\` - The server's name
             > \`{server:members}\` - The server's members`
-            
+
 
             let finJoinMsg = client.guildData.get(message.guild.id).joinmessage
                 .replace(/{member:mention}/g, `<@${message.author.id}>`)
