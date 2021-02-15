@@ -1,5 +1,5 @@
 const Discord = require('discord.js')
-/*
+
 module.exports = {
     name: 'config',
     description: 'Display or set server settings',
@@ -7,7 +7,7 @@ module.exports = {
     aliases: [],
     required: ['MANAGE_GUILD'],
     user: ['MANAGE_GUILD'],
-    category: __dirname.split("commands/")[1],
+    category: __dirname.split("commands\\")[1],
     args: false,
     premium: false,
     guildOnly: false,
@@ -53,4 +53,4 @@ module.exports = {
               message.channel.send(output.replace(/false/ig, "Disabled").replace(/true/ig, "Enabled") + "```");
         }
     }
-}*/
+}

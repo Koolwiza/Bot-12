@@ -8,7 +8,7 @@ module.exports = {
     aliases: [],
     required: ['MANAGE_ROLES'],
     user: ['MANAGE_ROLES'],
-    category: __dirname.split("commands/")[1],
+    category: __dirname.split("commands\\")[1],
     args: false,
     premium: false,
     guildOnly: false,
