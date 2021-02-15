@@ -12,7 +12,7 @@ module.exports = {
     aliases: ['re'],
     required: [],
     user: [],
-    category: __dirname.split("commands/")[1],
+    category: __dirname.split("commands\\")[1],
     args: false,
     premium: false,
     guildOnly: false,

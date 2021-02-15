@@ -11,7 +11,7 @@ module.exports = {
     aliases: ['commands', 'command'],
     required: [],
     user: [],
-    category: __dirname.split("commands/")[1],
+    category: __dirname.split("commands\\")[1],
     args: false,
     premium: false,
     guildOnly: false,
@@ -43,8 +43,9 @@ module.exports = {
                     categories.push(command.category)
                 }
             })
+
             
-            categories.forEach(cat => {
+            await categories.forEach(cat => {
                 const tCommands = commands.filter(cmd => cmd.category === cat)
                 noArgEmbed.addField(client.emoji.help[cat.toLowerCase()] + ` ${cat} [${tCommands.size}]`, tCommands.map(command => `\`${command.name}\``).join(", "))
             })

@@ -11,7 +11,7 @@ module.exports = {
   description: 'Adds the emoji to the server',
   usage: 'addemoji <emoji> [name]',
   aliases: [],
-  category: __dirname.split("commands/")[1],
+  category: __dirname.split("commands\\")[1],
   required: ['SEND_MESSAGES'],
   user: ['SEND_MESSAGES', 'MANAGE_EMOJIS'],
   args: true,
