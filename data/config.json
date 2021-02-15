@@ -6,6 +6,8 @@
         "prefix": "^",
         "joinchannel": null,
         "joinmessage": "Welcome to the server {user}! We are now at {membercount} members!",
+        "leavechannel":null,
+        "leavemessage":"{member:mention} left the server... We are down to {server:members} members",
         "logChannel": null,
         "modrole":null
     },

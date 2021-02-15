@@ -141,15 +141,42 @@ class Bot12 extends Client {
   }
 
   async resolveUser(search) {
+    let userRegex = /^<@!?(\d+)>$/
     let user = null;
     if (!search || typeof search !== "string") return;
-	    if (search.match(/^<@!?(\d+)>$/)) {
-      const id = search.match(/^<@!?(\d+)>$/)[1];
+	    if (search.match(userRegex)) {
+      const id = search.match(userRegex)[1];
       user = this.users.fetch(id).catch(() => { });
       if (user) return user;
     }
     user = await this.users.fetch(search).catch(() => { });
     return user;
+  }
+
+  async resolveChannel(search) {
+    let channelRegex = /^<#(\d+)>$/
+    let channel = null;
+    if (!search || typeof search !== "string") return;
+	    if (search.match(channelRegex)) {
+      const id = search.match(channelRegex)[1];
+      channel = this.channels.fetch(id).catch(() => { });
+      if (channel) return channel;
+    }
+    channel = await this.channels.fetch(search).catch(() => { });
+    return channel;
+  }
+
+  async resolveRole(search) {
+    let roleRegex = /^<&(\d+)>$/
+    let role = null;
+    if (!search || typeof search !== "string") return;
+	    if (search.match(roleRegex)) {
+      const id = search.match(roleRegex)[1];
+      role = this.roles.fetch(id).catch(() => { });
+      if (channel) return role;
+    }
+    role = await this.roles.fetch(search).catch(() => { });
+    return role;
   }
 
   randomString(length) {

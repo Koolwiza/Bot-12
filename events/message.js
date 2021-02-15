@@ -16,7 +16,7 @@ module.exports = async (client, message) => {
   client.guildData.ensure(message.guild.id, defaultSettings)
   client.plugins.ensure(message.guild.id, defaultPlugins)
 
-  let userProf = client.userProfiles.ensure(message.author.id, {
+  client.userProfiles.ensure(message.author.id, {
     balance: 0,
     premium: false
   })
@@ -28,7 +28,6 @@ module.exports = async (client, message) => {
 
 
   const prefix = client.guildData.has(message.guild.id, "prefix") ? client.guildData.get(message.guild.id, "prefix") : client.config.defaultSettings.prefix
-
   if (await client.resolveUser(message.content.split(" ")[0]) === client.user) message.channel.send(
     new Discord.MessageEmbed()
       .setDescription("👋 **Hello " + message.author.toString() + ", my prefix is `" + prefix + '`. \nUse the command `help` for all of my commands!**')
@@ -38,7 +37,7 @@ module.exports = async (client, message) => {
   )
 
   if (client.plugins.get(message.guild.id, "invites")) {
-    let inviteRegex = /(https?:\/\/)?(www\.)?(discord\.(gg|li|me|io)|discordapp\.com\/invite|invite\.gg)\/.+/gi
+    let inviteRegex = /(https?:\/\/)?(www\.)?(disc(ord)?\.(gg|li|me|io)|discordapp\.com\/invite|invite\.gg)\/.+/gi
     if (inviteRegex.test(message.content) /*&& !message.member.hasPermission("MANAGE_GUILD")*/) {
       message.delete().catch(() => { })
       message.channel.send(`${message.author.toString()}, ${client.emoji.misc.xmark} **You aren't allowed to send invites in this server**`).then(m => {
