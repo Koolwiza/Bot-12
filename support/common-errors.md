@@ -23,8 +23,19 @@ Afer this, you should be able to run the bot/install enmap
 I'm not too sure what's the cause for this error. 
 However running the command `npm rebuild` to uninstall all packages and to install them again seems to do the trick for me.
 
+### Error: Could not locate the bindings file. Tried: . . .
+
+There's probably a more efficient way to do this, but the way I do this is:
+
+- Open Windows Powershell using Administrator, and `cd` to your directory. 
+- Type the command `npm install windows-build-tools --vs2015 --global`
+
+Yea.... Same thing as installing enmap 😅
+
 ### Cannot find module <module_name>
 
 Simple, install the module using `npm install <module_name>`
+
+
 
 **Other errors will be supported, let me know by DM'ing me on Discord: Kool#7867**
