@@ -36,6 +36,4 @@ Yea.... Same thing as installing enmap 😅
 
 Simple, install the module using `npm install <module_name>`
 
-
-
 **Other errors will be supported, let me know by DM'ing me on Discord: Kool#7867**
