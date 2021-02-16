@@ -20,7 +20,7 @@ module.exports = {
 	
 	premium: false,
 	guildOnly: false,
-	async execute(message, args, client) {
+	async execute(message, args, client, data) {
 		let query = args.join("+")
 		if (!query) return client.missingArgs(message, "Please provide a query")
 

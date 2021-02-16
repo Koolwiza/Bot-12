@@ -16,7 +16,7 @@ module.exports = {
     
     premium: false,
     guildOnly: false,
-    async execute(message, args, client) {
+    async execute(message, args, client, data) {
         let user = (message.mentions.members.first()) || 
         (args[0] ? (await message.guild.members.fetch(args[0])) : message.member)
 

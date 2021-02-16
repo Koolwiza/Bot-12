@@ -13,7 +13,7 @@ module.exports = {
   
   premium: false,
   guildOnly: false,
-  execute: async (message, args, client) => {
+  execute: async (message, args, client, data) => {
     const Channel = message.member.voice.channel;
 
     if (!Channel) return client.error(message, "Please join a voice channel to continue")

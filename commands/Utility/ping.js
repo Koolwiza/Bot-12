@@ -12,7 +12,7 @@ module.exports = {
     
     premium: false,
     guildOnly: false,
-    async execute(message, args, client) {
+    async execute(message, args, client, data) {
 
         console.log(__dirname.split('commands\\'))
         message.channel.send(client.baseEmbed(message, {description: "```🏓 Pinging...```"})).then(m => {

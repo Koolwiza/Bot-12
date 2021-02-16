@@ -14,7 +14,7 @@ module.exports = {
   
   premium: false,
   guildOnly: false,
-  async execute(message, args, client) {
+  async execute(message, args, client, data) {
 
     const Channel = message.member.voice.channel;
 

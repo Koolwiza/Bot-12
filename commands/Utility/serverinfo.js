@@ -16,7 +16,7 @@ module.exports = {
     
     premium: false,
     guildOnly: false,
-    async execute(message, args, client) {
+    async execute(message, args, client, data) {
 
         let flags = {
             'dubai': "<:flag_db:801544606730813490>",

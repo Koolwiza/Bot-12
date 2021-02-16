@@ -13,7 +13,7 @@ module.exports = {
     
     premium: false,
     guildOnly: false,
-    async execute(message, args, client) {
+    async execute(message, args, client, data) {
         let query = args[0]
         let version = message.content.split('--src=')[1]
         if (!version) version = 'stable'

@@ -11,7 +11,7 @@ module.exports = {
 
     premium: false,
     guildOnly: false,
-    async execute(message, args, client) {
+    async execute(message, args, client, data) {
         if (!message.member.permissions.has("MANAGE_GUILD")) return client.authorPerms(message, ["MANAGE_SERVER"])
 
         if (!args[0]) return client.missingArgs(message, "No type provided.\nenable | disable | show")

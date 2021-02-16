@@ -14,7 +14,7 @@ module.exports = {
 
     premium: false,
     guildOnly: false,
-    async execute(message, args, client) {
+    async execute(message, args, client, data) {
 
         if (!args[0]) return client.missingArgs(message, "Please provide a type.\nchannel | message | show")
 
