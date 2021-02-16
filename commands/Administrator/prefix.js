@@ -13,7 +13,7 @@ module.exports = {
     category: __dirname.split("commands\\")[1],
     premium: false,
     guildOnly: false,
-    async execute(message, args, client) {
+    async execute(message, args, client, data) {
 
         if (!args.length) {
             let prefix = client.guildData.get(message.guild.id).prefix || defaultSettings.prefix

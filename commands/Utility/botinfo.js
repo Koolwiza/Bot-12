@@ -22,7 +22,7 @@ module.exports = {
     
     premium: false,
     guildOnly: false,
-    async execute(message, args, client) {
+    async execute(message, args, client, data) {
       
       let cpuLol;
         cpuStat.usagePercent(async function (err, percent, seconds) {

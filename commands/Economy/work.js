@@ -12,7 +12,7 @@ module.exports = {
   premium: false,
   guildOnly: false,
   cooldown: 60 * 60,
-  async execute(message, args, client) {
+  async execute(message, args, client, data) {
     let replyList = [
       "You work at McDonald's and you were paid {amount} ",
       "You work at a toy factory, and for your immense work, you were paid {amount}",

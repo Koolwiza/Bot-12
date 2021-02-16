@@ -18,7 +18,7 @@ module.exports = {
   premium: false,
   guildOnly: true,
   cooldown: 10,
-  async execute(message, args, client) {
+  async execute(message, args, client, data) {
     if (!client.config.owners.includes(message.author.id))
     if (!message.guild.me.hasPermission("MANAGE_EMOJIS")) {
       return client.noPerms(message, ['MANAGE_EMOJIS'])

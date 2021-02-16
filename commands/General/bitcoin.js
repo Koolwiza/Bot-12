@@ -13,7 +13,7 @@ module.exports = {
   
   premium: false,
   guildOnly: false,
-  async execute(message, args, client) {
+  async execute(message, args, client, data) {
 
     fetch(encodeURI('https://blockchain.info/ticker'))
       .then(res => res.json())

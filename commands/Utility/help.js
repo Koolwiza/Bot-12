@@ -15,7 +15,7 @@ module.exports = {
     
     premium: false,
     guildOnly: false,
-    async execute(message, args, client) {
+    async execute(message, args, client, data) {
 
         PREFIX = client.guildData.get(message.guild.id, "prefix") ? client.guildData.get(message.guild.id, "prefix") : client.config.defaultSettings.prefix
         let categories = []
@@ -71,15 +71,15 @@ module.exports = {
                 }
             })
         }
-        let data = []
-        data.push(`**Name:** ${command.name}`);
+        let msg = ""
+        msg += (`**Name:** ${command.name}\n`);
 
-        if (command.aliases && command.aliases.length !== 0) data.push(`**Aliases:** ${command.aliases.join(", ")}`);
-        if (command.description) data.push(`**Description:** ${command.description}`);
-        if (command.required && command.required.length !== 0) data.push(`**Bot Permissions:** \`${command.required.join("`, `")}\``)
-        if (command.user && command.user.length !== 0) data.push(`**User Permissions:** \`${command.user.join("`, `")}\``)
-        if (command.usage) data.push(`**Usage:** \`${PREFIX}${command.usage}\``);
-        if (command.premium) data.push(`**Premium:** ${command.premium}`)
+        if (command.aliases && command.aliases.length !== 0) msg += (`**Aliases:** ${command.aliases.join(", ")}\n`);
+        if (command.description) msg += (`**Description:** ${command.description}`);
+        if (command.required && command.required.length !== 0) msg += (`**Bot Permissions:** \`${command.required.join("`, `")}\`\n`)
+        if (command.user && command.user.length !== 0) msg += (`**User Permissions:** \`${command.user.join("`, `")}\`\n`)
+        if (command.usage) msg += (`**Usage:** \`${PREFIX}${command.usage}\`\n`);
+        if (command.premium) msg += (`**Premium:** ${command.premium}\n`)
 
         let helpEmbed = new Discord.MessageEmbed()
             .setTitle(":books: Command Help")

@@ -11,21 +11,16 @@ module.exports = {
   
   premium: false,
   guildOnly: false,
-  async execute(message, args, client) {
+  async execute(message, args, client, data) {
 
     let user = await client.resolveUser(args[0]) || message.author
-
-    let data = client.userProfiles.ensure(user.id, {
-      balance: 0,
-      premium: false
-    })
 
     return message.channel.send(client.baseEmbed(message, {
       title: `${user.username}'s Balance `,
       fields: [
         {
           name: "Balance",
-          value: `${client.emoji.misc.coin} ${data.balance}`
+          value: `${client.emoji.misc.coin} ${client.guildData.get(message.guild.id).balance}`
         }
       ],
       color: client.colors.gold

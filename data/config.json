@@ -8,7 +8,6 @@
         "joinmessage": "Welcome to the server {member:mention}! We are now at {server:members} members!",
         "leavechannel":null,
         "leavemessage":"{member:mention} left the server... We are down to {server:members} members",
-        "logChannel": null,
         "modrole":null
     },
     "defaultPlugins": {

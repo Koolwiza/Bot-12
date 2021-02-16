@@ -122,8 +122,10 @@ module.exports = async (client, message) => {
   timestamps.set(message.author.id, now);
   setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
 
+  let data = client.guildData.get(message.guild.id)
+
   try {
-    command.execute(message, args, client)
+    command.execute(message, args, client, data)
     client.logger.cmd(`${message.author.username} used the command ${command.name}`)
 
   } catch (e) {
