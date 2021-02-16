@@ -12,7 +12,6 @@ module.exports = {
     required: [],
     user: [],
     category: __dirname.split("commands\\")[1],
-    
     premium: false,
     guildOnly: false,
     async execute(message, args, client, data) {
@@ -24,7 +23,7 @@ module.exports = {
         } = message.client
 
         if (!args.length) {
-            
+
             let noArgEmbed = new Discord.MessageEmbed()
                 .setThumbnail(message.guild.iconURL())
                 .setDescription(`❯ To get help on a command, use \`${PREFIX}help <command>\`\n\n\`\`\`\n[] - Optional\n<> - Required\n\`\`\`\n`)
@@ -34,7 +33,7 @@ module.exports = {
                 }))
                 .setFooter(message.client.user.username, message.client.user.avatarURL())
                 .setTitle(`${message.client.user.username} Bot Help`)
-                
+
             commands.forEach(command => {
                 if (!categories.includes(command.category)) {
                     if (command.category === "Developer" && !client.config.owners.includes(message.author.id)) {
@@ -44,14 +43,14 @@ module.exports = {
                 }
             })
 
-            
+
             await categories.forEach(cat => {
                 const tCommands = commands.filter(cmd => cmd.category === cat)
                 noArgEmbed.addField(client.emoji.help[cat.toLowerCase()] + ` ${cat} [${tCommands.size}]`, tCommands.map(command => `\`${command.name}\``).join(", "))
             })
             return message.channel.send(noArgEmbed)
         }
-        
+
         const name = args[0].toLowerCase();
         const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
 

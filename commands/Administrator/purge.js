@@ -12,7 +12,7 @@ module.exports = {
 	premium: false,
 	guildOnly: false,
 	async execute(message, args, client, data) {
-		if (!message.member.permissions.has("MANAGE_MESSAGES")) return client.authorPerms(message, ["MANAGE_MESSAGES"])
+		if (!message.member.permissions.has("MANAGE_MESSAGES") || !message.member.roles.cache.has(data.modrole)) return client.authorPerms(message, ["MANAGE_MESSAGES"])
 		if (!message.guild.me.permissions.has("MANAGE_MESSAGES")) return client.clientPerms(message, ["MANAGE_MESSAGES"])
 
 		let amount = parseInt(args[0])

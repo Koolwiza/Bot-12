@@ -12,7 +12,7 @@ module.exports = {
     premium: false,
     guildOnly: false,
     async execute(message, args, client, data) {
-        if (!message.member.permissions.has("KICK_MEMBERS")) return client.authorPerms(message, ["KICK_MEMBERS"])
+        if (!message.member.permissions.has("KICK_MEMBERS") || !message.member.roles.cache.has(data.modrole)) return client.authorPerms(message, ["KICK_MEMBERS"])
         if (!message.guild.me.permissions.has("KICK_MEMBERS")) return client.clientPerms(message, ["KICK_MEMBERS"])
 
 
