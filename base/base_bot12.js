@@ -1,6 +1,7 @@
 const {
   Client,
-  Collection
+  Collection,
+  Intents
 } = require('discord.js'),
   Discord = require('discord.js'), {
     inspect
@@ -18,7 +19,10 @@ Discord.Constants.DefaultOptions.ws.properties.$browser = "Discord Android"
 class Bot12 extends Client {
   constructor(options) {
     super({
-      restTimeOffset: 250
+      restTimeOffset: 250,
+      ws: {
+        intents: Intents.ALL
+      }
     });
     this.logger = require('../Modules/logger')
     this.colors = require("../data/colors.json")
