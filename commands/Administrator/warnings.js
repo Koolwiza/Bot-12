@@ -13,7 +13,7 @@ module.exports = {
   premium: false,
   guildOnly: false,
   async execute(message, args, client, data) {
-    if (!!message.member.roles.cache.has(data.modrole) || !message.member.permissions.has("MANAGE_GUILD")) return client.authorPerms(message, ["MANAGE_SERVER"])
+    if (!message.member.permissions.has("MANAGE_GUILD") || !message.member.roles.cache.has(data.modrole)) return client.authorPerms(message, ["MANAGE_SERVER"])
 
 
     let user = await client.resolveUser(args[0])
