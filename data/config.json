@@ -1,21 +1,24 @@
 {
-    "token": "ODA4NDEwNzkyNDIwMDQ4OTc2.YCGJOA.AzrZVjh9-54_z1_JdRMIY27wCaE",
-		"google_api_key":"AIzaSyCbtj-nkM0sTjWXSyyPGoegCBtUQtAikwE",
-    "owners": ["774352602678558790", "660552441166823462"],
+    "token": "ODAwNTQ5ODIwNDg1NTk5Mjcy.YATwHg.NMzBjjDJ2PX_qGWWI60V8sZd4qw",
+    "google_api_key": "AIzaSyCbtj-nkM0sTjWXSyyPGoegCBtUQtAikwE",
+    "owners": [
+        "774352602678558790",
+        "660552441166823462"
+    ],
     "defaultSettings": {
         "prefix": "^",
         "joinchannel": null,
         "joinmessage": "Welcome to the server {member:mention}! We are now at {server:members} members!",
-        "leavechannel":null,
-        "leavemessage":"{member:mention} left the server... We are down to {server:members} members",
-        "modrole":null
+        "leavechannel": null,
+        "leavemessage": "{member:mention} left the server... We are down to {server:members} members",
+        "modrole": null
     },
     "defaultPlugins": {
         "welcomemessages": false,
         "links": false,
         "invites": false,
-        "spoilers":false,
-        "deletemodcmds":false,
-        "antibots":false
+        "spoilers": false,
+        "deletemodcmds": false,
+        "antibots": false
     }
 }
