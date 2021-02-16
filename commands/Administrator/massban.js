@@ -8,7 +8,7 @@ module.exports = {
     required: ['BAN_MEMBERS'],
     user: ['BAN_MEMBERS'],
     category: __dirname.split("commands\\")[1],
-    args: false,
+
     premium: false,
     guildOnly: false,
     async execute(message, args, client) {
@@ -24,14 +24,16 @@ module.exports = {
         function checkPerms(collection) {
             let data = []
             collection.forEach(m => {
-                if(m.roles.highest.position >= message.member.roles.highest.position || m.roles.highest.position >= message.guild.me.roles.highest.position ) data.push(m)
+                if (m.roles.highest.position >= message.member.roles.highest.position || m.roles.highest.position >= message.guild.me.roles.highest.position) data.push(m)
             })
-            if(data.length === 0) return false; // Passed
+            if (data.length === 0) return false; // Passed
             return data
         }
 
         let perms = checkPerms(bannedCollection)
-        if(Array.isArray(perms)) return client.authorPerms(message, "You don't have permission to ban " + perms.filter(T => T).map(({user}) => `**${user.tag}**`).join(", "))
+        if (Array.isArray(perms)) return client.authorPerms(message, "You don't have permission to ban " + perms.filter(T => T).map(({
+            user
+        }) => `**${user.tag}**`).join(", "))
 
         let collector = message.channel.createMessageCollector(m => m.author.id === message.author.id, {
             time: 60 * 1000
@@ -42,7 +44,7 @@ module.exports = {
             if (['yes', 'y'].includes(msg.content.toLowerCase())) {
 
                 try {
-                    
+
                     bannedCollection.forEach(member => {
                         message.guild.members.ban(member, {
                             reason: banReason

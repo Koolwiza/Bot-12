@@ -8,7 +8,7 @@ module.exports = {
 	required: ['MANAGE_MESSAGES'],
 	user: ['MANAGE_MESSAGES'],
 	category: __dirname.split("commands\\")[1],
-	args: false,
+
 	premium: false,
 	guildOnly: false,
 	async execute(message, args, client) {

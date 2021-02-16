@@ -9,7 +9,7 @@ module.exports = {
   required: ['MANAGE_GUILD'],
   user: ['MANAGE_GUILD'],
   category: __dirname.split("commands\\")[1],
-  args: false,
+
   premium: false,
   guildOnly: false,
   async execute(message, args, client) {
@@ -18,12 +18,11 @@ module.exports = {
 
     let user = await client.resolveUser(args[0])
     if (!user) return client.missingArgs(message, "Missing user for warnings")
-  
+
     let a = client.modActions.filter(c => (c.type === "warning") && (c.user === user.id) && (c.guild === message.guild.id))
 
-    let b = (await Promise.all(a.map(async (value, key) => 
-      `**ID: ${key} | ${(await client.users.fetch(value.moderator)).tag}**\n${value.reason} - ${moment(value.when).format('lll') } `
-    ))).join("\n\n")
+    let b = (await Promise.all(a.map(async (value, key) =>
+      `**ID: ${key} | ${(await client.users.fetch(value.moderator)).tag}**\n${value.reason} - ${moment(value.when).format('lll') } `))).join("\n\n")
 
 
     let embed = new Discord.MessageEmbed()

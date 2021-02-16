@@ -8,19 +8,19 @@ module.exports = {
     required: ['MANAGE_GUILD'],
     user: ['MANAGE_GUILD'],
     category: __dirname.split("commands\\")[1],
-    args: false,
+
     premium: false,
     guildOnly: false,
     async execute(message, args, client) {
         if (!message.member.permissions.has("MANAGE_GUILD")) return client.authorPerms(message, ["MANAGE_SERVER"])
 
-        if (!args[0]) return client.error(message, "No type provided.\nenable | disable | show")
+        if (!args[0]) return client.missingArgs(message, "No type provided.\nenable | disable | show")
 
         let type = args[0].toLowerCase()
         if (type === "enable") {
             const prop = args[1]
 
-            if (!prop) return client.error(message, "No property provided")
+            if (!prop) return client.missingArgs(message, "No property provided")
 
             if (!client.plugins.has(message.guild.id, prop.toLowerCase())) {
                 return client.error(message, "Provided plugin property wasn't valid")
@@ -35,7 +35,7 @@ module.exports = {
         } else if (type === "disable") {
             const prop = args[1]
 
-            if (!prop) return client.error(message, "No property provided")
+            if (!prop) return client.missingArgs(message, "No property provided")
 
             if (!client.plugins.has(message.guild.id, prop.toLowerCase())) {
                 return client.error(message, "Provided plugin property wasn't valid")

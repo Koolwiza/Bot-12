@@ -116,11 +116,11 @@ class Bot12 extends Client {
   missingArgs(message, content) {
     return message.channel.send(
       new Discord.MessageEmbed()
-        .setAuthor(message.author.tag, message.author.displayAvatarURL())
-        .setFooter(this.user.username, this.user.displayAvatarURL())
-        .setTitle("Missing Arguments")
-        .setColor(this.colors.red)
-        .setDescription(content))
+      .setAuthor(message.author.tag, message.author.displayAvatarURL())
+      .setFooter(this.user.username, this.user.displayAvatarURL())
+      .setTitle("Missing Arguments")
+      .setColor(this.colors.red)
+      .setDescription(content))
   }
 
 
@@ -144,12 +144,12 @@ class Bot12 extends Client {
     let userRegex = /^<@!?(\d+)>$/
     let user = null;
     if (!search || typeof search !== "string") return;
-	    if (search.match(userRegex)) {
+    if (search.match(userRegex)) {
       const id = search.match(userRegex)[1];
-      user = this.users.fetch(id).catch(() => { });
+      user = this.users.fetch(id).catch(() => {});
       if (user) return user;
     }
-    user = await this.users.fetch(search).catch(() => { });
+    user = await this.users.fetch(search).catch(() => {});
     return user;
   }
 
@@ -157,12 +157,12 @@ class Bot12 extends Client {
     let channelRegex = /^<#(\d+)>$/
     let channel = null;
     if (!search || typeof search !== "string") return;
-	    if (search.match(channelRegex)) {
+    if (search.match(channelRegex)) {
       const id = search.match(channelRegex)[1];
-      channel = this.channels.fetch(id).catch(() => { });
+      channel = this.channels.fetch(id).catch(() => {});
       if (channel) return channel;
     }
-    channel = await this.channels.fetch(search).catch(() => { });
+    channel = await this.channels.fetch(search).catch(() => {});
     return channel;
   }
 
@@ -170,12 +170,12 @@ class Bot12 extends Client {
     let roleRegex = /^<&(\d+)>$/
     let role = null;
     if (!search || typeof search !== "string") return;
-	    if (search.match(roleRegex)) {
+    if (search.match(roleRegex)) {
       const id = search.match(roleRegex)[1];
-      role = this.roles.fetch(id).catch(() => { });
+      role = this.roles.fetch(id).catch(() => {});
       if (channel) return role;
     }
-    role = await this.roles.fetch(search).catch(() => { });
+    role = await this.roles.fetch(search).catch(() => {});
     return role;
   }
 
@@ -189,7 +189,7 @@ class Bot12 extends Client {
     return result;
   }
 
-  async awaitReply (msg, question, limit = 60000) {
+  async awaitReply(msg, question, limit = 60000) {
     const filter = m => m.author.id === msg.author.id;
     await msg.channel.send(question);
     try {
