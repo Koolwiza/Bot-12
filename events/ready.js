@@ -11,5 +11,4 @@ module.exports = async client => {
         type: 'PLAYING',
     }), 1000 * 60 * 2);
 
-
 }
