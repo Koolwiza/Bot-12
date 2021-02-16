@@ -23,7 +23,7 @@ module.exports = async (client, guild) => {
   owner.send(
     new Discord.MessageEmbed()
     .setTitle("Thank you for adding me")
-    .setDescription(`For a list of my commands, use the command \`${client.config.defaultSettings.prefix}help\`. \nTo enable plugins, use the command \`${client.config.defaultSettings.prefix}plugins\`. \nTo configure server settings, use the command \`${client.config.defaultSettings.prefix}config\` `)
+    .setDescription(`For a list of my commands, use the command \`${client.config.defaultSettings.prefix}help\`. \nTo enable plugins, use the command \`${client.config.defaultSettings.prefix}plugins\`.`)
     .setColor(client.colors.sky)
     .setFooter(client.user.username, client.user.displayAvatarURL())
     .setAuthor(owner.user.tag, owner.user.tag)
