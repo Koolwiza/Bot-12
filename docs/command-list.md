@@ -4,21 +4,21 @@
 
  | Name | Description | Usage | Example | 
  | ---- | ----------- | ----- | ------- | 
- | ban | Ban a member from the server | ban <user> [reason] |
-  | delwarn | Remove a user's warn using an id | delwarn <id> |
-  | goodbye | Set the goodbye channel/message for the server | goodbye <type> [value] |
-  | kick | Kick a member out of the server | kick <user> [reason] |
-  | massban | Massban users | massban <@user1 @user2 @user3> [reason] |
-  | mute | Mute a member | mute <user> [time] [reason] |
-  | plugins | Enable or show plugins | plugins <type> [<property> <value>] |
-  | poll | An advanced poll command able to hold multiple questions | poll <option1 \| option2 \| option3 \| ...> |
-  | prefix | Show or set the prefix for the server | prefix [prefix] |
-  | purge | Purge messages from a channel | purge <@user \| userID \| channel \| bots] <amount> |
-  | softban | Remove all messages from the user | softban <user> [reason] |
-  | unmute | Unmute a user | unmute |
-  | warn | Warn a user | warn <user> <reason> |
-  | warnings | Display a user's warnings | warnings <user> |
-  | welcome | Set the welcome channel/message for the server | welcome <type> [value] |
+ | ban | Ban a member from the server | ban <user> [reason] | ^ban @Kool being annoying | 
+  | delwarn | Remove a user's warn using an id | delwarn <id> | ^delwarn x7WuyIV-lcTFj-Hjyldpg | 
+  | goodbye | Set the goodbye channel/message for the server | goodbye <type> [value] | ^goodbye message {member:mention} has joined the {server:name}! :D | 
+  | kick | Kick a member out of the server | kick <user> [reason] | ^kick 774352602678558790 masspinged | 
+  | massban | Massban users | massban <@user1 @user2 @user3> [reason] | ^massban @Kool @Rythm @DankMemer cuz im mean >:D | 
+  | mute | Mute a member | mute <user> [time] [reason] | ^mute @Kool 1d constant spam | 
+  | plugins | Enable or show plugins | plugins <type> [<property> <value>] | ^plugins enable antilinks | 
+  | poll | An advanced poll command able to hold multiple questions | poll <option1 \| option2 \| option3 \| ...> | ^poll "How's your day" Good \| Meh \| Terrible |
+  | prefix | Show or set the prefix for the server | prefix [prefix] | ^prefix bot! | 
+  | purge | Purge messages from a channel | purge <@user \| userID \| channel \| bots] <amount> | ^purge @Kool 10 | 
+  | softban | Remove all messages from the user | softban <user> [reason] | ^softban @Kool ads | 
+  | unmute | Unmute a user | unmute | ^unmute @Kool agreed to stop spamming | 
+  | warn | Warn a user | warn <user> <reason> | ^warn @Kool does not like chicken nuggets :( | 
+  | warnings | Display a user's warnings | warnings <user> | ^warnings @Kool | 
+  | welcome | Set the welcome channel/message for the server | welcome <type> [value] | ^welcome channel #welcome
 
 ## Developer [6]
 
