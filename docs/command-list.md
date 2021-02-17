@@ -59,24 +59,24 @@
 
  | Name | Description | Usage | Example | 
  | ---- | ----------- | ----- | ------- | 
- | applyfilter | Apply a filter to the music | applyfilter <filter> |
-  | bassboost | Bassboost the music | bassboost |
-  | clean | Clean the queue of the bot for the server, improves music quality! | clean |
-  | clearqueue | Clear the queue of the server | clearqueue |
-  | filters | Show the applied filters to the server | filters [filter name] |
-  | join | Make the bot join voice channel you are in | join  |
-  | leave | Leave the voice channel the bot is in | leave |
-  | loop | Loop the music | loop |
-  | lyrics | Show the lyrics for the current song | lyrics |
-  | nightcore | Enable nightcore mode  | nightcore |
-  | pause | Pause the current playing music | pause |
-  | play | Play music into the connected voice channel | play <youtube link \| youtube id \| youtube playlist> |
-  | playing | View what you're playing with progress bar | playing |
-  | queue | View the current queue in the server | queue |
-  | resume | If the music was paused earlier, resume it again |  |
-  | search | Search for a video with details | search <video> |
-  | shuffle | Shuffle the queue for the server! | shuffle |
-  | skip | Skip the current playing song | skip |
-  | songinfo | Gives detailed information about a song | songinfo <video> |
-  | stop | Stops the music | stop |
-  | volume | Set the volume of the song | volume <volume> |
+ | applyfilter | Apply a filter to the music | applyfilter <filter> | ^applyfilter phaser | 
+  | bassboost | Bassboost the music | bassboost | ^bassboost | 
+  | clean | Clean the queue of the bot for the server, improves music quality! | clean | ^clean | 
+  | clearqueue | Clear the queue of the server | clearqueue | ^clearqueue | 
+  | filters | Show the applied filters to the server | filters [filter name] | ^filters | 
+  | join | Make the bot join voice channel you are in | join | ^join | 
+  | leave | Leave the voice channel the bot is in | leave | ^leave | 
+  | loop | Loop the music | loop | ^loop | 
+  | lyrics | Show the lyrics for the current song or a custom song| lyrics [song] | ^lyrics Despacito | 
+  | nightcore | Enable nightcore mode | nightcore | ^nightcore | 
+  | pause | Pause the current playing music | pause | ^pause | 
+  | play | Play music into the connected voice channel | play <youtube link \| youtube id \| youtube playlist \| query> | ^play Despacito |
+  | playing | View what you're playing with progress bar | playing | ^playing | 
+  | queue | View the current queue in the server | queue | ^queue | 
+  | resume | If the music was paused earlier, resume it again | ^resume | 
+  | search | Search for a video with details | search <youtube link \| youtube id \| youtube playlist \| query> | ^search https://www.youtube.com/watch?v=kJQP7kiw5Fk | 
+  | shuffle | Shuffle the queue for the server! | shuffle | ^shuffle | 
+  | skip | Skip the current playing song | skip | ^skip | 
+  | songinfo | Gives detailed information about a song | songinfo <youtube link \| youtube id \| youtube playlist \| query> | ^songinfo kJQP7kiw5Fk | 
+  | stop | Stops the music | stop | ^stop | 
+  | volume | Set the volume of the song | volume <volume> | ^volume 50 | 
