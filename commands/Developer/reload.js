@@ -17,8 +17,8 @@ module.exports = {
     premium: false,
     guildOnly: false,
     async execute(message, args, client, data) {
-        if (!client.config.owners.includes(message.author.id)) return
-        if (!args.length) return client.missingArgs(message, "No command/event provided")
+
+        if (!args.length) return client.missingArgs(message, "No command provided")
 
         let commandName = args[0]
 

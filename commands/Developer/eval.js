@@ -16,7 +16,6 @@ module.exports = {
     premium: false,
     guildOnly: false,
     async execute(message, args, client, data) {
-        if (!client.config.owners.includes(message.author.id)) return
         let evaled;
         let code = args.join(" ");
         try {
