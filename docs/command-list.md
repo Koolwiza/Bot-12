@@ -33,26 +33,27 @@
 
 ## Economy [2]
 
+> ECONOMY NOT FINISHED
+
  | Name | Description | Usage | Example | 
  | ---- | ----------- | ----- | ------- | 
- | balance | View the balance of a member | balance <user> |
-  | work | Work a job gaining coins | balance <user> |
+ | balance | View the balance of a member | balance [user] | ^bal @Kool | 
+  | work | Work a job gaining coins | work <user> | ^work | 
 
 ## General [11]
 
  | Name | Description | Usage | Example | 
  | ---- | ----------- | ----- | ------- | 
- | bitcoin | See bitcoin values or convert bitcoin to currency | bitcoin [amount] |
-  | botinfo | Gives detailed information about the bot | botinfo |
-  | calculate | Calculate a math expression | calculate <expression> |
-  | docs | Look at the discord.js docs | docs [query] |
-  | ghcmdlist | hi | bonk |
-  | google | Google a query with valid search results | google <query>  |
-  | help | Sends you a list of commands | help [command] |
-  | ping | A simple ping command | ping |
-  | serverinfo | Get detailed information about the server | serverinfo |
-  | snipe | Check for deleted messages 👀 | snipe |
-  | userinfo | Get detailed information about a user | userinfo [user] |
+ | bitcoin | See bitcoin values or convert bitcoin to currency | bitcoin [amount] | ^bitcoin 3 | 
+  | botinfo | Gives detailed information about the bot | botinfo | ^botinfo | 
+  | calculate | Calculate a math expression | calculate <expression> | ^calculate ( 10^3 ) * 10 | 
+  | docs | Look at the discord.js docs | docs [query] | ^docs GuildChannelManager#create | 
+  | google | Google a query with valid search results | google <query>  | ^google Discord | 
+  | help | Sends you a list of commands | help [command] | ^help ban | 
+  | ping | A simple ping command | ping | ^ping | 
+  | serverinfo | Get detailed information about the server | serverinfo | ^serverinfo | 
+  | snipe | Check for deleted messages 👀 | snipe | ^snipe | 
+  | userinfo | Get detailed information about a user | userinfo [user] | ^userinfo @Kool | 
 
 ## Music [21]
 
