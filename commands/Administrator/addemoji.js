@@ -19,10 +19,11 @@ module.exports = {
   guildOnly: true,
   cooldown: 10,
   async execute(message, args, client, data) {
-    if (!client.config.owners.includes(message.author.id))
+    if (!message.member.permissions.has("MANAGE_EMOJIS") || (message.guild.roles.cache.get(data.modrole) && !message.member.roles.cache.has(data.modrole))) return client.authorPerms(message, ["BAN_MEMBERS"])
+    
     if (!message.guild.me.hasPermission("MANAGE_EMOJIS")) {
-      return client.noPerms(message, ['MANAGE_EMOJIS'])
-    }
+        return client.noPerms(message, ['MANAGE_EMOJIS'])
+      }
 
     const emoji = args[0];
     if (!emoji) return client.missingArgs(message, "Please give me an emoji to add")
@@ -66,7 +67,7 @@ module.exports = {
           )
           .setFooter(message.client.user.username, message.client.user.displayAvatarURL())
         return message.channel.send(Added).catch(e => {
-          client.logger.log("There wasn an error sending the confirm add emoji\n" + e, "error")
+          client.logger.log("There was an error sending the confirm add emoji\n" + e, "error")
         })
       } else {
 
@@ -74,7 +75,11 @@ module.exports = {
           assetType: "png"
         });
         if (!CheckEmoji[0]) return client.error(message, "Please give me a valid emoji")
-        message.channel.send(client.baseEmbed(message, { description: "You can use normal emojis without adding it to any server", color: client.colors.sky }))
+        message.channel.send(client.baseEmbed(message, {
+          title: "Returned",
+          description: "You can use normal emojis without adding it to any server",
+          color: client.colors.sky
+        }))
       }
     }
 

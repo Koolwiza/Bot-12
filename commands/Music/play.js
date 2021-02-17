@@ -10,7 +10,7 @@ const Discord = require("discord.js"),
 module.exports = {
   name: 'play',
   description: 'Play music into the connected voice channel',
-  usage: 'play <youtube link | youtube id | youtube playlist>',
+  usage: 'play <youtube link | youtube id | youtube playlist | query>',
   aliases: [],
   required: [],
   user: [],

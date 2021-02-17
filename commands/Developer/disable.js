@@ -14,7 +14,6 @@ module.exports = {
   premium: false,
   guildOnly: false,
   async execute(message, args, client, data) {
-    if (!client.config.owners.includes(message.author.id)) return
 
     let command = client.commands.get(args[0]) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(args[0]))
 		if(!command) return client.missingArgs(message, "Please provide a command")

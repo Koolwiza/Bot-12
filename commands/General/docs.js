@@ -18,7 +18,7 @@ module.exports = {
         let version = message.content.split('--src=')[1]
         if (!version) version = 'stable'
 
-        if (!query) query = client.awaitReply(message, client.baseEmbed(message, {
+        if (!query) query = await client.awaitReply(message, client.baseEmbed(message, {
             description: "What are you looking for?",
             title: "No query inputted"
         }))

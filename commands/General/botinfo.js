@@ -4,7 +4,6 @@ const {
     version
 } = require("discord.js");
 const moment = require("moment");
-const m = require("moment-duration-format");
 let os = require('os')
 let cpuStat = require("cpu-stat")
 const bytes = require('bytes')
@@ -31,7 +30,6 @@ module.exports = {
             }
             const duration = moment.duration(message.client.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
             const createdAt = await client.fetchApplication()
-
 
             const botinfo = new Discord.MessageEmbed()
                 .setAuthor(message.client.user.username)

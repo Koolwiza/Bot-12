@@ -74,7 +74,7 @@ module.exports = {
         msg += (`**Name:** ${command.name}\n`);
 
         if (command.aliases && command.aliases.length !== 0) msg += (`**Aliases:** ${command.aliases.join(", ")}\n`);
-        if (command.description) msg += (`**Description:** ${command.description}`);
+        if (command.description) msg += (`**Description:** ${command.description}\n`);
         if (command.required && command.required.length !== 0) msg += (`**Bot Permissions:** \`${command.required.join("`, `")}\`\n`)
         if (command.user && command.user.length !== 0) msg += (`**User Permissions:** \`${command.user.join("`, `")}\`\n`)
         if (command.usage) msg += (`**Usage:** \`${PREFIX}${command.usage}\`\n`);
@@ -82,7 +82,7 @@ module.exports = {
 
         let helpEmbed = new Discord.MessageEmbed()
             .setTitle(":books: Command Help")
-            .setDescription(data.join('\n'))
+            .setDescription(msg)
             .setColor(client.colors.sky)
             .setFooter(message.client.user.username, message.client.user.avatarURL())
             .addField('\u200b', '[Invite Me](https://discord.com/oauth2/authorize?client_id=800549820485599272&scope=bot&permissions=2080768255) ● Support Server coming Soon')

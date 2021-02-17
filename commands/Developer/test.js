@@ -97,7 +97,5 @@ And even more commands coming soon!
 
 		message.channel.send(msg)
 
-		
-
 	}
 }
