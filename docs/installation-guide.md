@@ -49,7 +49,7 @@ Node
  - `node bot12.js`
 
 PM2
- - `npm install pm2`
+ - `npm install pm2 -g`
  - `pm2 start bot12.js`
 
 Nodemon
