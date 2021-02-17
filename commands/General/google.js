@@ -24,8 +24,11 @@ module.exports = {
 		let query = args.join("+")
 		if (!query) return client.missingArgs(message, "Please provide a query")
 
+		if(!client.config.google_api_key) return console.log("No google api key, command not executable")
 
-		const request = await fetch(encodeURI(`https://www.googleapis.com/customsearch/v1?key=${client.config.google_api_key}&cx=017576662512468239146:omuauf_lfve&q=${query}`))
+		const request = await fetch(encodeURI(`https://www.googleapis.com/customsearch/v1?key=${client.config.google_api_key}&cx=017576662512468239146:omuauf_lfve&q=${query}`)).catch(e => {
+			return client.error(message, e.error.message)
+		})
 		const res = await request.json()
 
 		let embed = new Discord.MessageEmbed()
