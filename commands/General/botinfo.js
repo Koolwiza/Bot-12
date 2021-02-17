@@ -30,6 +30,9 @@ module.exports = {
                 return console.log(err);
             }
             const duration = moment.duration(message.client.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
+            const createdAt = await client.fetchApplication()
+
+
             const botinfo = new Discord.MessageEmbed()
                 .setAuthor(message.client.user.username)
                 .setTitle("__**Stats:**__")
@@ -39,6 +42,7 @@ module.exports = {
                 .addField("\\📁 Users", `${message.client.users.cache.size}`, true)
                 .addField("\\📁 Servers", `${message.client.guilds.cache.size}`, true)
                 .addField("\\📁 Channels ", `${message.client.channels.cache.size}`, true)
+                .addField("\\🕰️ Created At", moment(createdAt).format('lll'), true)
                 .addField("\\👾 Discord.js", `v${version}`, true)
                 .addField("\\🤖 Node", `${process.version}`, true)
                 .addField("\\🤖 CPU", `\`\`\`md\n${os.cpus().map(i => `${i.model}`)[0]}\`\`\``)

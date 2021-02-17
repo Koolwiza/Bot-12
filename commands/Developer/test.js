@@ -57,13 +57,17 @@ module.exports = {
 		let msg = `\`\`\`
 		<img width="150" height="150" align="left" style="float: left; margin: 0 10px 0 0;" alt="Bot 12" src="https://i.imgur.com/gid0Rot_d.png?maxwidth=760&fidelity=grand">  
 
-
 # Bot 12
 
 A random bot with a random name.
-
+		
 A bot to help your server with moderation, utility and more.
-
+		
+		​
+		​
+		​
+		
+		
 ### Some commands this bot offers
 
 ⭐ __**${client.commands.size}** total commands__ ⭐
@@ -92,5 +96,8 @@ And even more commands coming soon!
 \`\`\``
 
 		message.channel.send(msg)
+
+		
+
 	}
 }
