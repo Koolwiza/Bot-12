@@ -11,7 +11,7 @@ A bot to help your server with moderation, utility and more.
 ​
 
 
-### Table Of Contents
+## Table Of Contents
 
 * [Common Errors](https://github.com/Koolwiza/Bot-12/blob/main/support/common-errors.md)
 * [Command List](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md)
@@ -19,7 +19,7 @@ A bot to help your server with moderation, utility and more.
 * [Features](https://github.com/Koolwiza/Bot-12#features)
 * [Upcoming](https://github.com/Koolwiza/Bot-12#future-plansz)
 
-### Some commands this bot offers
+## Some commands this bot offers
 
 ###  55 total commands
 
@@ -46,3 +46,5 @@ And even more commands coming soon!
 Adding welcome/goodbye messages... 
 
 Adding more commands obviously, this bot isn't finished o.O
+
+\- Credits to [AtlantaBot](https://github.com/Androz2091/AtlantaBot) for code ideas + README format
