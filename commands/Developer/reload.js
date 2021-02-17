@@ -19,12 +19,8 @@ module.exports = {
     async execute(message, args, client, data) {
         if (!client.config.owners.includes(message.author.id)) return
         if (!args.length) return client.missingArgs(message, "No command/event provided")
-        let type = args[0]
 
-        if(type.toLowerCase() === "event") {
-          if(!fs.existsSync(`../../events/${args[0]}`)) return client.error(message, "No event with that name")
-          delete require.cache[require.resolve(`../../events/${args[0]}`)]
-        }
+        let commandName = args[0]
 
         const command = message.client.commands.get(commandName) ||
             client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
