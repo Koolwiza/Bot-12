@@ -10,15 +10,26 @@ A bot to help your server with moderation, utility and more.
 ​
 ​
 
+
+### Table Of Contents
+
+[Common Errors](https://github.com/Koolwiza/Bot-12/blob/main/support/common-errors.md)
+[Command List](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md)
+[Installation-Guide](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md)
+[Features](https://github.com/Koolwiza/Bot-12#features)
+[Upcoming](https://github.com/Koolwiza/Bot-12#future-plansz)
+
 ### Some commands this bot offers
 
-###  45 total commands
+###  55 total commands
 
-- 👑 **Developer or Owner**: `addemoji`, `disable`, `enable`, and **3** more... (Only available to the bot owner!)
-- 🔨 **Administrator or Moderation**: `ban`, `config`, `delwarn`, `kick`, `massban`, and **7** more...
-- 👍 **General**: `bitcoin`, `calculate`, `google`, and **1** more...
-- 💻 **Utility**: `botinfo`, `docs`, `help`, and **3** more...
-- 🎵 **Music**: `bassboost`, `play`, `skip`, `lyrics`,  `queue`, and **16** more...
+ - 🔨 **Administrator**: `addemoji`, `ban`, `delwarn`, `goodbye`, `kick` and **11** more...
+ - 👑 **Developer**: `disable`, `enable`, `eval`, `ghcmdlist`, `reload` and **1** more...
+ - 💵 **Economy**: `balance`, `work` 
+ - 👍 **General**: `bitcoin`, `botinfo`, `calculate`, `docs`, `google` and **5** more...
+ - 🎵 **Music**: `applyfilter`, `bassboost`, `clean`, `clearqueue`, `filters` and **16** more...
+
+[See full command list here...](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md)
 
 And even more commands coming soon!
 
@@ -30,11 +41,6 @@ And even more commands coming soon!
 - ✅ Automatic Administrator Command Deletion - Deletes administrator commands when enabled
 - ❌ Anti Bots - No bots will be able to be added to the server when the person who added doesn't have a certain role (mod role in config) when enabled
 - ✅ Configurable Prefix - A customizable prefix 
-
-### Support
-
-[Common Errors](https://github.com/Koolwiza/Bot-12/blob/main/support/common-errors.md)
-. . .
 
 ### Future Plans
 Adding welcome/goodbye messages... 
