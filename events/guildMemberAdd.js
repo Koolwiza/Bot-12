@@ -14,7 +14,7 @@ module.exports = async (client, member) => {
   let data = client.guildData
 
   if (member.user.bot) {
-    if (pdc.antibots) {
+    if (pd.antibots) {
       member.guild.fetchAuditLogs({
         limit: 1,
         type: 28

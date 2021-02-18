@@ -78,7 +78,7 @@ module.exports = async (client, message) => {
 
   if (!command) return;
 
-  if(command.category.toLowerCase() === "developer" && client.config.owners.includes(message.author.id)) return
+  if(command.category.toLowerCase() === "developer" && !client.config.owners.includes(message.author.id)) return
 
   if (client.plugins.get(message.guild.id, "deletemodcmds")) {
     if (command.category.toLowerCase() === "administrator") message.delete()
@@ -108,7 +108,7 @@ module.exports = async (client, message) => {
   const now = Date.now();
   const timestamps = cooldowns.get(command.name);
   const cooldownAmount = (command.cooldown || 3) * 1000;
-  
+
   if (timestamps.has(message.author.id)) {
     const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
     if (now < expirationTime) {
