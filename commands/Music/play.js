@@ -1,5 +1,5 @@
 
-const { Player, GetRegxp, Linker, Objector } = require("../../Modules/music.js")
+const { Player, GetRegxp, Linker, Objector } = require("../../helpers/music.js")
 const Discord = require("discord.js"),
   Sr = require("youtube-sr").default,
   syt = require("scrape-yt"),

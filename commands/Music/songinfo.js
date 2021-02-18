@@ -1,5 +1,5 @@
 
-const { Objector, GetRegxp, Linker } = require("../../Modules/music.js")
+const { Objector, GetRegxp, Linker } = require("../../helpers/music.js")
 const Discord = require("discord.js"), Ytdl = require("discord-ytdl-core")
 
 
