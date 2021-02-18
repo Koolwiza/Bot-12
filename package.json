@@ -28,6 +28,7 @@
     "node-fetch": "^2.6.1",
     "opusscript": "0.0.7",
     "os": "^0.1.1",
+    "pm2": "^4.5.4",
     "puppeteer": "^7.0.1",
     "request": "^2.88.2",
     "request-promise": "^4.2.6",

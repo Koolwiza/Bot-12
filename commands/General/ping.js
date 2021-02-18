@@ -14,7 +14,6 @@ module.exports = {
     guildOnly: false,
     async execute(message, args, client, data) {
 
-        console.log('hi')
         message.channel.send(client.baseEmbed(message, {description: "```🏓 Pinging...```"})).then(m => {
             client.wait(1000)
             m.edit(client.baseEmbed(message, {description: `\`\`\`🏓 Pong!\nMessage Latency: ${m.createdTimestamp - message.createdTimestamp}\nAPI Latency: ${client.ws.ping}\`\`\``}))
