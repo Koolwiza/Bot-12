@@ -77,7 +77,7 @@ module.exports = {
                 .addField("Current Value", client.guildData.get(message.guild.id).joinmessage)
                 .addField("Example", finJoinMsg)
                 .setColor(client.colors.sky)
-            message.channel.send(embed)
+return message.channel.send(embed)
         }
     }
 }

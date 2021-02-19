@@ -17,3 +17,5 @@ function init() {
 }
 
 init()
+
+module.exports = client

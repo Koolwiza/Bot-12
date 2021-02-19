@@ -25,7 +25,7 @@ module.exports = {
         fetch(`https://djsdocs.sorta.moe/v2/embed?src=${version}&q=${query}`).then(res => {
             res.json()
                 .then(body => {
-                    message.channel.send({
+return message.channel.send({
                         embed: body
                     }).catch(c => {
                         client.error(message, "Invalid query")

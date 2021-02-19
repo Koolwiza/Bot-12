@@ -47,7 +47,7 @@ module.exports = {
           embed.addField(`${upK} Prices`, `${client.emoji.bot.bitcoin} ⟹ ${format}`, true)
 
         }
-        message.channel.send(embed)
+return message.channel.send(embed)
 
       })
   }

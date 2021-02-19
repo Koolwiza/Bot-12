@@ -31,7 +31,7 @@ module.exports = {
         try {
             const newCommand = require(`../${command.category}/${command.name}.js`);
             client.commands.set(newCommand.name, newCommand);
-            message.channel.send(client.baseEmbed(message, {title: "Success!", description: `I have reloaded the command \`${command.name}\``, color: client.colors.green}))
+return message.channel.send(client.baseEmbed(message, {title: "Success!", description: `I have reloaded the command \`${command.name}\``, color: client.colors.green}))
         } catch (error) {
             client.logger.log("There was an error reloading the command\n" + error, "error")
             client.error(message, "There was an error reloading " + command.name)

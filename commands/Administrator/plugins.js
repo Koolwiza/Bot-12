@@ -27,7 +27,7 @@ module.exports = {
             }
 
             client.plugins.set(message.guild.id, true, prop)
-            message.channel.send(client.baseEmbed(message, {
+return message.channel.send(client.baseEmbed(message, {
                 title: "Success",
                 description: `Guild plugin ${prop} has been enabled`,
                 color: client.colors.green
@@ -42,7 +42,7 @@ module.exports = {
             }
 
             client.plugins.set(message.guild.id, false, prop)
-            message.channel.send(client.baseEmbed(message, {
+return message.channel.send(client.baseEmbed(message, {
                 title: "Success",
                 description: `Guild plugin ${prop} has been disabled`,
                 color: client.colors.green
@@ -61,7 +61,7 @@ module.exports = {
                 }
 
             })
-            message.channel.send(output.replace(/false/ig, "Disabled").replace(/true/ig, "Enabled") + "Set plugins using plugins enable/disable <plugin>```");
+return message.channel.send(output.replace(/false/ig, "Disabled").replace(/true/ig, "Enabled") + "Set plugins using plugins enable/disable <plugin>```");
         }
     }
 }

@@ -22,7 +22,8 @@ class Bot12 extends Client {
       restTimeOffset: 250,
       ws: {
         intents: Intents.ALL
-      }
+      },
+      partials: ['MESSAGE', 'REACTIONS', 'CHANNEL']
     });
     this.logger = require('../helpers/logger')
     this.colors = require("../data/colors")
@@ -60,6 +61,12 @@ class Bot12 extends Client {
     this.disabled = new Enmap({
       name: "commands",
       fetchAll: false,
+      autoFetch: true
+    })
+
+    this.cooldowns = new Enmap({
+      name: "cooldowns",
+      fetchAll: true,
       autoFetch: true
     })
 

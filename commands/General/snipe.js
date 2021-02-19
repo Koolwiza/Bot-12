@@ -33,6 +33,6 @@ module.exports = {
             embed.setDescription(snip.content)
         }
 
-        message.channel.send(embed)
+return message.channel.send(embed)
     }
 }

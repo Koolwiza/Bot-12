@@ -36,6 +36,6 @@ module.exports = {
       embed.addField(`ID: ${e.id} | Mmoderator: `)
     })*/
 
-    message.channel.send(embed)
+return message.channel.send(embed)
   }
 }

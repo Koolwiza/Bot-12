@@ -39,7 +39,7 @@ module.exports = {
             time: 60 * 1000
         })
 
-        message.channel.send(`${client.emoji.misc.check} **Are you sure you want to ban ${bannedCollection.map(mem => `${mem.toString()}`).join(", ")}?** \nPlease reply with \`y\`/\`yes\` or \`cancel\``)
+return message.channel.send(`${client.emoji.misc.check} **Are you sure you want to ban ${bannedCollection.map(mem => `${mem.toString()}`).join(", ")}?** \nPlease reply with \`y\`/\`yes\` or \`cancel\``)
         collector.on("collect", async msg => {
             if (['yes', 'y'].includes(msg.content.toLowerCase())) {
 
@@ -50,7 +50,7 @@ module.exports = {
                             reason: banReason
                         })
                     })
-                    await message.channel.send(client.baseEmbed(message, {
+                    return message.channel.send(client.baseEmbed(message, {
                         title: "Massban Successful",
                         description: `I have banned ${bannedCollection.map(m => `**${m.user.tag}**`).join(", ")} | ${banReason}`,
                         color: client.colors.discord
@@ -60,14 +60,14 @@ module.exports = {
                 }
                 return collector.stop()
             } else if (msg.content.toLowerCase() === "cancel") {
-                message.channel.send(client.baseEmbed(message, {
+                collector.stop()
+                return message.channel.send(client.baseEmbed(message, {
                     title: "Massban Cancelled",
                     description: `I have cancelled the massban.`,
                     color: client.colors.discord
                 }))
-                return collector.stop()
             } else {
-                message.channel.send(`**PROMPT FAILED**: \n${client.emoji.misc.check} Are you sure you want to ban ${bannedCollection.map(mem => `**${mem.user.username}**`).join(", ")}? \nPlease reply with \`y\`/\`yes\` or \`cancel\``)
+                return message.channel.send(`**PROMPT FAILED**: \n${client.emoji.misc.check} Are you sure you want to ban ${bannedCollection.map(mem => `**${mem.user.username}**`).join(", ")}? \nPlease reply with \`y\`/\`yes\` or \`cancel\``)
 
             }
         })
