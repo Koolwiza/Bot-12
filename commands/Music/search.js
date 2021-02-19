@@ -1,5 +1,5 @@
 
-const { Player, Objector } = require("../../Modules/music.js");
+const { Player, Objector } = require("../../helpers/music.js");
 const Discord = require("discord.js");
 Sr = require("youtube-sr").default,
   Ytdl = require("discord-ytdl-core");

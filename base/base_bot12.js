@@ -24,7 +24,7 @@ class Bot12 extends Client {
         intents: Intents.ALL
       }
     });
-    this.logger = require('../Modules/logger')
+    this.logger = require('../helpers/logger')
     this.colors = require("../data/colors.json")
     this.config = require('../data/config.json')
     this.emoji = require('../data/emojis.json')

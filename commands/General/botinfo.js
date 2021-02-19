@@ -3,7 +3,7 @@ const Discord = require("discord.js")
 const {
     version
 } = require("discord.js");
-const moment = require("moment");
+const humanize = require("humanize-duration");
 let os = require('os')
 let cpuStat = require("cpu-stat")
 const bytes = require('bytes')
@@ -28,7 +28,8 @@ module.exports = {
             if (err) {
                 return console.log(err);
             }
-            const duration = moment.duration(message.client.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
+
+            const duration = humanize(client.uptime, {conjunction: " and ", serialComma: false})
             const createdAt = await client.fetchApplication()
 
             const botinfo = new Discord.MessageEmbed()

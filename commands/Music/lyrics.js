@@ -1,5 +1,5 @@
 
-const { Player } = require("../../Modules/music.js")
+const { Player } = require("../../helpers/music.js")
 const Discord = require("discord.js"), Ytdl = require("discord-ytdl-core")
 
 const Finder = require('lyrics-finder')
