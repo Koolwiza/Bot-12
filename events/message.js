@@ -3,7 +3,7 @@ const Enmap = require('enmap')
 const {
   defaultSettings,
   defaultPlugins
-} = require('../data/config.json'),
+} = require('../data/config.js'),
   humanize = require('humanize-duration')
 
 let cooldowns = new Discord.Collection()
