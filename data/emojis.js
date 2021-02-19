@@ -1,4 +1,7 @@
-{
+module.exports = {
+    /**
+     * Fill emojis with your own preferences
+     */
     "misc": {
         "loading": "<a:loading:784864000956694558>",
         "profile": "<:profile:784863986784272484>",

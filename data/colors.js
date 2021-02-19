@@ -1,4 +1,4 @@
-{
+module.exports = {
     "gold":"fcba03",
     "green":"00ff00",
     "red":"ff0000",

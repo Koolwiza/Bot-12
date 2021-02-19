@@ -1,6 +1,7 @@
-{
-
-    
+module.exports = {
+    /**
+     * Fill config values with your desired things
+     */
     "token": "ODA4NDEwNzkyNDIwMDQ4OTc2.YCGJOA.AzrZVjh9-54_z1_JdRMIY27wCaE",
     "google_api_key": "AIzaSyCbtj-nkM0sTjWXSyyPGoegCBtUQtAikwE",
     "owners": [
@@ -22,5 +23,25 @@
         "spoilers": false,
         "deletemodcmds": false,
         "antibots": false
-    }
+    },
+    "status": [{
+            "type": "PLAYING",
+            "name": "@{client} 🤖"
+        },
+        {
+            "type": "WATCHING",
+            "name": "{guilds} servers"
+        }
+    ]
+
+    /**
+     * Multiple statuses
+     * If you only want one, leave one
+     * Variable templates include:
+     * {client} - Client's username
+     * {guilds} - Client's guilds
+     * {users} - Client's cached users
+     * {roles} - Client's roles
+     * {channels} - Client's channels
+    */
 }
