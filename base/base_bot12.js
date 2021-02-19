@@ -25,9 +25,9 @@ class Bot12 extends Client {
       }
     });
     this.logger = require('../helpers/logger')
-    this.colors = require("../data/colors.json")
-    this.config = require('../data/config.json')
-    this.emoji = require('../data/emojis.json')
+    this.colors = require("../data/colors")
+    this.config = require('../data/config')
+    this.emoji = require('../data/emojis')
 
     this.commands = new Collection()
     this.snipes = new Collection()
