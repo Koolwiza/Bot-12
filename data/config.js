@@ -41,7 +41,6 @@ module.exports = {
      * {client} - Client's username
      * {guilds} - Client's guilds
      * {users} - Client's cached users
-     * {roles} - Client's roles
      * {channels} - Client's channels
     */
 }

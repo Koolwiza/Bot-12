@@ -7,7 +7,10 @@ module.exports = async client => {
 
     client.user.setPresence({
         activity: {
-            name: config.status[0].name,
+            name: config.status[0].name.replace(/\{client\}/gi, client.user.username)
+            .replace(/\{guilds\}/gi, client.guilds.cache.size)
+            .replace(/\{users\}/gi, client.users.cache.size)
+            .replace(/\{channels\}/gi, client.channels.cache.size),
             type: config.status[0].type
         }
     })
@@ -15,7 +18,7 @@ module.exports = async client => {
 
     let i = 0
     setInterval(() => {
-        if (i > arr.length - 1) i = 0
+        if (i > config.status.length - 1) i = 0
         let status = config.status[i]
         /**
          * Multiple statuses
@@ -24,16 +27,15 @@ module.exports = async client => {
          * {client} - Client's username
          * {guilds} - Client's guilds
          * {users} - Client's cached users
-         * {roles} - Client's roles
          * {channels} - Client's channels
          */
         let name = status.name
             .replace(/\{client\}/gi, client.user.username)
-            .replace(/{guilds}/gi, client.guilds.cache.size)
+            .replace(/\{guilds\}/gi, client.guilds.cache.size)
             .replace(/\{users\}/gi, client.users.cache.size)
-            .replace(/\{roles\}/gi, client.roles.cache.size)
             .replace(/\{channels\}/gi, client.channels.cache.size)
-        client.user.setPresence({
+
+            client.user.setPresence({
             activity: {
                 type: status.type,
                 name: name
