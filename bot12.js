@@ -5,7 +5,7 @@ const Discord = require('discord.js'),
   cmdloader = require('./helpers/cmdloader'),
   eventloader = require('./helpers/eventloader')
 
-const Bot12 = require('./base/base_bot12'),
+const Bot12 = require('./Structures/Bot12Client'),
   client = new Bot12()
 
 require('./helpers/extenders')

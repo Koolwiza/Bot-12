@@ -12,7 +12,7 @@ module.exports = {
     premium: false,
     guildOnly: false,
     async execute(message, args, client, data) {
-        if (!message.member.permissions.has("MANAGE_GUILD") || (message.guild.roles.cache.get(data.modrole) && !message.member.roles.cache.has(data.modrole)) ) return client.authorPerms(message, ["MANAGE_SERVER"])
+        if (!message.member.permissions.has("MANAGE_GUILD") || (message.guild.roles.cache.get(data.modrole) && !message.member.roles.cache.has(data.modrole))) return client.authorPerms(message, ["MANAGE_SERVER"])
 
         if (!args[0]) return client.missingArgs(message, "No type provided.\nenable | disable | show")
 
@@ -27,7 +27,7 @@ module.exports = {
             }
 
             client.plugins.set(message.guild.id, true, prop)
-return message.channel.send(client.baseEmbed(message, {
+            return message.channel.send(client.baseEmbed(message, {
                 title: "Success",
                 description: `Guild plugin ${prop} has been enabled`,
                 color: client.colors.green
@@ -42,7 +42,7 @@ return message.channel.send(client.baseEmbed(message, {
             }
 
             client.plugins.set(message.guild.id, false, prop)
-return message.channel.send(client.baseEmbed(message, {
+            return message.channel.send(client.baseEmbed(message, {
                 title: "Success",
                 description: `Guild plugin ${prop} has been disabled`,
                 color: client.colors.green
@@ -61,7 +61,7 @@ return message.channel.send(client.baseEmbed(message, {
                 }
 
             })
-return message.channel.send(output.replace(/false/ig, "Disabled").replace(/true/ig, "Enabled") + "Set plugins using plugins enable/disable <plugin>```");
+            return message.channel.send(output.replace(/false/ig, "Disabled").replace(/true/ig, "Enabled") + "Set plugins using plugins enable/disable <plugin>```");
         }
     }
 }
