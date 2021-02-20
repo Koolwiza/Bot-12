@@ -95,7 +95,7 @@ And even more commands coming soon!
 - ✅ Welcome Messages - A plugin to send messages to a channel with variables whenever a user joins or leaves
 \`\`\``
 
-		message.channel.send(msg)
+return message.channel.send(msg)
 
 	}
 }

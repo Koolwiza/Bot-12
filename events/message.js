@@ -3,10 +3,11 @@ const Enmap = require('enmap')
 const {
   defaultSettings,
   defaultPlugins
-} = require('../data/config.json'),
-  humanize = require('humanize-duration')
+} = require('../data/config.js'),
+  humanize = require('humanize-duration'),
+  client = require('../bot12')
 
-let cooldowns = new Discord.Collection()
+let cooldowns = client.cooldowns
 
 module.exports = async (client, message) => {
 
@@ -30,29 +31,29 @@ module.exports = async (client, message) => {
   const prefix = client.guildData.has(message.guild.id, "prefix") ? client.guildData.get(message.guild.id, "prefix") : client.config.defaultSettings.prefix
   if (await client.resolveUser(message.content.split(" ")[0]) === client.user) message.channel.send(
     new Discord.MessageEmbed()
-      .setDescription("👋 **Hello " + message.author.toString() + ", my prefix is `" + prefix + '`. \nUse the command `help` for all of my commands!**')
-      .setAuthor(message.author.tag, message.author.displayAvatarURL())
-      .setFooter(client.user.username, client.user.displayAvatarURL())
-      .setColor(client.colors.sky)
+    .setDescription("👋 **Hello " + message.author.toString() + ", my prefix is `" + prefix + '`. \nUse the command `help` for all of my commands!**')
+    .setAuthor(message.author.tag, message.author.displayAvatarURL())
+    .setFooter(client.user.username, client.user.displayAvatarURL())
+    .setColor(client.colors.sky)
   )
 
   if (client.plugins.get(message.guild.id, "invites")) {
     let inviteRegex = /(https?:\/\/)?(www\.)?(disc(ord)?\.(gg|li|me|io)|discordapp\.com\/invite|invite\.gg)\/.+/gi
-    if (inviteRegex.test(message.content) /*&& !message.member.hasPermission("MANAGE_GUILD")*/) {
-      message.delete().catch(() => { })
-      message.channel.send(`${message.author.toString()}, ${client.emoji.misc.xmark} **You aren't allowed to send invites in this server**`).then(m => {
+    if (inviteRegex.test(message.content) /*&& !message.member.hasPermission("MANAGE_GUILD")*/ ) {
+      message.delete().catch(() => {})
+      return message.channel.send(`${message.author.toString()}, ${client.emoji.misc.xmark} **You aren't allowed to send invites in this server**`).then(m => {
         setTimeout(() => {
-          m.delete().catch(() => { })
+          m.delete().catch(() => {})
         }, 5000)
       })
     }
   } else if (client.plugins.get(message.guild.id, "links")) {
     let urlReg = /^(?:(?:https?|ftp):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/ig
-    if (urlReg.test(message.content) /* && !message.member.hasPermission("MANAGE_GUILD")*/) {
-      message.delete().catch(() => { })
-      message.channel.send(`${message.author.toString()}, ${client.emoji.misc.xmark} **You aren't allowed to send links in this server**`).then(m => {
+    if (urlReg.test(message.content) /* && !message.member.hasPermission("MANAGE_GUILD")*/ ) {
+      message.delete().catch(() => {})
+      return message.channel.send(`${message.author.toString()}, ${client.emoji.misc.xmark} **You aren't allowed to send links in this server**`).then(m => {
         setTimeout(() => {
-          m.delete().catch(() => { })
+          m.delete().catch(() => {})
         }, 5000)
       })
     }
@@ -60,10 +61,10 @@ module.exports = async (client, message) => {
     let spoilerRegex = /\|\|.*?\|\|/gmi
     const match = message.content.match(spoilerRegex)
     if (Array.isArray(match) && match.length >= 3) {
-      message.delete().catch(() => { })
-      message.channel.send(`${message.author.toString()}, ${client.emoji.misc.xmark} **You aren't allowed to send multiple spoilers in this server**`).then(m => {
+      message.delete().catch(() => {})
+      return message.channel.send(`${message.author.toString()}, ${client.emoji.misc.xmark} **You aren't allowed to send multiple spoilers in this server**`).then(m => {
         setTimeout(() => {
-          m.delete().catch(() => { })
+          m.delete().catch(() => {})
         }, 5000)
       })
     }
@@ -78,7 +79,7 @@ module.exports = async (client, message) => {
 
   if (!command) return;
 
-  if(command.category.toLowerCase() === "developer" && !client.config.owners.includes(message.author.id)) return
+  if (command.category.toLowerCase() === "developer" && !client.config.owners.includes(message.author.id)) return
 
   if (client.plugins.get(message.guild.id, "deletemodcmds")) {
     if (command.category.toLowerCase() === "administrator") message.delete()
@@ -120,20 +121,42 @@ module.exports = async (client, message) => {
         color: client.colors.red
       }))
     }
-  } 
+  }
 
   timestamps.set(message.author.id, now);
-  setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
+  cooldowns.set(command.name, timestamps)
 
+  setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
   let data = client.guildData.get(message.guild.id)
 
   try {
-    command.execute(message, args, client, data)
+    let msg = await command.execute(message, args, client, data)
     client.logger.cmd(`${message.author.username} used the command ${command.name}`)
+    let r = await msg.react('❌')
+    try {
+      let react = await r.message.awaitReactions((reaction, user) => reaction.emoji.name === "❌" && user.id === message.author.id, {
+        time: 30 * 1000,
+        max: 1,
+        errors: ['time']
+      })
+      if (react.first().emoji.name === '❌') msg.delete()
+      client.logger.cmd(`${message.author.username} deleted the command usage ${command.name}`)
+    } catch (e) {
+      if(msg.embeds.length) {
+        let embed = msg.embeds[0]
+        embed.color = ""
+        return msg.edit("This message is inactive", embed)
+      } else {
+        return msg.edit("This message is inactive\n\n" + msg.content)
+      }
+    }
+
 
   } catch (e) {
+    console.log(e)
     client.logger.error(e)
     client.error(message, e)
   }
 
 }
+

@@ -36,13 +36,14 @@
               member.ban({
                   reason: reason
               })
-              message.channel.send(client.baseEmbed(message, {
-                  title: "Success",
-                  description: `I have banned ${user.tag} | ${reason}`,
-                  color: client.colors.green
-              }))
+              
 
               await user.send(`**${client.emoji.misc.xmark} You have been banned from ${message.guild.name} for ${reason}**`)
+              return message.channel.send(client.baseEmbed(message, {
+                title: "Success",
+                description: `I have banned ${user.tag} | ${reason}`,
+                color: client.colors.green
+            }))
           } catch (err) {
               client.logger.log(`There was an error banning ${user.username}.\n${err}`, "error")
               client.error(message, "There was an error banning this user, please try again")

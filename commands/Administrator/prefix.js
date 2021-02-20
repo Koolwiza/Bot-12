@@ -1,7 +1,7 @@
 const Discord = require('discord.js'),
     {
         defaultSettings
-    } = require('../../data/config.json')
+    } = require('../../data/config.js')
 
 module.exports = {
     name: 'prefix',

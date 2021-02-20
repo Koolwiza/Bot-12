@@ -135,7 +135,7 @@ module.exports = {
             🙂 ${emojiSize} Emojis`, true)
             .setFooter(client.user.username, client.user.displayAvatarURL())
             .setImage(guildBanner)
-        message.channel.send(embed)
+return message.channel.send(embed)
 
 
 

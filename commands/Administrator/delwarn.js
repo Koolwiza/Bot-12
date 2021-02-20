@@ -23,9 +23,7 @@ module.exports = {
     if (!mod.has(id) || mod.get(id, "guild") !== message.guild.id) return client.error(message, "Invalid warning id")
 
     mod.delete(id)
-    console.log(mod)
-
-    await message.channel.send(client.baseEmbed(message, {
+    return message.channel.send(client.baseEmbed(message, {
       title: "Success",
       description: `Deleted the warning with an id of \`${id}\``,
       color: client.colors.green

@@ -17,7 +17,7 @@ module.exports = {
 
     let command = client.commands.get(args[0]) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(args[0]))
 		if(!command) return client.missingArgs(message, "Please provide a command")
-    message.channel.send(`${client.emoji.misc.check} **Disable command globally or guild only?**
+return message.channel.send(`${client.emoji.misc.check} **Disable command globally or guild only?**
       Please reply using \`globally\` or \`guild\``)
 
     let collector = message.channel.createMessageCollector(m => m.author.id === message.author.id)
@@ -25,7 +25,7 @@ module.exports = {
     collector.on('collect', async msg => {
       if (msg.content.toLowerCase() === "globally") {
         client.disabled.push("commands", command.name, "global")
-        message.channel.send(`${client.emoji.bot.disabled} **\`${command.name}\` has been disabled globally.** \nNo guilds will be able to use this command now `)
+return message.channel.send(`${client.emoji.bot.disabled} **\`${command.name}\` has been disabled globally.** \nNo guilds will be able to use this command now `)
 
         return collector.stop()
       } else if (msg.content.toLowerCase() === "guild") {

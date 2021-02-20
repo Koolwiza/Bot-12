@@ -75,7 +75,7 @@ module.exports = {
           assetType: "png"
         });
         if (!CheckEmoji[0]) return client.error(message, "Please give me a valid emoji")
-        message.channel.send(client.baseEmbed(message, {
+        return message.channel.send(client.baseEmbed(message, {
           title: "Returned",
           description: "You can use normal emojis without adding it to any server",
           color: client.colors.sky

@@ -35,7 +35,7 @@ module.exports = {
 
         if (a.roles.cache.has(muteRole.id)) {
             a.roles.remove(muteRole).then(async c => {
-                message.channel.send(client.baseEmbed(message, {
+return message.channel.send(client.baseEmbed(message, {
                     title: "Success",
                     description: `I have unmuted **${a.user.tag}** | ${reason}`,
                     color: client.colors.green

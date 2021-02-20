@@ -16,14 +16,13 @@ Discord.Constants.DefaultOptions.ws.properties.$browser = "Discord Android"
  * @param {restTimeOffset} Reduces time between requesting API
  */
 
-class Bot12 extends Client {
+class Bot12Client extends Client {
   constructor(options) {
     super({
       restTimeOffset: 250,
       ws: {
         intents: Intents.ALL
-      }
-    });
+      }    });
     this.logger = require('../helpers/logger')
     this.colors = require("../data/colors")
     this.config = require('../data/config')
@@ -60,6 +59,12 @@ class Bot12 extends Client {
     this.disabled = new Enmap({
       name: "commands",
       fetchAll: false,
+      autoFetch: true
+    })
+
+    this.cooldowns = new Enmap({
+      name: "cooldowns",
+      fetchAll: true,
       autoFetch: true
     })
 
@@ -212,4 +217,4 @@ class Bot12 extends Client {
 
 }
 
-module.exports = Bot12
+module.exports = Bot12Client

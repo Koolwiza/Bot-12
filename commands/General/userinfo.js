@@ -62,7 +62,7 @@ module.exports = {
             ⏰ Created At: ${userCreatedAt} (${userCreatedAtFromNow})
             ${client.emoji.misc.profile} Presence: ${userStatus}${userStatusEmoji} \`${userStatusMessage}\``)
             .setFooter(client.user.username, client.user.displayAvatarURL())
-        message.channel.send(userInfoEmbed)
+return message.channel.send(userInfoEmbed)
 
     }
 }

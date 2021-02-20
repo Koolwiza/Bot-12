@@ -18,7 +18,7 @@ module.exports = {
     let command = client.commands.get(args[0]) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(args[0]))
 
 		if(!command) return client.error(message, "Please provide a command")
-    message.channel.send(`${client.emoji.misc.check} **Enable command globally or guild only?**
+return message.channel.send(`${client.emoji.misc.check} **Enable command globally or guild only?**
       Please reply using \`globally\` or \`guild\``)
 
     let collector = message.channel.createMessageCollector(m => m.author.id === message.author.id)
@@ -52,7 +52,7 @@ module.exports = {
         await message.channel.send(`${client.emoji.misc.check} **\`${command.name}\` enabled in ${client.guilds.cache.get(guildI).name}**`)
 
       } else if (msg.content.toLowerCase() === "stop" || msg.content.toLowerCase() === "cancel") {
-				message.channel.send(`${client.emoji.misc.xmark} **Collector stopped, no changes made**`)
+return message.channel.send(`${client.emoji.misc.xmark} **Collector stopped, no changes made**`)
 				return collector.stop()
 			}
     })

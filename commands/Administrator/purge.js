@@ -35,7 +35,7 @@ module.exports = {
 					messages = messages.filter(m => m.author.id === filterBy).array().slice(0, amount);
 				}
 				message.channel.bulkDelete(messages, true).then(deleted => {
-					message.channel.send(client.baseEmbed(message, {
+return message.channel.send(client.baseEmbed(message, {
 						title: "Success!",
 						description: `Successfully purged ${deleted.size} messages from **${User.tag}**`,
 						color: client.colors.green,
@@ -57,7 +57,7 @@ module.exports = {
 			let channel = message.mentions.channels.first()
 			channel.bulkDelete(amount, true)
 				.then(deleted => {
-					message.channel.send(client.baseEmbed(message, {
+return message.channel.send(client.baseEmbed(message, {
 						title: "Success!",
 						description: `Successfully purged ${deleted.size} messages from **${channel.name}**`,
 						color: client.colors.green,
@@ -82,7 +82,7 @@ module.exports = {
 				messages = messages.filter(m => m.author.bot).array().slice(0, amount);
 
 				message.channel.bulkDelete(messages, true).then(deleted => {
-					message.channel.send(client.baseEmbed(message, {
+return message.channel.send(client.baseEmbed(message, {
 						title: "Success!",
 						description: `Successfully purged ${deleted.size} messages from **all bots**`,
 						color: client.colors.green,
@@ -101,7 +101,7 @@ module.exports = {
 			if (amount > 100) return client.error(message, "The amount you provided was over 100, I can only purge 100 messages at a time!")
 
 			message.channel.bulkDelete(amount, true).then(deleted => {
-				message.channel.send(client.baseEmbed(message, {
+return message.channel.send(client.baseEmbed(message, {
 					title: "Success!",
 					description: `Successfully purged ${deleted.size} messages`,
 					color: client.colors.green,
