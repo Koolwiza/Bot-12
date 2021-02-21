@@ -19,7 +19,8 @@ module.exports = async (client, message) => {
 
   client.userProfiles.ensure(message.author.id, {
     balance: 0,
-    premium: false
+    premium: false,
+    daily: 0
   })
 
   client.disabled.ensure("commands", {
@@ -135,7 +136,7 @@ module.exports = async (client, message) => {
     let r = await msg.react('❌')
     try {
       let react = await r.message.awaitReactions((reaction, user) => reaction.emoji.name === "❌" && user.id === message.author.id, {
-        time: 30 * 1000,
+        time: 10 * 60 * 1000,
         max: 1,
         errors: ['time']
       })

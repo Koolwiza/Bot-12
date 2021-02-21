@@ -5,7 +5,7 @@ const Discord = require('discord.js'),
   cmdloader = require('./helpers/cmdloader'),
   eventloader = require('./helpers/eventloader')
 
-const Bot12 = require('./Structures/Bot12Client'),
+const Bot12 = require('./struct/Bot12Client'),
   client = new Bot12()
 
 require('./helpers/extenders')
@@ -15,7 +15,6 @@ function init() {
   eventloader(client, "events")
   client.login(client.config.token)
 }
-
 init()
 
 module.exports = client

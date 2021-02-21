@@ -18,21 +18,25 @@ module.exports = {
       "You work at a toy factory, and for your immense work, you were paid {amount}",
       "You won a sleeping competition and won {amount}",
       "You play bingo at the casino and win {amount}",
-      "You mow Bill Gate's lawn and win {amount}",
+      "You mow Bill Gate's lawn and found {amount}",
       "You attended a boxing competition and won {amount}",
       "You work as a discord bot developer and you earned {amount}",
-      "You found an old women's ring on the floor and she paid you {amount}",
+      "You found an old women's wedding ring on the floor and she paid you {amount}",
       "You do nothing and get paid {amount}"
     ]
 
-    let amount = randomIntFromInterval(300, 750)
-
-
+    let amount = randNum(300, 750)
+    client.userProfiles.math(message.author.id, "add", amount, "balance")
+    return await message.channel.send(client.baseEmbed(message, {
+      title: "Success",
+      description: replyList[Math.floor(Math.random() * replyList.length)].replace(/\{amount\}/g, amount) + " "+client.emoji.misc.coin,
+      color: client.colors.gold
+    }))
 
   }
 }
 
 
-function randomIntFromInterval(min, max) { // min and max included 
+function randNum(min, max) { // min and max included 
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
