@@ -3,7 +3,7 @@ const chalk = require('chalk'),
   {
     defaultPlugins,
     defaultSettings
-  } = require('../data/config.js')
+  } = require('../src/data/config.js')
 
 module.exports = async (client, guild) => {
 

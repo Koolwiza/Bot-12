@@ -3,9 +3,9 @@ const Discord = require('discord.js'),
 	fetch = require("node-fetch")
 
 module.exports = {
-	name: 'test',
-	description: "A test file for developers",
-	usage: 'test ',
+	name: 'topgg',
+	description: "Shows topgg stuff",
+	usage: 'topgg ',
 	aliases: [],
 	required: [],
 	user: [],

@@ -23,7 +23,7 @@ class Bot12Client extends Client {
       ws: {
         intents: Intents.ALL
       }    });
-    this.logger = require('../helpers/logger')
+    this.logger = require('../../helpers/logger')
     this.colors = require("../data/colors")
     this.config = require('../data/config')
     this.emoji = require('../data/emojis')

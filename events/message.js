@@ -3,7 +3,7 @@ const Enmap = require('enmap')
 const {
   defaultSettings,
   defaultPlugins
-} = require('../data/config.js'),
+} = require('../src/data/config.js'),
   humanize = require('humanize-duration'),
   client = require('../bot12')
 
@@ -133,7 +133,7 @@ module.exports = async (client, message) => {
   try {
     let msg = await command.execute(message, args, client, data)
     client.logger.cmd(`${message.author.username} used the command ${command.name}`)
-    let r = await msg.react('❌')
+    let r = await msg.react('❌').catch(e => {})
     try {
       let react = await r.message.awaitReactions((reaction, user) => reaction.emoji.name === "❌" && user.id === message.author.id, {
         time: 10 * 60 * 1000,
