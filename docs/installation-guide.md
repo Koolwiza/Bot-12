@@ -2,7 +2,7 @@
 
 ## Before you begin
 
-**1.** Please ensure you have [Node.js]() v12 (14 if discord.js/master) or higher and Git
+**1.** Please ensure you have [Node.js](https://nodejs.org/en/download/) v12 (14 if you're using discord.js/master) or higher and Git
 
 **2.** Run the command `git clone https://www.github.com/Koolwiza/Bot-12`
 
