@@ -39,7 +39,7 @@ module.exports = {
             time: 60 * 1000
         })
 
-return message.channel.send(`${client.emoji.misc.check} **Are you sure you want to ban ${bannedCollection.map(mem => `${mem.toString()}`).join(", ")}?** \nPlease reply with \`y\`/\`yes\` or \`cancel\``)
+         message.channel.send(`${client.emoji.misc.check} **Are you sure you want to ban ${bannedCollection.map(mem => `${mem.toString()}`).join(", ")}?** \nPlease reply with \`y\`/\`yes\` or \`cancel\``)
         collector.on("collect", async msg => {
             if (['yes', 'y'].includes(msg.content.toLowerCase())) {
 

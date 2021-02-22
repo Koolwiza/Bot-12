@@ -87,7 +87,7 @@ module.exports = async (client, message) => {
   }
 
   let guildCmd = client.disabled.get("commands", "guild")
-  if (guildCmd[message.guild.id].includes(command.name)) return message.channel.send(`${client.emoji.bot.disabled} **This command is disabled for this guild**`)
+  if (guildCmd[message.guild.id] && guildCmd[message.guild.id].includes(command.name)) return message.channel.send(`${client.emoji.bot.disabled} **This command is disabled for this guild**`)
 
   let globalCmd = client.disabled.get("commands", "global")
   if (globalCmd.some(cmd => cmd.command === command.name)) return message.channel.send(`${client.emoji.bot.disabled} **This command is disabled globally**`)

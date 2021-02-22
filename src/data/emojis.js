@@ -37,13 +37,15 @@ module.exports = {
         "disabled": "<:disabled:783845378943483915>",
         "bitcoin": "<:bitcoin:809103620737335296>"
     },
-    "help": {
-        "administrator": "<:administrator:802227182025572403>",
+    "help": { // Property name HAS to match one of the following folders in "Commands"
+        "administrator": "<:administrator:813202655182192681>",
         "utility": "<:utility:802227236723228672>",
-        "developer": "<:developer:802227130044907590>",
+        "developer": "<:developer:813203304976482307>",
         "general": "<:flag:804095791705620560>",
         "music": "<:music:809222497576812565>",
-        "economy": "<:economy:809865161736978454>"
+        "economy": "<:economy:809865161736978454>",
+        "images":"<:image:810945961345679411>",
+        "fun":"<:fun:813205669930336276>"
     },
     "reward": {
         "r2": "<:r2:812828115738427416>",
