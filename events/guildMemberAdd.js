@@ -2,16 +2,13 @@ const chalk = require('chalk')
 const {
   defaultPlugins,
   defaultSettings
-} = require('../data/config.js')
+} = require('../')
 const Discord = require('discord.js')
 
 module.exports = async (client, member) => {
 
   let pd = client.plugins.ensure(member.guild.id, defaultPlugins)
   let gd = client.guildData.ensure(member.guild.id, defaultSettings)
-
-  let plugins = client.plugins
-  let data = client.guildData
 
   if (member.user.bot) {
     if (pd.antibots) {

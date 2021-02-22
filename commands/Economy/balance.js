@@ -17,12 +17,7 @@ module.exports = {
 
     return message.channel.send(client.baseEmbed(message, {
       title: `${user.username}'s Balance `,
-      fields: [
-        {
-          name: "Balance",
-          value: `${client.emoji.misc.coin} ${client.guildData.get(message.guild.id).balance}`
-        }
-      ],
+      description: `${client.emoji.misc.coin} ${client.userProfiles.get(user.id).balance}`,
       color: client.colors.gold
     }))
   }

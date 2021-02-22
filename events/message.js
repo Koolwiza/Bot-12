@@ -3,7 +3,7 @@ const Enmap = require('enmap')
 const {
   defaultSettings,
   defaultPlugins
-} = require('../data/config.js'),
+} = require('../src/data/config.js'),
   humanize = require('humanize-duration'),
   client = require('../bot12')
 
@@ -19,7 +19,8 @@ module.exports = async (client, message) => {
 
   client.userProfiles.ensure(message.author.id, {
     balance: 0,
-    premium: false
+    premium: false,
+    daily: 0
   })
 
   client.disabled.ensure("commands", {
@@ -86,7 +87,7 @@ module.exports = async (client, message) => {
   }
 
   let guildCmd = client.disabled.get("commands", "guild")
-  if (guildCmd[message.guild.id].includes(command.name)) return message.channel.send(`${client.emoji.bot.disabled} **This command is disabled for this guild**`)
+  if (guildCmd[message.guild.id] && guildCmd[message.guild.id].includes(command.name)) return message.channel.send(`${client.emoji.bot.disabled} **This command is disabled for this guild**`)
 
   let globalCmd = client.disabled.get("commands", "global")
   if (globalCmd.some(cmd => cmd.command === command.name)) return message.channel.send(`${client.emoji.bot.disabled} **This command is disabled globally**`)
@@ -132,10 +133,10 @@ module.exports = async (client, message) => {
   try {
     let msg = await command.execute(message, args, client, data)
     client.logger.cmd(`${message.author.username} used the command ${command.name}`)
-    let r = await msg.react('❌')
+    let r = await msg.react('❌').catch(e => {})
     try {
       let react = await r.message.awaitReactions((reaction, user) => reaction.emoji.name === "❌" && user.id === message.author.id, {
-        time: 30 * 1000,
+        time: 10 * 60 * 1000,
         max: 1,
         errors: ['time']
       })
