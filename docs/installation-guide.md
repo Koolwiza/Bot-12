@@ -42,6 +42,8 @@ IF google api key is not provided/invalid, google command does not execute
 
  - Fill the emoji file [here](https://github.com/Koolwiza/Bot-12/blob/main/data/emojis.json)
  - Install all needed libraries: `npm i`
+
+> To verify, run the command `node scripts/verify.js`
  
  ## Launch the bot
 

@@ -18,18 +18,21 @@ module.exports = {
     required: [],
     user: [],
     category: __dirname.split("commands\\")[1],
-    
+
     premium: false,
     guildOnly: false,
     async execute(message, args, client, data) {
-      
-      let cpuLol;
+
+        let cpuLol;
         cpuStat.usagePercent(async function (err, percent, seconds) {
             if (err) {
                 return console.log(err);
             }
 
-            const duration = humanize(client.uptime, {conjunction: " and ", serialComma: false})
+            const duration = humanize(client.uptime, {
+                conjunction: " and ",
+                serialComma: false
+            })
             const createdAt = await client.fetchApplication()
 
             const botinfo = new Discord.MessageEmbed()
@@ -49,7 +52,7 @@ module.exports = {
                 .addField("\\🤖 Arch", `\`${os.arch()}\``, true)
                 .addField("\\💻 Platform", `\`\`${os.platform()}\`\``, true)
                 .addField("API Latency", `${(message.client.ws.ping)}ms`)
-return message.channel.send(botinfo)
+            return message.channel.send(botinfo)
         });
 
     }
