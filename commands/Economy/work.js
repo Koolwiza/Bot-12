@@ -8,7 +8,7 @@ module.exports = {
   required: [],
   user: [],
   category: __dirname.split("commands\\")[1],
-  
+
   premium: false,
   guildOnly: false,
   cooldown: 60 * 60,
@@ -27,11 +27,8 @@ module.exports = {
 
     let amount = randNum(300, 750)
     client.userProfiles.math(message.author.id, "add", amount, "balance")
-    return await message.channel.send(client.baseEmbed(message, {
-      title: "Success",
-      description: replyList[Math.floor(Math.random() * replyList.length)].replace(/\{amount\}/g, amount) + " "+client.emoji.misc.coin,
-      color: client.colors.gold
-    }))
+    let reply = `${replyList[Math.floor(Math.random() * replyList.length)].replace(/\{amount\}/g, amount)} ${client.emoji.misc.coin}`
+    return message.sendE()
 
   }
 }

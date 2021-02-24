@@ -57,7 +57,7 @@ module.exports = {
             color: client.colors.gold
         })
 
-        e.footer = "Complete the word `REWARD` to receive a surprise!"
+        e.footer = "Complete the word `REWARD` to receive a surprise!" // Because default client.baseEmbed has client's username + avatar as footer
 
         return message.channel.send(e)
 
