@@ -20,10 +20,10 @@ module.exports = {
   cooldown: 10,
   async execute(message, args, client, data) {
     if (!message.member.permissions.has("MANAGE_EMOJIS") || (message.guild.roles.cache.get(data.modrole) && !message.member.roles.cache.has(data.modrole))) return client.authorPerms(message, ["BAN_MEMBERS"])
-    
+
     if (!message.guild.me.hasPermission("MANAGE_EMOJIS")) {
-        return client.noPerms(message, ['MANAGE_EMOJIS'])
-      }
+      return client.noPerms(message, ['MANAGE_EMOJIS'])
+    }
 
     const emoji = args[0];
     if (!emoji) return client.missingArgs(message, "Please give me an emoji to add")
@@ -32,19 +32,12 @@ module.exports = {
 
     let emojiTest = urlReg.test(emoji)
     if (emojiTest) {
-
       let name = args.slice(1).join(" ")
 
-      message.guild.emojis.create(emoji, name)
-      const a = new MessageEmbed()
-        .setTitle(`Emoji Added`)
-        .setColor(`${client.colors.green}`)
-        .setAuthor(message.author.tag, message.author.displayAvatarURL())
-        .setDescription(
-          `**Emoji has been added!** | **Name:** \`${name}\` | **Preview:** [Click Me](${emoji})`
-        )
-        .setFooter(message.client.user.username, message.client.user.displayAvatarURL())
-      return message.channel.send(a)
+      message.guild.emojis.create(emoji, name).catch(error => {
+        client.logger.error(error)
+      })
+      return message.sendE("Emoji Added", `**Name:** \`${name}\` | **Preview:** [Click Me](${emoji})`, client.colors.green)
     } else {
 
       let customemoji = Discord.Util.parseEmoji(emoji);
@@ -58,15 +51,8 @@ module.exports = {
           .catch(error => {
             client.logger.log("There was an error adding an emoji\n" + error, "error")
           })
-        const Added = new MessageEmbed()
-          .setTitle(`Emoji Added`)
-          .setColor(`${client.colors.green}`)
-          .setAuthor(message.author.tag, message.author.displayAvatarURL())
-          .setDescription(
-            `**Emoji has been added!** | **Name:** \`${name || `${customemoji.name}`}\` | **Preview:** [Click Me](${Link})`
-          )
-          .setFooter(message.client.user.username, message.client.user.displayAvatarURL())
-        return message.channel.send(Added).catch(e => {
+      
+        return message.sendE("Emoji Added", `**Name:** \`${name || `${customemoji.name}`}\` | **Preview:** [Click Me](${Link})`, client.colors.green).catch(e => {
           client.logger.log("There was an error sending the confirm add emoji\n" + e, "error")
         })
       } else {
@@ -74,12 +60,8 @@ module.exports = {
         let CheckEmoji = parse(emoji, {
           assetType: "png"
         });
-        if (!CheckEmoji[0]) return client.error(message, "Please give me a valid emoji")
-        return message.channel.send(client.baseEmbed(message, {
-          title: "Returned",
-          description: "You can use normal emojis without adding it to any server",
-          color: client.colors.sky
-        }))
+        if (!CheckEmoji[0]) return message.error("Please give me a valid emoji")
+        return message.channel.sendE("Returned", "You can use discord emojis without adding to a server")
       }
     }
 

@@ -19,14 +19,9 @@ module.exports = {
 
     let id = args[0]
     if (!id) return client.missingArgs(message, "Please provide a warning id")
-
-    if (!mod.has(id) || mod.get(id, "guild") !== message.guild.id) return client.error(message, "Invalid warning id")
+    if (!mod.has(id) || mod.get(id, "guild") !== message.guild.id) return message.error("Invalid warning id")
 
     mod.delete(id)
-    return message.channel.send(client.baseEmbed(message, {
-      title: "Success",
-      description: `Deleted the warning with an id of \`${id}\``,
-      color: client.colors.green
-    }))
+    return message.sendE("Success", `Deleted the warning with an id of \`${id}\``, client.colors.green)
   }
 }

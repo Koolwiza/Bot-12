@@ -24,27 +24,13 @@ module.exports = {
         if (type === "channel") {
             let channel = await client.resolveChannel(args[1])
             if (!channel) return client.missingArgs(message, "Invalid channel provided/no channel provided")
-
             client.guildData.set(message.guild.id, channel.id, "leavechannel")
-
-            return message.channel.send(client.baseEmbed(message, {
-                title: "Success",
-                description: "Redirected leave messages to " + channel.toString(),
-                color: client.colors.green
-            }))
-
+            return message.channel.send("Success", "Redirected leave messages to " + channel.toString(), client.colors.green)
         } else if (type === "message") {
             let msg = args.slice(1).join(" ")
-
             if (!msg) return client.missingArgs(message, "Please provide a leave message")
-
             client.guildData.set(message.guild.id, msg, "leavemessage")
-
-            return message.channel.send(client.baseEmbed(message, {
-                title: "Success",
-                description: "Changed leave message to ```" + msg + "```",
-                color: client.colors.green
-            }))
+            return message.sendE("Success", "Changed leave message to ```" + msg + "```", client.colors.green)
         } else if (type === "show") {
             let variables = ""
 

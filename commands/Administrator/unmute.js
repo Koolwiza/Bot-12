@@ -13,7 +13,7 @@ module.exports = {
     premium: false,
     guildOnly: false,
     async execute(message, args, client, data) {
-        if (!message.member.permissions.has("MANAGE_ROLES") || (message.guild.roles.cache.get(data.modrole) && !message.member.roles.cache.has(data.modrole)) ) return client.authorPerms(message, ["MANAGE_ROLES"])
+        if (!message.member.permissions.has("MANAGE_ROLES") || (message.guild.roles.cache.get(data.modrole) && !message.member.roles.cache.has(data.modrole))) return client.authorPerms(message, ["MANAGE_ROLES"])
         if (!message.guild.me.permissions.has("MANAGE_ROLES")) return client.clientPerms(message, ["MANAGE_ROLES"])
 
 
@@ -26,7 +26,7 @@ module.exports = {
 
         if (!user) return client.missingArgs(message, "Please provide a user to mute!\n```@user or userID```")
         let a = await message.guild.members.fetch(user.id).catch(c => {})
-        if (a.roles.highest.position >= message.guild.me.roles.highest.position) return client.error(message, "Provided member has equal or higher role than me.")
+        if (a.roles.highest.position >= message.guild.me.roles.highest.position) return message.error("Provided member has equal or higher role than me.")
 
         let reason = args.slice(1).join(" ")
         if (!reason) reason = "No reason provided"
@@ -35,18 +35,16 @@ module.exports = {
 
         if (a.roles.cache.has(muteRole.id)) {
             a.roles.remove(muteRole).then(async c => {
-return message.channel.send(client.baseEmbed(message, {
-                    title: "Success",
-                    description: `I have unmuted **${a.user.tag}** | ${reason}`,
-                    color: client.colors.green
-                }))
+                
                 await user.send(`**${client.emoji.misc.xmark} You have been unmuted in ${message.guild.name} for ${reason}**`)
+
+                return message.sendE("Success!", `I have unmuted ${user.tag} | ${reason}`, client.colors.green)
             }).catch(e => {
-                client.error(message, "An error occured unmuting this user")
+                message.error("An error occured unmuting this user")
                 client.logger.log("An error occured unmuting " + a.user.tag + "\n" + e, "error")
             })
         } else {
-            client.error(message, "This user isn't muted")
+            message.error("This user isn't muted")
         }
 
     }

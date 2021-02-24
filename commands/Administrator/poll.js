@@ -31,31 +31,20 @@ module.exports = {
         if (options[0] === "") {
             result += "✅ : Yes\n"
             result += "❌ : No"
-            let embed = new Discord.MessageEmbed()
-                .setTitle("📊 " + question)
-                .setDescription(`React with one of the following to determine your choice!\n${result}`)
-                .setColor("BLUE")
-                .setFooter(client.user.username, client.user.displayAvatarURL())
-                .setAuthor(message.author.tag, message.author.displayAvatarURL())
-
-            let msg = await message.channel.send(embed)
+            
+            let msg = await message.sendE(`📊 ${question}`, `React with one of the following to determine your choice!\n${result}`, "BLUE")
 
             await msg.react("✅")
             await msg.react("❌")
         } else {
 
+            if (options.length > 9) return message.error("Cannot be more than 9 options")
+
             for (i in options) {
                 result += `${num[i]} : ${options[i]}\n`
             }
 
-            let embed = new Discord.MessageEmbed()
-                .setTitle("📊 " + question)
-                .setDescription(`React with one of the following to determine your choice!\n${result}`)
-                .setColor("BLUE")
-                .setFooter(client.user.username, client.user.displayAvatarURL())
-                .setAuthor(message.author.tag, message.author.displayAvatarURL())
-
-            let msg = await message.channel.send(embed)
+            let msg = await message.sendE(`📊 ${question}`, `React with one of the following to determine your choice!\n${result}`, "BLUE")
 
             for (x in options) {
                 await msg.react(num[x])

@@ -23,8 +23,6 @@ module.exports = {
 
     let id = `${client.randomString(7)}-${client.randomString(5)}-${client.randomString(7)}`
 
-    let key = `${message.guild.id}_${user.id}`
-
     client.modActions.set(id, {
       user: user.id,
       guild: message.guild.id,
@@ -34,11 +32,7 @@ module.exports = {
       when: new Date()
     });
 
-    await message.channel.send(client.baseEmbed(message, {
-      title: "Success",
-      description: `I have warned ${user.tag} | ${reason}`,
-      color: client.colors.green
-    }))
+    await message.sendE("Success", `I have warned ${user.tag} | ${reason}`)
 
     await user.send(`${client.emoji.misc.xmark} You have been warned in **${message.guild.name}** for **${reason}**`)
   }

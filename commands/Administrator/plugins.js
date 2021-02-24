@@ -23,30 +23,22 @@ module.exports = {
             if (!prop) return client.missingArgs(message, "No property provided")
 
             if (!client.plugins.has(message.guild.id, prop.toLowerCase())) {
-                return client.error(message, "Provided plugin property wasn't valid")
+                return message.error("Provided plugin property wasn't valid")
             }
 
             client.plugins.set(message.guild.id, true, prop)
-            return message.channel.send(client.baseEmbed(message, {
-                title: "Success",
-                description: `Guild plugin ${prop} has been enabled`,
-                color: client.colors.green
-            }))
+            return message.sendE("Success", `Guild plugin ${prop} has been enabled`, client.colors.green)
         } else if (type === "disable") {
             const prop = args[1]
 
             if (!prop) return client.missingArgs(message, "No property provided")
 
             if (!client.plugins.has(message.guild.id, prop.toLowerCase())) {
-                return client.error(message, "Provided plugin property wasn't valid")
+                return message.error("Provided plugin property wasn't valid")
             }
 
             client.plugins.set(message.guild.id, false, prop)
-            return message.channel.send(client.baseEmbed(message, {
-                title: "Success",
-                description: `Guild plugin ${prop} has been disabled`,
-                color: client.colors.green
-            }))
+            return message.sendE("Success", `Guild plugin ${prop} has been disabled`, client.colors.green)
         } else if (type === "show") {
 
             let output = `\`\`\`asciidoc\n== Server Configurations ==\n`
