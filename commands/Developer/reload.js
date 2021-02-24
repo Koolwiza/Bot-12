@@ -13,7 +13,7 @@ module.exports = {
     required: [],
     user: [],
     category: __dirname.split("commands\\")[1],
-    
+
     premium: false,
     guildOnly: false,
     async execute(message, args, client, data) {
@@ -25,16 +25,16 @@ module.exports = {
         const command = message.client.commands.get(commandName) ||
             client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
-        if (!command) return client.error(message, "There is no command with that name/alias")
+        if (!command) return message.error("There is no command with that name/alias")
 
         delete require.cache[require.resolve(`../${command.category}/${command.name}.js`)];
         try {
             const newCommand = require(`../${command.category}/${command.name}.js`);
             client.commands.set(newCommand.name, newCommand);
-return message.channel.send(client.baseEmbed(message, {title: "Success!", description: `I have reloaded the command \`${command.name}\``, color: client.colors.green}))
+            return message.sendE("Success", `I have reloaded the command \`${command.name}\``, client.colors.green)
         } catch (error) {
             client.logger.log("There was an error reloading the command\n" + error, "error")
-            client.error(message, "There was an error reloading " + command.name)
+            message.error("There was an error reloading " + command.name)
         }
     }
 }
