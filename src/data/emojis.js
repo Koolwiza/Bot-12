@@ -6,7 +6,8 @@ module.exports = {
         "loading": "<a:loading:784864000956694558>",
         "xmark": "<:xmark:784863982871511060>",
         "check": "<:check:784863987610943528>",
-        "coin": "🪙"
+        "coin": "🪙",
+        "profile":"<:profile:814175783438254110>"
     },
     "presence": {
         "animidle": "<a:idle:801198955072323635>",
@@ -22,9 +23,10 @@ module.exports = {
         "rules": "<:rules:801200490742415390>",
         "cooldown": "<:cooldown:783845379120693249>",
         "authorized": "<:authorized:783782069746008095>",
-        "role": "<:role:783782069779169280>",
+        "role": "<:role:814174246179438623>",
         "text": "<:text_channel:801577339607187496>",
-        "vc": "<:voice_channel:801577429860745236>"
+        "vc": "<:voice_channel:801577429860745236>",
+        "join":"<:welcome:814174245856346142>"
     },
     "bot": {
         "warn": "<:warn:789530447373533184>",
@@ -43,7 +45,7 @@ module.exports = {
         "developer": "<:developer:813203304976482307>",
         "general": "<:flag:804095791705620560>",
         "music": "<:music:809222497576812565>",
-        "economy": "<:economy:809865161736978454>",
+        "economy": "<:money:813809931005198382>",
         "images":"<:image:810945961345679411>",
         "fun":"<:fun:813205669930336276>"
     },
