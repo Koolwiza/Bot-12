@@ -16,11 +16,11 @@ module.exports = {
   guildOnly: false,
   async execute(message, args, client, data) {
       let text = args.join(" ")
-      if(text.length >= 20) return client.error(message, "Invalid text: \nNo text provided | Text over 20 characters")
+      if(text.length >= 20) return message.error("Invalid text: \nNo text provided | Text over 20 characters")
 
       let ascii = await fig(text).catch(e => {
           client.logger.error(e)
-          return client.error(message, e)
+          return message.error(e)
       })
 
       return message.channel.send("```" + ascii + "```")
