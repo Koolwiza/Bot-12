@@ -10,7 +10,7 @@ module.exports = {
   required: [],
   user: [],
   category: __dirname.split("commands\\")[1],
-  
+
   premium: false,
   guildOnly: false,
   async execute(message, args, client, data) {
@@ -36,7 +36,6 @@ module.exports = {
           .setAuthor(message.author.username, message.author.displayAvatarURL())
           .setFooter(client.user.username, client.user.displayAvatarURL())
 
-
         for (var k in types) {
           let upK = k.toUpperCase()
 
@@ -47,7 +46,7 @@ module.exports = {
           embed.addField(`${upK} Prices`, `${client.emoji.bot.bitcoin} ⟹ ${format}`, true)
 
         }
-return message.channel.send(embed)
+        return message.channel.send(embed)
 
       })
   }

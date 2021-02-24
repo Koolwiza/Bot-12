@@ -13,16 +13,16 @@ module.exports = {
     required: [],
     user: [],
     category: __dirname.split("commands\\")[1],
-    
+
     premium: false,
     guildOnly: false,
     async execute(message, args, client, data) {
-        let user = (message.mentions.members.first()) || 
-        (args[0] ? (await message.guild.members.fetch(args[0])) : message.member)
+        let user = (message.mentions.members.first()) ||
+            (args[0] ? (await message.guild.members.fetch(args[0])) : message.member)
 
         let userCreatedAt = moment(user.user.createdAt).format("lll")
         let userCreatedAtFromNow = moment(user.user.createdAt, "YYYYMMDD").fromNow()
-        let userJoinedAt = moment(user.joinedAt).format("LLL") 
+        let userJoinedAt = moment(user.joinedAt).format("LLL")
         let userJoinedAtFromNow = moment(user.joinedAt, "YYYYMMDD").fromNow()
         let userTag = user.user.tag
         let userAv = user.user.displayAvatarURL({
@@ -30,10 +30,10 @@ module.exports = {
         })
         let userID = user.user.id
         let userStatus = user.presence.status
-        .replace(/dnd/ig, client.emoji.presence.animdnd)
-        .replace(/online/ig, client.emoji.presence.animonline)
-        .replace(/offline/ig, client.emoji.presence.animoffline)
-        .replace(/idle/ig, client.emoji.presence.animidle)
+            .replace(/dnd/ig, client.emoji.presence.animdnd)
+            .replace(/online/ig, client.emoji.presence.animonline)
+            .replace(/offline/ig, client.emoji.presence.animoffline)
+            .replace(/idle/ig, client.emoji.presence.animidle)
         let userActivityType = user.presence.activities[0].name || ""
         let userStatusMessage = user.presence.activities[0].state || "No status"
         let userStatusEmoji = user.presence.activities[0].emoji ? user.presence.activities[0].emoji.name : ""
@@ -41,7 +41,7 @@ module.exports = {
         let userRoles = user.roles.cache.map(c => `${c.toString()}`)
         let amount;
         if (userRoles.length > 10) {
-             amount = userRoles.length - 10
+            amount = userRoles.length - 10
             userRoles.splice(10, userRoles.length)
         }
 
@@ -62,8 +62,7 @@ module.exports = {
             ⏰ Created At: ${userCreatedAt} (${userCreatedAtFromNow})
             ${client.emoji.misc.profile} Presence: ${userStatus}${userStatusEmoji} \`${userStatusMessage}\``)
             .setFooter(client.user.username, client.user.displayAvatarURL())
-return message.channel.send(userInfoEmbed)
+        return message.channel.send(userInfoEmbed)
 
     }
 }
-
