@@ -16,12 +16,12 @@ module.exports = {
   async execute(message, args, client, data) {
     const Channel = message.member.voice.channel;
 
-    if (!Channel) return client.error(message, "Please join a voice channel to continue")
+    if (!Channel) return message.error("Please join a voice channel to continue")
 
     const Queue = await client.queue.get(message.guild.id);
 
     if (!Queue)
-      return client.error(message, "There are no songs in the queue")
+      return message.error("There are no songs in the queue")
     
     let Song, Seconds, Time, Total;
     
@@ -33,7 +33,7 @@ module.exports = {
       Time = parseInt(Queue.Bot.dispatcher.streamTime + Queue.ExtraTime);
       
     } catch (error) {
-      return client.error(message, "There are no songs in the queue")
+      return message.error("There are no songs in the queue")
     };
 
     function FD(duration) {

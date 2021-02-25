@@ -18,9 +18,9 @@ module.exports = {
 
     const Channel = message.member.voice.channel;
 
-    if (!Channel) return client.error(message, "Please join a voice channel to continue")
+    if (!Channel) return message.error("Please join a voice channel to continue")
 
-    if (!message.guild.me.voice) return client.error(message, "I'm not in any voice channel")
+    if (!message.guild.me.voice) return message.error("I'm not in any voice channel")
 
     try {
 

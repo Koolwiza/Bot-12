@@ -16,14 +16,14 @@ module.exports = {
   async execute(message, args, client, data) {
     const Channel = message.member.voice.channel;
 
-    if (!Channel) return client.error(message, "Please join a voice channel to continue")
+    if (!Channel) return message.error("Please join a voice channel to continue")
 
     const Queue = await client.queue.get(message.guild.id)
     const All = Queue
     let Joined
 
     if (!Queue)
-      return client.error(message, "There are no songs in the queue")
+      return message.error("There are no songs in the queue")
 
 
     await message.guild.me.voice.kick(), await client.queue.delete(message.guild.id);
@@ -34,7 +34,7 @@ module.exports = {
         All["Bot"] = Joined;
       } catch (error) {
         console.log(error);
-        return client.error(message, "Cannot join your voice channel")
+        return message.error("Cannot join your voice channel")
       };
       await client.queue.set(message.guild.id, All);
       await Player(message, Discord, client, Ytdl, { Play: All.Songs[0], Color: client.colors.green });

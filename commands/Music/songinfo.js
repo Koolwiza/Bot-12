@@ -38,7 +38,7 @@ module.exports = {
       }
     } catch (error) {
       console.log(error);
-      return client.error(message, "No video found")
+      return message.error("No video found")
     };
 
     try {
@@ -47,7 +47,7 @@ module.exports = {
       Song = await Objector(SongInfo, message);
     } catch (error) {
       console.log(error);
-      return client.error(message, "No video found")
+      return message.error("No video found")
     };
 
     const Data = `Song - **[${Song.Title}](${Song.Link})**\nCreator - **[${

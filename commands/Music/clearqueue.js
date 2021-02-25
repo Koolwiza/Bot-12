@@ -18,12 +18,12 @@ module.exports = {
 
     const Channel = message.member.voice.channel;
 
-    if (!Channel) return client.error(message, "Please join a voice channel to continue")
+    if (!Channel) return message.error("Please join a voice channel to continue")
 
     const Queue = await client.queue.get(message.guild.id);
 
     if (!Queue)
-      return client.error(message, "There are no songs in the queue")
+      return message.error("There are no songs in the queue")
 
     Queue.Songs = [];
     await Queue.Bot.dispatcher.end();

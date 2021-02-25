@@ -12,7 +12,7 @@
       premium: false,
       guildOnly: false,
       async execute(message, args, client, data) {
-          if (!message.member.permissions.has("BAN_MEMBERS") || (message.guild.roles.cache.get(data.modrole) && !message.member.roles.cache.has(data.modrole))) return client.authorPerms(message, ["BAN_MEMBERS"])
+          if (!message.member.permissions.has("BAN_MEMBERS") || client.modRole(message, data)) return client.authorPerms(message, ["BAN_MEMBERS"])
           if (!message.guild.me.permissions.has("BAN_MEMBERS")) return client.clientPerms(message, ["BAN_MEMBERS"])
 
 

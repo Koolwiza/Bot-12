@@ -58,7 +58,7 @@ module.exports = {
             ${client.emoji.server.join} Joined At: ${userJoinedAt} (${userJoinedAtFromNow})
             ☢️ Activity: \`${userActivityType}\``)
             .addField("User", `
-            :id: ID: ${userID}
+            🆔 ID: ${userID}
             ⏰ Created At: ${userCreatedAt} (${userCreatedAtFromNow})
             ${client.emoji.misc.profile} Presence: ${userStatus}${userStatusEmoji} \`${userStatusMessage}\``)
             .setFooter(client.user.username, client.user.displayAvatarURL())

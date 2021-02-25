@@ -21,11 +21,11 @@ module.exports = {
   async execute(message, args, client, data) {
     const Channel = message.member.voice.channel;
     if (!Channel)
-      return client.error(message, "Please join a voice channel to continue")
+      return message.error("Please join a voice channel to continue")
     if (!args[0])
       return client.missingArgs(message, "Please provide a Youtube Video (Link - ID) , Youtube Playlist (Link - ID) (Songs Limit: 50), or Query")
 
-    if (!Channel.joinable || !Channel.speakable) return client.error(message, "I can't join/speak (in) the voice channel")
+    if (!Channel.joinable || !Channel.speakable) return message.error("I can't join/speak (in) the voice channel")
 
     const YtID = await GetRegxp("YtID"),
       YtUrl = await GetRegxp("YtUrl"),
@@ -41,21 +41,21 @@ module.exports = {
       try {
         const Link = await Linker(args[0]), Info = await Ytdl.getInfo(Link);
         SongInfo = Info.videoDetails;
-        if (SongInfo.isLiveContent) return client.error(message, "Live videos are not supported")
+        if (SongInfo.isLiveContent) return message.error("Live videos are not supported")
         Song = await Objector(SongInfo, message);
       } catch (error) {
         console.log(error);
-        return client.error(message, "No youtube video found with this video ID")
+        return message.error("No youtube video found with this video ID")
       }
     } else if (YtUrl.test(args[0]) && !args[0].toLowerCase().includes("list")) {
       try {
         const Info = await Ytdl.getInfo(args[0]);
         SongInfo = Info.videoDetails;
-        if (SongInfo.isLiveContent) return client.error(message, "Live videos are not supported")
+        if (SongInfo.isLiveContent) return message.error("Live videos are not supported")
         Song = await Objector(SongInfo, message);
       } catch (error) {
         console.log(error);
-        return client.error(message, "No youtube video found with this link")
+        return message.error("No youtube video found with this link")
       }
     } else if (
       YtPlID.test(args[0]) &&
@@ -63,12 +63,12 @@ module.exports = {
     ) {
       try {
         const Info = await pl(args[0]);
-        if (Info.items.length < 1 || Info.items.length > 50) return client.error(message, "There are no songs or over 50 songs in this playlist")
+        if (Info.items.length < 1 || Info.items.length > 50) return message.error("There are no songs or over 50 songs in this playlist")
         const YtInfo = await Ytdl.getInfo(
           `https://www.youtube.com/watch?v=${Info.items[0].id}`
         );
         SongInfo = YtInfo.videoDetails;
-        if (SongInfo.isLiveContent) return client.error(message, "Live videos are not supported")
+        if (SongInfo.isLiveContent) return message.error("Live videos are not supported")
         Song = await Objector(SongInfo, message);
         const Arr = [];
         for (const Video of Info.items) {
@@ -85,17 +85,17 @@ module.exports = {
         };
       } catch (error) {
         console.log(error);
-        return client.error(message, "Multiple valid errors: Either no playlist found, playlist has 50+ songs, or playlist has private or no videos found")
+        return message.error("Multiple valid errors: Either no playlist found, playlist has 50+ songs, or playlist has private or no videos found")
       }
     } else if (YtPlUrl.test(args[0])) {
       try {
         const ID = await pl.getPlaylistID(args[0]), Info = await pl(ID);
-        if (Info.items.length < 1 || Info.items.length > 50) return client.error(message, "There are no songs or over 50 songs in this playlist")
+        if (Info.items.length < 1 || Info.items.length > 50) return message.error("There are no songs or over 50 songs in this playlist")
         const YtInfo = await Ytdl.getInfo(
           `https://www.youtube.com/watch?v=${Info.items[0].id}`
         );
         SongInfo = YtInfo.videoDetails;
-        if (SongInfo.isLiveContent) return client.error(message, "Live videos are not supported")
+        if (SongInfo.isLiveContent) return message.error("Live videos are not supported")
         Song = await Objector(SongInfo, message);
         const Arr = [];
         for (const Video of Info.items) {
@@ -112,7 +112,7 @@ module.exports = {
         };
       } catch (error) {
         console.log(error);
-        return client.error(message, "Multiple valid errors: Either no playlist found, playlist has 50+ songs, or playlist has private or no videos found")
+        return message.error("Multiple valid errors: Either no playlist found, playlist has 50+ songs, or playlist has private or no videos found")
 
       }
     } else {
@@ -120,12 +120,12 @@ module.exports = {
         await Sr.searchOne(args.join(" ")).then(async Info => {
           const YtInfo = await Ytdl.getInfo(`https://www.youtube.com/watch?v=${Info.id}`);
           SongInfo = YtInfo.videoDetails;
-          if (SongInfo.isLiveContent) return client.error(message, "Live videos are not supported")
+          if (SongInfo.isLiveContent) return message.error("Live videos are not supported")
           Song = await Objector(SongInfo, message);
         });
       } catch (error) {
         console.log(error);
-        return client.error(message, "No video found with this query")
+        return message.error("No video found with this query")
       };
     };
 
@@ -135,7 +135,7 @@ module.exports = {
       await Joined.voice.setSelfDeaf(true);
     } catch (error) {
       console.log(error);
-      return client.error(message, "I can't join the voice channel!")
+      return message.error("I can't join the voice channel!")
     };
 
     if (ServerQueue) {
@@ -154,7 +154,7 @@ module.exports = {
             await ServerQueue.Songs.push(Video);
           } catch (error) {
             await Channel.leave().catch(() => { });
-            return client.error(message, "Client internal error")
+            return message.error("Client internal error")
           }
         });
         return message.channel
@@ -204,7 +204,7 @@ module.exports = {
       console.log(error);
       await client.queue.delete(message.guild.id);
       await Channel.leave()
-      return client.error(message, "Client internal error")
+      return message.error("Client internal error")
     }
   }
 }

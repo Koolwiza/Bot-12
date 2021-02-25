@@ -13,7 +13,7 @@ module.exports = {
   premium: false,
   guildOnly: false,
   async execute(message, args, client, data) {
-    if (!message.member.permissions.has("MANAGE_GUILD") || (message.guild.roles.cache.get(data.modrole) && !message.member.roles.cache.has(data.modrole)) ) return client.authorPerms(message, ["MANAGE_SERVER"])
+    if (!message.member.permissions.has("MANAGE_GUILD") || client.modRole(message, data) ) return client.authorPerms(message, ["MANAGE_SERVER"])
 
     mod = client.modActions
 

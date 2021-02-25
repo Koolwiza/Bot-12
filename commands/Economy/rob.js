@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 
 module.exports = {
   name: 'rob',
-  description: 'Rob a user with money ',
+  description: 'Rob a user of their money ',
   usage: 'rob',
   aliases: [],
   required: [],
