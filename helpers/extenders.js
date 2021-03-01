@@ -19,6 +19,16 @@ Message.prototype.error = function (content) {
 	)
 }
 
+Message.prototype.args = function (content) {
+	return this.channel.send(
+		new MessageEmbed()
+		.setAuthor(this.author.tag, this.author.displayAvatarURL())
+		.setFooter(client.user.username, client.user.displayAvatarURL())
+		.setTitle("Missing Arguments")
+		.setColor(client.colors.red)
+		.setDescription(content))
+}
+
 Message.prototype.sendE = function (title = "", description = "", color = "", fields = []) {
 	return this.channel.send({
 		embed: {
@@ -48,12 +58,12 @@ MessageEmbed.prototype.success = function () {
 	return this
 }
 
-MessageEmbed.prototype.default = function() {
+MessageEmbed.prototype.default = function () {
 	this.setColor(client.colors.sky)
 	return this
 }
 
-MessageEmbed.prototype.error = function() {
+MessageEmbed.prototype.error = function () {
 	this.setColor(client.colors.red)
 	return this
 }
