@@ -25,7 +25,7 @@ module.exports = {
         }))
 
 
-        if (!user) return client.missingArgs(message, "Please provide a user to mute!\n```@user or userID```")
+        if (!user) return message.args("Please provide a user to mute!\n```@user or userID```")
         let a = await message.guild.members.fetch(user.id).catch(c => {})
         if (!a.manageable) return client.authorPerms(message, "You do not have permissions to manage this user")
 

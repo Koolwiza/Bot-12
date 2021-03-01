@@ -24,7 +24,7 @@ module.exports = {
         var questionRe = /"(.+)"/gmi
 
         let question = args.join(" ").match(questionRe)
-        if (!question) return client.missingArgs(message, "You did not provide question")
+        if (!question) return message.args("You did not provide question")
         let options = args.join(" ").slice(question[0].length).split(" | ")
 
         let result = ""

@@ -16,7 +16,7 @@ module.exports = {
     if (!message.member.permissions.has("MANAGE_GUILD") || client.modRole(message, data)) return client.authorPerms(message, ["MANAGE_SERVER"])
 
     let user = await client.resolveUser(args[0])
-    if (!user) return client.missingArgs(message, "Missing user for warnings")
+    if (!user) return message.args("Missing user for warnings")
 
     let a = client.modActions.filter(c => (c.type === "warning") && (c.user === user.id) && (c.guild === message.guild.id))
 

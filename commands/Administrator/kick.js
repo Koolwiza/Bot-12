@@ -19,7 +19,7 @@ module.exports = {
         let user = await client.resolveUser(args[0])
         if (user.id === message.author.id) return message.error("You can't kick yourself")
 
-        if (!user) return client.missingArgs(message, "Please provide a user to kick!\n```@user or userID```")
+        if (!user) return message.args("Please provide a user to kick!\n```@user or userID```")
         let a = await message.guild.members.fetch(user.id).catch(c => {})
         if (a.roles.highest.position >= message.guild.me.roles.highest.position) return message.error("Provided member has equal or higher role than me.")
 

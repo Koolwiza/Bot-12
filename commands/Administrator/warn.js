@@ -15,7 +15,7 @@ module.exports = {
     if (!message.member.permissions.has("MANAGE_GUILD") || client.modRole(message, data) ) return client.authorPerms(message, ["MANAGE_SERVER"])
 
     let user = await client.resolveUser(args[0])
-    if (!user) return client.missingArgs(message, "Please provide a user to warn")
+    if (!user) return message.args("Please provide a user to warn")
 
 
     let reason = args.slice(1).join(" ")

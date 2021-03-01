@@ -18,7 +18,7 @@ module.exports = {
     mod = client.modActions
 
     let id = args[0]
-    if (!id) return client.missingArgs(message, "Please provide a warning id")
+    if (!id) return message.args("Please provide a warning id")
     if (!mod.has(id) || mod.get(id, "guild") !== message.guild.id) return message.error("Invalid warning id")
 
     mod.delete(id)

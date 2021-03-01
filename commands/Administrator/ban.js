@@ -18,7 +18,7 @@
 
           let user = await client.resolveUser(args[0])
 
-          if (!user) return client.missingArgs(message, "Please provide a user to ban!\n```@user or userID```")
+          if (!user) return message.args("Please provide a user to ban!\n```@user or userID```")
           if (user.id === message.author.id) return message.error("You can't ban yourself")
 
           let a = await message.guild.members.fetch(user.id).catch(c => {})

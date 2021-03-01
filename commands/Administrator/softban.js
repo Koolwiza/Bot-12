@@ -18,7 +18,7 @@ module.exports = {
 
         let user = await client.resolveUser(args[0])
 
-        if (!user) return client.missingArgs(message, "Please provide a user to softban!\n```@user or userID```")
+        if (!user) return message.args("Please provide a user to softban!\n```@user or userID```")
         if (user.id === message.author.id) return message.sendE("Returned", "You can't softban yourself", client.colors.red)
 
         let a = await message.guild.members.fetch(user.id).catch(c => {})

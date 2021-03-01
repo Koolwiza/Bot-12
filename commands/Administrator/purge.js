@@ -23,7 +23,7 @@ module.exports = {
 
 			amount = Number(args[1])
 
-			if (isNaN(amount)) return client.missingArgs(message, "Please provide an amount for me to purge")
+			if (isNaN(amount)) return message.args("Please provide an amount for me to purge")
 			if (amount > 100) return message.error("The amount you provided was over 100, I can only purge 100 messages at a time!")
 
 			message.channel.messages.fetch({
@@ -46,7 +46,7 @@ module.exports = {
 		} else if (message.mentions.channels.size) {
 			amount = Number(args[1])
 
-			if (isNaN(amount)) return client.missingArgs(message, "Please provide an amount for me to purge")
+			if (isNaN(amount)) return message.args("Please provide an amount for me to purge")
 			if (amount > 100) return message.error("The amount you provided was over 100, I can only purge 100 messages at a time!")
 
 			let channel = message.mentions.channels.first()
@@ -62,7 +62,7 @@ module.exports = {
 			amount = Number(args[1])
 
 
-			if (isNaN(amount)) return client.missingArgs(message, "Please provide an amount for me to purge")
+			if (isNaN(amount)) return message.args("Please provide an amount for me to purge")
 			if (amount > 100) return message.error("The amount you provided was over 100, I can only purge 100 messages at a time!")
 
 			message.channel.messages.fetch({
@@ -82,7 +82,7 @@ module.exports = {
 
 		} else {
 
-			if (isNaN(amount)) return client.missingArgs(message, "Please provide an amount for me to purge")
+			if (isNaN(amount)) return message.args("Please provide an amount for me to purge")
 			if (amount > 100) return message.error("The amount you provided was over 100, I can only purge 100 messages at a time!")
 
 			message.channel.bulkDelete(amount, true).then(deleted => {
