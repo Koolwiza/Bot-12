@@ -2,27 +2,28 @@
 
             
 
-## Administrator [16]
+## Administrator [17]
     
 | Name | Description | Usage
 | ---- | ----------- | ----- 
 
-| addemoji | Adds the emoji to the server | addemoji <emoji> [name]
-| ban | Ban a member from the server | ban <user> [reason]
-| delwarn | Remove a user's warn using an id | delwarn <id>
-| goodbye | Set the goodbye channel/message for the server | goodbye <type> [value]
-| kick | Kick a member out of the server | kick <user> [reason]
-| massban | Massban users | massban <@user1 @user2 @user3> [reason]
-| mute | Mute a member | mute <user> [time] [reason]
-| plugins | Enable or show plugins | plugins <type> [<property> <value>]
-| poll | An advanced poll command able to hold multiple questions | poll <option1 | option2 | option3 | ...>
+| addemoji | Adds the emoji to the server | addemoji \<emoji\> [name]
+| ban | Ban a member from the server | ban \<user\> [reason]
+| delwarn | Remove a user's warn using an id | delwarn \<id\>
+| goodbye | Set the goodbye channel/message for the server | goodbye \<type\> [value]
+| kick | Kick a member out of the server | kick \<user\> [reason]
+| massban | Massban users | massban \<@user1 @user2 @user3\> [reason]
+| mute | Mute a member | mute \<user\> [time] [reason]
+| plugins | Enable or show plugins | plugins \<type\> [\<property\> \<value\>]
+| poll | An advanced poll command able to hold multiple questions | poll \<option1 \| option2 \| option3 \| ...\>
 | prefix | Show or set the prefix for the server | prefix [prefix]
-| purge | Purge messages from a channel | purge <@user | userID | channel | bots] <amount>
-| softban | Remove all messages from the user | softban <user> [reason]
+| purge | Purge messages from a channel | purge \<@user \| userID \| channel \| bots] \<amount\>
+| softban | Remove all messages from the user | softban \<user\> [reason]
+| tag | All options on a tag | tag \<type \| tagname\> [value] [new value]
 | unmute | Unmute a user | unmute
-| warn | Warn a user | warn <user> <reason>
-| warnings | Display a user's warnings | warnings <user>
-| welcome | Set the welcome channel/message for the server | welcome <type> [value]
+| warn | Warn a user | warn \<user\> \<reason\>
+| warnings | Display a user's warnings | warnings \<user\>
+| welcome | Set the welcome channel/message for the server | welcome \<type\> [value]
             
 
 ## Developer [6]
@@ -30,47 +31,48 @@
 | Name | Description | Usage
 | ---- | ----------- | ----- 
 
-| disable | Disable a command in either guild or globally | disable <command> [guildID]
-| enable | Enable a command in either guild or globally | enable <command> [guildID]
-| eval | Evaluates a piece of code | eval <code>
-| ghcmdlist | hi | bonk
-| reload | Reload a file/command | reload <command/alias>
+| disable | Disable a command in either guild or globally | disable \<command\> [guildID]
+| enable | Enable a command in either guild or globally | enable \<command\> [guildID]
+| eval | Evaluates a piece of code | eval \<code\>
+| reload | Reload a file/command | reload \<command/alias\>
+| test | test | test
 | topgg | Shows topgg stuff | topgg 
             
 
-## Economy [3]
+## Economy [4]
     
 | Name | Description | Usage
 | ---- | ----------- | ----- 
 
-| balance | View the balance of a member | balance <user>
+| balance | View the balance of a member | balance \<user\>
 | daily | Claim the daily reward for more coins!  | daily
-| work | Work a job gaining coins | balance <user>
+| rob | Rob a user of their money  | rob
+| work | Work a job gaining coins | balance \<user\>
             
 
-## Fun [2]
+## Fun [3]
     
 | Name | Description | Usage
 | ---- | ----------- | ----- 
 
-| ascii | Turn your text into A S C I I | ascii <text>
+| ascii | Turn your text into A S C I I | ascii \<text\>
+| choose | Let the bot choose an option for you | choose \<option1 \| option2 \| option3 ... \>
 | coinflip | Flip a coin | coinflip
             
 
-## General [12]
+## General [11]
     
 | Name | Description | Usage
 | ---- | ----------- | ----- 
 
 | bitcoin | See bitcoin values or convert bitcoin to currency | bitcoin [amount]
 | botinfo | Gives detailed information about the bot | botinfo
-| calculate | Calculate a math expression | calculate <expression>
-| choose | Let the bot choose an option for you | choose <option1 | option2 | option3 ... >
+| calculate | Calculate a math expression | calculate \<expression\>
 | docs | Look at the discord.js docs | docs [query]
-| google | Google a query with valid search results | google <query> 
+| google | Google a query with valid search results | google \<query\> 
 | help | Sends you a list of commands | help [command]
 | ping | A simple ping command | ping
-| say | Say something | say <message>
+| say | Say something | say \<message\>
 | serverinfo | Get detailed information about the server | serverinfo
 | snipe | Check for deleted messages 👀 | snipe
 | userinfo | Get detailed information about a user | userinfo [user]
@@ -90,7 +92,7 @@
 | Name | Description | Usage
 | ---- | ----------- | ----- 
 
-| applyfilter | Apply a filter to the music | applyfilter <filter>
+| applyfilter | Apply a filter to the music | applyfilter \<filter\>
 | bassboost | Bassboost the music | bassboost
 | clean | Clean the queue of the bot for the server, improves music quality! | clean
 | clearqueue | Clear the queue of the server | clearqueue
@@ -101,13 +103,13 @@
 | lyrics | Show the lyrics for the current song | lyrics
 | nightcore | Enable nightcore mode  | nightcore
 | pause | Pause the current playing music | pause
-| play | Play music into the connected voice channel | play <youtube link | youtube id | youtube playlist | query>
+| play | Play music into the connected voice channel | play \<youtube link \| youtube id \| youtube playlist \| query\>
 | playing | View what you're playing with progress bar | playing
 | queue | View the current queue in the server | queue
 | resume | If the music was paused earlier, resume it again | 
-| search | Search for a video with details | search <video>
+| search | Search for a video with details | search \<video\>
 | shuffle | Shuffle the queue for the server! | shuffle
 | skip | Skip the current playing song | skip
-| songinfo | Gives detailed information about a song | songinfo <video>
+| songinfo | Gives detailed information about a song | songinfo \<video\>
 | stop | Stops the music | stop
-| volume | Set the volume of the song | volume <volume>
+| volume | Set the volume of the song | volume \<volume\>
