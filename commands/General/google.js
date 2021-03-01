@@ -22,7 +22,7 @@ module.exports = {
 	guildOnly: false,
 	async execute(message, args, client, data) {
 		let query = args.join("+")
-		if (!query) return client.missingArgs(message, "Please provide a query")
+		if (!query) return message.args("Please provide a query")
 
 		if(!client.config.google_api_key) return console.log("No google api key, command not executable")
 

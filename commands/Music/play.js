@@ -23,7 +23,7 @@ module.exports = {
     if (!Channel)
       return message.error("Please join a voice channel to continue")
     if (!args[0])
-      return client.missingArgs(message, "Please provide a Youtube Video (Link - ID) , Youtube Playlist (Link - ID) (Songs Limit: 50), or Query")
+      return message.args("Please provide a Youtube Video (Link - ID) , Youtube Playlist (Link - ID) (Songs Limit: 50), or Query")
 
     if (!Channel.joinable || !Channel.speakable) return message.error("I can't join/speak (in) the voice channel")
 

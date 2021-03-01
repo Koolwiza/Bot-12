@@ -13,7 +13,7 @@ module.exports = {
   guildOnly: false,
   async execute(message, args, client, data) {
     let user = await client.resolveUser(args[0])
-    if(!user) return client.missingArgs(message, "Please provide a user or invalid user")
+    if(!user) return message.args("Please provide a user or invalid user")
 
     let userP = client.userProfiles.get(user.id)
     if(userP.balance < 1000) return message.error("This user is too poor! You can only rob users with more than 1k coins.")

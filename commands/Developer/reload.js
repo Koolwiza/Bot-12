@@ -18,7 +18,7 @@ module.exports = {
     guildOnly: false,
     async execute(message, args, client, data) {
 
-        if (!args.length) return client.missingArgs(message, "No command provided")
+        if (!args.length) return message.args("No command provided")
 
         let commandName = args[0]
 

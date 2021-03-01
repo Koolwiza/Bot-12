@@ -17,7 +17,7 @@ module.exports = {
 
     let expression = args.join(" ")
 
-    if (!expression) return client.missingArgs(message, "Please provide a math expression tno evauluate")
+    if (!expression) return message.args("Please provide a math expression tno evauluate")
 
     let result = math.evaluate(args.join(" ").replace(/[x]/gi, "*").replace(/[,]/g, ".").replace(/[÷]/gi, "/"));
 

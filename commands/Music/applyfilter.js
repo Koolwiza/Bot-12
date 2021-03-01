@@ -27,7 +27,7 @@ module.exports = {
 
     const Filters = ["nightcore", "bassboost", "vaporwave", "phaser", "treble", "normalizer", "flanger"];
 
-    if (!Filter) return client.missingArgs(message, Filters.map(fil => fil.charAt(0).toUpperCase() + fil.slice(1)).join(", "))
+    if (!Filter) return message.args(Filters.map(fil => fil.charAt(0).toUpperCase() + fil.slice(1)).join(", "))
 
     if (!Filters.find(Fil => Fil === Filter.toLowerCase())) return message.channel.send("No Filter Found - " + Filter.charAt(0).toUpperCase() + Filter.slice(1));
 

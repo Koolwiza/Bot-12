@@ -13,7 +13,7 @@ module.exports = {
   guildOnly: false,
   async execute(message, args, client, data) {
     let options = args.join(" ").split("|")
-    if (!options.length) return client.missingArgs(message, "Please provide options, example: \n ```Hot Dog | Steak | Burger```")
+    if (!options.length) return message.args("Please provide options, example: \n ```Hot Dog | Steak | Burger```")
 
     let choice = options.random().trim()
 

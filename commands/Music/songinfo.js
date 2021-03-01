@@ -23,7 +23,7 @@ module.exports = {
       YtUrl = await GetRegxp("YtUrl");
 
     if (!Value)
-      return client.missingArgs(message, "Please provide a valid video. ID, Link, or Name")
+      return message.args("Please provide a valid video. ID, Link, or Name")
 
     try {
       if (YtID.test(Value)) {

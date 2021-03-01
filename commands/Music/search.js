@@ -19,7 +19,7 @@ module.exports = {
     const Channel = message.member.voice.channel;
 
     if (!Channel) return message.error("Please join a voice channel to continue")
-    if (!args[0]) return client.missingArgs(message, "Please provide a query")
+    if (!args[0]) return message.args("Please provide a query")
 
     const Queue = await client.queue.get(message.guild.id);
 

@@ -18,7 +18,7 @@ module.exports = {
 
     const Queue = client.queue.get(message.guild.id);
 
-    if (!Queue && !args[0]) return client.missingArgs(message, "Please provide a song")
+    if (!Queue && !args[0]) return message.args("Please provide a song")
 
     let Lyric, Thing = Queue ? Queue.Songs[0].Title : args.join(" ");
 
