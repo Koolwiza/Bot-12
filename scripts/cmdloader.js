@@ -9,7 +9,7 @@ module.exports = async (client, path) => {
             if (!fs.existsSync(dir)) return reject("Error: directory does not exist")
             glob(`${dir}/**/*.js`, (err, files) => {
                 if (err) return reject(err);
-                let cmdFiles = files.map(c => '../' + c)
+                let cmdFiles = files.map(c => `../${c}`)
                 return resolve(cmdFiles);
             })
         })

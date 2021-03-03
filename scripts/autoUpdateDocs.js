@@ -22,7 +22,7 @@ module.exports = async (client) => {
     
 | Name | Description | Usage
 | ---- | ----------- | ----- \n
-${tCommands.map(command => `| ${command.name} | ${command.description} | ${command.usage}`).join("\n")}`
+${tCommands.map(command => `| ${command.name} | ${command.description} | ${command.usage.replace(/\|/g, "\\|").replace(/\</g, "\\<").replace(/\>/g, "\\>")}`).join("\n")}`
         })
         const fs = require('fs')
         if(fs.existsSync('./docs/command-list.md')) {
