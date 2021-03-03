@@ -1,9 +1,9 @@
 const Discord = require('discord.js'),
     ms = require('ms')
 fetch = require('node-fetch'), {
-    format
-} = require('date-fns'),
-moment = require('moment')
+        format
+    } = require('date-fns'),
+    moment = require('moment')
 
 module.exports = {
     name: 'serverinfo',
@@ -13,7 +13,7 @@ module.exports = {
     required: [],
     user: [],
     category: __dirname.split("commands\\")[1],
-    
+
     premium: false,
     guildOnly: false,
     async execute(message, args, client, data) {
@@ -78,7 +78,6 @@ module.exports = {
         let guildCreatedAtFromNow = moment(message.guild.createdAt, 'YYYYMMDD').fromNow()
         let afkChannel = message.guild.afkChannel ? message.guild.afkChannel : "None"
         let guildDescription = message.guild.description ? message.guild.description : "None"
-        let guildID = message.guild.id
         let guildName = message.guild.name
         let guildIcon = message.guild.iconURL({
             dynamic: true
@@ -93,7 +92,6 @@ module.exports = {
 
         let guildMemberCount = message.guild.memberCount
         let guildOwner = await message.guild.members.fetch(message.guild.ownerID)
-        let guildOwnerID = message.guild.ownerID
         let fetchedMembers = await message.guild.members.fetch()
 
         let onlineMembers = fetchedMembers.filter(c => c.presence.status === "online").size,
@@ -135,7 +133,7 @@ module.exports = {
             🙂 ${emojiSize} Emojis`, true)
             .setFooter(client.user.username, client.user.displayAvatarURL())
             .setImage(guildBanner)
-return message.channel.send(embed)
+        return message.channel.send(embed)
 
 
 

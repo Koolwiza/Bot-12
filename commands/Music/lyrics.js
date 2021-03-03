@@ -18,7 +18,7 @@ module.exports = {
 
     const Queue = client.queue.get(message.guild.id);
 
-    if (!Queue && !args[0]) return client.missingArgs(message, "Please provide a song")
+    if (!Queue && !args[0]) return message.args("Please provide a song")
 
     let Lyric, Thing = Queue ? Queue.Songs[0].Title : args.join(" ");
 
@@ -28,11 +28,11 @@ module.exports = {
         if (Queue && args[0]) {
           Lyric = await Finder(args.join(" "), '');
         } else {
-          return client.error(message, "No lyrics found - " + Thing)
+          return message.error("No lyrics found - " + Thing)
         };
       };
     } catch (error) {
-      return client.error(message, "No lyrics found - " + Thing);
+      return message.error("No lyrics found - " + Thing);
     };
 
     Lyric = await Lyric.replace(/(.{2021})/g, "\n1\n");
@@ -71,6 +71,6 @@ module.exports = {
       return message.channel.send(Embed5);
     };
 
-    return client.error(message, `${Thing}'s lyrics are over 10105 characters!`);
+    return message.error(`${Thing}'s lyrics are over 10105 characters!`);
   }
 }

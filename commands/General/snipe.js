@@ -9,12 +9,12 @@ module.exports = {
     required: [],
     user: [],
     category: __dirname.split("commands\\")[1],
-    
+
     premium: false,
     guildOnly: false,
     async execute(message, args, client, data) {
         let snip = client.snipes.get(message.guild.id)
-        if (!snip) return 
+        if (!snip) return
 
         let embed = new Discord.MessageEmbed()
             .setTitle(message.guild.name + " Snipe")
@@ -28,11 +28,11 @@ module.exports = {
 
         if (urlReg.test(snip.content)) {
             embed.setImage(snip.content)
-            
+
         } else {
             embed.setDescription(snip.content)
         }
 
-return message.channel.send(embed)
+        return message.channel.send(embed)
     }
 }

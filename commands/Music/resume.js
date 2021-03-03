@@ -17,14 +17,14 @@ module.exports = {
   async execute(message, args, client, data) {
     const Channel = message.member.voice.channel;
 
-    if (!Channel) return client.error(message, "Please join a voice channel to continue")
+    if (!Channel) return message.error("Please join a voice channel to continue")
 
     const Queue = await client.queue.get(message.guild.id);
 
     if (!Queue)
-      return client.error(message, "There are no songs in the queue")
+      return message.error("There are no songs in the queue")
 
-    if (Queue.Playing) return client.error(message, "🎶 Music is already playing");
+    if (Queue.Playing) return message.error("🎶 Music is already playing");
 
     Queue.Playing = true;
     Queue.Bot.dispatcher.resume();

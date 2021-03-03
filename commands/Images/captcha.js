@@ -13,11 +13,11 @@ module.exports = {
     premium: false,
     guildOnly: false,
     async execute(message, args, client, data) {
-        return client.error(message, "Command in progress")
+        return message.error("Command in progress")
         let user = await client.resolveUser(args[0]) || message.author
 
         let res = await fetch(encodeURI(`https://nekobot.xyz/api/imagegen?type=captcha&username=${user.username}&url=${user.displayAvatarURL({ format: "png", size: 512 })}`)).catch(e => {
-            client.error(message, e)
+            message.error(e)
             client.logger.error(e)
         })
         let body = await res.json()

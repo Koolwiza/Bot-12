@@ -31,8 +31,8 @@ module.exports = {
                 .setAuthor(message.author.tag, message.author.avatarURL({
                     dynamic: true
                 }))
-                .setFooter(message.client.user.username, message.client.user.avatarURL())
-                .setTitle(`${message.client.user.username} Bot Help`)
+                .setFooter(message.client.user.username, message.client.user.displayAvatarURL())
+                .setTitle(`${client.commands.size} Total Commands`)
 
             commands.forEach(command => {
                 if (!categories.includes(command.category)) {
@@ -84,7 +84,7 @@ module.exports = {
             .setTitle(":books: Command Help")
             .setDescription(msg)
             .setColor(client.colors.sky)
-            .setFooter(message.client.user.username, message.client.user.avatarURL())
+            .setFooter(message.client.user.username, message.client.user.displayAvatarURL())
             .addField('\u200b', '[Invite Me](https://discord.com/oauth2/authorize?client_id=800549820485599272&scope=bot&permissions=2080768255) ● Support Server coming Soon')
 return message.channel.send(helpEmbed)
     }

@@ -16,21 +16,56 @@ Discord.Constants.DefaultOptions.ws.properties.$browser = "Discord Android"
  * @param {restTimeOffset} Reduces time between requesting API
  */
 
-class Bot12Client extends Client {
+module.exports = class Bot12Client extends Client {
   constructor(options) {
     super({
+
+      /**
+       * Our Client options
+       * @property {ws} - Websocket manager for discord.js
+       * Provided Intents property is for discord.js v13
+       * @property {restTimeOffset} - Reduce amount of time between multiple REST requests
+       */
+
       restTimeOffset: 250,
       ws: {
         intents: Intents.ALL
-      }    });
+      }
+    });
+
+    /**
+     * Attach useful properties and functions to the extended client
+     * @property {logger} - A useful logger for aesthetic logging
+     * @property {colors} - An object filled with preset colors used for embeds
+     * @property {config} - Our configuration file, tokens, owners, etc . . .
+     * @property {emoji} - Close to overwriding 'emojis' property but doesn't. An object filled with emojis useful for general messages
+     */
+
     this.logger = require('../../helpers/logger')
     this.colors = require("../data/colors")
     this.config = require('../data/config')
     this.emoji = require('../data/emojis')
 
+    /**
+     * Datatypes that are stored in cache
+     * @property {commands} - A collection of the client's commands. Loaded in 'index.js'
+     * @property {snipes} - A collection of the recorded snipes. Loaded in 'messageDelete.js'
+     * @property {queue} - A Map of the songs used in a server. Loaded in 'Commands/Music'
+     */
+
     this.commands = new Collection()
     this.snipes = new Collection()
     this.queue = new Map()
+
+    /**
+     * Our Enmaps
+     * @property {guildData} - Stores prefixes, modroles, etc . . .
+     * @property {plugins} - Stores enabled plugins of a guild
+     * @property {modActions} - Stores the mod actions that were recorded in a server
+     * @property {userProfiles} - Stores the user's profiles throughout the bot
+     * @property {disabled} - Stores the disabled commands
+     * @property {cooldowns} - Stores cooldowns for each command by user
+     */
 
     this.guildData = new Enmap({
       name: "guild",
@@ -52,7 +87,7 @@ class Bot12Client extends Client {
 
     this.userProfiles = new Enmap({
       name: "profiles",
-      fetchAll: false,
+      fetchAll: true,
       autoFetch: true
     })
 
@@ -216,5 +251,3 @@ class Bot12Client extends Client {
   wait = require("util").promisify(setTimeout);
 
 }
-
-module.exports = Bot12Client

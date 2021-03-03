@@ -18,8 +18,8 @@ module.exports = {
   async execute(message, args, client, data) {
     const Channel = message.member.voice.channel;
 
-    if (!Channel) return client.error(message, "Please join a voice channel to continue")
-    if (!args[0]) return client.missingArgs(message, "Please provide a query")
+    if (!Channel) return message.error("Please join a voice channel to continue")
+    if (!args[0]) return message.args("Please provide a query")
 
     const Queue = await client.queue.get(message.guild.id);
 
@@ -34,7 +34,7 @@ module.exports = {
 
     await Sr.search(args.join(" "), { limit: 10 }).then(async Data => {
       if (!Data[0].id)
-        return client.error(message, "No video found")
+        return message.error("No video found")
       const All = await Data.map(
         (Video, Position) =>
           `${Position + 1}. **[${
@@ -62,9 +62,9 @@ module.exports = {
             Song = null;
           Msg = Msg.first();
           if (isNaN(Content))
-            return client.error(message, "Invalid number provided")
+            return message.error("Invalid number provided")
           if (Content - 1 > All.length || !All[Content])
-            return client.error(message, "Invalid number provided")
+            return message.error("Invalid number provided")
 
           try {
             const Find = await Data.find(Dat => Dat === Data[Content - 1]);
@@ -76,7 +76,7 @@ module.exports = {
             Song = await Objector(SongInfo, message);
           } catch (error) {
             console.log(error);
-            return client.error(message, "Unknown error, please try again")
+            return message.error("Unknown error, please try again")
           }
 
           let Joined;
@@ -137,7 +137,7 @@ module.exports = {
             console.log(error);
             await client.queue.delete(message.guild.id);
             await Channel.leave().catch(() => { });
-            return client.error(message, "Client internal error")
+            return message.error("Client internal error")
           }
         });
     });

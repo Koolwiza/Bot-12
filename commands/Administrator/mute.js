@@ -13,7 +13,7 @@ module.exports = {
     premium: false,
     guildOnly: false,
     async execute(message, args, client, data) {
-        if (!message.member.permissions.has("MANAGE_ROLES") || (message.guild.roles.cache.get(data.modrole) && !message.member.roles.cache.has(data.modrole)) ) return client.authorPerms(message, ["MANAGE_ROLES"])
+        if (!message.member.permissions.has("MANAGE_ROLES") || client.modRole(message, data) ) return client.authorPerms(message, ["MANAGE_ROLES"])
         if (!message.guild.me.permissions.has("MANAGE_ROLES")) return client.clientPerms(message, ["MANAGE_ROLES"])
 
         let user = await client.resolveUser(args[0])
@@ -25,14 +25,14 @@ module.exports = {
         }))
 
 
-        if (!user) return client.missingArgs(message, "Please provide a user to mute!\n```@user or userID```")
+        if (!user) return message.args("Please provide a user to mute!\n```@user or userID```")
         let a = await message.guild.members.fetch(user.id).catch(c => {})
         if (!a.manageable) return client.authorPerms(message, "You do not have permissions to manage this user")
 
         let time = args[1]
 
         if (!time || isNaN(ms(time))) {
-            return client.error(message, "Provided time wasn't a valid time or missing time")
+            return message.error("Provided time wasn't a valid time or missing time")
         }
 
         let reason = args.slice(2).join(" ")
@@ -60,20 +60,15 @@ module.exports = {
                 })
             })
         } catch (err) {
-            client.error(message, "An error occured when updating overwrites for channels")
+            message.error("An error occured when updating overwrites for channels")
             client.logger.log("Error updating permission overwrites\n" + err, "error")
         }
 
-        if (a.roles.cache.has(muteR.id)) return client.error(message, "User provided is already muted")
+        if (a.roles.cache.has(muteR.id)) return message.error("User provided is already muted")
 
-        a.roles.add(muteR).catch(c => client.error("An error occured when adding roles to the user"))
+        a.roles.add(muteR).catch(() => client.error("An error occured when adding roles to the user"))
         await user.send(`**${client.emoji.misc.xmark} You have been warned in ${message.guild.name} for ${reason}**`)
 
-        return message.channel.send(client.baseEmbed(message, {
-            title: "Success",
-            description: `I have muted **${user.tag}** | ${reason}`,
-            color: client.colors.green
-        }))
         
         setTimeout(() => {
             if (a.roles.cache.has(muteR)) {
@@ -86,5 +81,12 @@ module.exports = {
             }
 
         }, time)
+
+        return message.channel.send(client.baseEmbed(message, {
+            title: "Success",
+            description: `I have muted **${user.tag}** | ${reason}`,
+            color: client.colors.green
+        }))
+        
     }
 }

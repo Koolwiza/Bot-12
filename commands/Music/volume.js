@@ -17,12 +17,12 @@ module.exports = {
   async execute(message, args, client, data) {
     const Channel = message.member.voice.channel;
 
-    if (!Channel) return client.error(message, "Please join a voice channel to continue")
+    if (!Channel) return message.error("Please join a voice channel to continue")
 
     const Queue = await client.queue.get(message.guild.id);
 
     if (!Queue)
-      return client.error(message, "There are no songs in the queue")
+      return message.error("There are no songs in the queue")
 
     const Embed = new Discord.MessageEmbed()
       .setColor(client.colors.green)
@@ -36,10 +36,10 @@ module.exports = {
     let number = parseInt(args[0])
     if (number) {
       if (isNaN(number))
-        return client.error(message, "Please give a valid number")
-      if (number > 150) return client.error(message, "Volume limit: 150")
+        return message.error("Please give a valid number")
+      if (number > 150) return message.error("Volume limit: 150")
       if (parseInt(Queue.Volume) === number)
-        return client.error(message, "Nothing was changed, provided volume was equal to volume")
+        return message.error("Nothing was changed, provided volume was equal to volume")
 
       Queue.Volume = parseInt(number);
       Queue.Bot.dispatcher.setVolumeLogarithmic(Queue.Volume / 100);

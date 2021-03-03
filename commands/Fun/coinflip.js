@@ -14,17 +14,9 @@ module.exports = {
     async execute(message, args, client, data) {
         let choice = Math.random() > 0.5 
         if(choice) {
-            return message.channel.send(client.baseEmbed(message, {
-                title: "Coinflip",
-                description: `${client.emoji.misc.coin} You flipped a coin and got heads!`,
-                color: client.colors.gold
-            }))
+            return message.sendE("Coinflip", `${client.emoji.misc.coin} You flipped a coin and got heads!`, client.colors.gold)
         } else {
-            return message.channel.send(client.baseEmbed(message, {
-                title: "Coinflip",
-                description: `${client.emoji.misc.coin} You flipped a coin and got tails!`,
-                color: client.colors.gold
-            }))
+            return message.sendE("Coinflip", `${client.emoji.misc.coin} You flipped a coin and got tails!`, client.colors.gold)
         }
     }
 }

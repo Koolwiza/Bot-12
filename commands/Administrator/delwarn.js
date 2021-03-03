@@ -13,20 +13,15 @@ module.exports = {
   premium: false,
   guildOnly: false,
   async execute(message, args, client, data) {
-    if (!message.member.permissions.has("MANAGE_GUILD") || (message.guild.roles.cache.get(data.modrole) && !message.member.roles.cache.has(data.modrole)) ) return client.authorPerms(message, ["MANAGE_SERVER"])
+    if (!message.member.permissions.has("MANAGE_GUILD") || client.modRole(message, data) ) return client.authorPerms(message, ["MANAGE_SERVER"])
 
     mod = client.modActions
 
     let id = args[0]
-    if (!id) return client.missingArgs(message, "Please provide a warning id")
-
-    if (!mod.has(id) || mod.get(id, "guild") !== message.guild.id) return client.error(message, "Invalid warning id")
+    if (!id) return message.args("Please provide a warning id")
+    if (!mod.has(id) || mod.get(id, "guild") !== message.guild.id) return message.error("Invalid warning id")
 
     mod.delete(id)
-    return message.channel.send(client.baseEmbed(message, {
-      title: "Success",
-      description: `Deleted the warning with an id of \`${id}\``,
-      color: client.colors.green
-    }))
+    return message.sendE("Success", `Deleted the warning with an id of \`${id}\``, client.colors.green)
   }
 }

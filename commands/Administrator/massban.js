@@ -12,7 +12,7 @@ module.exports = {
     premium: false,
     guildOnly: false,
     async execute(message, args, client, data) {
-        if (!message.member.permissions.has("BAN_MEMBERS") || (message.guild.roles.cache.get(data.modrole) && !message.member.roles.cache.has(data.modrole)) ) return client.authorPerms(message, ["BAN_MEMBERS"])
+        if (!message.member.permissions.has("BAN_MEMBERS") || client.modRole(message, data)) return client.authorPerms(message, ["BAN_MEMBERS"])
         if (!message.guild.me.permissions.has("BAN_MEMBERS")) return client.clientPerms(message, ["BAN_MEMBERS"])
 
 
@@ -39,7 +39,7 @@ module.exports = {
             time: 60 * 1000
         })
 
-         message.channel.send(`${client.emoji.misc.check} **Are you sure you want to ban ${bannedCollection.map(mem => `${mem.toString()}`).join(", ")}?** \nPlease reply with \`y\`/\`yes\` or \`cancel\``)
+        message.channel.send(`${client.emoji.misc.check} **Are you sure you want to ban ${bannedCollection.map(mem => `${mem.toString()}`).join(", ")}?** \nPlease reply with \`y\`/\`yes\` or \`cancel\``)
         collector.on("collect", async msg => {
             if (['yes', 'y'].includes(msg.content.toLowerCase())) {
 
@@ -47,25 +47,18 @@ module.exports = {
 
                     bannedCollection.forEach(member => {
                         message.guild.members.ban(member, {
-                            reason: banReason
+                            reason: banReason,
+                            days: 7
                         })
                     })
-                    return message.channel.send(client.baseEmbed(message, {
-                        title: "Massban Successful",
-                        description: `I have banned ${bannedCollection.map(m => `**${m.user.tag}**`).join(", ")} | ${banReason}`,
-                        color: client.colors.discord
-                    }))
+                    return message.sendE("Massban Successful", `I have banned ${bannedCollection.map(m => `**${m.user.tag}**`).join(", ")} | ${banReason}`, client.colors.discord)
                 } catch (e) {
                     client.logger.log(`Massban failed \n${e}`, "error")
                 }
                 return collector.stop()
             } else if (msg.content.toLowerCase() === "cancel") {
                 collector.stop()
-                return message.channel.send(client.baseEmbed(message, {
-                    title: "Massban Cancelled",
-                    description: `I have cancelled the massban.`,
-                    color: client.colors.discord
-                }))
+                return message.sendE("Massban", "I have cancelled the massban on " + bannedCollection.size + " members", client.colors.green)
             } else {
                 return message.channel.send(`**PROMPT FAILED**: \n${client.emoji.misc.check} Are you sure you want to ban ${bannedCollection.map(mem => `**${mem.user.username}**`).join(", ")}? \nPlease reply with \`y\`/\`yes\` or \`cancel\``)
 
@@ -74,7 +67,7 @@ module.exports = {
 
         collector.on("end", (_, reason) => {
             if (reason === "time") {
-                return client.error(message, "Ran out of time, please try again")
+                return message.error("Ran out of time, please try again")
             }
         });
     }

@@ -23,7 +23,7 @@ module.exports = {
       YtUrl = await GetRegxp("YtUrl");
 
     if (!Value)
-      return client.missingArgs(message, "Please provide a valid video. ID, Link, or Name")
+      return message.args("Please provide a valid video. ID, Link, or Name")
 
     try {
       if (YtID.test(Value)) {
@@ -38,7 +38,7 @@ module.exports = {
       }
     } catch (error) {
       console.log(error);
-      return client.error(message, "No video found")
+      return message.error("No video found")
     };
 
     try {
@@ -47,7 +47,7 @@ module.exports = {
       Song = await Objector(SongInfo, message);
     } catch (error) {
       console.log(error);
-      return client.error(message, "No video found")
+      return message.error("No video found")
     };
 
     const Data = `Song - **[${Song.Title}](${Song.Link})**\nCreator - **[${

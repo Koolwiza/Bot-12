@@ -32,18 +32,11 @@ module.exports = {
             response += ` • Type: \`${typeof evaled}\`\n`;
             response += ` • Time taken: \`${(((hrStop[0] * 1e9) + hrStop[1])) / 1e6}ms\``;
 
-            let evEmbed = new Discord.MessageEmbed()
-                .setColor(client.colors.sky)
-                .setDescription(response)
-                .setFooter(client.user.username, client.user.displayAvatarURL())
-                .setAuthor(message.author.tag, message.author.displayAvatarURL())
-
             if (response.length > 0) {
-                return await message.channel.send(evEmbed)
-
+                return message.sendE("Success", response, client.colors.sky)
             }
         } catch (err) {
-            return client.error(message, `Error: ${await client.clean(err.message)}`)
+            return message.error(`Error: ${await client.clean(err.message)}`)
         }
 
 
