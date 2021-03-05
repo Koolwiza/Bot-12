@@ -7,7 +7,7 @@ A random bot with a random name.
 
 A bot to help your server with moderation, utility and more.
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-1.0.1-blue.svg?cacheSeconds=2592000?style=for-the-badge" />
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.1-blue.svg?style=for-the-badge" />
   <a href="https://github.com/Koolwiza/Bot-12/tree/main/docs" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg?style=for-the-badge" />
   </a>
