@@ -24,9 +24,8 @@ A bot to help your server with moderation, utility and more.
 ## 🏠 [Homepage](https://github.com/Koolwiza/Bot-12#readme)
 
 
-## Author
-
-👤 **Koolwiza**
+## 👤 Author
+**Koolwiza**
 
 * Github: [@Koolwiza](https://github.com/Koolwiza)
 
@@ -38,7 +37,7 @@ A bot to help your server with moderation, utility and more.
 * [Features](https://github.com/Koolwiza/Bot-12#features)
 * [Upcoming](https://github.com/Koolwiza/Bot-12#future-plansz)
 
-## Some commands this bot offers
+## ⭐ Some commands this bot offers
 
 ###  55 total commands
 
