@@ -30,10 +30,10 @@ A bot to help your server with moderation, utility and more.
 
 * Github: [@Koolwiza](https://github.com/Koolwiza)
 
-## Table Of Contents
+## 📔 Table Of Contents
 
 * [Common Errors](https://github.com/Koolwiza/Bot-12/blob/main/docs/common-errors.md)
-* [Command List](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md)
+* [Command  List](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md)
 * [Installation-Guide](https://github.com/Koolwiza/Bot-12/blob/main/docs/installation-guide.md)
 * [Features](https://github.com/Koolwiza/Bot-12#features)
 * [Upcoming](https://github.com/Koolwiza/Bot-12#future-plansz)
@@ -65,7 +65,7 @@ And even more commands coming soon!
 
 Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/Koolwiza/Bot-12/issues). You can also take a look at the [contributing guide](https://github.com/Koolwiza/Bot-12/blob/main/docs/contributing.md).
 
-## Show your support
+## ❤️ Show your support
 
 Give a ⭐️ if this project helped you!
 
