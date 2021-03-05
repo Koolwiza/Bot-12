@@ -18,7 +18,7 @@ module.exports = {
 		let amount = parseInt(args[0])
 		message.delete().catch(() => {})
 
-		if (client.resolveUser(args[0])) {
+		if (await client.resolveUser(args[0])) {
 			let User = await client.resolveUser(args[0])
 
 			amount = Number(args[1])
@@ -26,23 +26,24 @@ module.exports = {
 			if (isNaN(amount)) return message.args("Please provide an amount for me to purge")
 			if (amount > 100) return message.error("The amount you provided was over 100, I can only purge 100 messages at a time!")
 
-			message.channel.messages.fetch({
+			let messages = await message.channel.messages.fetch({
 				limit: 100
-			}).then(async messages => {
-				const filterBy = User ? User.id : message.client.user.id;
-
-				if (User) {
-					messages = messages.filter(m => m.author.id === filterBy).array().slice(0, amount);
-				}
-				message.channel.bulkDelete(messages, true).then(deleted => {
-					return message.sendE("Success", `Successfully purged ${deleted.size} messages from **${User.tag}**`, client.colors.green)
-				}).catch(e => {
-					client.logger.log("Error ran from purging messages\n" + e, "error")
-					return message.error("could not purge messages, please try again")
-				})
-
-
 			})
+			const filterBy = User ? User.id : message.client.user.id;
+
+			if (User) {
+				messages = messages
+					.filter(m => m.author.id === filterBy)
+					.array()
+					.slice(0, amount);
+			}
+			let deleted = await message.channel.bulkDelete(messages, true).catch(e => {
+				client.logger.log("Error ran from purging messages\n" + e, "error")
+				return message.error("could not purge messages, please try again")
+			})
+			return message.sendE("Success", `Successfully purged ${deleted.size} messages from **${User.tag}**`, client.colors.green)
+
+
 		} else if (message.mentions.channels.size) {
 			amount = Number(args[1])
 
@@ -50,13 +51,13 @@ module.exports = {
 			if (amount > 100) return message.error("The amount you provided was over 100, I can only purge 100 messages at a time!")
 
 			let channel = message.mentions.channels.first()
-			channel.bulkDelete(amount, true)
-				.then(deleted => {
-					return message.sendE("Success", `Successfully purged ${deleted.size} messages from **${channel.name}**`, client.colors.green)
-				}).catch(e => {
-					client.logger.log("Error ran from purging messages\n" + e, "error")
-					return message.error("could not purge messages, please try again")
-				})
+			let deleted = await channel.bulkDelete(amount, true).catch(e => {
+				client.logger.log("Error ran from purging messages\n" + e, "error")
+				return message.error("could not purge messages, please try again")
+			})
+
+			return message.sendE("Success", `Successfully purged ${deleted.size} messages from **${channel.name}**`, client.colors.green)
+
 
 		} else if (args[0] === "bots") {
 			amount = Number(args[1])
@@ -65,34 +66,30 @@ module.exports = {
 			if (isNaN(amount)) return message.args("Please provide an amount for me to purge")
 			if (amount > 100) return message.error("The amount you provided was over 100, I can only purge 100 messages at a time!")
 
-			message.channel.messages.fetch({
+			let messages = await message.channel.messages.fetch({
 				limit: 100
-			}).then(async messages => {
-
-				messages = messages.filter(m => m.author.bot).array().slice(0, amount);
-
-				message.channel.bulkDelete(messages, true).then(deleted => {
-					return message.sendE("Success", `Successfully purged ${deleted.size} messages from **all bots**`, client.colors.green)
-				}).catch(e => {
-					client.logger.log("Error ran from purging messages\n" + e, "error")
-					return message.error("could not purge messages, please try again")
-				})
-
 			})
+
+			messages = messages.filter(m => m.author.bot).array().slice(0, amount);
+
+			let deleted = await message.channel.bulkDelete(messages, true).catch(e => {
+				client.logger.log("Error ran from purging messages\n" + e, "error")
+				return message.error("could not purge messages, please try again")
+			})
+			return message.sendE("Success", `Successfully purged ${deleted.size} messages from **all bots**`, client.colors.green)
 
 		} else {
 
 			if (isNaN(amount)) return message.args("Please provide an amount for me to purge")
 			if (amount > 100) return message.error("The amount you provided was over 100, I can only purge 100 messages at a time!")
 
-			message.channel.bulkDelete(amount, true).then(deleted => {
-				return message.sendE("Success", `Successfully purged ${deleted.size} messages`, client.colors.green)
-			}).catch(e => {
+			let deleted = await message.channel.bulkDelete(amount, true).catch(e => {
 				client.logger.log("Error ran from purging messages\n" + e, "error")
 				return message.error("could not purge messages, please try again")
 			})
 
-		}
+			return message.sendE("Success", `Successfully purged ${deleted.size} messages`, client.colors.green)
 
+		}
 	}
 }
