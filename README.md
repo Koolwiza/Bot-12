@@ -25,8 +25,6 @@ A bot to help your server with moderation, utility and more.
 
 
 ## 👤 Author
-**Koolwiza**
-
 * Github: [@Koolwiza](https://github.com/Koolwiza)
 
 ## 📔 Table Of Contents
