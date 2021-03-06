@@ -34,8 +34,8 @@ module.exports = {
             .replace(/online/ig, client.emoji.presence.animonline)
             .replace(/offline/ig, client.emoji.presence.animoffline)
             .replace(/idle/ig, client.emoji.presence.animidle)
-        let userActivityType = user.presence.activities[0].name || ""
-        let userStatusMessage = user.presence.activities[0].state || "No status"
+        let userActivityType = user.presence.activities[0] ? user.presence.activities[0].name : ""
+        let userStatusMessage = user.presence.activities[0] ? user.presence.activities[0].state : "No status"
         let userStatusEmoji = user.presence.activities[0].emoji ? user.presence.activities[0].emoji.name : ""
         let uesrNickname = user.displayName || "No nickname"
         let userRoles = user.roles.cache.map(c => `${c.toString()}`)
