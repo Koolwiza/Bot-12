@@ -14,7 +14,7 @@ module.exports = {
     guildOnly: false,
     async execute(message, args, client, data) {
         let snip = client.snipes.get(message.guild.id)
-        if (!snip) return
+        if (!snip) return message.error("There are no snipes in this server")
 
         let embed = new Discord.MessageEmbed()
             .setTitle(message.guild.name + " Snipe")
