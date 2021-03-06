@@ -177,7 +177,7 @@ module.exports = {
       Link: Song.video_url,
       Duration: await FD(Song.lengthSeconds),
       Seconds: Song.lengthSeconds,
-      Thumbnail: Song.thumbnail.thumbnails[0].url,
+      Thumbnail: Song.thumbnails[0].url,
       Author: Song.ownerChannelName,
       AuthorLink: Song.ownerProfileUrl,
       Upload: Song.uploadDate,

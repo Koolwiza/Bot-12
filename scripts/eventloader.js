@@ -10,7 +10,7 @@ module.exports = async (client, path) => {
 
         glob(`${dir}/*.js`, (err, files) => {
           if(err) return reject(err)
-          let eventF = files.map(c => '../' + c)
+          let eventF = files.map(c => `../${c}`)
           return resolve(eventF)
         })
       }) 

@@ -16,13 +16,11 @@ module.exports = async (client, message) => {
 
   client.guildData.ensure(message.guild.id, defaultSettings)
   client.plugins.ensure(message.guild.id, defaultPlugins)
-
   client.userProfiles.ensure(message.author.id, {
     balance: 0,
     premium: false,
     daily: 0
   })
-
   client.disabled.ensure("commands", {
     guild: {},
     global: []
@@ -73,10 +71,10 @@ module.exports = async (client, message) => {
 
   let args = message.content.trim().slice(prefix.length).trim().split(/ +/g)
   let commandName = args.shift().toLowerCase()
-
+  
   if (!message.content.startsWith(prefix)) return;
 
-  let command = message.client.commands.get(commandName) || message.client.commands.find(c => c.aliases && c.aliases.includes(commandName))
+  let command = client.commands.get(commandName) || client.commands.find(c => c.aliases && c.aliases.includes(commandName))
 
   if (!command) return;
 
@@ -114,13 +112,15 @@ module.exports = async (client, message) => {
   if (timestamps.has(message.author.id)) {
     const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
     if (now < expirationTime) {
-      const timeLeft = (expirationTime - now);
+      if(!client.config.owners.includes(message.author.id)) {
+        const timeLeft = (expirationTime - now);
 
-      return message.channel.send(client.baseEmbed(message, {
-        title: "You are on a cooldown!",
-        description: `You can only use this command in **${humanize(timeLeft, {conjunction: " and ", serialComma: false})}** `,
-        color: client.colors.red
-      }))
+        return message.channel.send(client.baseEmbed(message, {
+          title: "You are on a cooldown!",
+          description: `You can only use this command in **${humanize(timeLeft, {conjunction: " and ", serialComma: false})}** `,
+          color: client.colors.red
+        }))
+      } 
     }
   }
 
@@ -131,9 +131,11 @@ module.exports = async (client, message) => {
   let data = client.guildData.get(message.guild.id)
 
   try {
-    let msg = await command.execute(message, args, client, data)
+    let msg = await command.execute(message, args, client, data) // ALL COMMANDS MUST RETURN A PROMISE
+    if(command.ignore) return;
+
     client.logger.cmd(`${message.author.username} used the command ${command.name}`)
-    let r = await msg.react('❌').catch(e => {})
+    let r = await msg.react('❌').catch(() => {})
     try {
       let react = await r.message.awaitReactions((reaction, user) => reaction.emoji.name === "❌" && user.id === message.author.id, {
         time: 10 * 60 * 1000,
@@ -154,9 +156,8 @@ module.exports = async (client, message) => {
 
 
   } catch (e) {
-    console.log(e)
-    client.logger.error(e)
-    client.error(message, e)
+    console.log(e.stack)
+    message.error(e)
   }
 
 }

@@ -15,7 +15,7 @@
 | massban | Massban users | massban \<@user1 @user2 @user3\> [reason]
 | mute | Mute a member | mute \<user\> [time] [reason]
 | plugins | Enable or show plugins | plugins \<type\> [\<property\> \<value\>]
-| poll | An advanced poll command able to hold multiple questions | poll \<option1 \| option2 \| option3 \| ...\>
+| poll | An advanced poll command able to hold multiple questions | poll \<question\> [option1 \| option2 \| option3 \| ...]
 | prefix | Show or set the prefix for the server | prefix [prefix]
 | purge | Purge messages from a channel | purge \<@user \| userID \| channel \| bots] \<amount\>
 | softban | Remove all messages from the user | softban \<user\> [reason]
@@ -26,7 +26,7 @@
 | welcome | Set the welcome channel/message for the server | welcome \<type\> [value]
             
 
-## Developer [6]
+## Developer [5]
     
 | Name | Description | Usage
 | ---- | ----------- | ----- 
@@ -35,7 +35,6 @@
 | enable | Enable a command in either guild or globally | enable \<command\> [guildID]
 | eval | Evaluates a piece of code | eval \<code\>
 | reload | Reload a file/command | reload \<command/alias\>
-| test | test | test
 | topgg | Shows topgg stuff | topgg 
             
 
@@ -60,14 +59,13 @@
 | coinflip | Flip a coin | coinflip
             
 
-## General [11]
+## General [10]
     
 | Name | Description | Usage
 | ---- | ----------- | ----- 
 
 | bitcoin | See bitcoin values or convert bitcoin to currency | bitcoin [amount]
 | botinfo | Gives detailed information about the bot | botinfo
-| calculate | Calculate a math expression | calculate \<expression\>
 | docs | Look at the discord.js docs | docs [query]
 | google | Google a query with valid search results | google \<query\> 
 | help | Sends you a list of commands | help [command]
@@ -78,13 +76,15 @@
 | userinfo | Get detailed information about a user | userinfo [user]
             
 
-## Images [2]
+## Images [4]
     
 | Name | Description | Usage
 | ---- | ----------- | ----- 
 
 | avatar | Show the avatar of a person | avatar [user]
 | captcha | Generate a fake captcha | captcha [user]
+| changemymind | Change my mind canvas | changemymind [user]
+| thesearch | The search continues... | thesearch \<message\>
             
 
 ## Music [21]

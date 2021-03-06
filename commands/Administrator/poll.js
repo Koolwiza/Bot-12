@@ -1,54 +1,58 @@
 const Discord = require('discord.js')
 
-let num = [
-    '1️⃣', '2️⃣', '3️⃣',
-    '4️⃣', '5️⃣', '6️⃣',
-    '7️⃣', '8️⃣', '9️⃣',
-    '🔟'
-]
+let num = {
+    1: '1️⃣',
+    2: '2️⃣',
+    3: '3️⃣',
+    4: '4️⃣',
+    5: '5️⃣',
+    6: '6️⃣',
+    7: '7️⃣',
+    8: '8️⃣',
+    9: '9️⃣',
+    10: '🔟'
+}
 
 module.exports = {
     name: 'poll',
     description: 'An advanced poll command able to hold multiple questions',
-    usage: 'poll <option1 | option2 | option3 | ...>',
+    usage: 'poll <question> [option1 | option2 | option3 | ...]',
     aliases: [],
     required: ['MANAGE_GUILD'],
     user: ['MANAGE_GUILD'],
     category: __dirname.split("commands\\")[1],
-
     premium: false,
     guildOnly: false,
+    ignore: true,
     async execute(message, args, client, data) {
-        if (!message.member.permissions.has("MANAGE_GUILD") || client.modRole(message, data) ) return client.authorPerms(message, ["MANAGE_SERVER"])
+        if (!message.member.permissions.has("MANAGE_GUILD") || client.modRole(message, data)) return client.authorPerms(message, ["MANAGE_SERVER"])
 
-        var questionRe = /"(.+)"/gmi
-
+        var questionRe = /"(.*)"/gmi
         let question = args.join(" ").match(questionRe)
-        if (!question) return message.args("You did not provide question")
-        let options = args.join(" ").slice(question[0].length).split(" | ")
 
+        if (!questionRe) return message.args("You did not provide question")
+        let options = args.join(" ").slice(question[0].length).split(" | ")
         let result = ""
-        if (options[0] === "") {
+        
+        
+        if (options.length <= 1) {
             result += "✅ : Yes\n"
             result += "❌ : No"
-            
-            let msg = await message.sendE(`📊 ${question}`, `React with one of the following to determine your choice!\n${result}`, "BLUE")
 
-            await msg.react("✅")
-            await msg.react("❌")
+            return message.sendE(`📊 ${question}`, `React with one of the following to determine your choice!\n${result}`, "BLUE").then(async msg => {
+                await msg.react("✅")
+                await msg.react("❌")
+            })
+
         } else {
-
             if (options.length > 9) return message.error("Cannot be more than 9 options")
-
-            for (i in options) {
-                result += `${num[i]} : ${options[i]}\n`
-            }
-
-            let msg = await message.sendE(`📊 ${question}`, `React with one of the following to determine your choice!\n${result}`, "BLUE")
-
-            for (x in options) {
-                await msg.react(num[x])
-            }
+            result = options.map((c, i) => {
+                return `${num[i + 1]}: ${c}`
+            })
+            let msg = await message.sendE(`📊 ${question}`, `React with one of the following to determine your choice!\n${result.join('\n')}`, "BLUE")
+            options.map(async (c, x) => {
+                await msg.react(num[x + 1])
+            })
         }
 
 
