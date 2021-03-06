@@ -103,16 +103,12 @@ module.exports = class Bot12Client extends Client {
       autoFetch: true
     })
 
-  }
+    this.tags = new Enmap({
+      name: "tags",
+      fetchAll: true,
+      autoFetch: true
+    })
 
-  error(message, err) {
-    const errorEmbed = new Discord.MessageEmbed()
-      .setTitle("An unexpected error occured")
-      .setDescription(`\`\`\`${err}\`\`\``)
-      .setColor(this.colors.red)
-      .setFooter(this.user.username, this.user.displayAvatarURL())
-      .setAuthor(message.author.tag, message.author.displayAvatarURL())
-    return message.channel.send(errorEmbed)
   }
 
   authorPerms(message, perms) {
@@ -139,6 +135,19 @@ module.exports = class Bot12Client extends Client {
     return message.channel.send(errorEmbed)
   }
 
+  modRole(message, data) {
+    return (!message.member.permissions.has("BAN_MEMBERS") || (message.guild.roles.cache.get(data.modrole) && !message.member.roles.cache.has(data.modrole)))
+  }
+
+
+  applyText(canvas, text, defaultFontSize) {
+    const ctx = canvas.getContext("2d");
+    do {
+      ctx.font = `${defaultFontSize -= 10}px Bold`;
+    } while (ctx.measureText(text).width > 600);
+    return ctx.font;
+  };
+
   baseEmbed(msg, object) {
     let authorObject = {
       name: msg.author.tag,
@@ -158,13 +167,7 @@ module.exports = class Bot12Client extends Client {
   }
 
   missingArgs(message, content) {
-    return message.channel.send(
-      new Discord.MessageEmbed()
-      .setAuthor(message.author.tag, message.author.displayAvatarURL())
-      .setFooter(this.user.username, this.user.displayAvatarURL())
-      .setTitle("Missing Arguments")
-      .setColor(this.colors.red)
-      .setDescription(content))
+
   }
 
 
@@ -177,8 +180,8 @@ module.exports = class Bot12Client extends Client {
       });
 
     text = text
-      .replace(/`/g, "`" + String.fromCharCode(8203))
-      .replace(/@/g, "@" + String.fromCharCode(8203))
+      .replace(/`/g, `\`${String.fromCharCode(8203)}`)
+      .replace(/@/g, `@${String.fromCharCode(8203)}`)
       .replace(this.config.token, "mfa.VkO_2G4Qv3T--NOt--lWetW_--A--tjND--TOKEN--QFTm6YGtzq9PH--4U--tG0");
 
     return text;
