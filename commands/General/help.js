@@ -41,10 +41,11 @@ module.exports = {
             })
 
 
-            let abc = ""
+            let abc = "React with an emoji to see it's following commands!\n"
             cat.forEach(element => {
                 abc += `${client.emoji.help[element.toLowerCase()]}: **${element}**\n`
             })
+            abc += "<:help_house:818174483343867964>: **All commands**"
 
             let embed = new Discord.MessageEmbed()
                 .setTitle("Reaction Help Menu")
@@ -54,12 +55,12 @@ module.exports = {
                 .setColor(client.colors.sky)
             let msg = await message.channel.send(embed)
 
-            for (var [k, v] of Object.entries(categories)) {
+            for (var k of [...Object.keys(categories), '818174483343867964']) {
                 await msg.react(k)
             }
 
             let rFilt = (reaction, user) => {
-                return Object.keys(categories).includes(reaction.emoji.id) && user.id === message.author.id
+                return [...Object.keys(categories), '818174483343867964'].includes(reaction.emoji.id) && user.id === message.author.id
             }
 
             let collector = msg.createReactionCollector(rFilt, {
@@ -78,10 +79,35 @@ module.exports = {
                 }
 
                 let reaction = collected.emoji
-                let content = categories[reaction.id]
-                    .map(em => `\`${em.name} - ${em.description}\``)
-                embed.setDescription(content.join("\n"))
-                msg.edit(embed)
+                if (reaction.id === "818174483343867964") {
+                    let cats = []
+                    commands.forEach(command => {
+                        if (!cats.includes(command.category)) {
+                            if (command.category === "Developer" && !client.config.owners.includes(message.author.id)) {
+                                return;
+                            }
+                            cats.push(command.category)
+                        }
+                    })
+
+
+                    await cats.forEach(cat => {
+                        const tCommands = commands.filter(cmd => cmd.category === cat)
+                        embed.addField(client.emoji.help[cat.toLowerCase()] + ` ${cat} [${tCommands.size}]`, tCommands.map(command => `\`${command.name}\``).join(", "))
+                    })
+                    embed.setDescription(" ")
+                    embed.setTitle(client.user.username + " Help")
+                    msg.reactions.removeAll()
+                    msg.edit(embed)
+                } else {
+                    
+                    let content = categories[reaction.id]
+                        .map(em => `\`${em.name} - ${em.description}\``)
+                    embed.setDescription(content.join("\n"))
+                    msg.edit(embed)
+                }
+
+                
             })
 
             collector.on('end', (_, reason) => {
@@ -90,41 +116,7 @@ module.exports = {
                     msg.edit("This message is inactive", embed)
                 }
             })
-            // Debating if I want to do reaction collector or not
-
-            /* let categories = []
-        const {
-            commands
-        } = message.client
-
-        if (!args.length) {
-
-            let noArgEmbed = new Discord.MessageEmbed()
-                .setThumbnail(message.guild.iconURL())
-                .setDescription(`❯ To get help on a command, use \`${PREFIX}help <command>\`\n\n\`\`\`\n[] - Optional\n<> - Required\n\`\`\`\n`)
-                .setColor(client.colors.sky)
-                .setAuthor(message.author.tag, message.author.avatarURL({
-                    dynamic: true
-                }))
-                .setFooter(message.client.user.username, message.client.user.displayAvatarURL())
-                .setTitle(`${client.commands.size} Total Commands`)
-
-            commands.forEach(command => {
-                if (!categories.includes(command.category)) {
-                    if (command.category === "Developer" && !client.config.owners.includes(message.author.id)) {
-                        return;
-                    }
-                    categories.push(command.category)
-                }
-            })
-
-
-            await categories.forEach(cat => {
-                const tCommands = commands.filter(cmd => cmd.category === cat)
-                noArgEmbed.addField(client.emoji.help[cat.toLowerCase()] + ` ${cat} [${tCommands.size}]`, tCommands.map(command => `\`${command.name}\``).join(", "))
-            })
-            return message.channel.send(noArgEmbed)
-        } */
+            
         } else {
             const name = args[0].toLowerCase();
             const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
