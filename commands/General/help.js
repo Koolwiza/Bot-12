@@ -16,6 +16,10 @@ module.exports = {
     guildOnly: false,
     ignore: true,
     async execute(message, args, client, data) {
+        const {
+            commands
+        } = client
+
 
         PREFIX = client.guildData.get(message.guild.id, "prefix") ? client.guildData.get(message.guild.id, "prefix") : client.config.defaultSettings.prefix
         if (!args.length) {
@@ -23,13 +27,18 @@ module.exports = {
 
             }
             let cat = []
-            const {
-                commands
-            } = client
+
 
             commands.forEach(c => {
-                if (!cat.includes(c.category)) cat.push(c.category)
+                if (!cat.includes(c.category)) {
+                    if (c.category === "Developer" && !client.config.owners.includes(message.author.id)) {
+                        return;
+                    }
+                    cat.push(c.category)
+                }
             })
+
+            console.log(cat)
 
 
             cat.forEach(cat => {
@@ -41,11 +50,12 @@ module.exports = {
             })
 
 
-            let abc = "React with an emoji to see it's following commands!\n"
+            let abc = "React with an emoji to see it's following commands!\n\n"
             cat.forEach(element => {
                 abc += `${client.emoji.help[element.toLowerCase()]}: **${element}**\n`
             })
-            abc += "<:help_house:818174483343867964>: **All commands**"
+            abc += `<:help_house:818174483343867964>: **All commands**
+            [Invite Me](https://discord.com/oauth2/authorize?client_id=800549820485599272&scope=bot&permissions=2080768255) ● [Support](${client.config.support})`
 
             let embed = new Discord.MessageEmbed()
                 .setTitle("Reaction Help Menu")
@@ -54,13 +64,14 @@ module.exports = {
                 .setFooter(client.user.username, client.user.displayAvatarURL())
                 .setColor(client.colors.sky)
             let msg = await message.channel.send(embed)
+            let xmark = client.emoji.misc.xmark.match(/\d+/g)[0]
 
-            for (var k of [...Object.keys(categories), '818174483343867964']) {
+            for (var k of [xmark, ...Object.keys(categories), '818174483343867964', '818523288686035015']) {
                 await msg.react(k)
             }
 
             let rFilt = (reaction, user) => {
-                return [...Object.keys(categories), '818174483343867964'].includes(reaction.emoji.id) && user.id === message.author.id
+                return [...Object.keys(categories), '818174483343867964', xmark, '818523288686035015'].includes(reaction.emoji.id) && user.id === message.author.id
             }
 
             let collector = msg.createReactionCollector(rFilt, {
@@ -99,15 +110,19 @@ module.exports = {
                     embed.setTitle(client.user.username + " Help")
                     msg.reactions.removeAll()
                     msg.edit(embed)
+                } else if (reaction.id === xmark) {
+                    collector.stop()
+                    embed.setColor(null)
+                    msg.edit(embed)
+                } else if (reaction.id === "818523288686035015") {
+                    embed.setDescription(abc)
+                    msg.edit(embed)
                 } else {
-                    
                     let content = categories[reaction.id]
                         .map(em => `\`${em.name} - ${em.description}\``)
                     embed.setDescription(content.join("\n"))
                     msg.edit(embed)
                 }
-
-                
             })
 
             collector.on('end', (_, reason) => {
@@ -116,7 +131,7 @@ module.exports = {
                     msg.edit("This message is inactive", embed)
                 }
             })
-            
+
         } else {
             const name = args[0].toLowerCase();
             const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
@@ -152,7 +167,7 @@ module.exports = {
                 .setDescription(msg)
                 .setColor(client.colors.sky)
                 .setFooter(message.client.user.username, message.client.user.displayAvatarURL())
-                .addField('\u200b', '[Invite Me](https://discord.com/oauth2/authorize?client_id=800549820485599272&scope=bot&permissions=2080768255) ● Support Server coming Soon')
+                .addField('\u200b', '[Invite Me](https://discord.com/oauth2/authorize?client_id=800549820485599272&scope=bot&permissions=2080768255) ● [Support](' + client.config.support + ')')
             return message.channel.send(helpEmbed)
         }
     }
