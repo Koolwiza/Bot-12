@@ -7,23 +7,23 @@
 
 | Name | Description | 
 | ---- | ----------- | 
-| [addemoji](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/addemoji) | Adds the emoji to the server | 
-| [ban](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/ban) | Ban a member from the server | 
-| [delwarn](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/delwarn) | Remove a user's warn using an id | 
-| [goodbye](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/goodbye) | Set the goodbye channel/message for the server | 
-| [kick](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/kick) | Kick a member out of the server | 
-| [massban](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/massban) | Massban users | 
-| [mute](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/mute) | Mute a member | 
-| [plugins](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/plugins) | Enable or show plugins | 
-| [poll](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/poll) | An advanced poll command able to hold multiple questions | 
-| [prefix](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/prefix) | Show or set the prefix for the server | 
-| [purge](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/purge) | Purge messages from a channel | 
-| [softban](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/softban) | Remove all messages from the user | 
-| [tag](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/tag) | All options on a tag | 
-| [unmute](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/unmute) | Unmute a user | 
-| [warn](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/warn) | Warn a user | 
-| [warnings](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/warnings) | Display a user's warnings | 
-| [welcome](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/welcome) | Set the welcome channel/message for the server | 
+| [addemoji](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#addemoji) | Adds the emoji to the server | 
+| [ban](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#ban) | Ban a member from the server | 
+| [delwarn](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#delwarn) | Remove a user's warn using an id | 
+| [goodbye](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#goodbye) | Set the goodbye channel/message for the server | 
+| [kick](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#kick) | Kick a member out of the server | 
+| [massban](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#massban) | Massban users | 
+| [mute](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#mute) | Mute a member | 
+| [plugins](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#plugins) | Enable or show plugins | 
+| [poll](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#poll) | An advanced poll command able to hold multiple questions | 
+| [prefix](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#prefix) | Show or set the prefix for the server | 
+| [purge](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#purge) | Purge messages from a channel | 
+| [softban](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#softban) | Remove all messages from the user | 
+| [tag](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#tag) | All options on a tag | 
+| [unmute](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#unmute) | Unmute a user | 
+| [warn](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#warn) | Warn a user | 
+| [warnings](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#warnings) | Display a user's warnings | 
+| [welcome](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#welcome) | Set the welcome channel/message for the server | 
 
 
             
@@ -32,11 +32,11 @@
 
 | Name | Description | 
 | ---- | ----------- | 
-| [disable](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/disable) | Disable a command in either guild or globally | 
-| [enable](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/enable) | Enable a command in either guild or globally | 
-| [eval](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/eval) | Evaluates a piece of code | 
-| [reload](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/reload) | Reload a file/command | 
-| [topgg](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/topgg) | Shows topgg stuff | 
+| [disable](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#disable) | Disable a command in either guild or globally | 
+| [enable](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#enable) | Enable a command in either guild or globally | 
+| [eval](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#eval) | Evaluates a piece of code | 
+| [reload](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#reload) | Reload a file/command | 
+| [topgg](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#topgg) | Shows topgg stuff | 
 
 
             
@@ -45,10 +45,10 @@
 
 | Name | Description | 
 | ---- | ----------- | 
-| [balance](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/balance) | View the balance of a member | 
-| [daily](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/daily) | Claim the daily reward for more coins!  | 
-| [rob](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/rob) | Rob a user of their money  | 
-| [work](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/work) | Work a job gaining coins | 
+| [balance](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#balance) | View the balance of a member | 
+| [daily](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#daily) | Claim the daily reward for more coins!  | 
+| [rob](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#rob) | Rob a user of their money  | 
+| [work](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#work) | Work a job gaining coins | 
 
 
             
@@ -57,9 +57,9 @@
 
 | Name | Description | 
 | ---- | ----------- | 
-| [ascii](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/ascii) | Turn your text into A S C I I | 
-| [choose](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/choose) | Let the bot choose an option for you | 
-| [coinflip](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/coinflip) | Flip a coin | 
+| [ascii](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#ascii) | Turn your text into A S C I I | 
+| [choose](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#choose) | Let the bot choose an option for you | 
+| [coinflip](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#coinflip) | Flip a coin | 
 
 
             
@@ -68,17 +68,17 @@
 
 | Name | Description | 
 | ---- | ----------- | 
-| [bitcoin](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/bitcoin) | See bitcoin values or convert bitcoin to currency | 
-| [botinfo](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/botinfo) | Gives detailed information about the bot | 
-| [docs](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/docs) | Look at the discord.js docs | 
-| [embed](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/embed) | Create an embed | 
-| [google](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/google) | Google a query with valid search results | 
-| [help](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/help) | Sends you a list of commands | 
-| [ping](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/ping) | A simple ping command | 
-| [say](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/say) | Say something | 
-| [serverinfo](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/serverinfo) | Get detailed information about the server | 
-| [snipe](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/snipe) | Check for deleted messages 👀 | 
-| [userinfo](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/userinfo) | Get detailed information about a user | 
+| [bitcoin](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bitcoin) | See bitcoin values or convert bitcoin to currency | 
+| [botinfo](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#botinfo) | Gives detailed information about the bot | 
+| [docs](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#docs) | Look at the discord.js docs | 
+| [embed](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#embed) | Create an embed | 
+| [google](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#google) | Google a query with valid search results | 
+| [help](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#help) | Sends you a list of commands | 
+| [ping](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#ping) | A simple ping command | 
+| [say](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#say) | Say something | 
+| [serverinfo](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#serverinfo) | Get detailed information about the server | 
+| [snipe](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#snipe) | Check for deleted messages 👀 | 
+| [userinfo](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#userinfo) | Get detailed information about a user | 
 
 
             
@@ -87,10 +87,10 @@
 
 | Name | Description | 
 | ---- | ----------- | 
-| [avatar](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/avatar) | Show the avatar of a person | 
-| [captcha](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/captcha) | Generate a fake captcha | 
-| [changemymind](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/changemymind) | Change my mind canvas | 
-| [thesearch](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/thesearch) | The search continues... | 
+| [avatar](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#avatar) | Show the avatar of a person | 
+| [captcha](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#captcha) | Generate a fake captcha | 
+| [changemymind](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#changemymind) | Change my mind canvas | 
+| [thesearch](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#thesearch) | The search continues... | 
 
 
             
@@ -99,34 +99,34 @@
 
 | Name | Description | 
 | ---- | ----------- | 
-| [applyfilter](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/applyfilter) | Apply a filter to the music | 
-| [bassboost](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/bassboost) | Bassboost the music | 
-| [clean](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/clean) | Clean the queue of the bot for the server, improves music quality! | 
-| [clearqueue](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/clearqueue) | Clear the queue of the server | 
-| [filters](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/filters) | Show the applied filters to the server | 
-| [join](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/join) | Make the bot join voice channel you are in | 
-| [leave](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/leave) | Leave the voice channel the bot is in | 
-| [loop](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/loop) | Loop the music | 
-| [lyrics](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/lyrics) | Show the lyrics for the current song | 
-| [nightcore](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/nightcore) | Enable nightcore mode  | 
-| [pause](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/pause) | Pause the current playing music | 
-| [play](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/play) | Play music into the connected voice channel | 
-| [playing](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/playing) | View what you're playing with progress bar | 
-| [queue](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/queue) | View the current queue in the server | 
-| [resume](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/resume) | If the music was paused earlier, resume it again | 
-| [search](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/search) | Search for a video with details | 
-| [shuffle](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/shuffle) | Shuffle the queue for the server! | 
-| [skip](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/skip) | Skip the current playing song | 
-| [songinfo](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/songinfo) | Gives detailed information about a song | 
-| [stop](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/stop) | Stops the music | 
-| [volume](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md/volume) | Set the volume of the song | 
+| [applyfilter](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#applyfilter) | Apply a filter to the music | 
+| [bassboost](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bassboost) | Bassboost the music | 
+| [clean](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#clean) | Clean the queue of the bot for the server, improves music quality! | 
+| [clearqueue](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#clearqueue) | Clear the queue of the server | 
+| [filters](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#filters) | Show the applied filters to the server | 
+| [join](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#join) | Make the bot join voice channel you are in | 
+| [leave](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#leave) | Leave the voice channel the bot is in | 
+| [loop](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#loop) | Loop the music | 
+| [lyrics](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#lyrics) | Show the lyrics for the current song | 
+| [nightcore](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#nightcore) | Enable nightcore mode  | 
+| [pause](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#pause) | Pause the current playing music | 
+| [play](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#play) | Play music into the connected voice channel | 
+| [playing](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#playing) | View what you're playing with progress bar | 
+| [queue](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#queue) | View the current queue in the server | 
+| [resume](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#resume) | If the music was paused earlier, resume it again | 
+| [search](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#search) | Search for a video with details | 
+| [shuffle](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#shuffle) | Shuffle the queue for the server! | 
+| [skip](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#skip) | Skip the current playing song | 
+| [songinfo](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#songinfo) | Gives detailed information about a song | 
+| [stop](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#stop) | Stops the music | 
+| [volume](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#volume) | Set the volume of the song | 
 
 # Detailed Command List
 ## Administrator | 17 Commands
 
 
 
-## Addemoji
+### Addemoji
 
 Command: addemoji
 
@@ -140,7 +140,7 @@ Aliases:
 
 
 
-## Ban
+### Ban
 
 Command: ban
 
@@ -154,7 +154,7 @@ Aliases:
 
 
 
-## Delwarn
+### Delwarn
 
 Command: delwarn
 
@@ -168,7 +168,7 @@ Aliases:
 
 
 
-## Goodbye
+### Goodbye
 
 Command: goodbye
 
@@ -182,7 +182,7 @@ Aliases:
 
 
 
-## Kick
+### Kick
 
 Command: kick
 
@@ -196,7 +196,7 @@ Aliases:
 
 
 
-## Massban
+### Massban
 
 Command: massban
 
@@ -210,7 +210,7 @@ Aliases:
 
 
 
-## Mute
+### Mute
 
 Command: mute
 
@@ -224,7 +224,7 @@ Aliases:
 
 
 
-## Plugins
+### Plugins
 
 Command: plugins
 
@@ -238,7 +238,7 @@ Aliases:
 
 
 
-## Poll
+### Poll
 
 Command: poll
 
@@ -252,7 +252,7 @@ Aliases:
 
 
 
-## Prefix
+### Prefix
 
 Command: prefix
 
@@ -266,7 +266,7 @@ Aliases:
 
 
 
-## Purge
+### Purge
 
 Command: purge
 
@@ -280,7 +280,7 @@ Aliases:
 
 
 
-## Softban
+### Softban
 
 Command: softban
 
@@ -294,7 +294,7 @@ Aliases:
 
 
 
-## Tag
+### Tag
 
 Command: tag
 
@@ -308,7 +308,7 @@ Aliases:
 
 
 
-## Unmute
+### Unmute
 
 Command: unmute
 
@@ -322,7 +322,7 @@ Aliases:
 
 
 
-## Warn
+### Warn
 
 Command: warn
 
@@ -336,7 +336,7 @@ Aliases:
 
 
 
-## Warnings
+### Warnings
 
 Command: warnings
 
@@ -350,7 +350,7 @@ Aliases:
 
 
 
-## Welcome
+### Welcome
 
 Command: welcome
 
@@ -365,7 +365,7 @@ Aliases:
 
 
 
-## Disable
+### Disable
 
 Command: disable
 
@@ -379,7 +379,7 @@ Aliases:
 
 
 
-## Enable
+### Enable
 
 Command: enable
 
@@ -393,7 +393,7 @@ Aliases:
 
 
 
-## Eval
+### Eval
 
 Command: eval
 
@@ -407,7 +407,7 @@ Aliases: ev, evaluate
 
 
 
-## Reload
+### Reload
 
 Command: reload
 
@@ -421,7 +421,7 @@ Aliases: re
 
 
 
-## Topgg
+### Topgg
 
 Command: topgg
 
@@ -436,7 +436,7 @@ Aliases:
 
 
 
-## Balance
+### Balance
 
 Command: balance
 
@@ -450,7 +450,7 @@ Aliases: money, cash, coins, bal, coin
 
 
 
-## Daily
+### Daily
 
 Command: daily
 
@@ -464,7 +464,7 @@ Aliases:
 
 
 
-## Rob
+### Rob
 
 Command: rob
 
@@ -478,7 +478,7 @@ Aliases:
 
 
 
-## Work
+### Work
 
 Command: work
 
@@ -493,7 +493,7 @@ Aliases: job
 
 
 
-## Ascii
+### Ascii
 
 Command: ascii
 
@@ -507,7 +507,7 @@ Aliases:
 
 
 
-## Choose
+### Choose
 
 Command: choose
 
@@ -521,7 +521,7 @@ Aliases:
 
 
 
-## Coinflip
+### Coinflip
 
 Command: coinflip
 
@@ -536,7 +536,7 @@ Aliases: cf, flip
 
 
 
-## Bitcoin
+### Bitcoin
 
 Command: bitcoin
 
@@ -550,7 +550,7 @@ Aliases:
 
 
 
-## Botinfo
+### Botinfo
 
 Command: botinfo
 
@@ -564,7 +564,7 @@ Aliases: bot
 
 
 
-## Docs
+### Docs
 
 Command: docs
 
@@ -578,7 +578,7 @@ Aliases: djs
 
 
 
-## Embed
+### Embed
 
 Command: embed
 
@@ -592,7 +592,7 @@ Aliases:
 
 
 
-## Google
+### Google
 
 Command: google
 
@@ -606,7 +606,7 @@ Aliases:
 
 
 
-## Help
+### Help
 
 Command: help
 
@@ -620,7 +620,7 @@ Aliases: commands, command
 
 
 
-## Ping
+### Ping
 
 Command: ping
 
@@ -634,7 +634,7 @@ Aliases:
 
 
 
-## Say
+### Say
 
 Command: say
 
@@ -648,7 +648,7 @@ Aliases:
 
 
 
-## Serverinfo
+### Serverinfo
 
 Command: serverinfo
 
@@ -662,7 +662,7 @@ Aliases: server, guild
 
 
 
-## Snipe
+### Snipe
 
 Command: snipe
 
@@ -676,7 +676,7 @@ Aliases:
 
 
 
-## Userinfo
+### Userinfo
 
 Command: userinfo
 
@@ -691,7 +691,7 @@ Aliases: member, user
 
 
 
-## Avatar
+### Avatar
 
 Command: avatar
 
@@ -705,7 +705,7 @@ Aliases: av, pfp, profilepicture
 
 
 
-## Captcha
+### Captcha
 
 Command: captcha
 
@@ -719,7 +719,7 @@ Aliases:
 
 
 
-## Changemymind
+### Changemymind
 
 Command: changemymind
 
@@ -733,7 +733,7 @@ Aliases:
 
 
 
-## Thesearch
+### Thesearch
 
 Command: thesearch
 
@@ -748,7 +748,7 @@ Aliases:
 
 
 
-## Applyfilter
+### Applyfilter
 
 Command: applyfilter
 
@@ -762,7 +762,7 @@ Aliases: filter
 
 
 
-## Bassboost
+### Bassboost
 
 Command: bassboost
 
@@ -776,7 +776,7 @@ Aliases:
 
 
 
-## Clean
+### Clean
 
 Command: clean
 
@@ -790,7 +790,7 @@ Aliases:
 
 
 
-## Clearqueue
+### Clearqueue
 
 Command: clearqueue
 
@@ -804,7 +804,7 @@ Aliases:
 
 
 
-## Filters
+### Filters
 
 Command: filters
 
@@ -818,7 +818,7 @@ Aliases:
 
 
 
-## Join
+### Join
 
 Command: join
 
@@ -832,7 +832,7 @@ Aliases:
 
 
 
-## Leave
+### Leave
 
 Command: leave
 
@@ -846,7 +846,7 @@ Aliases:
 
 
 
-## Loop
+### Loop
 
 Command: loop
 
@@ -860,7 +860,7 @@ Aliases:
 
 
 
-## Lyrics
+### Lyrics
 
 Command: lyrics
 
@@ -874,7 +874,7 @@ Aliases:
 
 
 
-## Nightcore
+### Nightcore
 
 Command: nightcore
 
@@ -888,7 +888,7 @@ Aliases:
 
 
 
-## Pause
+### Pause
 
 Command: pause
 
@@ -902,7 +902,7 @@ Aliases:
 
 
 
-## Play
+### Play
 
 Command: play
 
@@ -916,7 +916,7 @@ Aliases:
 
 
 
-## Playing
+### Playing
 
 Command: playing
 
@@ -930,7 +930,7 @@ Aliases:
 
 
 
-## Queue
+### Queue
 
 Command: queue
 
@@ -944,7 +944,7 @@ Aliases:
 
 
 
-## Resume
+### Resume
 
 Command: resume
 
@@ -958,7 +958,7 @@ Aliases:
 
 
 
-## Search
+### Search
 
 Command: search
 
@@ -972,7 +972,7 @@ Aliases:
 
 
 
-## Shuffle
+### Shuffle
 
 Command: shuffle
 
@@ -986,7 +986,7 @@ Aliases: shufflequeue
 
 
 
-## Skip
+### Skip
 
 Command: skip
 
@@ -1000,7 +1000,7 @@ Aliases:
 
 
 
-## Songinfo
+### Songinfo
 
 Command: songinfo
 
@@ -1014,7 +1014,7 @@ Aliases:
 
 
 
-## Stop
+### Stop
 
 Command: stop
 
@@ -1028,7 +1028,7 @@ Aliases:
 
 
 
-## Volume
+### Volume
 
 Command: volume
 
