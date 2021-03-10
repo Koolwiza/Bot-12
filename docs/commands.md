@@ -7,23 +7,23 @@
 
 | Name | Description | 
 | ---- | ----------- | 
-| [addemoji](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#addemoji) | Adds the emoji to the server | 
-| [ban](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#ban) | Ban a member from the server | 
-| [delwarn](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#delwarn) | Remove a user's warn using an id | 
-| [goodbye](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#goodbye) | Set the goodbye channel/message for the server | 
-| [kick](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#kick) | Kick a member out of the server | 
-| [massban](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#massban) | Massban users | 
-| [mute](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#mute) | Mute a member | 
-| [plugins](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#plugins) | Enable or show plugins | 
-| [poll](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#poll) | An advanced poll command able to hold multiple questions | 
-| [prefix](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#prefix) | Show or set the prefix for the server | 
-| [purge](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#purge) | Purge messages from a channel | 
-| [softban](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#softban) | Remove all messages from the user | 
-| [tag](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#tag) | All options on a tag | 
-| [unmute](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#unmute) | Unmute a user | 
-| [warn](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#warn) | Warn a user | 
-| [warnings](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#warnings) | Display a user's warnings | 
-| [welcome](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#welcome) | Set the welcome channel/message for the server | 
+| [addemoji](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#addemoji) | Adds the emoji to the server | 
+| [ban](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#ban) | Ban a member from the server | 
+| [delwarn](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#delwarn) | Remove a user's warn using an id | 
+| [goodbye](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#goodbye) | Set the goodbye channel/message for the server | 
+| [kick](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#kick) | Kick a member out of the server | 
+| [massban](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#massban) | Massban users | 
+| [mute](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#mute) | Mute a member | 
+| [plugins](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#plugins) | Enable or show plugins | 
+| [poll](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#poll) | An advanced poll command able to hold multiple questions | 
+| [prefix](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#prefix) | Show or set the prefix for the server | 
+| [purge](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#purge) | Purge messages from a channel | 
+| [softban](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#softban) | Remove all messages from the user | 
+| [tag](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#tag) | All options on a tag | 
+| [unmute](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#unmute) | Unmute a user | 
+| [warn](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#warn) | Warn a user | 
+| [warnings](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#warnings) | Display a user's warnings | 
+| [welcome](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#welcome) | Set the welcome channel/message for the server | 
 
 
             
@@ -32,11 +32,11 @@
 
 | Name | Description | 
 | ---- | ----------- | 
-| [disable](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#disable) | Disable a command in either guild or globally | 
-| [enable](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#enable) | Enable a command in either guild or globally | 
-| [eval](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#eval) | Evaluates a piece of code | 
-| [reload](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#reload) | Reload a file/command | 
-| [topgg](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#topgg) | Shows topgg stuff | 
+| [disable](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#disable) | Disable a command in either guild or globally | 
+| [enable](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#enable) | Enable a command in either guild or globally | 
+| [eval](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#eval) | Evaluates a piece of code | 
+| [reload](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#reload) | Reload a file/command | 
+| [topgg](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#topgg) | Shows topgg stuff | 
 
 
             
@@ -45,10 +45,10 @@
 
 | Name | Description | 
 | ---- | ----------- | 
-| [balance](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#balance) | View the balance of a member | 
-| [daily](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#daily) | Claim the daily reward for more coins!  | 
-| [rob](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#rob) | Rob a user of their money  | 
-| [work](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#work) | Work a job gaining coins | 
+| [balance](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#balance) | View the balance of a member | 
+| [daily](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#daily) | Claim the daily reward for more coins!  | 
+| [rob](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#rob) | Rob a user of their money  | 
+| [work](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#work) | Work a job gaining coins | 
 
 
             
@@ -57,9 +57,9 @@
 
 | Name | Description | 
 | ---- | ----------- | 
-| [ascii](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#ascii) | Turn your text into A S C I I | 
-| [choose](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#choose) | Let the bot choose an option for you | 
-| [coinflip](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#coinflip) | Flip a coin | 
+| [ascii](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#ascii) | Turn your text into A S C I I | 
+| [choose](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#choose) | Let the bot choose an option for you | 
+| [coinflip](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#coinflip) | Flip a coin | 
 
 
             
@@ -68,17 +68,17 @@
 
 | Name | Description | 
 | ---- | ----------- | 
-| [bitcoin](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bitcoin) | See bitcoin values or convert bitcoin to currency | 
-| [botinfo](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#botinfo) | Gives detailed information about the bot | 
-| [docs](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#docs) | Look at the discord.js docs | 
-| [embed](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#embed) | Create an embed | 
-| [google](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#google) | Google a query with valid search results | 
-| [help](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#help) | Sends you a list of commands | 
-| [ping](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#ping) | A simple ping command | 
-| [say](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#say) | Say something | 
-| [serverinfo](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#serverinfo) | Get detailed information about the server | 
-| [snipe](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#snipe) | Check for deleted messages 👀 | 
-| [userinfo](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#userinfo) | Get detailed information about a user | 
+| [bitcoin](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bitcoin) | See bitcoin values or convert bitcoin to currency | 
+| [botinfo](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#botinfo) | Gives detailed information about the bot | 
+| [docs](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#docs) | Look at the discord.js docs | 
+| [embed](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#embed) | Create an embed | 
+| [google](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#google) | Google a query with valid search results | 
+| [help](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#help) | Sends you a list of commands | 
+| [ping](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#ping) | A simple ping command | 
+| [say](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#say) | Say something | 
+| [serverinfo](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#serverinfo) | Get detailed information about the server | 
+| [snipe](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#snipe) | Check for deleted messages 👀 | 
+| [userinfo](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#userinfo) | Get detailed information about a user | 
 
 
             
@@ -87,10 +87,10 @@
 
 | Name | Description | 
 | ---- | ----------- | 
-| [avatar](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#avatar) | Show the avatar of a person | 
-| [captcha](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#captcha) | Generate a fake captcha | 
-| [changemymind](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#changemymind) | Change my mind canvas | 
-| [thesearch](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#thesearch) | The search continues... | 
+| [avatar](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#avatar) | Show the avatar of a person | 
+| [captcha](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#captcha) | Generate a fake captcha | 
+| [changemymind](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#changemymind) | Change my mind canvas | 
+| [thesearch](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#thesearch) | The search continues... | 
 
 
             
@@ -99,27 +99,27 @@
 
 | Name | Description | 
 | ---- | ----------- | 
-| [applyfilter](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#applyfilter) | Apply a filter to the music | 
-| [bassboost](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bassboost) | Bassboost the music | 
-| [clean](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#clean) | Clean the queue of the bot for the server, improves music quality! | 
-| [clearqueue](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#clearqueue) | Clear the queue of the server | 
-| [filters](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#filters) | Show the applied filters to the server | 
-| [join](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#join) | Make the bot join voice channel you are in | 
-| [leave](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#leave) | Leave the voice channel the bot is in | 
-| [loop](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#loop) | Loop the music | 
-| [lyrics](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#lyrics) | Show the lyrics for the current song | 
-| [nightcore](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#nightcore) | Enable nightcore mode  | 
-| [pause](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#pause) | Pause the current playing music | 
-| [play](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#play) | Play music into the connected voice channel | 
-| [playing](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#playing) | View what you're playing with progress bar | 
-| [queue](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#queue) | View the current queue in the server | 
-| [resume](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#resume) | If the music was paused earlier, resume it again | 
-| [search](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#search) | Search for a video with details | 
-| [shuffle](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#shuffle) | Shuffle the queue for the server! | 
-| [skip](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#skip) | Skip the current playing song | 
-| [songinfo](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#songinfo) | Gives detailed information about a song | 
-| [stop](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#stop) | Stops the music | 
-| [volume](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#volume) | Set the volume of the song | 
+| [applyfilter](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#applyfilter) | Apply a filter to the music | 
+| [bassboost](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bassboost) | Bassboost the music | 
+| [clean](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#clean) | Clean the queue of the bot for the server, improves music quality! | 
+| [clearqueue](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#clearqueue) | Clear the queue of the server | 
+| [filters](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#filters) | Show the applied filters to the server | 
+| [join](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#join) | Make the bot join voice channel you are in | 
+| [leave](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#leave) | Leave the voice channel the bot is in | 
+| [loop](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#loop) | Loop the music | 
+| [lyrics](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#lyrics) | Show the lyrics for the current song | 
+| [nightcore](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#nightcore) | Enable nightcore mode  | 
+| [pause](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#pause) | Pause the current playing music | 
+| [play](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#play) | Play music into the connected voice channel | 
+| [playing](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#playing) | View what you're playing with progress bar | 
+| [queue](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#queue) | View the current queue in the server | 
+| [resume](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#resume) | If the music was paused earlier, resume it again | 
+| [search](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#search) | Search for a video with details | 
+| [shuffle](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#shuffle) | Shuffle the queue for the server! | 
+| [skip](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#skip) | Skip the current playing song | 
+| [songinfo](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#songinfo) | Gives detailed information about a song | 
+| [stop](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#stop) | Stops the music | 
+| [volume](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#volume) | Set the volume of the song | 
 
 # Detailed Command List
 ## Administrator | 17 Commands
@@ -136,7 +136,7 @@ Usage: addemoji <emoji> [name]
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -150,7 +150,7 @@ Usage: ban <user> [reason]
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -164,7 +164,7 @@ Usage: delwarn <id>
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -178,7 +178,7 @@ Usage: goodbye <type> [value]
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -192,7 +192,7 @@ Usage: kick <user> [reason]
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -206,7 +206,7 @@ Usage: massban <@user1 @user2 @user3> [reason]
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -220,7 +220,7 @@ Usage: mute <user> [time] [reason]
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -234,7 +234,7 @@ Usage: plugins <type> [<property> <value>]
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -248,7 +248,7 @@ Usage: poll <question> [option1 | option2 | option3 | ...]
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -262,7 +262,7 @@ Usage: prefix [prefix]
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -276,7 +276,7 @@ Usage: purge <@user | userID | channel | bots] <amount>
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -290,7 +290,7 @@ Usage: softban <user> [reason]
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -304,7 +304,7 @@ Usage: tag <type | tagname> [value] [new value]
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -318,7 +318,7 @@ Usage: unmute
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -332,7 +332,7 @@ Usage: warn <user> <reason>
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -346,7 +346,7 @@ Usage: warnings <user>
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -360,7 +360,7 @@ Usage: welcome <type> [value]
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 ## Developer | 5 Commands
 
 
@@ -375,7 +375,7 @@ Usage: disable <command> [guildID]
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -389,7 +389,7 @@ Usage: enable <command> [guildID]
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -403,7 +403,7 @@ Usage: eval <code>
 
 Aliases: ev, evaluate
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -417,7 +417,7 @@ Usage: reload <command/alias>
 
 Aliases: re
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -431,7 +431,7 @@ Usage: topgg
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 ## Economy | 4 Commands
 
 
@@ -446,7 +446,7 @@ Usage: balance <user>
 
 Aliases: money, cash, coins, bal, coin
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -460,7 +460,7 @@ Usage: daily
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -474,7 +474,7 @@ Usage: rob
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -488,7 +488,7 @@ Usage: balance <user>
 
 Aliases: job
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 ## Fun | 3 Commands
 
 
@@ -503,7 +503,7 @@ Usage: ascii <text>
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -517,7 +517,7 @@ Usage: choose <option1 | option2 | option3 ... >
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -531,7 +531,7 @@ Usage: coinflip
 
 Aliases: cf, flip
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 ## General | 11 Commands
 
 
@@ -546,7 +546,7 @@ Usage: bitcoin [amount]
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -560,7 +560,7 @@ Usage: botinfo
 
 Aliases: bot
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -574,7 +574,7 @@ Usage: docs [query]
 
 Aliases: djs
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -588,7 +588,7 @@ Usage: embed
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -602,7 +602,7 @@ Usage: google <query>
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -616,7 +616,7 @@ Usage: help [command]
 
 Aliases: commands, command
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -630,7 +630,7 @@ Usage: ping
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -644,7 +644,7 @@ Usage: say <message>
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -658,7 +658,7 @@ Usage: serverinfo
 
 Aliases: server, guild
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -672,7 +672,7 @@ Usage: snipe
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -686,7 +686,7 @@ Usage: userinfo [user]
 
 Aliases: member, user
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 ## Images | 4 Commands
 
 
@@ -701,7 +701,7 @@ Usage: avatar [user]
 
 Aliases: av, pfp, profilepicture
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -715,7 +715,7 @@ Usage: captcha [user]
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -729,7 +729,7 @@ Usage: changemymind [user]
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -743,7 +743,7 @@ Usage: thesearch <message>
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 ## Music | 21 Commands
 
 
@@ -758,7 +758,7 @@ Usage: applyfilter <filter>
 
 Aliases: filter
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -772,7 +772,7 @@ Usage: bassboost
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -786,7 +786,7 @@ Usage: clean
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -800,7 +800,7 @@ Usage: clearqueue
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -814,7 +814,7 @@ Usage: filters [filter name]
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -828,7 +828,7 @@ Usage: join
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -842,7 +842,7 @@ Usage: leave
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -856,7 +856,7 @@ Usage: loop
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -870,7 +870,7 @@ Usage: lyrics
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -884,7 +884,7 @@ Usage: nightcore
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -898,7 +898,7 @@ Usage: pause
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -912,7 +912,7 @@ Usage: play <youtube link | youtube id | youtube playlist | query>
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -926,7 +926,7 @@ Usage: playing
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -940,7 +940,7 @@ Usage: queue
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -954,7 +954,7 @@ Usage:
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -968,7 +968,7 @@ Usage: search <video>
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -982,7 +982,7 @@ Usage: shuffle
 
 Aliases: shufflequeue
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -996,7 +996,7 @@ Usage: skip
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -1010,7 +1010,7 @@ Usage: songinfo <video>
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -1024,7 +1024,7 @@ Usage: stop
 
 Aliases: 
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
 
 
 
@@ -1038,4 +1038,4 @@ Usage: volume <volume>
 
 Aliases: setvolume
 
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md#bot-12-command-list)
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/command-list.md#bot-12-command-list)
