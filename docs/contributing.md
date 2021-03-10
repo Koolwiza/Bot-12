@@ -6,5 +6,3 @@
 4) Make necessary changes and commit those changes `git commit -m "Added feature"`
 5) Push changes to github `git push origin my-new-branch`
 6) Submit PR with [this format](https://github.com/Koolwiza/Bot-12/blob/main/.github/pr-format.md)
-
-

@@ -36,6 +36,8 @@ Yea.... Same thing as installing enmap 😅
 
 Simple, install the module using `npm install <module_name>`
 
+### Error: spawn ffmpeg ENOENT
+
 ### nodemon.ps1 cannot be loaded because running scripts is disabled on this system.
 
 This one, it's because the windows default system disables untrusted scrypts.

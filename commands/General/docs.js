@@ -22,15 +22,13 @@ fetch = require('node-fetch'),
                 description: "What are you looking for?",
                 title: "No query inputted"
             }))
-            fetch(`https://djsdocs.sorta.moe/v2/embed?src=${version}&q=${query}`).then(res => {
-                res.json()
-                    .then(body => {
-                        return message.channel.send({
-                            embed: body
-                        }).catch(c => {
-                            message.error("Invalid query")
-                        })
-                    })
+            let res = await fetch(`https://djsdocs.sorta.moe/v2/embed?src=${version}&q=${query}`)
+            let body = await res.json()
+
+            return message.channel.send({
+                embed: body
+            }).catch(c => {
+                message.error("Invalid query")
             })
 
         }

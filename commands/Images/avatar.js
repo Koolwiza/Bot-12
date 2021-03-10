@@ -19,7 +19,7 @@ module.exports = {
     let user = await client.resolveUser(args[0]) || message.author
 
     let size = [16, 32, 64, 128, 256, 512, 1024, 2048, 4096]
-    let type = ['webp', 'png', 'jpg']
+    let type = ['webp', 'png', 'jpg', 'gif', 'jpeg']
 
     let embed = new Discord.MessageEmbed()
       .setAuthor(message.author.tag, message.author.displayAvatarURL())
@@ -28,7 +28,7 @@ module.exports = {
       .setColor(client.colors.sky)
 
       type.forEach(em => {
-        embed.addField(em.toProperCase(), size.map(s => `[${s}](${user.displayAvatarURL({size: s, type: em})})`).join(" | "))
+        embed.addField(em.toProperCase(), size.map(s => `[${s}](${user.displayAvatarURL({size: s, format: em})})`).join(" | "))
       })
 
 
