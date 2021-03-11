@@ -165,12 +165,7 @@ module.exports = class Bot12Client extends Client {
       }
     }
   }
-
-  missingArgs(message, content) {
-
-  }
-
-
+  
   async clean(text) {
     if (text && text.constructor.name == "Promise")
       text = await text;
@@ -245,7 +240,10 @@ module.exports = class Bot12Client extends Client {
         time: limit,
         errors: ["time"]
       });
-      return collected.first().content;
+
+      const collect = collected.first()
+
+      return collect.attachments.first() ? collect.attachments.first().proxyURL() : collect.content;
     } catch (e) {
       return false;
     }
