@@ -54,7 +54,15 @@ module.exports = {
             cat.forEach(element => {
                 abc += `${client.emoji.help[element.toLowerCase()]}: **${element}**\n`
             })
+
+            let xmark = client.emoji.misc.xmark.match(/\d+/g)[0]
+
             abc += `<:help_house:818174483343867964>: **All commands**
+
+            **Additional**:
+            <:help_back:818523288686035015>:  **Back to main menu**
+            ${client.emoji.misc.xmark}: **Stop menu**
+            
             [Invite Me](https://discord.com/oauth2/authorize?client_id=800549820485599272&scope=bot&permissions=2080768255) ● [Support](${client.config.support})`
 
             let embed = new Discord.MessageEmbed()
@@ -64,7 +72,6 @@ module.exports = {
                 .setFooter(client.user.username, client.user.displayAvatarURL())
                 .setColor(client.colors.sky)
             let msg = await message.channel.send(embed)
-            let xmark = client.emoji.misc.xmark.match(/\d+/g)[0]
 
             for (var k of [xmark, ...Object.keys(categories), '818174483343867964', '818523288686035015']) {
                 await msg.react(k)
@@ -101,7 +108,6 @@ module.exports = {
                         }
                     })
 
-
                     await cats.forEach(cat => {
                         const tCommands = commands.filter(cmd => cmd.category === cat)
                         embed.addField(client.emoji.help[cat.toLowerCase()] + ` ${cat} [${tCommands.size}]`, tCommands.map(command => `\`${command.name}\``).join(", "))
@@ -112,6 +118,7 @@ module.exports = {
                     msg.edit(embed)
                 } else if (reaction.id === xmark) {
                     collector.stop()
+                    msg.reactions.removeAll()
                     embed.setColor(null)
                     msg.edit(embed)
                 } else if (reaction.id === "818523288686035015") {
