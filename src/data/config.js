@@ -4,6 +4,7 @@ module.exports = {
      */
     "token": "ODA4NDEwNzkyNDIwMDQ4OTc2.YCGJOA.AzrZVjh9-54_z1_JdRMIY27wCaE",
     "google_api_key": "AIzaSyCbtj-nkM0sTjWXSyyPGoegCBtUQtAikwE",
+    "support":"https://discord.gg/JHJQ4tG2rf",
     "owners": [
         "774352602678558790",
         "660552441166823462"
