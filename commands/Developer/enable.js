@@ -1,6 +1,6 @@
-const Discord = require('discord.js'),
-  ms = require('ms'),
-  enmap = require('enmap')
+const {
+  pullAt
+} = require('lodash')
 
 module.exports = {
   name: 'enable',
@@ -48,7 +48,7 @@ module.exports = {
 
         if (!cmd[guildI].includes(command.name)) return message.error('This command isn\'t disabled')
 
-        let c = cmd[guildI].remove(command.name)
+        let c = pullAt(cmd[guildI], command.name)
         client.disabled.set("commands", c, `guild.${guildI}`)
 
         await message.channel.send(`${client.emoji.misc.check} **\`${command.name}\` enabled in ${client.guilds.cache.get(guildI).name}**`)
