@@ -1,12 +1,15 @@
 const Discord = require('discord.js'),
 	ms = require('ms'),
-	fetch = require("node-fetch")
+	fetch = require("node-fetch"),
+	{
+		sample
+	} = require('lodash')
 
 let numbers = [
-    '1️⃣', '2️⃣', '3️⃣',
-    '4️⃣', '5️⃣', '6️⃣',
-    '7️⃣', '8️⃣', '9️⃣',
-    '🔟'
+	'1️⃣', '2️⃣', '3️⃣',
+	'4️⃣', '5️⃣', '6️⃣',
+	'7️⃣', '8️⃣', '9️⃣',
+	'🔟'
 ]
 
 module.exports = {
@@ -17,14 +20,14 @@ module.exports = {
 	required: [],
 	user: [],
 	category: __dirname.split("commands\\")[1],
-	
+
 	premium: false,
 	guildOnly: false,
 	async execute(message, args, client, data) {
 		let query = args.join("+")
 		if (!query) return message.args("Please provide a query")
 
-		if(!client.config.google_api_key) return console.log("No google api key, command not executable")
+		if (!client.config.google_api_key) return console.log("No google api key, command not executable")
 
 		const request = await fetch(encodeURI(`https://www.googleapis.com/customsearch/v1?key=${client.config.google_api_key}&cx=017576662512468239146:omuauf_lfve&q=${query}`)).catch(e => {
 			return message.error(e.error.message)
@@ -33,7 +36,7 @@ module.exports = {
 
 		let embed = new Discord.MessageEmbed()
 			.setTitle(`Google search, query: ` + args.join(" "))
-			.setColor(['4285F4', 'DB4437', 'F4B400', '0F9D58'].random())
+			.setColor(sample(['4285F4', 'DB4437', 'F4B400', '0F9D58']))
 			.setThumbnail("https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png")
 			.setAuthor(message.author.username, message.author.displayAvatarURL())
 			.setFooter(client.user.username, client.user.displayAvatarURL())
@@ -56,6 +59,6 @@ Suggestions:
 			`)
 		}
 
-		 return message.channel.send(embed)
+		return message.channel.send(embed)
 	}
 }
