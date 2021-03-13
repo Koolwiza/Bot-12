@@ -5,11 +5,13 @@ const {
   defaultPlugins
 } = require('../src/data/config.js'),
   humanize = require('humanize-duration'),
+  AutomodClient = require('../src/struct/AutomodClient')
   client = require('../bot12')
 
 let cooldowns = client.cooldowns
 
 module.exports = async (client, message) => {
+  const automod = new AutomodClient(message, client)
 
   if (message.author.bot) return
   if (!message.guild || message.channel.type === "dm") return
@@ -35,39 +37,8 @@ module.exports = async (client, message) => {
     .setFooter(client.user.username, client.user.displayAvatarURL())
     .setColor(client.colors.sky)
   )
-
-  if (client.plugins.get(message.guild.id, "invites")) {
-    let inviteRegex = /(https?:\/\/)?(www\.)?(disc(ord)?\.(gg|li|me|io)|discordapp\.com\/invite|invite\.gg)\/.+/gi
-    if (inviteRegex.test(message.content) && !message.member.permissions.has("MANAGE_GUILD") ) {
-      message.delete().catch(() => {})
-      return message.channel.send(`${message.author.toString()}, ${client.emoji.misc.xmark} **You aren't allowed to send invites in this server**`).then(m => {
-        setTimeout(() => {
-          m.delete().catch(() => {})
-        }, 5000)
-      })
-    }
-  } else if (client.plugins.get(message.guild.id, "links")) {
-    let urlReg = /^(?:(?:https?|ftp):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/ig
-    if (urlReg.test(message.content) && !message.member.permissions.has("MANAGE_GUILD") ) {
-      message.delete().catch(() => {})
-      return message.channel.send(`${message.author.toString()}, ${client.emoji.misc.xmark} **You aren't allowed to send links in this server**`).then(m => {
-        setTimeout(() => {
-          m.delete().catch(() => {})
-        }, 5000)
-      })
-    }
-  } else if (client.plugins.get(message.guild.id, "spoilers")) {
-    let spoilerRegex = /\|\|.*?\|\|/gmi
-    const match = message.content.match(spoilerRegex)
-    if (Array.isArray(match) && match.length >= 3 && !message.member.permissions.has("MANAGE_GUILD")) {
-      message.delete().catch(() => {})
-      return message.channel.send(`${message.author.toString()}, ${client.emoji.misc.xmark} **You aren't allowed to send multiple spoilers in this server**`).then(m => {
-        setTimeout(() => {
-          m.delete().catch(() => {})
-        }, 5000)
-      })
-    }
-  }
+  
+  automod.init() // Initiate automod client
 
   let args = message.content.trim().slice(prefix.length).trim().split(/ +/g)
   let commandName = args.shift().toLowerCase()
