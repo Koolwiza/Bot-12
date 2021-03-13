@@ -28,7 +28,7 @@
 
             
 
-### Developer [5] 
+### Developer [6] 
 
 | Name | Description | 
 | ---- | ----------- | 
@@ -64,14 +64,13 @@
 
             
 
-### General [11] 
+### General [10] 
 
 | Name | Description | 
 | ---- | ----------- | 
 | [bitcoin](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bitcoin) | See bitcoin values or convert bitcoin to currency | 
 | [botinfo](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#botinfo) | Gives detailed information about the bot | 
 | [docs](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#docs) | Look at the discord.js docs | 
-| [embed](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#embed) | Create an embed | 
 | [google](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#google) | Google a query with valid search results | 
 | [help](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#help) | Sends you a list of commands | 
 | [ping](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#ping) | A simple ping command | 
@@ -132,7 +131,6 @@ Command: addemoji\
 Description: Adds the emoji to the server\
 Usage: addemoji <emoji> [name]\
 Aliases: 
-
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
 
 
@@ -310,7 +308,7 @@ Usage: welcome <type> [value]\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-## Developer | 5 Commands
+## Developer | 6 Commands
 
 
 
@@ -445,7 +443,7 @@ Usage: coinflip\
 Aliases: cf, flip
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-## General | 11 Commands
+## General | 10 Commands
 
 
 
@@ -477,17 +475,6 @@ Command: docs\
 Description: Look at the discord.js docs\
 Usage: docs [query]\
 Aliases: djs
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-
-
-
-### Embed
-
-Command: embed\
-Description: Create an embed\
-Usage: embed\
-Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
 
