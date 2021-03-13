@@ -23,7 +23,7 @@ module.exports = {
         "invites": false,
         "spoilers": false,
         "deletemodcmds": false,
-        "antibots": false
+        "antibots": false,
     },
     "status": [{
             "type": "PLAYING",
