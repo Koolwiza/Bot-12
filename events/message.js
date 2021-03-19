@@ -2,9 +2,9 @@ const Discord = require("discord.js"),
   {
     defaultSettings,
     defaultPlugins
-  } = require('../data/config.js'),
+  } = require('../src/data/config.js'),
   humanize = require('humanize-duration'),
-  AutomodClient = require('../struct/AutomodClient')
+  AutomodClient = require('../src/struct/AutomodClient')
 
 module.exports = async (client, message) => {
 
