@@ -58,13 +58,15 @@ MessageEmbed.prototype.success = function () {
 	return this
 }
 
-MessageEmbed.prototype.default = function () {
-	this.setColor(client.colors.sky)
+MessageEmbed.prototype.error = function () {
+	this.setColor(client.colors.red)
 	return this
 }
 
-MessageEmbed.prototype.error = function () {
-	this.setColor(client.colors.red)
+MessageEmbed.prototype.default = function(message) {
+	this
+	.setAuthor(message.author.tag, message.author.displayAvatarURL())
+	.setFooter(client.user.username, client.user.displayAvatarURL())
 	return this
 }
 
