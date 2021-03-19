@@ -1,5 +1,5 @@
 const chalk = require('chalk'),
-    config = require('../src/data/config')
+    config = require('../data/config')
 
 module.exports = async client => {
     console.clear()

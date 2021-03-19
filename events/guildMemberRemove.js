@@ -2,7 +2,7 @@ const chalk = require('chalk')
 const {
     defaultPlugins,
     defaultSettings
-} = require('../src/data/config.js')
+} = require('../data/config.js')
 const Discord = require('discord.js')
 
 module.exports = async (client, member) => {

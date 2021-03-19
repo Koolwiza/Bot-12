@@ -1,16 +1,14 @@
-const Discord = require("discord.js");
-const Enmap = require('enmap')
-const {
-  defaultSettings,
-  defaultPlugins
-} = require('../src/data/config.js'),
+const Discord = require("discord.js"),
+  {
+    defaultSettings,
+    defaultPlugins
+  } = require('../data/config.js'),
   humanize = require('humanize-duration'),
-  AutomodClient = require('../src/struct/AutomodClient')
-  client = require('../bot12')
-
-let cooldowns = client.cooldowns
+  AutomodClient = require('../struct/AutomodClient')
 
 module.exports = async (client, message) => {
+
+  let cooldowns = client.cooldowns
   const automod = new AutomodClient(message, client)
 
   if (message.author.bot) return
@@ -37,12 +35,14 @@ module.exports = async (client, message) => {
     .setFooter(client.user.username, client.user.displayAvatarURL())
     .setColor(client.colors.sky)
   )
-  
+
   automod.init() // Initiate automod client
+
+
 
   let args = message.content.trim().slice(prefix.length).trim().split(/ +/g)
   let commandName = args.shift().toLowerCase()
-  
+
   if (!message.content.startsWith(prefix)) return;
 
   let command = client.commands.get(commandName) || client.commands.find(c => c.aliases && c.aliases.includes(commandName))
@@ -83,15 +83,11 @@ module.exports = async (client, message) => {
   if (timestamps.has(message.author.id)) {
     const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
     if (now < expirationTime) {
-      if(!client.config.owners.includes(message.author.id)) {
+      if (!client.config.owners.includes(message.author.id)) {
         const timeLeft = (expirationTime - now);
 
-        return message.channel.send(client.baseEmbed(message, {
-          title: "You are on a cooldown!",
-          description: `You can only use this command in **${humanize(timeLeft, {conjunction: " and ", serialComma: false})}** `,
-          color: client.colors.red
-        }))
-      } 
+        return message.sendE("You are on a cooldown!", `You can only use this command in **${humanize(timeLeft, {conjunction: " and ", serialComma: false})}** `, client.colors.red)
+      }
     }
   }
 
@@ -103,7 +99,7 @@ module.exports = async (client, message) => {
 
   try {
     let msg = await command.execute(message, args, client, data) // ALL COMMANDS MUST RETURN A PROMISE
-    if(command.ignore) return;
+    if (command.ignore) return;
 
     client.logger.cmd(`${message.author.username} used the command ${command.name}`)
     let r = await msg.react('🗑️').catch(() => {})
@@ -116,7 +112,7 @@ module.exports = async (client, message) => {
       if (react.first().emoji.name === '🗑️') msg.delete()
       client.logger.cmd(`${message.author.username} deleted the command usage ${command.name}`)
     } catch (e) {
-      if(msg.embeds.length) {
+      if (msg.embeds.length) {
         let embed = msg.embeds[0]
         embed.color = ""
         return msg.edit("This message is inactive", embed)
@@ -132,4 +128,3 @@ module.exports = async (client, message) => {
   }
 
 }
-
