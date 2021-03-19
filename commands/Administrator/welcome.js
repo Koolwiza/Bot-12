@@ -27,11 +27,7 @@ module.exports = {
 
             client.guildData.set(message.guild.id, channel.id, "joinchannel")
 
-            return message.channel.send(client.baseEmbed(message, {
-                title: "Success",
-                description: "Redirected join messages to " + channel.toString(),
-                color: client.colors.green
-            }))
+            return message.sendE("Success", `Redirected join messages to ${channel.toString()}`)
 
         } else if (type === "message") {
             let msg = args.slice(1).join(" ")
@@ -40,11 +36,7 @@ module.exports = {
 
             client.guildData.set(message.guild.id, msg, "joinmessage")
 
-            return message.channel.send(client.baseEmbed(message, {
-                title: "Success",
-                description: "Changed join message to ```" + msg + "```",
-                color: client.colors.green
-            }))
+            return message.sendE("Success", "Changed join message to ```" + msg + "```", client.colors.green)
         } else if (type === "show") {
             let variables = ""
 

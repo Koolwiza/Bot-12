@@ -18,11 +18,7 @@ module.exports = {
 
         let user = await client.resolveUser(args[0])
 
-        if (user.id === message.author.id) return message.channel.send(client.baseEmbed(message, {
-            title: "Error",
-            description: "You can't mute yourself!",
-            color: client.colors.red
-        }))
+        if (user.id === message.author.id) return message.error("You can't mute yourself")
 
 
         if (!user) return message.args("Please provide a user to mute!\n```@user or userID```")
@@ -78,15 +74,13 @@ module.exports = {
                     description: `Your mute in ${message.guild.name} has been removed!`,
                     color: client.colors.green
                 }))
+
+
             }
 
         }, time)
 
-        return message.channel.send(client.baseEmbed(message, {
-            title: "Success",
-            description: `I have muted **${user.tag}** | ${reason}`,
-            color: client.colors.green
-        }))
+        return message.sendE("Success", `I have muted **${user.tag}** | ${reason}`, client.colors.green)
         
     }
 }

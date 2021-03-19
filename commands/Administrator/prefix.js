@@ -1,7 +1,4 @@
-const Discord = require('discord.js'),
-    {
-        defaultSettings
-    } = require('../../src/data/config.js')
+
 
 module.exports = {
     name: 'prefix',
@@ -17,7 +14,7 @@ module.exports = {
         if (!message.member.permissions.has("MANAGE_GUILD") || client.modRole(message, data) ) return client.authorPerms(message, ["MANAGE_SERVER"])
 
         if (!args.length) {
-            let prefix = client.guildData.get(message.guild.id).prefix || defaultSettings.prefix
+            let prefix = client.guildData.get(message.guild.id).prefix || client.config.defaultSettings.prefix
 
             return message.sendE(`Prefix for ${message.guild.name}`, `👋 My prefix is \`${prefix}\`. 
 To configure it, run the command \`prefix [prefix]\` e.g \`prefix !\``, client.colors.sky)
