@@ -3,7 +3,7 @@
 
             
 
-### Administrator [17] 
+### Administrator [18] 
 
 | Name | Description | 
 | ---- | ----------- | 
@@ -18,6 +18,7 @@
 | [poll](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#poll) | An advanced poll command able to hold multiple questions | 
 | [prefix](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#prefix) | Show or set the prefix for the server | 
 | [purge](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#purge) | Purge messages from a channel | 
+| [role](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#role) | Add a role to a user | 
 | [softban](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#softban) | Remove all messages from the user | 
 | [tag](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#tag) | All options on a tag | 
 | [unmute](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#unmute) | Unmute a user | 
@@ -28,7 +29,7 @@
 
             
 
-### Developer [6] 
+### Developer [7] 
 
 | Name | Description | 
 | ---- | ----------- | 
@@ -36,6 +37,8 @@
 | [enable](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#enable) | Enable a command in either guild or globally | 
 | [eval](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#eval) | Evaluates a piece of code | 
 | [reload](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#reload) | Reload a file/command | 
+| [test](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#test) |  | 
+| [timeout](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#timeout) |  | 
 | [topgg](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#topgg) | Shows topgg stuff | 
 
 
@@ -91,37 +94,8 @@
 | [changemymind](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#changemymind) | Change my mind canvas | 
 | [thesearch](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#thesearch) | The search continues... | 
 
-
-            
-
-### Music [21] 
-
-| Name | Description | 
-| ---- | ----------- | 
-| [applyfilter](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#applyfilter) | Apply a filter to the music | 
-| [bassboost](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bassboost) | Bassboost the music | 
-| [clean](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#clean) | Clean the queue of the bot for the server, improves music quality! | 
-| [clearqueue](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#clearqueue) | Clear the queue of the server | 
-| [filters](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#filters) | Show the applied filters to the server | 
-| [join](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#join) | Make the bot join voice channel you are in | 
-| [leave](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#leave) | Leave the voice channel the bot is in | 
-| [loop](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#loop) | Loop the music | 
-| [lyrics](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#lyrics) | Show the lyrics for the current song | 
-| [nightcore](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#nightcore) | Enable nightcore mode  | 
-| [pause](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#pause) | Pause the current playing music | 
-| [play](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#play) | Play music into the connected voice channel | 
-| [playing](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#playing) | View what you're playing with progress bar | 
-| [queue](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#queue) | View the current queue in the server | 
-| [resume](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#resume) | If the music was paused earlier, resume it again | 
-| [search](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#search) | Search for a video with details | 
-| [shuffle](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#shuffle) | Shuffle the queue for the server! | 
-| [skip](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#skip) | Skip the current playing song | 
-| [songinfo](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#songinfo) | Gives detailed information about a song | 
-| [stop](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#stop) | Stops the music | 
-| [volume](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#volume) | Set the volume of the song | 
-
 # Detailed Command List
-## Administrator | 17 Commands
+## Administrator | 18 Commands
 
 
 
@@ -131,6 +105,7 @@ Command: addemoji\
 Description: Adds the emoji to the server\
 Usage: addemoji <emoji> [name]\
 Aliases: 
+
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
 
 
@@ -245,6 +220,17 @@ Aliases:
 
 
 
+### Role
+
+Command: role\
+Description: Add a role to a user\
+Usage: role <user> <role>\
+Aliases: 
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
 ### Softban
 
 Command: softban\
@@ -308,7 +294,7 @@ Usage: welcome <type> [value]\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-## Developer | 6 Commands
+## Developer | 7 Commands
 
 
 
@@ -351,6 +337,28 @@ Command: reload\
 Description: Reload a file/command\
 Usage: reload <command/alias>\
 Aliases: re
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Test
+
+Command: test\
+Description: \
+Usage: \
+Aliases: 
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Timeout
+
+Command: timeout\
+Description: \
+Usage: \
+Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
 
@@ -597,237 +605,5 @@ Command: thesearch\
 Description: The search continues...\
 Usage: thesearch <message>\
 Aliases: 
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-## Music | 21 Commands
-
-
-
-### Applyfilter
-
-Command: applyfilter\
-Description: Apply a filter to the music\
-Usage: applyfilter <filter>\
-Aliases: filter
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-
-
-
-### Bassboost
-
-Command: bassboost\
-Description: Bassboost the music\
-Usage: bassboost\
-Aliases: 
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-
-
-
-### Clean
-
-Command: clean\
-Description: Clean the queue of the bot for the server, improves music quality!\
-Usage: clean\
-Aliases: 
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-
-
-
-### Clearqueue
-
-Command: clearqueue\
-Description: Clear the queue of the server\
-Usage: clearqueue\
-Aliases: 
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-
-
-
-### Filters
-
-Command: filters\
-Description: Show the applied filters to the server\
-Usage: filters [filter name]\
-Aliases: 
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-
-
-
-### Join
-
-Command: join\
-Description: Make the bot join voice channel you are in\
-Usage: join \
-Aliases: 
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-
-
-
-### Leave
-
-Command: leave\
-Description: Leave the voice channel the bot is in\
-Usage: leave\
-Aliases: 
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-
-
-
-### Loop
-
-Command: loop\
-Description: Loop the music\
-Usage: loop\
-Aliases: 
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-
-
-
-### Lyrics
-
-Command: lyrics\
-Description: Show the lyrics for the current song\
-Usage: lyrics\
-Aliases: 
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-
-
-
-### Nightcore
-
-Command: nightcore\
-Description: Enable nightcore mode \
-Usage: nightcore\
-Aliases: 
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-
-
-
-### Pause
-
-Command: pause\
-Description: Pause the current playing music\
-Usage: pause\
-Aliases: 
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-
-
-
-### Play
-
-Command: play\
-Description: Play music into the connected voice channel\
-Usage: play <youtube link | youtube id | youtube playlist | query>\
-Aliases: 
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-
-
-
-### Playing
-
-Command: playing\
-Description: View what you're playing with progress bar\
-Usage: playing\
-Aliases: 
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-
-
-
-### Queue
-
-Command: queue\
-Description: View the current queue in the server\
-Usage: queue\
-Aliases: 
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-
-
-
-### Resume
-
-Command: resume\
-Description: If the music was paused earlier, resume it again\
-Usage: \
-Aliases: 
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-
-
-
-### Search
-
-Command: search\
-Description: Search for a video with details\
-Usage: search <video>\
-Aliases: 
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-
-
-
-### Shuffle
-
-Command: shuffle\
-Description: Shuffle the queue for the server!\
-Usage: shuffle\
-Aliases: shufflequeue
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-
-
-
-### Skip
-
-Command: skip\
-Description: Skip the current playing song\
-Usage: skip\
-Aliases: 
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-
-
-
-### Songinfo
-
-Command: songinfo\
-Description: Gives detailed information about a song\
-Usage: songinfo <video>\
-Aliases: 
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-
-
-
-### Stop
-
-Command: stop\
-Description: Stops the music\
-Usage: stop\
-Aliases: 
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-
-
-
-### Volume
-
-Command: volume\
-Description: Set the volume of the song\
-Usage: volume <volume>\
-Aliases: setvolume
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
