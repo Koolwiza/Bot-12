@@ -17,8 +17,8 @@ client.on("disconnect", () => client.logger.warn("Bot is disconnecting..."))
 async function init() {
   await cmdloader(client, "commands")
   await eventloader(client, "events")
-  await docsUpdater(client)
   await require('./helpers/extenders')
+  await docsUpdater(client)
   client.login(client.config.token)
 }
 init()

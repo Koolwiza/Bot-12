@@ -67,48 +67,23 @@ module.exports = class Bot12Client extends Client {
      * @property {cooldowns} - Stores cooldowns for each command by user
      */
 
-    this.guildData = new Enmap({
-      name: "guild",
-      fetchAll: false,
-      autoFetch: true
-    })
+    let enmaps = {
+      "guildData":"guild",
+      "plugins":"plugin",
+      "modActions":"actions",
+      "userProfiles":"profiles",
+      "disabled":"commands",
+      "cooldowns":"cooldowns",
+      "tags":"tags"
+    }
 
-    this.plugins = new Enmap({
-      name: "plugin",
-      fetchAll: false,
-      autoFetch: true
-    })
-
-    this.modActions = new Enmap({
-      name: "actions",
-      fetchAll: true,
-      autoFetch: true
-    })
-
-    this.userProfiles = new Enmap({
-      name: "profiles",
-      fetchAll: true,
-      autoFetch: true
-    })
-
-    this.disabled = new Enmap({
-      name: "commands",
-      fetchAll: false,
-      autoFetch: true
-    })
-
-    this.cooldowns = new Enmap({
-      name: "cooldowns",
-      fetchAll: true,
-      autoFetch: true
-    })
-
-    this.tags = new Enmap({
-      name: "tags",
-      fetchAll: true,
-      autoFetch: true
-    })
-
+    for(const [k,v] of Object.entries(enmaps)){
+      this[k] = new Enmap({
+        name: v,
+        fetchAll: true,
+        autoFetch: true
+      })
+    }
   }
 
   authorPerms(message, perms) {
@@ -165,12 +140,7 @@ module.exports = class Bot12Client extends Client {
       }
     }
   }
-
-  missingArgs(message, content) {
-
-  }
-
-
+  
   async clean(text) {
     if (text && text.constructor.name == "Promise")
       text = await text;
@@ -186,6 +156,8 @@ module.exports = class Bot12Client extends Client {
 
     return text;
   }
+
+  
 
   async resolveUser(search) {
     let userRegex = /^<@!?(\d+)>$/
@@ -245,11 +217,16 @@ module.exports = class Bot12Client extends Client {
         time: limit,
         errors: ["time"]
       });
-      return collected.first().content;
+
+      const collect = collected.first()
+
+      return collect.attachments.first() ? collect.attachments.first().proxyURL() : collect.content;
     } catch (e) {
       return false;
     }
-  };
+  }
+
+  
 
   wait = require("util").promisify(setTimeout);
 

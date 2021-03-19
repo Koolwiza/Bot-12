@@ -2,7 +2,7 @@ const chalk = require('chalk')
 const {
   defaultPlugins,
   defaultSettings
-} = require('../')
+} = require('../src/data/config')
 const Discord = require('discord.js')
 
 module.exports = async (client, member) => {
@@ -30,7 +30,7 @@ module.exports = async (client, member) => {
         await owner.send(
           new Discord.MessageEmbed()
           .setTitle(":warning: Bot added")
-          .setDescription(`${user.toString()} has added the bot ${bot.toString()} to your server. This user does not have the modrole. The bot has been kicked `)
+          .setDescription(`${user.toString()} has added the bot ${bot.toString()} to your server. This user is not whitelisted. The bot has been kicked `)
           .setColor(client.colors.red)
           .setFooter(client.user.username, client.user.displayAvatarURL())
         )

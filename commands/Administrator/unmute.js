@@ -18,11 +18,7 @@ module.exports = {
 
 
         let user = await client.resolveUser(args[0])
-        if (user.id === message.author.id) return message.channel.send(client.baseEmbed(message, {
-            title: "Error",
-            description: "You can't mute yourself!",
-            color: client.colors.red
-        }))
+        if (user.id === message.author.id) return message.error("You can't mute yourself")
 
         if (!user) return message.args("Please provide a user to mute!\n```@user or userID```")
         let a = await message.guild.members.fetch(user.id).catch(c => {})

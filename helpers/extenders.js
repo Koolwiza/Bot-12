@@ -58,45 +58,16 @@ MessageEmbed.prototype.success = function () {
 	return this
 }
 
-MessageEmbed.prototype.default = function () {
-	this.setColor(client.colors.sky)
-	return this
-}
-
 MessageEmbed.prototype.error = function () {
 	this.setColor(client.colors.red)
 	return this
 }
 
-/**
- * Array prototype functions
- */
-
-Array.prototype.random = function () {
-	return this[Math.floor(Math.random() * this.length)];
-};
-
-Array.prototype.remove = function (a) {
-	const index = this.indexOf(a);
-	if (index > -1) {
-		this.splice(index, 1);
-	}
+MessageEmbed.prototype.default = function(message) {
+	this
+	.setAuthor(message.author.tag, message.author.displayAvatarURL())
+	.setFooter(client.user.username, client.user.displayAvatarURL())
 	return this
-}
-
-Array.prototype.shuffle = function () {
-	const array = [];
-	this.forEach(element => array.push(element));
-	let currentIndex = array.length,
-		temporaryValue, randomIndex;
-	while (0 !== currentIndex) {
-		randomIndex = Math.floor(Math.random() * currentIndex);
-		currentIndex -= 1;
-		temporaryValue = array[currentIndex];
-		array[currentIndex] = array[randomIndex];
-		array[randomIndex] = temporaryValue;
-	}
-	return array;
 }
 
 /**
