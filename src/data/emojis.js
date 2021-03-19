@@ -44,7 +44,6 @@ module.exports = {
         "utility": "<:utility:802227236723228672>",
         "developer": "<:developer:813203304976482307>",
         "general": "<:flag:804095791705620560>",
-        "music": "<:music:809222497576812565>",
         "economy": "<:money:813809931005198382>",
         "images":"<:image:810945961345679411>",
         "fun":"<:fun:813205669930336276>"

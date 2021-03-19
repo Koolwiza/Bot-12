@@ -2,7 +2,7 @@ module.exports = {
     /**
      * Fill config values with your desired things
      */
-    "token": "ODA4NDEwNzkyNDIwMDQ4OTc2.YCGJOA.AzrZVjh9-54_z1_JdRMIY27wCaE",
+    "token": "ODA4NDEwNzkyNDIwMDQ4OTc2.YCGJOA.l-81-tMvbl2Uz26ttVyMSeoGdeE",
     "google_api_key": "AIzaSyCbtj-nkM0sTjWXSyyPGoegCBtUQtAikwE",
     "support":"https://discord.gg/JHJQ4tG2rf",
     "owners": [
