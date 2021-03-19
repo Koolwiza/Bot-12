@@ -38,9 +38,6 @@ module.exports = {
                 }
             })
 
-            console.log(cat)
-
-
             cat.forEach(cat => {
                 let match = /\d+/g
                 let emojiID = client.emoji.help[cat.toLowerCase()].match(match)[0]
