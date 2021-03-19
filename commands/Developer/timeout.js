@@ -1,5 +1,5 @@
 const Discord = require('discord.js'),
-    Timeout = require('../../struct/Timeouts')
+    Timeout = require('../../src/struct/Timeouts')
 
 module.exports = {
     name: 'timeout',
