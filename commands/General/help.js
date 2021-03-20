@@ -123,7 +123,7 @@ module.exports = {
                     msg.edit(embed)
                 } else {
                     let content = categories[reaction.id]
-                        .map(em => `\`${em.name} - ${em.description}\``)
+                        .map(em => `\`${em.name}\` - ${em.description}`)
                     embed.setDescription(content.join("\n"))
                     msg.edit(embed)
                 }
