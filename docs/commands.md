@@ -8,6 +8,7 @@
 | Name | Description | 
 | ---- | ----------- | 
 | [addemoji](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#addemoji) | Adds the emoji to the server | 
+| [antialt](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#antialt) | Configure antialt settings | 
 | [ban](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#ban) | Ban a member from the server | 
 | [delwarn](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#delwarn) | Remove a user's warn using an id | 
 | [goodbye](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#goodbye) | Set the goodbye channel/message for the server | 
@@ -18,7 +19,6 @@
 | [poll](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#poll) | An advanced poll command able to hold multiple questions | 
 | [prefix](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#prefix) | Show or set the prefix for the server | 
 | [purge](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#purge) | Purge messages from a channel | 
-| [role](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#role) | Add a role to a user | 
 | [softban](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#softban) | Remove all messages from the user | 
 | [tag](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#tag) | All options on a tag | 
 | [unmute](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#unmute) | Unmute a user | 
@@ -29,7 +29,7 @@
 
             
 
-### Developer [7] 
+### Developer [6] 
 
 | Name | Description | 
 | ---- | ----------- | 
@@ -37,8 +37,7 @@
 | [enable](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#enable) | Enable a command in either guild or globally | 
 | [eval](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#eval) | Evaluates a piece of code | 
 | [reload](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#reload) | Reload a file/command | 
-| [test](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#test) |  | 
-| [timeout](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#timeout) |  | 
+| [timeout](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#timeout) | adsf | 
 | [topgg](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#topgg) | Shows topgg stuff | 
 
 
@@ -104,6 +103,17 @@
 Command: addemoji\
 Description: Adds the emoji to the server\
 Usage: addemoji <emoji> [name]\
+Aliases: 
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Antialt
+
+Command: antialt\
+Description: Configure antialt settings\
+Usage: antialt <type> [value]\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
@@ -220,17 +230,6 @@ Aliases:
 
 
 
-### Role
-
-Command: role\
-Description: Add a role to a user\
-Usage: role <user> <role>\
-Aliases: 
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-
-
-
 ### Softban
 
 Command: softban\
@@ -294,7 +293,7 @@ Usage: welcome <type> [value]\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-## Developer | 7 Commands
+## Developer | 6 Commands
 
 
 
@@ -342,22 +341,11 @@ Aliases: re
 
 
 
-### Test
-
-Command: test\
-Description: \
-Usage: \
-Aliases: 
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-
-
-
 ### Timeout
 
 Command: timeout\
-Description: \
-Usage: \
+Description: adsf\
+Usage: asdf\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
