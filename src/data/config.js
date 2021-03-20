@@ -24,6 +24,13 @@ module.exports = {
         "spoilers": false,
         "deletemodcmds": false,
         "antibots": false,
+        "antialt":false
+    },
+    "antiAltSettings": { // Default for antiAlt
+        "age": 30, // Days
+        "punishment":"kick",
+        "whitelisted":[],
+        "log":""
     },
     "status": [{
             "type": "PLAYING",

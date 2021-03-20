@@ -18,20 +18,7 @@ Discord.Constants.DefaultOptions.ws.properties.$browser = "Discord Android"
 
 module.exports = class Bot12Client extends Client {
   constructor(options) {
-    super({
-
-      /**
-       * Our Client options
-       * @property {ws} - Websocket manager for discord.js
-       * Provided Intents property is for discord.js v13
-       * @property {restTimeOffset} - Reduce amount of time between multiple REST requests
-       */
-
-      restTimeOffset: 250,
-      ws: {
-        intents: Intents.ALL
-      }
-    });
+    super(options);
 
     /**
      * Attach useful properties and functions to the extended client
@@ -74,7 +61,8 @@ module.exports = class Bot12Client extends Client {
       "userProfiles":"profiles",
       "disabled":"commands",
       "cooldowns":"cooldowns",
-      "tags":"tags"
+      "tags":"tags",
+      "antiAlt":"antialt"
     }
 
     for(const [k,v] of Object.entries(enmaps)){
