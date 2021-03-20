@@ -29,7 +29,7 @@
 
           try {
               let member = await message.guild.members.fetch(user.id).catch(c => {})
-              user.send(`**${client.emoji.misc.xmark} You have been banned from ${message.guild.name} for ${reason}**`)
+              await user.send(`**${client.emoji.misc.xmark} You have been banned from ${message.guild.name} for ${reason}**`)
               await message.guild.members.ban(member, {
                   reason: reason,
                   days: 7

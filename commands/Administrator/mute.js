@@ -36,7 +36,7 @@ module.exports = {
 
         let muteRole = message.guild.roles.cache.find(c => c.name.toLowerCase() === "muted")
         if (!muteRole) {
-            message.guild.roles.create({
+            await message.guild.roles.create({
                 name: "Muted",
                 color: "#818386",
                 mentionable: false

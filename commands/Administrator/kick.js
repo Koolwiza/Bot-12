@@ -28,7 +28,7 @@ module.exports = {
 
         try {
             let member = await message.guild.members.fetch(user.id).catch(() => {})
-            user.send(`**${client.emoji.misc.xmark} You have been kicked in ${message.guild.name} for ${reason}**`)
+            await user.send(`**${client.emoji.misc.xmark} You have been kicked in ${message.guild.name} for ${reason}**`)
             await member.kick(reason)
             return message.sendE("Success", `I have kicked ${user.tag} | ${reason}`, client.colors.green)
 
