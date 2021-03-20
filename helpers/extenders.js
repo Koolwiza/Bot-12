@@ -63,9 +63,9 @@ MessageEmbed.prototype.error = function () {
 	return this
 }
 
-MessageEmbed.prototype.default = function(message) {
+MessageEmbed.prototype.default = function(user) {
 	this
-	.setAuthor(message.author.tag, message.author.displayAvatarURL())
+	.setAuthor(user.tag, user.displayAvatarURL())
 	.setFooter(client.user.username, client.user.displayAvatarURL())
 	return this
 }
