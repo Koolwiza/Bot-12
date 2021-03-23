@@ -109,7 +109,7 @@ module.exports = {
                         const tCommands = commands.filter(cmd => cmd.category === cat)
                         embed.addField(client.emoji.help[cat.toLowerCase()] + ` ${cat} [${tCommands.size}]`, tCommands.map(command => `\`${command.name}\``).join(", "))
                     })
-                    embed.setDescription(" ")
+                    embed.setDescription(`**${client.commands.size}** Total Commands`)
                     embed.setTitle(client.user.username + " Help")
                     msg.reactions.removeAll()
                     msg.edit(embed)
@@ -124,7 +124,11 @@ module.exports = {
                 } else {
                     let content = categories[reaction.id]
                         .map(em => `\`${em.name}\` - ${em.description}`)
-                    embed.setDescription(content.join("\n"))
+                    embed.setDescription(content.join("\n") + `\n
+
+                    **Additional**:
+                    <:help_back:818523288686035015>:  **Back to main menu**
+                    ${client.emoji.misc.xmark}: **Stop menu**`)
                     msg.edit(embed)
                 }
             })
