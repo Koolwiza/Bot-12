@@ -3,8 +3,11 @@ module.exports = {
      * Fill config values with your desired things
      */
     "token": "ODA4NDEwNzkyNDIwMDQ4OTc2.YCGJOA.l-81-tMvbl2Uz26ttVyMSeoGdeE",
-    "google_api_key": "AIzaSyCbtj-nkM0sTjWXSyyPGoegCBtUQtAikwE",
-    "support":"https://discord.gg/JHJQ4tG2rf",
+    "google": {
+        "search": "AIzaSyCbtj-nkM0sTjWXSyyPGoegCBtUQtAikwE", // Custom Search API Key
+        "translate": 'translate-308403' // Google translate Project ID
+    },
+    "support": "https://discord.gg/JHJQ4tG2rf",
     "owners": [
         "774352602678558790",
         "660552441166823462"
@@ -24,13 +27,18 @@ module.exports = {
         "spoilers": false,
         "deletemodcmds": false,
         "antibots": false,
-        "antialt":false
+        "antialt": false
+    },
+    "userData": {
+        "balance": 0,
+        "premium": false,
+        "daily": 0
     },
     "antiAltSettings": { // Default for antiAlt
         "age": 30, // Days
-        "punishment":"kick",
-        "whitelisted":[],
-        "log":""
+        "punishment": "kick",
+        "whitelisted": [],
+        "log": ""
     },
     "status": [{
             "type": "PLAYING",
@@ -50,5 +58,5 @@ module.exports = {
      * {guilds} - Client's guilds
      * {users} - Client's cached users
      * {channels} - Client's channels
-    */
+     */
 }
