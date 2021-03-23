@@ -1,7 +1,8 @@
 const Discord = require("discord.js"),
   {
     defaultSettings,
-    defaultPlugins
+    defaultPlugins,
+    userData
   } = require('../src/data/config.js'),
   humanize = require('humanize-duration'),
   AutomodClient = require('../src/struct/AutomodClient')
@@ -14,13 +15,16 @@ module.exports = async (client, message) => {
   if (message.author.bot) return
   if (!message.guild || message.channel.type === "dm") return
 
-  client.guildData.ensure(message.guild.id, defaultSettings)
-  client.plugins.ensure(message.guild.id, defaultPlugins)
-  client.userProfiles.ensure(message.author.id, {
-    balance: 0,
-    premium: false,
-    daily: 0
-  })
+  const data = {
+    guild: client.guildData.ensure(message.guild.id, defaultSettings),
+    user: (user) => {
+      return client.userProfiles.ensure(user.id, {
+        ...userData,
+        user: message.author.id
+      })
+    },
+    plugins: client.plugins.ensure(message.guild.id, defaultPlugins)
+  }
   client.disabled.ensure("commands", {
     guild: {},
     global: []
@@ -95,7 +99,8 @@ module.exports = async (client, message) => {
   cooldowns.set(command.name, timestamps)
 
   setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
-  let data = client.guildData.get(message.guild.id)
+  
+
 
   try {
     let msg = await command.execute(message, args, client, data) // ALL COMMANDS MUST RETURN A PROMISE
