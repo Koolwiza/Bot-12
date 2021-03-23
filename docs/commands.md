@@ -43,12 +43,14 @@
 
             
 
-### Economy [4] 
+### Economy [6] 
 
 | Name | Description | 
 | ---- | ----------- | 
 | [balance](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#balance) | View the balance of a member | 
 | [daily](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#daily) | Claim the daily reward for more coins!  | 
+| [give](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#give) | Give money to another person | 
+| [leaderboard](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#leaderboard) | Display the global leaderboard for economy | 
 | [rob](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#rob) | Rob a user of their money  | 
 | [work](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#work) | Work a job gaining coins | 
 
@@ -360,7 +362,7 @@ Usage: topgg \
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-## Economy | 4 Commands
+## Economy | 6 Commands
 
 
 
@@ -381,6 +383,28 @@ Command: daily\
 Description: Claim the daily reward for more coins! \
 Usage: daily\
 Aliases: 
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Give
+
+Command: give\
+Description: Give money to another person\
+Usage: give <user> <amount>\
+Aliases: pay, transfer
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Leaderboard
+
+Command: leaderboard\
+Description: Display the global leaderboard for economy\
+Usage: \
+Aliases: lb, top
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
 
