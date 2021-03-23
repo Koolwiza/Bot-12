@@ -13,7 +13,6 @@ Discord.Constants.DefaultOptions.ws.properties.$browser = "Discord Android"
 /**
  * A class used to attach functions and properties to the main client provided by discord
  * @extends {Client}
- * @param {restTimeOffset} Reduces time between requesting API
  */
 
 module.exports = class Bot12Client extends Client {
@@ -146,6 +145,17 @@ module.exports = class Bot12Client extends Client {
   }
 
   
+  randomString(length) {
+    var result = '';
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for (var i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  }
+
+  
 
   async resolveUser(search) {
     let userRegex = /^<@!?(\d+)>$/
@@ -186,15 +196,6 @@ module.exports = class Bot12Client extends Client {
     return role;
   }
 
-  randomString(length) {
-    var result = '';
-    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    var charactersLength = characters.length;
-    for (var i = 0; i < length; i++) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
-    return result;
-  }
 
   async awaitReply(msg, question, limit = 60000) {
     const filter = m => m.author.id === msg.author.id;
