@@ -2,10 +2,10 @@ module.exports = {
     /**
      * Fill config values with your desired things
      */
-    "token": "ODA4NDEwNzkyNDIwMDQ4OTc2.YCGJOA.l-81-tMvbl2Uz26ttVyMSeoGdeE",
+    "token": "",
     "google": {
-        "search": "AIzaSyCbtj-nkM0sTjWXSyyPGoegCBtUQtAikwE", // Custom Search API Key
-        "translate": 'translate-308403' // Google translate Project ID
+        "search": "", // Custom Search API Key
+        "translate": '' // Google translate Project ID
     },
     "support": "https://discord.gg/JHJQ4tG2rf",
     "owners": [
