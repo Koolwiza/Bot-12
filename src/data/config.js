@@ -2,12 +2,11 @@ module.exports = {
     /**
      * Fill config values with your desired things
      */
-    "token": "ODA4NDEwNzkyNDIwMDQ4OTc2.YCGJOA.l-81-tMvbl2Uz26ttVyMSeoGdeE",
-    "google_api_key": "AIzaSyCbtj-nkM0sTjWXSyyPGoegCBtUQtAikwE",
+    "token": "",
+    "google_api_key": "",
     "support":"https://discord.gg/JHJQ4tG2rf",
     "owners": [
-        "774352602678558790",
-        "660552441166823462"
+        ""
     ],
     "defaultSettings": {
         "prefix": "^",
