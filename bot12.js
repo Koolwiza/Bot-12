@@ -3,11 +3,10 @@ const {
 } = require('discord.js'),
   cmdloader = require('./scripts/cmdloader'),
   eventloader = require('./scripts/eventloader'),
-  docsUpdater = require('./scripts/autoUpdateDocs')
-
-
-const Bot12 = require('./src/struct/Bot12Client'),
+  docsUpdater = require('./scripts/autoUpdateDocs'),
+  Bot12 = require('./src/struct/Bot12Client'),
   client = new Bot12({
+    partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
     restTimeOffset: 250,
     ws: {
       intents: Intents.ALL

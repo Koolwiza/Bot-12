@@ -5,8 +5,6 @@ const client = require('../../bot12')
 
 module.exports = class AntiAlt {
     constructor(client) {
-
-
         this.client = client
     }
 

@@ -6,12 +6,16 @@ module.exports = class AutomodClient {
 
     init() {
 
-        let message = this.message
-        let client = this.client
-        if (client.plugins.get(message.guild.id, "invites")) {
-            let inviteRegex = /(https?:\/\/)?(www\.)?(disc(ord)?\.(gg|li|me|io)|discordapp\.com\/invite|invite\.gg)\/.+/gi
+        let message = this.message,
+            client = this.client,
+            regex = {
+                invite: /(https?:\/\/)?(www\.)?(disc(ord)?\.(gg|li|me|io)|discordapp\.com\/invite|invite\.gg)\/.+/gi,
+                link: /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/i,
+                spoiler: /\|\|.*?\|\|/g
+            }
 
-            if (inviteRegex.test(message.content) && !message.member.permissions.has("MANAGE_GUILD") && !client.modRole(message, client.guildData.get(message.guild.id))) {
+        if (client.plugins.get(message.guild.id, "invites")) {
+            if (regex.invite.test(message.content) && !message.member.permissions.has("MANAGE_GUILD") && !client.modRole(message, client.guildData.get(message.guild.id))) {
 
                 message.delete().catch(() => {})
                 return message.channel.send(`${message.author.toString()}, ${client.emoji.misc.xmark} **You aren't allowed to send invites in this server**`).then(m => {
@@ -22,8 +26,7 @@ module.exports = class AutomodClient {
             }
         } else if (client.plugins.get(message.guild.id, "links")) {
 
-            let urlReg = /http?(s)?:(\/\/)?(www\..+)/i
-            if (urlReg.test(message.content) && !message.member.permissions.has("MANAGE_GUILD") && !client.modRole(message, client.guildData.get(message.guild.id))) {
+            if (regex.link.test(message.content) && !message.member.permissions.has("MANAGE_GUILD") && !client.modRole(message, client.guildData.get(message.guild.id))) {
 
                 message.delete().catch(() => {})
                 return message.channel.send(`${message.author.toString()}, ${client.emoji.misc.xmark} **You aren't allowed to send links in this server**`).then(m => {
@@ -31,10 +34,9 @@ module.exports = class AutomodClient {
                         m.delete().catch(() => {})
                     }, 5000)
                 })
-            }
+            } 
         } else if (client.plugins.get(message.guild.id, "spoilers")) {
 
-            let spoilerRegex = /\|\|.*?\|\|/gmi
             const match = message.content.match(spoilerRegex)
             if (Array.isArray(match) && match.length >= 3 && !message.member.permissions.has("MANAGE_GUILD") && !client.modRole(message, client.guildData.get(message.guild.id))) {
 

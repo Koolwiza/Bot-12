@@ -45,7 +45,7 @@ A bot to help your server with moderation, utility and more.
  - 👍 **General**: `bitcoin`, `botinfo`, `calculate`, `docs`, `google` and **5** more...
  - 🎵 **Music**: `applyfilter`, `bassboost`, `clean`, `clearqueue`, `filters` and **16** more...
 
-[See full command list here...](https://github.com/Koolwiza/Bot-12/blob/main/docs/command-list.md)
+[See full command list here...](https://github.com/Koolwiza/Bot-12/blob/main/docs/commands.md)
 
 And even more commands coming soon!
 

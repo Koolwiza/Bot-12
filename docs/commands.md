@@ -68,13 +68,14 @@
 
             
 
-### General [10] 
+### General [11] 
 
 | Name | Description | 
 | ---- | ----------- | 
 | [bitcoin](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bitcoin) | See bitcoin values or convert bitcoin to currency | 
 | [botinfo](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#botinfo) | Gives detailed information about the bot | 
 | [docs](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#docs) | Look at the discord.js docs | 
+| [github](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#github) | Search up a user from github | 
 | [google](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#google) | Google a query with valid search results | 
 | [help](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#help) | Sends you a list of commands | 
 | [ping](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#ping) | A simple ping command | 
@@ -463,7 +464,7 @@ Usage: coinflip\
 Aliases: cf, flip
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-## General | 10 Commands
+## General | 11 Commands
 
 
 
@@ -495,6 +496,17 @@ Command: docs\
 Description: Look at the discord.js docs\
 Usage: docs [query]\
 Aliases: djs
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Github
+
+Command: github\
+Description: Search up a user from github\
+Usage: github <github username>\
+Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
 
