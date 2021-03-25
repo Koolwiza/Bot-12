@@ -100,33 +100,12 @@ module.exports = async (client, message) => {
 
   setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
   
-
-
   try {
     let msg = await command.execute(message, args, client, data) // ALL COMMANDS MUST RETURN A PROMISE
     if (command.ignore) return;
 
     client.logger.cmd(`${message.author.username} used the command ${command.name}`)
-    let r = await msg.react('🗑️').catch(() => {})
-    try {
-      let react = await r.message.awaitReactions((reaction, user) => reaction.emoji.name === "🗑️" && user.id === message.author.id, {
-        time: 10 * 60 * 1000,
-        max: 1,
-        errors: ['time']
-      })
-      if (react.first().emoji.name === '🗑️') msg.delete()
-      client.logger.cmd(`${message.author.username} deleted the command usage ${command.name}`)
-    } catch (e) {
-      if (msg.embeds.length) {
-        let embed = msg.embeds[0]
-        embed.color = ""
-        return msg.edit("This message is inactive", embed)
-      } else {
-        return msg.edit("This message is inactive\n\n" + msg.content)
-      }
-    }
-
-
+    await msg.react('🗑️').catch(() => {})
   } catch (e) {
     console.log(e.stack)
     message.error(e)
