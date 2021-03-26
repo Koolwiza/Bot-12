@@ -29,9 +29,9 @@ A bot to help your server with moderation, utility and more.
 
 ## 📔 Table Of Contents
 
-* [Common Errors](https://github.com/Koolwiza/Bot-12/blob/main/docs/common-errors.md)
+* [Common Errors](https://github.com/Koolwiza/Bot-12/blob/main/docs/installation/common-errors.md)
 * [Command  List](https://github.com/Koolwiza/Bot-12/blob/main/docs/commands.md)
-* [Installation-Guide](https://github.com/Koolwiza/Bot-12/blob/main/docs/installation-guide.md)
+* [Installation-Guide](https://github.com/Koolwiza/Bot-12/blob/main/docs/installation/installation-guide.md)
 * [Features](https://github.com/Koolwiza/Bot-12#features)
 * [Upcoming](https://github.com/Koolwiza/Bot-12#future-plansz)
 
