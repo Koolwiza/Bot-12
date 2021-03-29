@@ -54,7 +54,6 @@ Message.prototype.sendE = function (title = "", description = "", color = "", fi
 
 MessageEmbed.prototype.success = function () {
 	this.setColor(client.colors.green)
-	this.setTitle("Success")
 	return this
 }
 
