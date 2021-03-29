@@ -14,7 +14,7 @@ module.exports = class AntiAlt {
             ...this.client.config.antiAltSettings
         })
 
-        if(data.whitelisted.includes(member.user.id)) return;
+        if(data.whitelisted.includes(member.user.id) && !member.user.avatarURL()) return;
     
         let dataAge = data.age * 24 * 60 * 60 * 1000
     
