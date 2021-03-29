@@ -42,8 +42,6 @@ module.exports = async (client, message) => {
 
   automod.init() // Initiate automod client
 
-
-
   let args = message.content.trim().slice(prefix.length).trim().split(/ +/g)
   let commandName = args.shift().toLowerCase()
 
