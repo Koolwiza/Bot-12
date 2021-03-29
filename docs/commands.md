@@ -3,7 +3,7 @@
 
             
 
-### Administrator [18] 
+### Administrator [19] 
 
 | Name | Description | 
 | ---- | ----------- | 
@@ -19,6 +19,7 @@
 | [poll](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#poll) | An advanced poll command able to hold multiple questions | 
 | [prefix](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#prefix) | Show or set the prefix for the server | 
 | [purge](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#purge) | Purge messages from a channel | 
+| [roles](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#roles) | Send all roles in the server | 
 | [softban](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#softban) | Remove all messages from the user | 
 | [tag](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#tag) | All options on a tag | 
 | [unmute](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#unmute) | Unmute a user | 
@@ -68,17 +69,19 @@
 
             
 
-### General [11] 
+### General [13] 
 
 | Name | Description | 
 | ---- | ----------- | 
 | [bitcoin](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bitcoin) | See bitcoin values or convert bitcoin to currency | 
 | [botinfo](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#botinfo) | Gives detailed information about the bot | 
+| [channelinfo](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#channelinfo) | Display detailed information on the channel | 
 | [docs](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#docs) | Look at the discord.js docs | 
 | [github](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#github) | Search up a user from github | 
 | [google](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#google) | Google a query with valid search results | 
 | [help](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#help) | Sends you a list of commands | 
 | [ping](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#ping) | A simple ping command | 
+| [roleinfo](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#roleinfo) | Displays deatiled information about a role | 
 | [say](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#say) | Say something | 
 | [serverinfo](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#serverinfo) | Get detailed information about the server | 
 | [snipe](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#snipe) | Check for deleted messages 👀 | 
@@ -97,7 +100,7 @@
 | [thesearch](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#thesearch) | The search continues... | 
 
 # Detailed Command List
-## Administrator | 18 Commands
+## Administrator | 19 Commands
 
 
 
@@ -227,6 +230,17 @@ Aliases:
 Command: purge\
 Description: Purge messages from a channel\
 Usage: purge <@user | userID | channel | bots] <amount>\
+Aliases: 
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Roles
+
+Command: roles\
+Description: Send all roles in the server\
+Usage: roles\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
@@ -464,7 +478,7 @@ Usage: coinflip\
 Aliases: cf, flip
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-## General | 11 Commands
+## General | 13 Commands
 
 
 
@@ -485,6 +499,17 @@ Command: botinfo\
 Description: Gives detailed information about the bot\
 Usage: botinfo\
 Aliases: bot
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Channelinfo
+
+Command: channelinfo\
+Description: Display detailed information on the channel\
+Usage: channel [channel]\
+Aliases: channel
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
 
@@ -539,6 +564,17 @@ Aliases: commands, command
 Command: ping\
 Description: A simple ping command\
 Usage: ping\
+Aliases: 
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Roleinfo
+
+Command: roleinfo\
+Description: Displays deatiled information about a role\
+Usage: role [role]\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
