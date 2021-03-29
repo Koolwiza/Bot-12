@@ -15,7 +15,7 @@ module.exports = {
     let user = await client.resolveUser(args[0])
     if(!user) return message.args("Please provide a user or invalid user")
 
-    let userP = client.userProfiles.get(user.id)
+    let userP = data.user(user.id).balance
     if(userP.balance < 1000) return message.error("This user is too poor! You can only rob users with more than 1k coins.")
 
     let percent = (Math.floor(Math.random() * 50))

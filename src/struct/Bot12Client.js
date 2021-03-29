@@ -13,25 +13,11 @@ Discord.Constants.DefaultOptions.ws.properties.$browser = "Discord Android"
 /**
  * A class used to attach functions and properties to the main client provided by discord
  * @extends {Client}
- * @param {restTimeOffset} Reduces time between requesting API
  */
 
 module.exports = class Bot12Client extends Client {
   constructor(options) {
-    super({
-
-      /**
-       * Our Client options
-       * @property {ws} - Websocket manager for discord.js
-       * Provided Intents property is for discord.js v13
-       * @property {restTimeOffset} - Reduce amount of time between multiple REST requests
-       */
-
-      restTimeOffset: 250,
-      ws: {
-        intents: Intents.ALL
-      }
-    });
+    super(options);
 
     /**
      * Attach useful properties and functions to the extended client
@@ -68,16 +54,17 @@ module.exports = class Bot12Client extends Client {
      */
 
     let enmaps = {
-      "guildData":"guild",
-      "plugins":"plugin",
-      "modActions":"actions",
-      "userProfiles":"profiles",
-      "disabled":"commands",
-      "cooldowns":"cooldowns",
-      "tags":"tags"
+      "guildData": "guild",
+      "plugins": "plugin",
+      "modActions": "actions",
+      "userProfiles": "profiles",
+      "disabled": "commands",
+      "cooldowns": "cooldowns",
+      "tags": "tags",
+      "antiAlt": "antialt"
     }
 
-    for(const [k,v] of Object.entries(enmaps)){
+    for (const [k, v] of Object.entries(enmaps)) {
       this[k] = new Enmap({
         name: v,
         fetchAll: true,
@@ -111,7 +98,15 @@ module.exports = class Bot12Client extends Client {
   }
 
   modRole(message, data) {
-    return (!message.member.permissions.has("BAN_MEMBERS") || (message.guild.roles.cache.get(data.modrole) && !message.member.roles.cache.has(data.modrole)))
+
+    if (!data.modrole) {
+      return true
+    }
+    else {
+      let mod = (message.guild.roles.cache.get(data.modrole) && !message.member.roles.cache.has(data.modrole))
+      return mod
+    }
+
   }
 
 
@@ -140,7 +135,7 @@ module.exports = class Bot12Client extends Client {
       }
     }
   }
-  
+
   async clean(text) {
     if (text && text.constructor.name == "Promise")
       text = await text;
@@ -157,7 +152,18 @@ module.exports = class Bot12Client extends Client {
     return text;
   }
 
-  
+
+  randomString(length) {
+    var result = '';
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for (var i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  }
+
+
 
   async resolveUser(search) {
     let userRegex = /^<@!?(\d+)>$/
@@ -198,15 +204,6 @@ module.exports = class Bot12Client extends Client {
     return role;
   }
 
-  randomString(length) {
-    var result = '';
-    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    var charactersLength = characters.length;
-    for (var i = 0; i < length; i++) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
-    return result;
-  }
 
   async awaitReply(msg, question, limit = 60000) {
     const filter = m => m.author.id === msg.author.id;
@@ -226,7 +223,7 @@ module.exports = class Bot12Client extends Client {
     }
   }
 
-  
+
 
   wait = require("util").promisify(setTimeout);
 

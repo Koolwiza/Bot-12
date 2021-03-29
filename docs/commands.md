@@ -3,11 +3,12 @@
 
             
 
-### Administrator [18] 
+### Administrator [19] 
 
 | Name | Description | 
 | ---- | ----------- | 
 | [addemoji](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#addemoji) | Adds the emoji to the server | 
+| [antialt](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#antialt) | Configure antialt settings | 
 | [ban](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#ban) | Ban a member from the server | 
 | [delwarn](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#delwarn) | Remove a user's warn using an id | 
 | [goodbye](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#goodbye) | Set the goodbye channel/message for the server | 
@@ -18,7 +19,7 @@
 | [poll](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#poll) | An advanced poll command able to hold multiple questions | 
 | [prefix](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#prefix) | Show or set the prefix for the server | 
 | [purge](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#purge) | Purge messages from a channel | 
-| [role](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#role) | Add a role to a user | 
+| [roles](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#roles) | Send all roles in the server | 
 | [softban](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#softban) | Remove all messages from the user | 
 | [tag](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#tag) | All options on a tag | 
 | [unmute](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#unmute) | Unmute a user | 
@@ -29,7 +30,7 @@
 
             
 
-### Developer [7] 
+### Developer [6] 
 
 | Name | Description | 
 | ---- | ----------- | 
@@ -37,19 +38,20 @@
 | [enable](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#enable) | Enable a command in either guild or globally | 
 | [eval](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#eval) | Evaluates a piece of code | 
 | [reload](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#reload) | Reload a file/command | 
-| [test](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#test) |  | 
-| [timeout](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#timeout) |  | 
+| [timeout](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#timeout) | adsf | 
 | [topgg](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#topgg) | Shows topgg stuff | 
 
 
             
 
-### Economy [4] 
+### Economy [6] 
 
 | Name | Description | 
 | ---- | ----------- | 
 | [balance](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#balance) | View the balance of a member | 
 | [daily](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#daily) | Claim the daily reward for more coins!  | 
+| [give](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#give) | Give money to another person | 
+| [leaderboard](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#leaderboard) | Display the global leaderboard for economy | 
 | [rob](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#rob) | Rob a user of their money  | 
 | [work](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#work) | Work a job gaining coins | 
 
@@ -67,16 +69,19 @@
 
             
 
-### General [10] 
+### General [13] 
 
 | Name | Description | 
 | ---- | ----------- | 
 | [bitcoin](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bitcoin) | See bitcoin values or convert bitcoin to currency | 
 | [botinfo](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#botinfo) | Gives detailed information about the bot | 
+| [channelinfo](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#channelinfo) | Display detailed information on the channel | 
 | [docs](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#docs) | Look at the discord.js docs | 
+| [github](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#github) | Search up a user from github | 
 | [google](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#google) | Google a query with valid search results | 
 | [help](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#help) | Sends you a list of commands | 
 | [ping](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#ping) | A simple ping command | 
+| [roleinfo](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#roleinfo) | Displays deatiled information about a role | 
 | [say](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#say) | Say something | 
 | [serverinfo](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#serverinfo) | Get detailed information about the server | 
 | [snipe](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#snipe) | Check for deleted messages 👀 | 
@@ -95,7 +100,7 @@
 | [thesearch](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#thesearch) | The search continues... | 
 
 # Detailed Command List
-## Administrator | 18 Commands
+## Administrator | 19 Commands
 
 
 
@@ -104,6 +109,17 @@
 Command: addemoji\
 Description: Adds the emoji to the server\
 Usage: addemoji <emoji> [name]\
+Aliases: 
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Antialt
+
+Command: antialt\
+Description: Configure antialt settings\
+Usage: antialt <type> [value]\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
@@ -220,11 +236,11 @@ Aliases:
 
 
 
-### Role
+### Roles
 
-Command: role\
-Description: Add a role to a user\
-Usage: role <user> <role>\
+Command: roles\
+Description: Send all roles in the server\
+Usage: roles\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
@@ -294,7 +310,7 @@ Usage: welcome <type> [value]\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-## Developer | 7 Commands
+## Developer | 6 Commands
 
 
 
@@ -342,22 +358,11 @@ Aliases: re
 
 
 
-### Test
-
-Command: test\
-Description: \
-Usage: \
-Aliases: 
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-
-
-
 ### Timeout
 
 Command: timeout\
-Description: \
-Usage: \
+Description: adsf\
+Usage: asdf\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
@@ -372,7 +377,7 @@ Usage: topgg \
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-## Economy | 4 Commands
+## Economy | 6 Commands
 
 
 
@@ -393,6 +398,28 @@ Command: daily\
 Description: Claim the daily reward for more coins! \
 Usage: daily\
 Aliases: 
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Give
+
+Command: give\
+Description: Give money to another person\
+Usage: give <user> <amount>\
+Aliases: pay, transfer
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Leaderboard
+
+Command: leaderboard\
+Description: Display the global leaderboard for economy\
+Usage: \
+Aliases: lb, top
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
 
@@ -451,7 +478,7 @@ Usage: coinflip\
 Aliases: cf, flip
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-## General | 10 Commands
+## General | 13 Commands
 
 
 
@@ -477,12 +504,34 @@ Aliases: bot
 
 
 
+### Channelinfo
+
+Command: channelinfo\
+Description: Display detailed information on the channel\
+Usage: channel [channel]\
+Aliases: channel
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
 ### Docs
 
 Command: docs\
 Description: Look at the discord.js docs\
 Usage: docs [query]\
 Aliases: djs
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Github
+
+Command: github\
+Description: Search up a user from github\
+Usage: github <github username>\
+Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
 
@@ -515,6 +564,17 @@ Aliases: commands, command
 Command: ping\
 Description: A simple ping command\
 Usage: ping\
+Aliases: 
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Roleinfo
+
+Command: roleinfo\
+Description: Displays deatiled information about a role\
+Usage: role [role]\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)

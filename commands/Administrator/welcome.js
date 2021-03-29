@@ -15,7 +15,7 @@ module.exports = {
     premium: false,
     guildOnly: false,
     async execute(message, args, client, data) {
-        if (!message.member.permissions.has("MANAGE_GUILD") || client.modRole(message, data)) return client.authorPerms(message, ["MANAGE_SERVER"])
+        if (!message.member.permissions.has("MANAGE_GUILD") || client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_SERVER"])
 
         if (!args[0]) return message.args("Please provide a type.\nchannel | message | show")
 

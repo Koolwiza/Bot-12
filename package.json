@@ -38,6 +38,7 @@
     "request": "^2.88.2",
     "request-promise": "^4.2.6",
     "scrape-yt": "^1.4.8",
+    "translate": "^1.2.3",
     "twemoji-parser": "^13.0.0",
     "util": "^0.12.3",
     "youtube-sr": "^3.0.4",

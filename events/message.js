@@ -1,7 +1,8 @@
 const Discord = require("discord.js"),
   {
     defaultSettings,
-    defaultPlugins
+    defaultPlugins,
+    userData
   } = require('../src/data/config.js'),
   humanize = require('humanize-duration'),
   AutomodClient = require('../src/struct/AutomodClient')
@@ -14,13 +15,16 @@ module.exports = async (client, message) => {
   if (message.author.bot) return
   if (!message.guild || message.channel.type === "dm") return
 
-  client.guildData.ensure(message.guild.id, defaultSettings)
-  client.plugins.ensure(message.guild.id, defaultPlugins)
-  client.userProfiles.ensure(message.author.id, {
-    balance: 0,
-    premium: false,
-    daily: 0
-  })
+  const data = {
+    guild: client.guildData.ensure(message.guild.id, defaultSettings),
+    user: (user) => {
+      return client.userProfiles.ensure(user.id, {
+        ...userData,
+        user: message.author.id
+      })
+    },
+    plugins: client.plugins.ensure(message.guild.id, defaultPlugins)
+  }
   client.disabled.ensure("commands", {
     guild: {},
     global: []
@@ -37,8 +41,6 @@ module.exports = async (client, message) => {
   )
 
   automod.init() // Initiate automod client
-
-
 
   let args = message.content.trim().slice(prefix.length).trim().split(/ +/g)
   let commandName = args.shift().toLowerCase()
@@ -95,33 +97,13 @@ module.exports = async (client, message) => {
   cooldowns.set(command.name, timestamps)
 
   setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
-  let data = client.guildData.get(message.guild.id)
-
+  
   try {
     let msg = await command.execute(message, args, client, data) // ALL COMMANDS MUST RETURN A PROMISE
     if (command.ignore) return;
 
     client.logger.cmd(`${message.author.username} used the command ${command.name}`)
-    let r = await msg.react('🗑️').catch(() => {})
-    try {
-      let react = await r.message.awaitReactions((reaction, user) => reaction.emoji.name === "🗑️" && user.id === message.author.id, {
-        time: 10 * 60 * 1000,
-        max: 1,
-        errors: ['time']
-      })
-      if (react.first().emoji.name === '🗑️') msg.delete()
-      client.logger.cmd(`${message.author.username} deleted the command usage ${command.name}`)
-    } catch (e) {
-      if (msg.embeds.length) {
-        let embed = msg.embeds[0]
-        embed.color = ""
-        return msg.edit("This message is inactive", embed)
-      } else {
-        return msg.edit("This message is inactive\n\n" + msg.content)
-      }
-    }
-
-
+    await msg.react('🗑️').catch(() => {})
   } catch (e) {
     console.log(e.stack)
     message.error(e)
