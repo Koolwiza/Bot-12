@@ -54,17 +54,17 @@ module.exports = class Bot12Client extends Client {
      */
 
     let enmaps = {
-      "guildData":"guild",
-      "plugins":"plugin",
-      "modActions":"actions",
-      "userProfiles":"profiles",
-      "disabled":"commands",
-      "cooldowns":"cooldowns",
-      "tags":"tags",
-      "antiAlt":"antialt"
+      "guildData": "guild",
+      "plugins": "plugin",
+      "modActions": "actions",
+      "userProfiles": "profiles",
+      "disabled": "commands",
+      "cooldowns": "cooldowns",
+      "tags": "tags",
+      "antiAlt": "antialt"
     }
 
-    for(const [k,v] of Object.entries(enmaps)){
+    for (const [k, v] of Object.entries(enmaps)) {
       this[k] = new Enmap({
         name: v,
         fetchAll: true,
@@ -98,7 +98,15 @@ module.exports = class Bot12Client extends Client {
   }
 
   modRole(message, data) {
-    return (!message.member.permissions.has("BAN_MEMBERS") || (message.guild.roles.cache.get(data.modrole) && !message.member.roles.cache.has(data.modrole)))
+
+    if (!data.modrole) {
+      return true
+    }
+    else {
+      let mod = (message.guild.roles.cache.get(data.modrole) && !message.member.roles.cache.has(data.modrole))
+      return mod
+    }
+
   }
 
 
@@ -127,7 +135,7 @@ module.exports = class Bot12Client extends Client {
       }
     }
   }
-  
+
   async clean(text) {
     if (text && text.constructor.name == "Promise")
       text = await text;
@@ -144,7 +152,7 @@ module.exports = class Bot12Client extends Client {
     return text;
   }
 
-  
+
   randomString(length) {
     var result = '';
     var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -155,7 +163,7 @@ module.exports = class Bot12Client extends Client {
     return result;
   }
 
-  
+
 
   async resolveUser(search) {
     let userRegex = /^<@!?(\d+)>$/
@@ -215,7 +223,7 @@ module.exports = class Bot12Client extends Client {
     }
   }
 
-  
+
 
   wait = require("util").promisify(setTimeout);
 
