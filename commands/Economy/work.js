@@ -28,7 +28,7 @@ module.exports = {
     let amount = randNum(300, 750)
     client.userProfiles.math(message.author.id, "add", amount, "balance")
     let reply = `${replyList[Math.floor(Math.random() * replyList.length)].replace(/\{amount\}/g, amount)} ${client.emoji.misc.coin}`
-    return message.sendE()
+    return message.sendE("Success", reply, client.colors.gold)
 
   }
 }

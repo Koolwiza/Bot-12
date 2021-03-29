@@ -14,6 +14,6 @@ module.exports = {
   async execute(message, args, client, data) {
 
     let user = await client.resolveUser(args[0]) || message.author
-    return message.sendE(`${user.username}'s Balance`, `${client.emoji.misc.coin} ${client.userProfiles.get(user.id).balance}`, client.colors.gold)
+    return message.sendE(`${user.username}'s Balance`, `${client.emoji.misc.coin} ${data.user(user.id).balance}`, client.colors.gold)
   }
 }

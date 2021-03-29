@@ -32,8 +32,9 @@ module.exports = {
 			administrator: "🔨",
 			general: "👍",
 			utility: "💻",
-			music: '🎵',
-			economy: '💵'
+			images: '🖼️',
+			economy: '💵',
+			fun: '🎪'
 		}
 
 		let a = ""
@@ -59,40 +60,31 @@ module.exports = {
 
 # Bot 12
 
-A random bot with a random name.
-		
-A bot to help your server with moderation, utility and more.
-		
-		​
-		​
-		​
-		
-		
+A random bot with a random name.\\
+A bot to help your server with moderation, utility and more.		
+\\
+\\
+\\
+\\
+
 ### Some commands this bot offers
 
 ⭐ __**${client.commands.size}** total commands__ ⭐
 
 ${a}
 
-And even more commands coming soon!
-
+And even more commands coming soon!\\
 ### Features 
 
-- ❌ Anti Links - No links allowed when enabled
-
-- ❌ Anti Invites - No invites allowed when enabled
-
-- ❌ Anti Spoilers - No spoilers allowed when enabled
-
-- ✅ Automatic Administrator Command Deletion - Deletes administrator commands when enabled
-
-- ❌ Anti Bots - No bots will be able to be added to the server when the person who added doesn't have a certain role (mod role in config) when enabled
-
-- ✅ Configurable Prefix - A customizable prefix 
-
-- ✅ Modrole - A modrole to bypass permission checks
-
-- ✅ Welcome Messages - A plugin to send messages to a channel with variables whenever a user joins or leaves
+- ❌ Anti Links - No links allowed when enabled\\
+- ❌ Anti Invites - No invites allowed when enabled\\
+- ❌ Anti Spoilers - No spoilers allowed when enabled\\
+- ❌ Anti Alt - Automatically kicks alts if they join when enabled\\
+- ❌ Anti Bots - No bots will be able to be added to the server when the person who added doesn't have a certain role (mod role in config) when enabled\\
+- ✅ Automatic Administrator Command Deletion - Deletes administrator commands when enabled\\
+- ✅ Configurable Prefix - A customizable prefix \\
+- ✅ Modrole - A modrole to bypass permission checks\\
+- ✅ Welcome Messages - A plugin to send messages to a channel with variables whenever a user joins or leaves\\
 \`\`\``
 
 return message.channel.send(msg)

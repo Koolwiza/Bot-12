@@ -7,4 +7,3 @@
   - [ ] This PR includes breaking changes (methods removed or renamed, parameters moved or removed)
 - [ ] This PR **only** includes non-code changes, like changes to README, etc.
 
-\- Provided by GuideBot

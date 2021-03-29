@@ -2,8 +2,9 @@ const chalk = require('chalk')
 const {
   defaultPlugins,
   defaultSettings
-} = require('../src/data/config')
-const Discord = require('discord.js')
+} = require('../src/data/config'),
+  Discord = require('discord.js'),
+  AntiAlt = require('../src/struct/AntiAlt')
 
 module.exports = async (client, member) => {
 
@@ -52,5 +53,7 @@ module.exports = async (client, member) => {
 
       channel.send(msg)
     }
+  } else if (pd.antialt) {
+    new AntiAlt(client).start(member)
   }
 }

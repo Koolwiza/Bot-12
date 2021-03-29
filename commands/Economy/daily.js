@@ -18,7 +18,7 @@ module.exports = {
     async execute(message, args, client, data) {
 
         let user = client.userProfiles
-        let d = user.get(message.author.id)
+        let d = data.user(message.author.id)
 
         let award = ['r', 'e', 'w', 'a', 'r', 'd']
 
