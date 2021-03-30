@@ -69,7 +69,7 @@
 
             
 
-### General [13] 
+### General [12] 
 
 | Name | Description | 
 | ---- | ----------- | 
@@ -81,7 +81,6 @@
 | [google](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#google) | Google a query with valid search results | 
 | [help](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#help) | Sends you a list of commands | 
 | [ping](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#ping) | A simple ping command | 
-| [roleinfo](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#roleinfo) | Displays deatiled information about a role | 
 | [say](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#say) | Say something | 
 | [serverinfo](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#serverinfo) | Get detailed information about the server | 
 | [snipe](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#snipe) | Check for deleted messages 👀 | 
@@ -478,7 +477,7 @@ Usage: coinflip\
 Aliases: cf, flip
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-## General | 13 Commands
+## General | 12 Commands
 
 
 
@@ -564,17 +563,6 @@ Aliases: commands, command
 Command: ping\
 Description: A simple ping command\
 Usage: ping\
-Aliases: 
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-
-
-
-### Roleinfo
-
-Command: roleinfo\
-Description: Displays deatiled information about a role\
-Usage: role [role]\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
