@@ -5,12 +5,12 @@ const Discord = require("discord.js"),
     userData
   } = require('../src/data/config.js'),
   humanize = require('humanize-duration'),
-  AutomodClient = require('../src/struct/AutomodClient')
+  AutomodClient = require('../src/struct/AutomodClient'),
+  AntiSpamClient = require('../src/struct/AntiSpam')
 
 module.exports = async (client, message) => {
 
   let cooldowns = client.cooldowns
-  const automod = new AutomodClient(message, client)
 
   if (message.author.bot) return
   if (!message.guild || message.channel.type === "dm") return
@@ -40,7 +40,8 @@ module.exports = async (client, message) => {
     .setColor(client.colors.sky)
   )
 
-  automod.init() // Initiate automod client
+  new AutomodClient().init(message, client) // Initiate AutoMod client
+  new AntiSpamClient(client.antiSpam.get(message.guild.id)).init(message, client) // Initiate AntiSpam client
 
   let args = message.content.trim().slice(prefix.length).trim().split(/ +/g)
   let commandName = args.shift().toLowerCase()
