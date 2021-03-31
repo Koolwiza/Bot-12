@@ -15,7 +15,7 @@ Discord.Constants.DefaultOptions.ws.properties.$browser = "Discord Android"
  * @extends {Client}
  */
 
-module.exports = class Bot12Client extends Client {
+module.exports = class Bot12 extends Client {
   constructor(options) {
     super(options);
 
@@ -61,7 +61,10 @@ module.exports = class Bot12Client extends Client {
       "disabled": "commands",
       "cooldowns": "cooldowns",
       "tags": "tags",
-      "antiAlt": "antialt"
+      "antiAlt": "antialt",
+      "autoMod":"automod",
+      "antiSpam":"antispam",
+      "joins":"joins"
     }
 
     for (const [k, v] of Object.entries(enmaps)) {
@@ -190,20 +193,6 @@ module.exports = class Bot12Client extends Client {
     channel = await this.channels.fetch(search).catch(() => {});
     return channel;
   }
-
-  async resolveRole(search) {
-    let roleRegex = /^<&(\d+)>$/
-    let role = null;
-    if (!search || typeof search !== "string") return;
-    if (search.match(roleRegex)) {
-      const id = search.match(roleRegex)[1];
-      role = this.roles.fetch(id).catch(() => {});
-      if (channel) return role;
-    }
-    role = await this.roles.fetch(search).catch(() => {});
-    return role;
-  }
-
 
   async awaitReply(msg, question, limit = 60000) {
     const filter = m => m.author.id === msg.author.id;
