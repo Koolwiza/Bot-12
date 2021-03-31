@@ -13,6 +13,7 @@ module.exports = class AntiAlt {
         let data = this.client.antiAlt.ensure(member.guild.id, {
             ...this.client.config.antiAltSettings
         })
+        if(!data.enabled) return;
 
         if(data.whitelisted.includes(member.user.id) && !member.user.avatarURL()) return;
     
@@ -38,7 +39,7 @@ module.exports = class AntiAlt {
             })
     
             await member.user.send(new Discord.MessageEmbed()
-                .setTitle("You were detected")
+                .setTitle("Anti Alt")
                 .setDescription(`You were **${data.punishment === "kick" ? "kicked" : "banned"}** from ${member.guild.name}.\nMinimum Account Age: ${ageTime}\nYour Account Age: ${userTime}. \n\n*PS. Your account needs to be ${neededTime} older!*`)
                 .error()
                 .default(member.user)
