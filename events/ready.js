@@ -9,7 +9,7 @@ module.exports = async client => {
         activity: {
             name: config.status[0].name.replace(/\{client\}/gi, client.user.username)
             .replace(/\{guilds\}/gi, client.guilds.cache.size)
-            .replace(/\{users\}/gi, client.users.cache.size)
+            .replace(/\{users\}/gi, client.guilds.cache.reduce((acc, value) => acc + value.memberCount, 0))
             .replace(/\{channels\}/gi, client.channels.cache.size),
             type: config.status[0].type
         }
@@ -32,7 +32,7 @@ module.exports = async client => {
         let name = status.name
             .replace(/\{client\}/gi, client.user.username)
             .replace(/\{guilds\}/gi, client.guilds.cache.size)
-            .replace(/\{users\}/gi, client.users.cache.size)
+            .replace(/\{users\}/gi, client.guilds.cache.reduce((acc, value) => acc + value.memberCount, 0))
             .replace(/\{channels\}/gi, client.channels.cache.size)
 
             client.user.setPresence({
