@@ -13,7 +13,7 @@ module.exports = {
   guildOnly: false,
   ignore: true,
   async execute(message, args, client, data) {
-    if(!message.member.permissions.has("MANAGE_SERVER") || !client.modRole(message, data.guild)) return client.missingArgs(message, ["MANAGE_SERVER"])
+    if(!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_ROLES) || !client.modRole(message, data.guild)) return client.missingArgs(message, ["MANAGE_SERVER"])
     let msg = "```asciidoc\n== ROLES ==\n"
     let names = message.guild.roles.cache.map(c => `${c.name}`)
     let longest = names.reduce((long, str) => Math.max(long, str.length), 0)

@@ -13,7 +13,7 @@ module.exports = {
   premium: false,
   guildOnly: false,
   async execute(message, args, client, data) {
-    if (!message.member.permissions.has("MANAGE_GUILD") || client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_SERVER"])
+    if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_GUILD) || client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_SERVER"])
 
     let user = await client.resolveUser(args[0])
     if (!user) return message.args("Missing user for warnings")
