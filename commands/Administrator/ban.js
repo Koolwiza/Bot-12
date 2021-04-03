@@ -12,8 +12,8 @@
       premium: false,
       guildOnly: false,
       async execute(message, args, client, data) {
-          if (!message.member.permissions.has("BAN_MEMBERS") || client.modRole(message, data.guild)) return client.authorPerms(message, ["BAN_MEMBERS"])
-          if (!message.guild.me.permissions.has("BAN_MEMBERS")) return client.clientPerms(message, ["BAN_MEMBERS"])
+          if (!message.member.permissions.has(Discord.Permissions.FLAGS.BAN_MEMBERS) || client.modRole(message, data.guild)) return client.authorPerms(message, ["BAN_MEMBERS"])
+          if (!message.guild.me.permissions.has(Discord.Permissions.FLAGS.BAN_MEMBERS)) return client.clientPerms(message, ["BAN_MEMBERS"])
 
 
           let user = await client.resolveUser(args[0])

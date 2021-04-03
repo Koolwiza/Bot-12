@@ -12,30 +12,36 @@ module.exports = {
     premium: false,
     guildOnly: false,
     async execute(message, [type, ...value], client, data) {
-        if (!message.member.permissions.has("MANAGE_GUILD") || client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_GUILD"])
-        let ac = client.config.antiAltSettings
+        if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_GUILD) || client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_GUILD"])
+        let ac = client.config.plugins.defaultAntiAlt
         let allowedTypes = Object.keys(ac)
-        let options = ['show', ...allowedTypes]
+        let options = ['show', , 'enable', 'disable', ...allowedTypes]
         if (!type) return message.args("Please provide an option to configure")
 
         type = type.toLowerCase()
         if (!options.includes(type)) return;
 
         if (type === "show") {
-            let output = `\`\`\`asciidoc\n== Server Configurations ==\n`
+            let output = `\`\`\`asciidoc\n== AntiAlt Configurations ==\n`
             let props = Object.keys(ac)
             let a = ac
             const longest = props.reduce((long, str) => Math.max(long, str.length), 0)
             props.forEach(c => {
                 if (c instanceof Array) c = c.join(", ")
-                if (a[c] === null) {
-                    output += `${c}${" ".repeat(longest - c.length)} :: None\n`
+                if (ac[c] === null) {
+                    output += `${c}${" ".repeat(longest - c.slength)} :: None\n`
                 } else {
-                    output += `${c}${" ".repeat(longest - c.length)} :: ${a[c]}\n`
+                    output += `${c}${" ".repeat(longest - c.length)} :: ${ac[c]}\n`
                 }
 
             })
             return message.channel.send(output + "```");
+        } else if (type === "enable") {
+            client.antiAlt.set(message.guild.id, true, "enabled")
+            return message.sendE("Success", `Enabled anti alt`, client.colors.green)
+        } else if (type === "disable") {
+            client.antiAlt.set(message.guild.id, false, 'enabled')
+            return message.sendE("Success", `Disabled anti alt`, client.colors.green)
         }
 
 

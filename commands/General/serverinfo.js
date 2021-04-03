@@ -35,7 +35,6 @@ module.exports = {
             "us": ":flag_us:"
         }
 
-
         let guildRegion = message.guild.region
             .replace(/us-west/gi, `${flags.us} US West`)
             .replace(/us-east/gi, `${flags.us} US West`)
@@ -134,8 +133,5 @@ module.exports = {
             .setFooter(client.user.username, client.user.displayAvatarURL())
             .setImage(guildBanner)
         return message.channel.send(embed)
-
-
-
     }
 }

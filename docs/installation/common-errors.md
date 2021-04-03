@@ -46,6 +46,6 @@ Only do this if you're SURE of changing it.
 - Open Windows Powershell as Administrator, and you'd see something like `PS C:\windows\system32`.
 - Type the following `Set-ExecutionPolicy -ExecutionPolicy Unrestricted` and `Y` after.
 
-Then try nodemon again and it should work!
+Then try nodemon again and it will work!
 
-**Other errors will be supported, let me know by DM'ing me on Discord: Kool#7867**
+**Other errors will be supported, let me know by DM'ing me on Discord: Raccoon#7867**

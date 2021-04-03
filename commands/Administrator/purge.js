@@ -12,8 +12,8 @@ module.exports = {
 	premium: false,
 	guildOnly: false,
 	async execute(message, args, client, data) {
-		if (!message.member.permissions.has("MANAGE_MESSAGES") || client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_MESSAGES"])
-		if (!message.guild.me.permissions.has("MANAGE_MESSAGES")) return client.clientPerms(message, ["MANAGE_MESSAGES"])
+		if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_MESSAGES) || client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_MESSAGES"])
+		if (!message.guild.me.permissions.has(Discord.Permissions.FLAGS.MANAGE_MESSAGES)) return client.clientPerms(message, ["MANAGE_MESSAGES"])
 
 		let amount = parseInt(args[0])
 		message.delete().catch(() => {})

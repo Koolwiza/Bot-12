@@ -3,17 +3,19 @@
 
             
 
-### Administrator [19] 
+### Administrator [21] 
 
 | Name | Description | 
 | ---- | ----------- | 
 | [addemoji](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#addemoji) | Adds the emoji to the server | 
 | [antialt](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#antialt) | Configure antialt settings | 
+| [antispam](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#antispam) | Configure antispam settings for your server | 
 | [ban](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#ban) | Ban a member from the server | 
 | [delwarn](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#delwarn) | Remove a user's warn using an id | 
 | [goodbye](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#goodbye) | Set the goodbye channel/message for the server | 
 | [kick](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#kick) | Kick a member out of the server | 
 | [massban](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#massban) | Massban users | 
+| [members](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#members) | Shows detailed information about members and join rate | 
 | [mute](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#mute) | Mute a member | 
 | [plugins](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#plugins) | Enable or show plugins | 
 | [poll](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#poll) | An advanced poll command able to hold multiple questions | 
@@ -69,7 +71,7 @@
 
             
 
-### General [13] 
+### General [12] 
 
 | Name | Description | 
 | ---- | ----------- | 
@@ -81,7 +83,6 @@
 | [google](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#google) | Google a query with valid search results | 
 | [help](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#help) | Sends you a list of commands | 
 | [ping](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#ping) | A simple ping command | 
-| [roleinfo](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#roleinfo) | Displays deatiled information about a role | 
 | [say](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#say) | Say something | 
 | [serverinfo](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#serverinfo) | Get detailed information about the server | 
 | [snipe](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#snipe) | Check for deleted messages 👀 | 
@@ -100,7 +101,7 @@
 | [thesearch](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#thesearch) | The search continues... | 
 
 # Detailed Command List
-## Administrator | 19 Commands
+## Administrator | 21 Commands
 
 
 
@@ -120,6 +121,17 @@ Aliases:
 Command: antialt\
 Description: Configure antialt settings\
 Usage: antialt <type> [value]\
+Aliases: 
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Antispam
+
+Command: antispam\
+Description: Configure antispam settings for your server\
+Usage: \
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
@@ -175,6 +187,17 @@ Aliases:
 Command: massban\
 Description: Massban users\
 Usage: massban <@user1 @user2 @user3> [reason]\
+Aliases: 
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Members
+
+Command: members\
+Description: Shows detailed information about members and join rate\
+Usage: members\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
@@ -478,7 +501,7 @@ Usage: coinflip\
 Aliases: cf, flip
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-## General | 13 Commands
+## General | 12 Commands
 
 
 
@@ -564,17 +587,6 @@ Aliases: commands, command
 Command: ping\
 Description: A simple ping command\
 Usage: ping\
-Aliases: 
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-
-
-
-### Roleinfo
-
-Command: roleinfo\
-Description: Displays deatiled information about a role\
-Usage: role [role]\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)

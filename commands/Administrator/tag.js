@@ -23,7 +23,7 @@ module.exports = {
     }
 
     if (["add", "create"].includes(type)) {
-      if (!message.member.permissions.has("MANAGE_GUILD") || client.modRole(message, data.guild)) return client.authorPerms(message, ['MANAGE_SERVER'])
+      if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_GUILD) || client.modRole(message, data.guild)) return client.authorPerms(message, ['MANAGE_SERVER'])
       if (!value) return message.args("Please provide a name for the tag")
       if (!args.length) return message.args("Please provide the tag content")
 
@@ -34,7 +34,7 @@ module.exports = {
       return message.sendE("Success", `I have added the tag ${value} with a reply of \`\`\`${await client.clean(args.join(" "))}\`\`\``, client.colors.discord)
 
     } else if (["alias", "alt"].includes(type)) {
-      if (!message.member.permissions.has("MANAGE_GUILD") || client.modRole(message, data.guild)) return client.authorPerms(message, ['MANAGE_SERVER'])
+      if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_GUILD) || client.modRole(message, data.guild)) return client.authorPerms(message, ['MANAGE_SERVER'])
 
       if (!value) return message.args("Please provide an option.\nadd | remove")
       let option = args[0]
@@ -47,14 +47,14 @@ module.exports = {
 
 
       if (["add", "create"].includes(value)) {
-        if (!message.member.permissions.has("MANAGE_GUILD") || client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_GUILD"])
+        if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_GUILD) || client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_GUILD"])
     
         Tag.alias("add", `${message.guild.id}-${option}`, alias)
 
         return message.sendE("Success", `I have added the alias \`${alias}\` to the tag \`${alias}\``, client.colors.green)
 
       } else if (["remove", "delete"].includes(value)) {
-        if (!message.member.permissions.has("MANAGE_GUILD") || client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_GUILD"])
+        if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_GUILD) || client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_GUILD"])
     
         try {
           Tag.alias("remove", `${message.guild.id}-${option}`, alias)
@@ -80,7 +80,7 @@ module.exports = {
       return message.sendE(`${foundTags.size} Tags found`, `${foundTags.map(c => `\`${c.name}\``).join(", ")}`, client.colors.sky)
 
     } else if (['delete', 'remove'].includes(type)) {
-      if (!message.member.permissions.has("MANAGE_GUILD") || client.modRole(message, data.guild)) return client.authorPerms(message, ['MANAGE_SERVER'])
+      if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_GUILD) || client.modRole(message, data.guild)) return client.authorPerms(message, ['MANAGE_SERVER'])
       if (!check(value)) return message.error("Please provide a valid tag")
 
       Tag.delete(message, value)
