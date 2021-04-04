@@ -32,13 +32,14 @@
 
             
 
-### Developer [6] 
+### Developer [7] 
 
 | Name | Description | 
 | ---- | ----------- | 
 | [disable](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#disable) | Disable a command in either guild or globally | 
 | [enable](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#enable) | Enable a command in either guild or globally | 
 | [eval](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#eval) | Evaluates a piece of code | 
+| [test](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#test) |  | 
 | [reload](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#reload) | Reload a file/command | 
 | [timeout](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#timeout) | adsf | 
 | [topgg](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#topgg) | Shows topgg stuff | 
@@ -333,7 +334,7 @@ Usage: welcome <type> [value]\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-## Developer | 6 Commands
+## Developer | 7 Commands
 
 
 
@@ -365,6 +366,17 @@ Command: eval\
 Description: Evaluates a piece of code\
 Usage: eval <code>\
 Aliases: ev, evaluate
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Test
+
+Command: test\
+Description: \
+Usage: \
+Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
 
