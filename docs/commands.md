@@ -32,10 +32,11 @@
 
             
 
-### Developer [7] 
+### Developer [8] 
 
 | Name | Description | 
 | ---- | ----------- | 
+| [changelog](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#changelog) | Update change log | 
 | [disable](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#disable) | Disable a command in either guild or globally | 
 | [enable](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#enable) | Enable a command in either guild or globally | 
 | [eval](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#eval) | Evaluates a piece of code | 
@@ -334,7 +335,18 @@ Usage: welcome <type> [value]\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-## Developer | 7 Commands
+## Developer | 8 Commands
+
+
+
+### Changelog
+
+Command: changelog\
+Description: Update change log\
+Usage: changelog <title> <description>\
+Aliases: 
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
 
 
 
