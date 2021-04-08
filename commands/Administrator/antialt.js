@@ -24,12 +24,11 @@ module.exports = {
         if (type === "show") {
             let output = `\`\`\`asciidoc\n== AntiAlt Configurations ==\n`
             let props = Object.keys(ac)
-            let a = ac
             const longest = props.reduce((long, str) => Math.max(long, str.length), 0)
             props.forEach(c => {
                 if (c instanceof Array) c = c.join(", ")
                 if (ac[c] === null) {
-                    output += `${c}${" ".repeat(longest - c.slength)} :: None\n`
+                    output += `${c}${" ".repeat(longest - c.length)} :: None\n`
                 } else {
                     output += `${c}${" ".repeat(longest - c.length)} :: ${ac[c]}\n`
                 }
