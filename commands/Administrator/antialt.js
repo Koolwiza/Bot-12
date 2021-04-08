@@ -26,7 +26,7 @@ module.exports = {
             let props = Object.keys(ac)
             const longest = props.reduce((long, str) => Math.max(long, str.length), 0)
             props.forEach(c => {
-                if (c instanceof Array) c = c.join(", ")
+                if (Array.isArray(c)) c = c.join(", ")
                 if (ac[c] === null) {
                     output += `${c}${" ".repeat(longest - c.length)} :: None\n`
                 } else {
