@@ -3,7 +3,7 @@
 
             
 
-### Administrator [21] 
+### Administrator [20] 
 
 | Name | Description | 
 | ---- | ----------- | 
@@ -15,7 +15,6 @@
 | [goodbye](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#goodbye) | Set the goodbye channel/message for the server | 
 | [kick](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#kick) | Kick a member out of the server | 
 | [massban](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#massban) | Massban users | 
-| [members](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#members) | Shows detailed information about members and join rate | 
 | [mute](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#mute) | Mute a member | 
 | [plugins](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#plugins) | Enable or show plugins | 
 | [poll](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#poll) | An advanced poll command able to hold multiple questions | 
@@ -32,7 +31,7 @@
 
             
 
-### Developer [8] 
+### Developer [9] 
 
 | Name | Description | 
 | ---- | ----------- | 
@@ -40,6 +39,7 @@
 | [disable](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#disable) | Disable a command in either guild or globally | 
 | [enable](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#enable) | Enable a command in either guild or globally | 
 | [eval](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#eval) | Evaluates a piece of code | 
+| [execute](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#execute) | Run a shell command | 
 | [test](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#test) |  | 
 | [reload](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#reload) | Reload a file/command | 
 | [timeout](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#timeout) | adsf | 
@@ -73,7 +73,7 @@
 
             
 
-### General [12] 
+### General [14] 
 
 | Name | Description | 
 | ---- | ----------- | 
@@ -84,6 +84,8 @@
 | [github](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#github) | Search up a user from github | 
 | [google](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#google) | Google a query with valid search results | 
 | [help](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#help) | Sends you a list of commands | 
+| [members](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#members) | Shows detailed information about members and join rate | 
+| [npm](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#npm) | Search for a package in npm | 
 | [ping](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#ping) | A simple ping command | 
 | [say](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#say) | Say something | 
 | [serverinfo](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#serverinfo) | Get detailed information about the server | 
@@ -103,7 +105,7 @@
 | [thesearch](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#thesearch) | The search continues... | 
 
 # Detailed Command List
-## Administrator | 21 Commands
+## Administrator | 20 Commands
 
 
 
@@ -189,17 +191,6 @@ Aliases:
 Command: massban\
 Description: Massban users\
 Usage: massban <@user1 @user2 @user3> [reason]\
-Aliases: 
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-
-
-
-### Members
-
-Command: members\
-Description: Shows detailed information about members and join rate\
-Usage: members\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
@@ -335,7 +326,7 @@ Usage: welcome <type> [value]\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-## Developer | 8 Commands
+## Developer | 9 Commands
 
 
 
@@ -378,6 +369,17 @@ Command: eval\
 Description: Evaluates a piece of code\
 Usage: eval <code>\
 Aliases: ev, evaluate
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Execute
+
+Command: execute\
+Description: Run a shell command\
+Usage: \
+Aliases: exec, ex
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
 
@@ -525,7 +527,7 @@ Usage: coinflip\
 Aliases: cf, flip
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-## General | 12 Commands
+## General | 14 Commands
 
 
 
@@ -601,6 +603,28 @@ Command: help\
 Description: Sends you a list of commands\
 Usage: help [command]\
 Aliases: commands, command
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Members
+
+Command: members\
+Description: Shows detailed information about members and join rate\
+Usage: members\
+Aliases: 
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Npm
+
+Command: npm\
+Description: Search for a package in npm\
+Usage: npm <package>\
+Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
 
