@@ -16,7 +16,7 @@ const {
       CronJob
   } = require('cron')
 
-const job = new CronJob('0 12 * * Sun', () => {
+new CronJob('0 12 * * Sun', () => {
   client.joins.clear()
 }, null, true, 'America/Los_Angeles')
 
