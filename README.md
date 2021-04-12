@@ -35,17 +35,9 @@ A bot to help your server with moderation, utility and more.
 * [Features](https://github.com/Koolwiza/Bot-12#features)
 * [Upcoming](https://github.com/Koolwiza/Bot-12#future-plansz)
 
-## ⭐ Some commands this bot offers
+## ⭐ Commands
 
-###  55 total commands
-
- - 🔨 **Administrator**: `addemoji`, `ban`, `delwarn`, `goodbye`, `kick` and **11** more...
- - 👑 **Developer**: `disable`, `enable`, `eval`, `ghcmdlist`, `reload` and **1** more...
- - 💵 **Economy**: `balance`, `work` 
- - 👍 **General**: `bitcoin`, `botinfo`, `calculate`, `docs`, `google` and **5** more...
- - 🎵 **Music**: `applyfilter`, `bassboost`, `clean`, `clearqueue`, `filters` and **16** more...
-
-[See full command list here...](https://github.com/Koolwiza/Bot-12/blob/main/docs/commands.md)
+[Command List](https://github.com/Koolwiza/Bot-12/blob/main/docs/commands.md)
 
 And even more commands coming soon!
 
@@ -54,6 +46,8 @@ And even more commands coming soon!
 - ❌ Anti Links - No links allowed when enabled
 - ❌ Anti Invites - No invites allowed when enabled
 - ❌ Anti Spoilers - No spoilers allowed when enabled
+- ❌ Anti Alt - No alts allowed to join
+- ❌ Anti Spam - Punishes members if they spam in a server
 - ✅ Automatic Administrator Command Deletion - Deletes administrator commands when enabled
 - ❌ Anti Bots - No bots will be able to be added to the server when the person who added doesn't have a certain role (mod role in config) when enabled
 - ✅ Configurable Prefix - A customizable prefix 
