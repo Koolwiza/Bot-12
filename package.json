@@ -32,7 +32,8 @@
     "pm2": "^4.5.4",
     "request-promise": "^4.2.6",
     "translate": "^1.2.3",
-    "twemoji-parser": "^13.0.0"
+    "twemoji-parser": "^13.0.0",
+    "weather-js": "^2.0.0"
   },
   "devDependencies": {},
   "repository": {

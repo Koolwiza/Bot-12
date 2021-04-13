@@ -1,3 +1,4 @@
 node_modules
 src/data/config.js
 data
+commands/Developer/kahoot.js
