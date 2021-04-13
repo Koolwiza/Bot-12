@@ -21,4 +21,5 @@
 7) Enable the api by clicking "Enable"
 8) Create API key by going to [credentials](https://console.cloud.google.com/apis/credentials) 
 9) Press "Create Credentials" and select "API Key"
-10) You're done!
+10) Copy the API key 
+11) You're done!
