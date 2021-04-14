@@ -25,7 +25,7 @@ module.exports = {
     guildOnly: false,
     ignore: true,
     async execute(message, args, client, data) {
-        if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_GUILD) || client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_SERVER"])
+        if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_GUILD) || !client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_SERVER"])
 
         var questionRe = /"(.*)"/gmi
         let question = args.join(" ").match(questionRe)
