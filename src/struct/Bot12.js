@@ -1,7 +1,8 @@
 const {
   Client,
   Collection,
-  Intents
+  User,
+  GuildChannel
 } = require('discord.js'),
   Discord = require('discord.js'), {
     inspect
@@ -21,10 +22,10 @@ module.exports = class Bot12 extends Client {
 
     /**
      * Attach useful properties and functions to the extended client
-     * @property {logger} - A useful logger for aesthetic logging
-     * @property {colors} - An object filled with preset colors used for embeds
-     * @property {config} - Our configuration file, tokens, owners, etc . . .
-     * @property {emoji} - Close to overwriding 'emojis' property but doesn't. An object filled with emojis useful for general messages
+     * @property {function} logger A useful logger for aesthetic logging
+     * @property {object} colors An object filled with preset colors used for embeds
+     * @property {object} config Our configuration file, tokens, owners, etc . . .
+     * @property {object} emoji Close to overwriding 'emojis' property but doesn't. An object filled with emojis useful for general messages
      */
 
     this.logger = require('../../helpers/logger')
@@ -34,9 +35,9 @@ module.exports = class Bot12 extends Client {
 
     /**
      * Datatypes that are stored in cache
-     * @property {commands} - A collection of the client's commands. Loaded in 'index.js'
-     * @property {snipes} - A collection of the recorded snipes. Loaded in 'messageDelete.js'
-     * @property {queue} - A Map of the songs used in a server. Loaded in 'Commands/Music'
+     * @property {Collection} commands - A collection of the client's commands. Loaded in 'index.js'
+     * @property {Collection} snipes - A collection of the recorded snipes. Loaded in 'messageDelete.js'
+     * @property {Collection} queue - A Map of the songs used in a server. Loaded in 'Commands/Music'
      */
 
     this.commands = new Collection()
@@ -45,12 +46,17 @@ module.exports = class Bot12 extends Client {
 
     /**
      * Our Enmaps
-     * @property {guildData} - Stores prefixes, modroles, etc . . .
-     * @property {plugins} - Stores enabled plugins of a guild
-     * @property {modActions} - Stores the mod actions that were recorded in a server
-     * @property {userProfiles} - Stores the user's profiles throughout the bot
-     * @property {disabled} - Stores the disabled commands
-     * @property {cooldowns} - Stores cooldowns for each command by user
+     * @property {Enmap} guildData Stores prefixes, modroles, etc . . .
+     * @property {Enmap} plugins Stores enabled plugins of a guild
+     * @property {Enmap} modActions Stores the mod actions that were recorded in a guild
+     * @property {Enmap} userProfiles Stores the user's profiles throughout the bot
+     * @property {Enmap} disabled Stores the disabled commands
+     * @property {Enmap} cooldowns Stores cooldowns for each command by user
+     * @property {Enmap} tags The tags for each guild
+     * @property {Enmap} antiAlt The anti alt settings per guild
+     * @property {Enmap} autoMod The automod settings per guild
+     * @property {Enmap} antiSpam The anti spam settings per guild
+     * @property {Enmap} joins The guild join data
      */
 
     let enmaps = {
@@ -62,9 +68,9 @@ module.exports = class Bot12 extends Client {
       "cooldowns": "cooldowns",
       "tags": "tags",
       "antiAlt": "antialt",
-      "autoMod":"automod",
-      "antiSpam":"antispam",
-      "joins":"joins"
+      "autoMod": "automod",
+      "antiSpam": "antispam",
+      "joins": "joins"
     }
 
     for (const [k, v] of Object.entries(enmaps)) {
@@ -76,8 +82,15 @@ module.exports = class Bot12 extends Client {
     }
   }
 
+  /**
+   * 
+   * @param {object} message The discord.js message object
+   * @param {array | string} perms An array of permission strings or a permission string
+   * @returns {Promise} Promise of TextChannel#send
+   */
+
   authorPerms(message, perms) {
-    let a = typeof perms === Array ? perms.join(", ") : perms
+    let a = Array.isArray(perms) ? perms.join(", ") : perms
 
     const errorEmbed = new Discord.MessageEmbed()
       .setTitle("You don't have permission to execute this comamnd")
@@ -88,8 +101,15 @@ module.exports = class Bot12 extends Client {
     return message.channel.send(errorEmbed)
   }
 
+  /**
+   * 
+   * @param {object} message The discord.js message object 
+   * @param {array} perms An array of permission strings or a permission string
+   * @returns {Promise} Promise of TextChannel#send
+   */
+
   clientPerms(message, perms) {
-    let p = typeof perms === Array ? perms.join(', ') : perms
+    let p = Array.isArray(array) ? perms.join(', ') : perms
 
     const errorEmbed = new Discord.MessageEmbed()
       .setTitle("I don't have permission to execute this comamnd")
@@ -100,19 +120,31 @@ module.exports = class Bot12 extends Client {
     return message.channel.send(errorEmbed)
   }
 
+  /**
+   * 
+   * @param {object} message The discord.js message object
+   * @param {object} data The data for the guild
+   * @returns {boolean} Whether the person has the mod role of that guild or not
+   */
+
   modRole(message, data) {
 
     if (!data.modrole) {
       return true
-    }
-    else {
+    } else {
       let mod = (message.guild.roles.cache.get(data.modrole) && !message.member.roles.cache.has(data.modrole))
       return mod
     }
 
   }
 
-
+  /**
+   * 
+   * @param {object} canvas The canvas constructor
+   * @param {string} text The string you want to apply
+   * @param {number} defaultFontSize The default font size of the text
+   * @returns {string} The string resolvable of canvas fonts
+   */
   applyText(canvas, text, defaultFontSize) {
     const ctx = canvas.getContext("2d");
     do {
@@ -121,6 +153,12 @@ module.exports = class Bot12 extends Client {
     return ctx.font;
   };
 
+  /**
+   * 
+   * @param {object} msg The discord.js message object
+   * @param {object} object The rest of the Discord#MessageEmbed object
+   * @returns {object} The object for a Discord#MessageEmbed
+   */
   baseEmbed(msg, object) {
     let authorObject = {
       name: msg.author.tag,
@@ -139,6 +177,12 @@ module.exports = class Bot12 extends Client {
     }
   }
 
+  /**
+   * 
+   * @param {string} text The string needed to "clean" e.g replacing secrets
+   * @returns {string} The cleaned string
+   */
+
   async clean(text) {
     if (text && text.constructor.name == "Promise")
       text = await text;
@@ -155,8 +199,13 @@ module.exports = class Bot12 extends Client {
     return text;
   }
 
+  /**
+   * 
+   * @param {number} length The length of the randomly generated string. Defaulted at 6
+   * @returns {string} A randomly generated string with the length of that number
+   */
 
-  randomString(length) {
+  randomString(length = 6) {
     var result = '';
     var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     var charactersLength = characters.length;
@@ -166,7 +215,11 @@ module.exports = class Bot12 extends Client {
     return result;
   }
 
-
+  /**
+   *  
+   * @param {string} search The mentioned string
+   * @returns {User} A user object
+   */
 
   async resolveUser(search) {
     let userRegex = /^<@!?(\d+)>$/
@@ -181,6 +234,12 @@ module.exports = class Bot12 extends Client {
     return user;
   }
 
+  /**
+   * 
+   * @param {string} search The mentioned channel
+   * @returns {Channel} A channel object
+   */
+
   async resolveChannel(search) {
     let channelRegex = /^<#(\d+)>$/
     let channel = null;
@@ -193,6 +252,14 @@ module.exports = class Bot12 extends Client {
     channel = await this.channels.fetch(search).catch(() => {});
     return channel;
   }
+
+  /**
+   * 
+   * @param {object} msg The discord.js message object
+   * @param {string} question The question needed to prompt
+   * @param {number} limit How long it the discord.js collector should wait
+   * @returns {string} The collected string
+   */
 
   async awaitReply(msg, question, limit = 60000) {
     const filter = m => m.author.id === msg.author.id;
@@ -212,8 +279,28 @@ module.exports = class Bot12 extends Client {
     }
   }
 
+  /**
+   * 
+   * @param {object} message A message object
+   * @returns {(object|Array)}
+   */
 
+  parseMessage(message) {
+    let embeds = message.embeds?.length
+    let attachments = message.attachments?.first()
+    let data = embeds ? {
+      embed: true,
+      data: message.embeds[0]
+    } : attachments ? {
+      attachment: true,
+      data: attachments.proxyURL
+    } : message.content
+    return data
+  }
 
+  /**
+   * @returns {Promise} When the setTimeout is resolved
+   */
   wait = require("util").promisify(setTimeout);
 
 }

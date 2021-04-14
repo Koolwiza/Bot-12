@@ -48,4 +48,4 @@ Only do this if you're SURE of changing it.
 
 Then try nodemon again and it will work!
 
-**Other errors will be supported, let me know by DM'ing me on Discord: Raccoon#7867**
+**Other errors will be supported, let me know by DM'ing me on Discord: 817259481133088809 (id)**

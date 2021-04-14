@@ -25,7 +25,7 @@ module.exports = {
             "sunday": 0,
         })
 
-        const chart = {
+        let chart = {
             type: 'line',
             data: {
                 labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
@@ -38,8 +38,17 @@ module.exports = {
 
         let enChart = encodeURIComponent(JSON.stringify(chart))
         const chartUrl = `https://quickchart.io/chart?c=${enChart}&backgroundColor=(rgb(47,%2049,%2054))`;
-        message.channel.send(new Discord.MessageAttachment(chartUrl, "chart.png"))
+        await message.guild.members.fetch()
 
-        // Print the chart URL
+        let humanPercent = Math.round((message.guild.members.cache.filter(m => !m.user.bot).size / message.guild.memberCount) * 100);
+        let botPercent = Math.round((message.guild.members.cache.filter(m => m.user.bot).size / message.guild.memberCount) * 100);
+        
+        let embed = new Discord.MessageEmbed()  
+            .setTitle(`${message.guild.name} Member statistics`)
+            .setDescription(`${message.guild.memberCount} total members. (${humanPercent}% humans + ${botPercent}% bots)`)
+            .setImage(chartUrl)
+            .setColor(client.colors.green)
+            .default(message.author)
+        message.channel.send(embed)
     }
 }

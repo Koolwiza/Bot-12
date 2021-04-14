@@ -12,7 +12,7 @@ module.exports = {
     premium: false,
     guildOnly: false,
     async execute(message, [type, ...value], client, data) {
-        if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_GUILD) || client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_GUILD"])
+        if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_GUILD) || client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_SERVER"])
         let ac = client.config.plugins.defaultAntiAlt
         let allowedTypes = Object.keys(ac)
         let options = ['show', , 'enable', 'disable', ...allowedTypes]
@@ -24,12 +24,11 @@ module.exports = {
         if (type === "show") {
             let output = `\`\`\`asciidoc\n== AntiAlt Configurations ==\n`
             let props = Object.keys(ac)
-            let a = ac
             const longest = props.reduce((long, str) => Math.max(long, str.length), 0)
             props.forEach(c => {
-                if (c instanceof Array) c = c.join(", ")
+                if (Array.isArray(c)) c = c.join(", ")
                 if (ac[c] === null) {
-                    output += `${c}${" ".repeat(longest - c.slength)} :: None\n`
+                    output += `${c}${" ".repeat(longest - c.length)} :: None\n`
                 } else {
                     output += `${c}${" ".repeat(longest - c.length)} :: ${ac[c]}\n`
                 }

@@ -3,7 +3,7 @@
 
             
 
-### Administrator [21] 
+### Administrator [20] 
 
 | Name | Description | 
 | ---- | ----------- | 
@@ -15,7 +15,6 @@
 | [goodbye](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#goodbye) | Set the goodbye channel/message for the server | 
 | [kick](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#kick) | Kick a member out of the server | 
 | [massban](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#massban) | Massban users | 
-| [members](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#members) | Shows detailed information about members and join rate | 
 | [mute](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#mute) | Mute a member | 
 | [plugins](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#plugins) | Enable or show plugins | 
 | [poll](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#poll) | An advanced poll command able to hold multiple questions | 
@@ -32,13 +31,16 @@
 
             
 
-### Developer [6] 
+### Developer [9] 
 
 | Name | Description | 
 | ---- | ----------- | 
+| [changelog](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#changelog) | Update change log | 
 | [disable](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#disable) | Disable a command in either guild or globally | 
 | [enable](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#enable) | Enable a command in either guild or globally | 
 | [eval](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#eval) | Evaluates a piece of code | 
+| [execute](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#execute) | Run a shell command | 
+| [test](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#test) |  | 
 | [reload](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#reload) | Reload a file/command | 
 | [timeout](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#timeout) | adsf | 
 | [topgg](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#topgg) | Shows topgg stuff | 
@@ -60,18 +62,20 @@
 
             
 
-### Fun [3] 
+### Fun [5] 
 
 | Name | Description | 
 | ---- | ----------- | 
 | [ascii](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#ascii) | Turn your text into A S C I I | 
+| [binary](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#binary) | Translate your text to binary | 
 | [choose](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#choose) | Let the bot choose an option for you | 
 | [coinflip](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#coinflip) | Flip a coin | 
+| [say](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#say) | Say something | 
 
 
             
 
-### General [12] 
+### General [14] 
 
 | Name | Description | 
 | ---- | ----------- | 
@@ -82,11 +86,13 @@
 | [github](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#github) | Search up a user from github | 
 | [google](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#google) | Google a query with valid search results | 
 | [help](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#help) | Sends you a list of commands | 
+| [members](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#members) | Shows detailed information about members and join rate | 
+| [npm](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#npm) | Search for a package in npm | 
 | [ping](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#ping) | A simple ping command | 
-| [say](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#say) | Say something | 
 | [serverinfo](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#serverinfo) | Get detailed information about the server | 
 | [snipe](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#snipe) | Check for deleted messages 👀 | 
 | [userinfo](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#userinfo) | Get detailed information about a user | 
+| [weather](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#weather) | Search for the weather in a location in F° or C° | 
 
 
             
@@ -101,7 +107,7 @@
 | [thesearch](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#thesearch) | The search continues... | 
 
 # Detailed Command List
-## Administrator | 21 Commands
+## Administrator | 20 Commands
 
 
 
@@ -187,17 +193,6 @@ Aliases:
 Command: massban\
 Description: Massban users\
 Usage: massban <@user1 @user2 @user3> [reason]\
-Aliases: 
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-
-
-
-### Members
-
-Command: members\
-Description: Shows detailed information about members and join rate\
-Usage: members\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
@@ -333,7 +328,18 @@ Usage: welcome <type> [value]\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-## Developer | 6 Commands
+## Developer | 9 Commands
+
+
+
+### Changelog
+
+Command: changelog\
+Description: Update change log\
+Usage: changelog <title> <description>\
+Aliases: 
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
 
 
 
@@ -365,6 +371,28 @@ Command: eval\
 Description: Evaluates a piece of code\
 Usage: eval <code>\
 Aliases: ev, evaluate
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Execute
+
+Command: execute\
+Description: Run a shell command\
+Usage: \
+Aliases: exec, ex
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Test
+
+Command: test\
+Description: \
+Usage: \
+Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
 
@@ -467,7 +495,7 @@ Usage: balance <user>\
 Aliases: job
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-## Fun | 3 Commands
+## Fun | 5 Commands
 
 
 
@@ -476,6 +504,17 @@ Aliases: job
 Command: ascii\
 Description: Turn your text into A S C I I\
 Usage: ascii <text>\
+Aliases: 
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Binary
+
+Command: binary\
+Description: Translate your text to binary\
+Usage: binary <text>\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
@@ -501,7 +540,18 @@ Usage: coinflip\
 Aliases: cf, flip
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-## General | 12 Commands
+
+
+
+### Say
+
+Command: say\
+Description: Say something\
+Usage: say <message>\
+Aliases: 
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+## General | 14 Commands
 
 
 
@@ -582,22 +632,33 @@ Aliases: commands, command
 
 
 
-### Ping
+### Members
 
-Command: ping\
-Description: A simple ping command\
-Usage: ping\
+Command: members\
+Description: Shows detailed information about members and join rate\
+Usage: members\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
 
 
 
-### Say
+### Npm
 
-Command: say\
-Description: Say something\
-Usage: say <message>\
+Command: npm\
+Description: Search for a package in npm\
+Usage: npm <package>\
+Aliases: 
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Ping
+
+Command: ping\
+Description: A simple ping command\
+Usage: ping\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
@@ -632,6 +693,17 @@ Command: userinfo\
 Description: Get detailed information about a user\
 Usage: userinfo [user]\
 Aliases: member, user
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Weather
+
+Command: weather\
+Description: Search for the weather in a location in F° or C°\
+Usage: weather <location> [--(c|f)]\
+Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
 ## Images | 4 Commands

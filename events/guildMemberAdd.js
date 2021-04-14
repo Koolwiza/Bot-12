@@ -67,7 +67,8 @@ module.exports = async (client, member) => {
 
       channel.send(msg)
     }
-  } else if (pd.antialt) {
+  }
+  if (pd.antialt) {
     new AntiAlt(client).start(member)
   }
 }
