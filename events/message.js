@@ -12,7 +12,7 @@ module.exports = async (client, message) => {
 
   let cooldowns = client.cooldowns
 
-  if (message.author.bot) return
+  if (message.author.bot && message.content.startsWith(client.config.prefix)) return
   if (!message.guild || message.channel.type === "dm") return
 
   const data = {
@@ -20,16 +20,16 @@ module.exports = async (client, message) => {
     user: (user) => {
       return client.userProfiles.ensure(user.id, {
         ...userData,
-        user: message.author.id
+        user: user.id
       })
     },
     plugins: client.plugins.ensure(message.guild.id, defaultPlugins)
   }
+  data.user(message.author)
   client.disabled.ensure("commands", {
     guild: {},
     global: []
   })
-
 
   const prefix = client.guildData.has(message.guild.id, "prefix") ? client.guildData.get(message.guild.id, "prefix") : client.config.defaultSettings.prefix
   if (await client.resolveUser(message.content.split(" ")[0].id) === client.user.id) message.channel.send(
