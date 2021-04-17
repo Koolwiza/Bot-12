@@ -7,7 +7,9 @@ module.exports = {
         category: "giveaway",
         aliases: ["giveaway-start"],
         usage: '<channel> <duration> <winners>, <prize>',
-    run: async (bot, message, args) => {
+    premium: false,
+         guildOnly: false,
+         async execute(message, args, client, data) {
        if(!message.member.hasPermission('MANAGE_MESSAGES') && !message.member.roles.cache.some((r) => r.name === "Giveaways")){
         return message.channel.send(':x: You need to have the manage messages permissions to start giveaways.');
     }
