@@ -24,6 +24,6 @@ module.exports = {
 
     client.userProfiles.math(message.author.id, "subtract", amount, 'balance')
     client.userProfiles.math(user.id, 'add', amount, 'balance')
-    return message.sendE("Success", `You have gave ${user.toString()} ${client.emoji.misc.coin}${amount}`, client.colors.green)
+    return message.sendE("Success", `You have gave ${user.toString()} ${client.emoji.misc.coin}${amount.toLocaleString()}`, client.colors.green)
   }
 }
