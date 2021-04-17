@@ -27,7 +27,7 @@ module.exports = {
         let msg = `You receive ${client.emoji.misc.coin} **${amount}** for your daily reward\n`
         if (d.daily >= 6) {
             let add = randNum(3000, 4000)
-            reward += `You have gotten the 6 daily streak! \nYour reward is an extra ${client.emoji.misc.coin}** ${add}**\n`
+            reward += `You have gotten the 6 daily streak! \nYour reward is an extra ${client.emoji.misc.coin}** ${add.toLocaleString()}**\n`
             amount += add
             user.set(message.author.id, 0, "daily")
         }
@@ -63,8 +63,6 @@ module.exports = {
 
     }
 }
-
-
 
 function randNum(min, max) { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min);
