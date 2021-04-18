@@ -44,8 +44,8 @@ client.giveawaysManager
         if(e.startsWith(`Giveaway with message ID ${giveaway.messageID} is already ended.`)){
             message.channel.send('This giveaway is already ended!');
         } else {
-            console.error(e);
-            message.channel.send('An error occured...');
+client.logger.error(e)
+message.error("An error occured. Please try again!")
         }
     });
     }
