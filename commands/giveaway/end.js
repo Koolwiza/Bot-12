@@ -28,7 +28,7 @@ client.giveawaysManager
 
     // If no giveaway was found
     if(!giveaway){
-        return message.channel.send('Unable to find a giveaway for `'+ args.join(' ') + '`.');
+return message.error(`Unable to find a giveaway for \`${args.join(" ")}\``)
     }
 
     // Edit the giveaway
