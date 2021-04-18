@@ -42,7 +42,7 @@ return message.error(`Unable to find a giveaway for \`${args.join(" ")}\``)
     })
     .catch((e) => {
         if(e.startsWith(`Giveaway with message ID ${giveaway.messageID} is already ended.`)){
-            message.channel.send('This giveaway is already ended!');
+message.error("This giveaway is already ended")
         } else {
 client.logger.error(e)
 message.error("An error occured. Please try again!")
