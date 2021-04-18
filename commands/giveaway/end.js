@@ -16,7 +16,7 @@ return client.authorPerms(message, "Manage messages or role 'Giveaways'")
 
     // If no message ID or giveaway name is specified
     if(!args[0]){
-        return message.channel.send(':x: You have to specify a valid message ID!');
+if(!args[0]) return message.args("Please specify a message ID")
     }
 
     // try to found the giveaway with prize then with ID
