@@ -21,9 +21,9 @@ premium: false,
     // try to found the giveaway with prize then with ID
     let giveaway = 
     // Search with giveaway prize
-    bot.giveawaysManager.giveaways.find((g) => g.prize === args.join(' ')) ||
+    client.giveawaysManager.giveaways.find((g) => g.prize === args.join(' ')) ||
     // Search with giveaway ID
-    bot.giveawaysManager.giveaways.find((g) => g.messageID === args[0]);
+    client.giveawaysManager.giveaways.find((g) => g.messageID === args[0]);
 
     // If no giveaway was found
     if(!giveaway){
@@ -31,7 +31,7 @@ premium: false,
     }
 
     // Reroll the giveaway
-    bot.giveawaysManager.reroll(giveaway.messageID)
+    client.giveawaysManager.reroll(giveaway.messageID)
     .then(() => {
         // Success message
         message.channel.send('Giveaway rerolled!');
