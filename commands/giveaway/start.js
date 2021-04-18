@@ -43,7 +43,7 @@ module.exports = {
     }
 
     // Start the giveaway
-    bot.giveawaysManager.start(giveawayChannel, {
+   client.giveawaysManager.start(giveawayChannel, {
         // The giveaway duration
         time: ms(giveawayDuration),
         // The giveaway prize
