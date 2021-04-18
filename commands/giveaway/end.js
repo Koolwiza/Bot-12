@@ -22,7 +22,7 @@ return client.authorPerms(message, "Manage messages or role 'Giveaways'")
     // try to found the giveaway with prize then with ID
     let giveaway = 
     // Search with giveaway prize
-    bot.giveawaysManager.giveaways.find((g) => g.prize === args.join(' ')) ||
+client.giveawaysManager
     // Search with giveaway ID
     bot.giveawaysManager.giveaways.find((g) => g.messageID === args[0]);
 
