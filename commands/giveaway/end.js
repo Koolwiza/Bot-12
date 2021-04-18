@@ -24,7 +24,7 @@ if(!args[0]) return message.args("Please specify a message ID")
     // Search with giveaway prize
 client.giveawaysManager
     // Search with giveaway ID
-    bot.giveawaysManager.giveaways.find((g) => g.messageID === args[0]);
+    client.giveawaysManager.giveaways.find((g) => g.messageID === args[0]);
 
     // If no giveaway was found
     if(!giveaway){
@@ -32,13 +32,13 @@ return message.error(`Unable to find a giveaway for \`${args.join(" ")}\``)
     }
 
     // Edit the giveaway
-    bot.giveawaysManager.edit(giveaway.messageID, {
+    client.giveawaysManager.edit(giveaway.messageID, {
         setEndTimestamp: Date.now()
     })
     // Success message
     .then(() => {
         // Success message
-        message.channel.send('Giveaway will end in less than '+(bot.giveawaysManager.options.updateCountdownEvery/1000)+' seconds...');
+        message.channel.send('Giveaway will end in less than '+(client.giveawaysManager.options.updateCountdownEvery/1000)+' seconds...');
     })
     .catch((e) => {
         if(e.startsWith(`Giveaway with message ID ${giveaway.messageID} is already ended.`)){
