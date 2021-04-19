@@ -2,7 +2,8 @@ const {
   Client,
   Collection,
   User,
-  GuildChannel
+  GuildChannel,
+  MessageEmbed
 } = require('discord.js'),
   Discord = require('discord.js'), {
     inspect
@@ -36,13 +37,9 @@ module.exports = class Bot12 extends Client {
     /**
      * Datatypes that are stored in cache
      * @property {Collection} commands - A collection of the client's commands. Loaded in 'index.js'
-     * @property {Collection} snipes - A collection of the recorded snipes. Loaded in 'messageDelete.js'
-     * @property {Collection} queue - A Map of the songs used in a server. Loaded in 'Commands/Music'
      */
 
     this.commands = new Collection()
-    this.snipes = new Collection()
-    this.queue = new Map()
 
     /**
      * Our Enmaps
@@ -77,7 +74,8 @@ module.exports = class Bot12 extends Client {
       this[k] = new Enmap({
         name: v,
         fetchAll: true,
-        autoFetch: true
+        autoFetch: true,
+        ensureProps: true
       })
     }
   }
@@ -237,7 +235,7 @@ module.exports = class Bot12 extends Client {
   /**
    * 
    * @param {string} search The mentioned channel
-   * @returns {Channel} A channel object
+   * @returns {GuildChannel} A channel object
    */
 
   async resolveChannel(search) {
@@ -290,7 +288,7 @@ module.exports = class Bot12 extends Client {
     let attachments = message.attachments?.first()
     let data = embeds ? {
       embed: true,
-      data: message.embeds[0]
+      data: new MessageEmbed(message.embeds[0])
     } : attachments ? {
       attachment: true,
       data: attachments.proxyURL

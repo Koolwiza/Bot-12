@@ -19,7 +19,7 @@ module.exports = {
   guildOnly: true,
   cooldown: 10,
   async execute(message, args, client, data) {
-    if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_EMOJIS) || client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_EMOJIS"])
+    if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_EMOJIS) || !client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_EMOJIS"])
 
     if (!message.guild.me.hasPermission(Discord.Permissions.FLAGS.MANAGE_EMOJIS)) {
       return client.noPerms(message, ['MANAGE_EMOJIS'])
@@ -57,11 +57,11 @@ module.exports = {
         })
       } else {
 
-        let CheckEmoji = parse(emoji, {
+        let checkEmoji = parse(emoji, {
           assetType: "png"
         });
-        if (!CheckEmoji[0]) return message.error("Please give me a valid emoji")
-        return message.channel.sendE("Returned", "You can use discord emojis without adding to a server")
+        if (!checkEmoji[0]) return message.error("Please give me a valid emoji")
+        return message.error("Returned", "You can use discord emojis without adding to a server")
       }
     }
 

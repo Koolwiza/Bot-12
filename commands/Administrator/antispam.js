@@ -15,7 +15,7 @@ module.exports = {
   async execute(message, [type, ...args], client, data) {
     if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_GUILD) || !client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_SERVER"])
     if (!type) return message.error("Please provide a config option")
-
+    type = type.toLowerCase()
     let antiSpamKeys = Object.keys(client.config.plugins.defaultAntiSpam)
     let options = ['show', 'enable', 'disable', ...antiSpamKeys]
 
@@ -45,7 +45,6 @@ module.exports = {
         message.sendE("Success", 'Enabled antispam', client.colors.green)
         break;
       case "disable":
-        console.log("go to disable")
         client.antiSpam.set(message.guild.id, false, "enabled")
         message.sendE("Success", 'Enabled antispam', client.colors.green)
         break;

@@ -48,15 +48,20 @@
 
             
 
-### Economy [6] 
+### Economy [11] 
 
 | Name | Description | 
 | ---- | ----------- | 
 | [balance](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#balance) | View the balance of a member | 
+| [buy](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#buy) | Buy an item | 
 | [daily](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#daily) | Claim the daily reward for more coins!  | 
+| [fish](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#fish) | **Requires fishing rod**. Fish at a pond getting you fish! | 
 | [give](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#give) | Give money to another person | 
+| [hunt](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#hunt) | Hunt for animals! | 
 | [leaderboard](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#leaderboard) | Display the global leaderboard for economy | 
 | [rob](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#rob) | Rob a user of their money  | 
+| [sell](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#sell) | Sell an item you have in your inventory | 
+| [shop](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#shop) | Display the shop menu for the bot's economy | 
 | [work](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#work) | Work a job gaining coins | 
 
 
@@ -75,7 +80,7 @@
 
             
 
-### General [14] 
+### General [13] 
 
 | Name | Description | 
 | ---- | ----------- | 
@@ -90,7 +95,6 @@
 | [npm](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#npm) | Search for a package in npm | 
 | [ping](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#ping) | A simple ping command | 
 | [serverinfo](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#serverinfo) | Get detailed information about the server | 
-| [snipe](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#snipe) | Check for deleted messages 👀 | 
 | [userinfo](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#userinfo) | Get detailed information about a user | 
 | [weather](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#weather) | Search for the weather in a location in F° or C° | 
 
@@ -247,7 +251,7 @@ Aliases:
 
 Command: purge\
 Description: Purge messages from a channel\
-Usage: purge <@user | userID | channel | bots] <amount>\
+Usage: purge <@user | userID | customEmoji | normalEmoji | @role | roleID | content | channel | bots] <amount>\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
@@ -428,7 +432,7 @@ Usage: topgg \
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-## Economy | 6 Commands
+## Economy | 11 Commands
 
 
 
@@ -438,6 +442,17 @@ Command: balance\
 Description: View the balance of a member\
 Usage: balance <user>\
 Aliases: money, cash, coins, bal, coin
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Buy
+
+Command: buy\
+Description: Buy an item\
+Usage: buy <item> <quantity>\
+Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
 
@@ -454,12 +469,34 @@ Aliases:
 
 
 
+### Fish
+
+Command: fish\
+Description: **Requires fishing rod**. Fish at a pond getting you fish!\
+Usage: \
+Aliases: 
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
 ### Give
 
 Command: give\
 Description: Give money to another person\
 Usage: give <user> <amount>\
 Aliases: pay, transfer
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Hunt
+
+Command: hunt\
+Description: Hunt for animals!\
+Usage: hunt\
+Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
 
@@ -481,6 +518,28 @@ Aliases: lb, top
 Command: rob\
 Description: Rob a user of their money \
 Usage: rob\
+Aliases: 
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Sell
+
+Command: sell\
+Description: Sell an item you have in your inventory\
+Usage: sell\
+Aliases: 
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Shop
+
+Command: shop\
+Description: Display the shop menu for the bot's economy\
+Usage: shop\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
@@ -551,7 +610,7 @@ Usage: say <message>\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-## General | 14 Commands
+## General | 13 Commands
 
 
 
@@ -671,17 +730,6 @@ Command: serverinfo\
 Description: Get detailed information about the server\
 Usage: serverinfo\
 Aliases: server, guild
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-
-
-
-### Snipe
-
-Command: snipe\
-Description: Check for deleted messages 👀\
-Usage: snipe\
-Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
 

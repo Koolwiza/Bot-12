@@ -5,14 +5,14 @@ const Discord = require("discord.js"),
     userData
   } = require('../src/data/config.js'),
   humanize = require('humanize-duration'),
-  AutomodClient = require('../src/struct/AutomodClient'),
+  AutomodClient = require('../src/struct/Automod'),
   AntiSpamClient = require('../src/struct/AntiSpam')
 
 module.exports = async (client, message) => {
 
   let cooldowns = client.cooldowns
 
-  if (message.author.bot) return
+  if (message.author.bot && message.content.startsWith(client.config.prefix)) return
   if (!message.guild || message.channel.type === "dm") return
 
   const data = {
@@ -20,16 +20,16 @@ module.exports = async (client, message) => {
     user: (user) => {
       return client.userProfiles.ensure(user.id, {
         ...userData,
-        user: message.author.id
+        user: user.id
       })
     },
     plugins: client.plugins.ensure(message.guild.id, defaultPlugins)
   }
+  data.user(message.author)
   client.disabled.ensure("commands", {
     guild: {},
     global: []
   })
-
 
   const prefix = client.guildData.has(message.guild.id, "prefix") ? client.guildData.get(message.guild.id, "prefix") : client.config.defaultSettings.prefix
   if (await client.resolveUser(message.content.split(" ")[0].id) === client.user.id) message.channel.send(
@@ -40,8 +40,8 @@ module.exports = async (client, message) => {
     .setColor(client.colors.sky)
   )
 
-  new AutomodClient().init(message, client) // Initiate AutoMod client
-  new AntiSpamClient(client.antiSpam.get(message.guild.id)).init(message, client) // Initiate AntiSpam client
+  new AutomodClient(client.autoMod.ensure(message.guild.id, client.config.plugins.defaultAutoMod)).init(message, client) // Initiate AutoMod client
+  new AntiSpamClient(client.antiSpam.ensure(message.guild.id, client.config.plugins.defaultAntiSpam)).init(message, client) // Initiate AntiSpam client
 
   let args = message.content.trim().slice(prefix.length).trim().split(/ +/g)
   let commandName = args.shift().toLowerCase()

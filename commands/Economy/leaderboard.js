@@ -11,7 +11,6 @@ module.exports = {
 
   premium: false,
   guildOnly: false,
-  ignore: true,
   async execute(message, args, client, data) {
     let bals = client.userProfiles
       .array()
@@ -19,10 +18,16 @@ module.exports = {
       .slice(0, 10)
       .map(async (u, i) => {
         let user = await client.users.fetch(u.user)
-        return `**${i}.** ${user.toString()}`
+        let emoji = i === 0 ? "🥇 " : i === 1 ? "🥈 " : i === 2 ? "🥉 " : ""
+        return `${emoji}**${i + 1}.** **${user.tag}** - ${client.emoji.misc.coin} ${u.balance.toLocaleString()}`
       })
 
-    console.log(bals)
+    let embed = client.baseEmbed(message, {
+      title: `${client.user.username} Economy Leaderboard`,
+      description: `${(await Promise.all(bals)).join("\n")}`,
+      color: client.colors.gold
+    })
+    return message.channel.send(embed)
 
   }
 }

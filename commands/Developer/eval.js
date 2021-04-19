@@ -32,9 +32,7 @@ module.exports = {
             response += ` • Type: \`${typeof evaled}\`\n`;
             response += ` • Time taken: \`${(((hrStop[0] * 1e9) + hrStop[1])) / 1e6}ms\``;
 
-            if (response.length > 0) {
-                return message.sendE("Success", response, client.colors.sky)
-            }
+            return message.sendE("Success", response, client.colors.sky)
         } catch (err) {
             return message.error(`Error: ${await client.clean(err.message)}`)
         }

@@ -12,7 +12,7 @@ module.exports = {
     premium: false,
     guildOnly: false,
     async execute(message, args, client, data) {
-        if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_GUILD) || client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_SERVER"])
+        if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_GUILD) || !client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_SERVER"])
 
         if (!args[0]) return message.args("No type provided.\nenable | disable | show")
 
@@ -23,7 +23,7 @@ module.exports = {
             if (!prop) return message.args("No property provided")
 
             if (!client.plugins.has(message.guild.id, prop.toLowerCase())) {
-                return message.error("Provided plugin property wasn't valid")
+                return message.error("Provided plugin property wasn valid")
             }
 
             client.plugins.set(message.guild.id, true, prop)
@@ -34,7 +34,7 @@ module.exports = {
             if (!prop) return message.args("No property provided")
 
             if (!client.plugins.has(message.guild.id, prop.toLowerCase())) {
-                return message.error("Provided plugin property wasn't valid")
+                return message.error("Provided plugin property wasn valid")
             }
 
             client.plugins.set(message.guild.id, false, prop)

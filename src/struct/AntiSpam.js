@@ -29,7 +29,7 @@ module.exports = class AntiSpam extends BaseAntiSpam {
         } = this,
         baseMsg = new BaseMessage(message, client)
 
-        if(!options.enabled) return;
+        if (!options.enabled) return;
 
         msgs.push(baseMsg)
         let filteredMsgs = msgs.filter(c => c.author === message.author.id && c.guild === message.guild.id)
@@ -64,7 +64,7 @@ module.exports = class AntiSpam extends BaseAntiSpam {
                 client.logger.error(e)
             })
         } else if (duplicates.length > options.muteThreshold) {
-            if (!message.guild.roles.cache.get(options.muteRole)) return console.log("no role")
+            if (!message.guild.roles.cache.get(options.muteRole)) return
             msgs = this.removeMessages(duplicates, message.channel, msgs)
 
             await message.member.roles.add(options.muteRole).catch(e => {
@@ -73,13 +73,14 @@ module.exports = class AntiSpam extends BaseAntiSpam {
 
             await message.member.send(
                 new MessageEmbed()
-                    .setTitle("Anti Spam")
-                    .setDescription(`You were muted from ${message.guild.name} for spamming`)
-                    .default(message.member.user)
-                    .success()     
-            )
+                .setTitle("Anti Spam")
+                .setDescription(`You were muted from ${message.guild.name} for spamming`)
+                .default(message.member.user)
+                .success()
+            ).catch(e => client.logger.error(e))
+
             new Timeout(`${message.author.id}_antispam`, options.muteLength).add(async () => {
-                await message.member.roles.remove(muteRole).catch(e => {
+                await message.member.roles.remove(options.muteRole).catch(e => {
                     client.logger.error(e)
                 })
             })
