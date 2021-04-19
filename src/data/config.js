@@ -1,5 +1,4 @@
 module.exports = {
-  module.exports = {
     /**
      * Fill config values with your desired things
      */
@@ -70,4 +69,4 @@ module.exports = {
      * {channels} - Client's channels
      */
 }
-}
+
