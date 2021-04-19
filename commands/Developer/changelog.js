@@ -17,22 +17,13 @@ module.exports = {
     ignore: true,
     async execute(message, [title, ...description], client, data) {
         let date = moment(new Date()).format('lll')
-        console.log('test 1')
-        if (!title || !description.length) {
-            console.log('no args') 
-            message.args("Missing title or description")
-        }
-        console.log('test 2')
+        if (!title || !description.length) return message.args("Missing title or description")
+        
          fs.readFile('./docs/change-log.md', (err, data) => {
-            console.log('test 3')
-            console.log(data)
             if (err) return console.log('error')
             let update = `\n\n**${date}: ${title}**\n > ${description.join(" ")}`
             fs.writeFileSync('./docs/change-log.md', data + update)
+            return message.sendE("Success", `I have updated change logs!`, client.colors.green)
         })
-        message.channel.send("Updated!")
-
-        console.log(fs.readFileSync('./docs/change-log.md'))
-
     }
 }
