@@ -15,7 +15,7 @@ module.exports = {
         if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_GUILD) || !client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_SERVER"])
         let ac = client.config.plugins.defaultAntiAlt
         let allowedTypes = Object.keys(ac)
-        let options = ['show', , 'enable', 'disable', ...allowedTypes]
+        let options = ['show','enable', 'disable', ...allowedTypes]
         if (!type) return message.args("Please provide an option to configure")
 
         type = type.toLowerCase()
@@ -41,18 +41,17 @@ module.exports = {
         } else if (type === "disable") {
             client.antiAlt.set(message.guild.id, false, 'enabled')
             return message.sendE("Success", `Disabled anti alt`, client.colors.green)
+        } else {
+            if (!Object.keys(ac).includes(type)) return message.args("Please provide a valid type to configure")
+
+            if (type === "punishment") {
+                if (!['kick', 'ban'].includes(value.join(" "))) return message.error("Punishment can only be kick or ban")
+                client.antiAlt.set(message.guild.id, value.join(" "), "punishment")
+                return message.sendE("Success", `Set \`punishment\` as \`${value.join(" ")}\``, client.colors.green)
+            }
+    
+            client.antiAlt.set(message.guild.id, value.join(" "), type)
+            return message.sendE("Success", `Set \`${type}\` as \`${value.join(" ")}\``, client.colors.green)
         }
-
-
-        if (!Object.keys(ac).includes(type)) return message.args("Please provide a valid type to configure")
-
-        if (type === "punishment") {
-            if (!['kick', 'ban'].includes(value.join(" "))) return message.error("Punishment can only be kick or ban")
-            client.antiAlt.set(message.guild.id, value.join(" "), "punishment")
-            return message.sendE("Success", `Set \`punishment\` as \`${value.join(" ")}\``, client.colors.green)
-        }
-
-        client.antiAlt.set(message.guild.id, value.join(" "), type)
-        return message.sendE("Success", `Set \`${type}\` as \`${value.join(" ")}\``, client.colors.green)
     }
 }
