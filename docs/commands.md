@@ -3,13 +3,14 @@
 
             
 
-### Administrator [20] 
+### Administrator [21] 
 
 | Name | Description | 
 | ---- | ----------- | 
 | [addemoji](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#addemoji) | Adds the emoji to the server | 
 | [antialt](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#antialt) | Configure antialt settings | 
 | [antispam](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#antispam) | Configure antispam settings for your server | 
+| [automod](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#automod) | Configure automod settings | 
 | [ban](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#ban) | Ban a member from the server | 
 | [delwarn](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#delwarn) | Remove a user's warn using an id | 
 | [goodbye](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#goodbye) | Set the goodbye channel/message for the server | 
@@ -31,11 +32,10 @@
 
             
 
-### Developer [9] 
+### Developer [8] 
 
 | Name | Description | 
 | ---- | ----------- | 
-| [changelog](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#changelog) | Update change log | 
 | [disable](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#disable) | Disable a command in either guild or globally | 
 | [enable](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#enable) | Enable a command in either guild or globally | 
 | [eval](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#eval) | Evaluates a piece of code | 
@@ -80,12 +80,14 @@
 
             
 
-### General [13] 
+### General [15] 
 
 | Name | Description | 
 | ---- | ----------- | 
+| [badges](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#badges) | Shows all member badges in a server | 
 | [bitcoin](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bitcoin) | See bitcoin values or convert bitcoin to currency | 
 | [botinfo](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#botinfo) | Gives detailed information about the bot | 
+| [changelog](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#changelog) | Get the most recent changes to the bot | 
 | [channelinfo](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#channelinfo) | Display detailed information on the channel | 
 | [docs](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#docs) | Look at the discord.js docs | 
 | [github](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#github) | Search up a user from github | 
@@ -111,7 +113,7 @@
 | [thesearch](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#thesearch) | The search continues... | 
 
 # Detailed Command List
-## Administrator | 20 Commands
+## Administrator | 21 Commands
 
 
 
@@ -142,6 +144,17 @@ Aliases:
 Command: antispam\
 Description: Configure antispam settings for your server\
 Usage: \
+Aliases: 
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Automod
+
+Command: automod\
+Description: Configure automod settings\
+Usage: automod <type> [value]\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
@@ -332,18 +345,7 @@ Usage: welcome <type> [value]\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-## Developer | 9 Commands
-
-
-
-### Changelog
-
-Command: changelog\
-Description: Update change log\
-Usage: changelog <title> <description>\
-Aliases: 
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+## Developer | 8 Commands
 
 
 
@@ -610,7 +612,18 @@ Usage: say <message>\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-## General | 13 Commands
+## General | 15 Commands
+
+
+
+### Badges
+
+Command: badges\
+Description: Shows all member badges in a server\
+Usage: \
+Aliases: 
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
 
 
 
@@ -631,6 +644,17 @@ Command: botinfo\
 Description: Gives detailed information about the bot\
 Usage: botinfo\
 Aliases: bot
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Changelog
+
+Command: changelog\
+Description: Get the most recent changes to the bot\
+Usage: changelog\
+Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
 
