@@ -6,7 +6,15 @@ const Discord = require("discord.js"),
   } = require('../src/data/config.js'),
   humanize = require('humanize-duration'),
   AutomodClient = require('../src/struct/Automod'),
-  AntiSpamClient = require('../src/struct/AntiSpam')
+  AntiSpamClient = require('../src/struct/AntiSpam'),
+  Bot12 = require('../src/struct/Bot12')
+
+  /**
+   * 
+   * @param {Bot12} client 
+   * @param {Discord.Message} message 
+   * @returns 
+   */
 
 module.exports = async (client, message) => {
 
@@ -64,16 +72,11 @@ module.exports = async (client, message) => {
   let globalCmd = client.disabled.get("commands", "global")
   if (globalCmd.some(cmd => cmd.command === command.name)) return message.channel.send(`${client.emoji.bot.disabled} **This command is disabled globally**`)
 
-
-  /*if (command.premium) {
-    if(!client.config.owners.includes(message.author.id) || !client.userProfiles.get(message.author.id).premium) {
-      return message.channel.send(client.baseEmbed(message, {
-        title: "Missing Premium",
-        description: "This command is only available to premium members",
-        color: client.colors.red
-      }))
+  if (command.premium) {
+    if(!client.config.owners.includes(message.author.id) || !data.user(message.author).premium) {
+      return message.sendE("Missing Premium", `This command is only available to premium members! To get premium, buy it from the shop: \`shop\``, client.colors.red)
     }
-  }*/
+  }
 
   if (!cooldowns.has(command.name)) {
     cooldowns.set(command.name, new Map());
@@ -106,8 +109,8 @@ module.exports = async (client, message) => {
     client.logger.cmd(`${message.author.username} used the command ${command.name}`)
     await msg.react('🗑️').catch(() => {})
   } catch (e) {
-    console.log(e.stack)
-    message.error(e)
+    client.logger.error(e.stack)
+    message.error(`${e}\n\nIf this issue is continous, please report this in our [support server](${client.config.support})`)
   }
 
 }
