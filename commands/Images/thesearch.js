@@ -4,6 +4,8 @@ const Discord = require('discord.js'),
         Canvas
     } = require('canvas-constructor')
 
+const Bot12 = require('../../src/struct/Bot12.js')
+
 module.exports = {
     name: 'thesearch',
     description: 'The search continues...',

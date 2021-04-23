@@ -4,6 +4,8 @@ const Discord = require('discord.js'),
         resolveImage
     } = require('canvas-constructor')
 
+const Bot12 = require('../../src/struct/Bot12.js')
+
 module.exports = {
     name: 'changemymind',
     description: 'Change my mind canvas',

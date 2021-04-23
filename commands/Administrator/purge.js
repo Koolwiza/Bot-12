@@ -7,6 +7,8 @@ const {
 	Collection
 } = require('discord.js')
 
+const Bot12 = require('../../src/struct/Bot12.js')
+
 module.exports = {
 	name: 'purge',
 	description: 'Purge messages from a channel',

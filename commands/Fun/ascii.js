@@ -3,6 +3,8 @@ const Discord = require('discord.js'),
   util = require('util'),
   fig = util.promisify(figlet)
 
+const Bot12 = require('../../src/struct/Bot12.js')
+
 module.exports = {
   name: 'ascii',
   description: 'Turn your text into A S C I I',

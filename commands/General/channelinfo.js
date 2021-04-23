@@ -1,6 +1,8 @@
 const Discord = require('discord.js'),
     moment = require('moment')
 
+const Bot12 = require('../../src/struct/Bot12.js')
+
 module.exports = {
     name: 'channelinfo',
     description: 'Display detailed information on the channel',

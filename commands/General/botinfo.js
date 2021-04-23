@@ -12,6 +12,8 @@ const {
     cpu = util.promisify(stat.usagePercent)
 
 
+const Bot12 = require('../../src/struct/Bot12.js')
+
 module.exports = {
     name: 'botinfo',
     description: 'Gives detailed information about the bot',

@@ -1,6 +1,8 @@
 const Discord = require('discord.js'),
     Timeout = require('../../src/struct/Timeouts')
 
+const Bot12 = require('../../src/struct/Bot12.js')
+
 module.exports = {
     name: 'timeout',
     description: 'adsf',

@@ -5,6 +5,8 @@ fetch = require('node-fetch'), {
     } = require('date-fns'),
     moment = require('moment')
 
+const Bot12 = require('../../src/struct/Bot12.js')
+
 module.exports = {
     name: 'serverinfo',
     description: 'Get detailed information about the server',

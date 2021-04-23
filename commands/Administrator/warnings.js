@@ -1,6 +1,8 @@
 const Discord = require('discord.js')
 const moment = require('moment')
 
+const Bot12 = require('../../src/struct/Bot12.js')
+
 module.exports = {
   name: 'warnings',
   description: 'Display a user\'s warnings',

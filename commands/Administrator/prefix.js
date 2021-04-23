@@ -1,5 +1,7 @@
 
 
+const Bot12 = require('../../src/struct/Bot12.js')
+
 module.exports = {
     name: 'prefix',
     description: 'Show or set the prefix for the server',

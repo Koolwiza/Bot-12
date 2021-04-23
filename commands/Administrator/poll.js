@@ -13,6 +13,8 @@ let num = {
     10: '🔟'
 }
 
+const Bot12 = require('../../src/struct/Bot12.js')
+
 module.exports = {
     name: 'poll',
     description: 'An advanced poll command able to hold multiple questions',

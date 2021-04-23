@@ -1,5 +1,7 @@
 const Discord = require('discord.js')
 
+const Bot12 = require('../../src/struct/Bot12.js')
+
 module.exports = {
   name: 'rob',
   description: 'Rob a user of their money ',

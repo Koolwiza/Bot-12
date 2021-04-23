@@ -8,6 +8,8 @@ const weather = require('weather-js'),
     } = require('util'),
     asyncWeather = promisify(weather.find)
 
+const Bot12 = require('../../src/struct/Bot12.js')
+
 module.exports = {
     name: 'weather',
     description: 'Search for the weather in a location in F° or C°',

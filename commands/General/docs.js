@@ -2,7 +2,9 @@ const Discord = require('discord.js'),
     ms = require('ms')
 fetch = require('node-fetch'),
 
-    module.exports = {
+    const Bot12 = require('../../src/struct/Bot12.js')
+
+module.exports = {
         name: 'docs',
         description: 'Look at the discord.js docs',
         usage: 'docs [query]',

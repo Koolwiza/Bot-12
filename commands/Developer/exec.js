@@ -3,6 +3,8 @@ const {
 } = require('child_process')
 const Discord = require('discord.js')
 
+const Bot12 = require('../../src/struct/Bot12.js')
+
 module.exports = {
     name: 'execute',
     description: 'Run a shell command',

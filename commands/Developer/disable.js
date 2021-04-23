@@ -2,6 +2,8 @@ const Discord = require('discord.js'),
   ms = require('ms'),
   enmap = require('enmap')
 
+const Bot12 = require('../../src/struct/Bot12.js')
+
 module.exports = {
   name: 'disable',
   description: 'Disable a command in either guild or globally',

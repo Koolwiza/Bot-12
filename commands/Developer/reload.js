@@ -5,6 +5,8 @@ const Discord = require('discord.js'),
     } = require('util'),
     fs = require("fs")
 
+const Bot12 = require('../../src/struct/Bot12.js')
+
 module.exports = {
     name: 'reload',
     description: 'Reload a file/command',

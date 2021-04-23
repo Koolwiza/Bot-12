@@ -4,6 +4,8 @@ const Discord = require('discord.js'),
         inspect
     } = require('util')
 
+const Bot12 = require('../../src/struct/Bot12.js')
+
 module.exports = {
     name: 'eval',
     description: 'Evaluates a piece of code',

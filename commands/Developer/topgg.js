@@ -2,6 +2,8 @@ const Discord = require('discord.js'),
 	ms = require('ms'),
 	fetch = require("node-fetch")
 
+const Bot12 = require('../../src/struct/Bot12.js')
+
 module.exports = {
 	name: 'topgg',
 	description: "Shows topgg stuff",

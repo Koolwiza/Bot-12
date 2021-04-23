@@ -1,6 +1,8 @@
 const Discord = require('discord.js'),
     fetch = require('node-fetch')
 
+const Bot12 = require('../../src/struct/Bot12.js')
+
 module.exports = {
     name: 'members',
     description: 'Shows detailed information about members and join rate',

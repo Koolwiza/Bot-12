@@ -4,6 +4,8 @@ const {
 
 const Discord = require('discord.js')
 
+const Bot12 = require('../../src/struct/Bot12.js')
+
 module.exports = {
   name: 'avatar',
   description: 'Show the avatar of a person',

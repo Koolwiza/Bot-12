@@ -1,5 +1,7 @@
 const Discord = require('discord.js')
 
+const Bot12 = require('../../src/struct/Bot12.js')
+
 module.exports = {
   name: 'roles',
   description: 'Send all roles in the server',

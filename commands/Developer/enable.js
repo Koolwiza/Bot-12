@@ -2,6 +2,8 @@ const {
   pullAt
 } = require('lodash')
 
+const Bot12 = require('../../src/struct/Bot12.js')
+
 module.exports = {
   name: 'enable',
   description: 'Enable a command in either guild or globally',

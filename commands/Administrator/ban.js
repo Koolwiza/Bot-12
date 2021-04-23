@@ -1,6 +1,8 @@
   const Discord = require('discord.js')
 
-  module.exports = {
+  const Bot12 = require('../../src/struct/Bot12.js')
+
+module.exports = {
       name: 'ban',
       description: 'Ban a member from the server',
       usage: 'ban <user> [reason]',

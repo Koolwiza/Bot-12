@@ -4,6 +4,8 @@ const Discord = require('discord.js'),
         Collection
     } = require('discord.js')
 
+const Bot12 = require('../../src/struct/Bot12.js')
+
 module.exports = {
     name: 'help',
     description: 'Sends you a list of commands',

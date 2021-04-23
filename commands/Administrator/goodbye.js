@@ -3,6 +3,8 @@ const Discord = require('discord.js'),
         defaultSettings
     } = require('../../src/data/config.js')
 
+const Bot12 = require('../../src/struct/Bot12.js')
+
 module.exports = {
     name: 'goodbye',
     description: 'Set the goodbye channel/message for the server',

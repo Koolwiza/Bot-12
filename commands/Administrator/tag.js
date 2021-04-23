@@ -1,6 +1,8 @@
 const Discord = require('discord.js'),
   Tag = require('../../src/struct/Tag')
 
+const Bot12 = require('../../src/struct/Bot12.js')
+
 module.exports = {
   name: 'tag',
   description: 'All options on a tag',

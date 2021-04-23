@@ -1,6 +1,8 @@
 const Discord = require('discord.js'),
     ms = require('ms')
 
+const Bot12 = require('../../src/struct/Bot12.js')
+
 module.exports = {
     name: 'mute',
     description: 'Mute a member',

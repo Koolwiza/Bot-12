@@ -5,6 +5,8 @@ const Discord = require('discord.js'),
     } = require('date-fns'),
     moment = require('moment')
 
+const Bot12 = require('../../src/struct/Bot12.js')
+
 module.exports = {
     name: 'userinfo',
     description: 'Get detailed information about a user',

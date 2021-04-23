@@ -12,6 +12,8 @@ let numbers = [
 	'🔟'
 ]
 
+const Bot12 = require('../../src/struct/Bot12.js')
+
 module.exports = {
 	name: 'google',
 	description: "Google a query with valid search results",
