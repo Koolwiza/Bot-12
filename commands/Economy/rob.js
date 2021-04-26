@@ -13,7 +13,14 @@ module.exports = {
 
   premium: false,
   guildOnly: false,
-  async execute(message, args, client, data) {
+  /**
+     * 
+     * @param {Discord.Message} message 
+     * @param {Array} args 
+     * @param {Bot12} client 
+     * @param {object} data 
+     */
+    async execute(message, args, client, data) {
     let user = await client.resolveUser(args[0])
     if (!user) return message.args("Please provide a user or invalid user")
 

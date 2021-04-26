@@ -13,8 +13,15 @@ module.exports = {
 
     premium: false,
     guildOnly: false,
+    /**
+     * 
+     * @param {Discord.Message} message 
+     * @param {Array} args 
+     * @param {Bot12} client 
+     * @param {object} data 
+     */
     async execute(message, args, client, data) {
-        const npm = encodeURIComponent(args[0])
+        const npm = encodeURIComponent(args.join(" "))
         if (!npm) return message.reply('Please Provide A Valid Package To Search.') // If No Packge In Searched.
 
         let response = await fetch(`https://api.npms.io/v2/search?q=${npm}`)

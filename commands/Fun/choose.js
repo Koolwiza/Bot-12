@@ -13,7 +13,14 @@ module.exports = {
 
   premium: false,
   guildOnly: false,
-  async execute(message, args, client, data) {
+  /**
+     * 
+     * @param {Discord.Message} message 
+     * @param {Array} args 
+     * @param {Bot12} client 
+     * @param {object} data 
+     */
+    async execute(message, args, client, data) {
     let options = args.join(" ").split("|")
     if (!options.length) return message.args("Please provide options, example: \n ```Hot Dog | Steak | Burger```")
 

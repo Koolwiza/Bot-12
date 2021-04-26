@@ -14,6 +14,15 @@ module.exports = {
   premium: false,
   guildOnly: false,
   ignore: true,
+
+  /**
+   * 
+   * @param {Discord.Message} message 
+   * @param {Array} args 
+   * @param {Bot12} client 
+   * @param {object} data 
+   */
+
   async execute(message, [type, ...args], client, data) {
     if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_GUILD) || !client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_SERVER"])
     if (!type) return message.error("Please provide a config option")
@@ -53,7 +62,7 @@ module.exports = {
       case "muteRole":
         let role = message.mentions.roles.first() || message.guild.roles.cache.get(args[0])
         if (!role) return message.error("Please provide a valid role")
-  
+
         client.antiSpam.set(message.guild.id, role.id, "muteRole")
         message.sendE("Success", `Set mute role to ${role.toString()}`, client.colors.green)
         break;

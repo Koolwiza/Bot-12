@@ -12,6 +12,13 @@ module.exports = {
     category: __dirname.split("commands\\")[1],
     premium: false,
     guildOnly: false,
+    /**
+     * 
+     * @param {Discord.Message} message 
+     * @param {Array} args 
+     * @param {Bot12} client 
+     * @param {object} data 
+     */
     async execute(message, args, client, data) {
         if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_GUILD) || !client.modRole(message, data.guild) ) return client.authorPerms(message, ["MANAGE_SERVER"])
 

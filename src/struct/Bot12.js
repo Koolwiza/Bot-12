@@ -83,8 +83,8 @@ module.exports = class Bot12 extends Client {
   /**
    * 
    * @param {object} message The discord.js message object
-   * @param {array | string} perms An array of permission strings or a permission string
-   * @returns {Promise} Promise of TextChannel#send
+   * @param {(string[] | string)} perms An array of permission strings or a permission string
+   * @returns {Promise<Discord.Message>} Promise of TextChannel#send
    */
 
   authorPerms(message, perms) {
@@ -102,8 +102,8 @@ module.exports = class Bot12 extends Client {
   /**
    * 
    * @param {object} message The discord.js message object 
-   * @param {array} perms An array of permission strings or a permission string
-   * @returns {Promise} Promise of TextChannel#send
+   * @param {string[]} perms An array of permission strings or a permission string
+   * @returns {Promise<Discord.Message>} Promise of TextChannel#send
    */
 
   clientPerms(message, perms) {
@@ -120,7 +120,7 @@ module.exports = class Bot12 extends Client {
 
   /**
    * 
-   * @param {object} message The discord.js message object
+   * @param {Discord.Message} message The discord.js message object
    * @param {object} data The data for the guild
    * @returns {boolean} Whether the person has the mod role of that guild or not
    */
@@ -153,9 +153,9 @@ module.exports = class Bot12 extends Client {
 
   /**
    * 
-   * @param {object} msg The discord.js message object
+   * @param {Discord.Message} msg The discord.js message object
    * @param {object} object The rest of the Discord#MessageEmbed object
-   * @returns {object} The object for a Discord#MessageEmbed
+   * @returns {MessageEmbed} The object for a Discord#MessageEmbed
    */
   baseEmbed(msg, object) {
     let authorObject = {
@@ -166,13 +166,13 @@ module.exports = class Bot12 extends Client {
       text: this.user.username,
       icon_url: this.user.displayAvatarURL()
     }
-    return {
+    return new Discord.MessageEmbed({
       embed: {
         author: authorObject,
         footer: footerObject,
         ...object
       }
-    }
+    })
   }
 
   /**
@@ -199,7 +199,7 @@ module.exports = class Bot12 extends Client {
 
   /**
    * 
-   * @param {number} length The length of the randomly generated string. Defaulted at 6
+   * @param {number} [length=6] The length of the randomly generated string. Defaulted at 6
    * @returns {string} A randomly generated string with the length of that number
    */
 
@@ -253,7 +253,7 @@ module.exports = class Bot12 extends Client {
 
   /**
    * 
-   * @param {object} msg The discord.js message object
+   * @param {Discord.Message} msg The discord.js message object
    * @param {string} question The question needed to prompt
    * @param {number} limit How long it the discord.js collector should wait
    * @returns {string} The collected string
@@ -279,8 +279,8 @@ module.exports = class Bot12 extends Client {
 
   /**
    * 
-   * @param {object} message A message object
-   * @returns {(object|Array)}
+   * @param {Discord.Message} message A message object
+   * @returns {(Discord.MessageAttachment|Discord.MessageAttachment|Array)}
    */
 
   parseMessage(message) {
@@ -297,7 +297,7 @@ module.exports = class Bot12 extends Client {
   }
 
   /**
-   * @returns {Promise} When the setTimeout is resolved
+   * @returns {Promise<Function>} When the setTimeout is resolved
    */
   wait = require("util").promisify(setTimeout);
 

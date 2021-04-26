@@ -14,6 +14,13 @@ module.exports = {
 
     premium: false,
     guildOnly: false,
+    /**
+     * 
+     * @param {Discord.Message} message 
+     * @param {Array} args 
+     * @param {Bot12} client 
+     * @param {object} data 
+     */
     async execute(message, args, client, data) {
         let channel = await client.resolveChannel(args[0]) ?? message.channel
         let date = moment(channel.createdAt).format('lll')

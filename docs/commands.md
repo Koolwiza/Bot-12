@@ -67,7 +67,7 @@
 
             
 
-### Fun [5] 
+### Fun [8] 
 
 | Name | Description | 
 | ---- | ----------- | 
@@ -76,6 +76,9 @@
 | [choose](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#choose) | Let the bot choose an option for you | 
 | [coinflip](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#coinflip) | Flip a coin | 
 | [say](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#say) | Say something | 
+| [uwuify](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#uwuify) | Tuwn youw text into dis | 
+| [wouldyourather](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#wouldyourather) | Play would you rather | 
+| [zalgo](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#zalgo) | Turn your text into evil characters! | 
 
 
             
@@ -103,13 +106,16 @@
 
             
 
-### Images [4] 
+### Images [7] 
 
 | Name | Description | 
 | ---- | ----------- | 
 | [avatar](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#avatar) | Show the avatar of a person | 
-| [captcha](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#captcha) | Generate a fake captcha | 
+| [blur](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#blur) | Blur a user's avatar | 
 | [changemymind](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#changemymind) | Change my mind canvas | 
+| [greyscale](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#greyscale) | Apply a gray filter to a user's profile picture | 
+| [invert](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#invert) | Invert the colors of a user's profile picture | 
+| [silhouette](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#silhouette) | Convert the colors of a user's profile picture into a silhouette | 
 | [thesearch](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#thesearch) | The search continues... | 
 
 # Detailed Command List
@@ -556,7 +562,7 @@ Usage: balance <user>\
 Aliases: job
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-## Fun | 5 Commands
+## Fun | 8 Commands
 
 
 
@@ -609,6 +615,39 @@ Aliases: cf, flip
 Command: say\
 Description: Say something\
 Usage: say <message>\
+Aliases: 
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Uwuify
+
+Command: uwuify\
+Description: Tuwn youw text into dis\
+Usage: uwuify <text>\
+Aliases: uwu
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Wouldyourather
+
+Command: wouldyourather\
+Description: Play would you rather\
+Usage: wouldyourather\
+Aliases: wyr
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Zalgo
+
+Command: zalgo\
+Description: Turn your text into evil characters!\
+Usage: zalgo <text>\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
@@ -778,7 +817,7 @@ Usage: weather <location> [--(c|f)]\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-## Images | 4 Commands
+## Images | 7 Commands
 
 
 
@@ -793,11 +832,11 @@ Aliases: av, pfp, profilepicture
 
 
 
-### Captcha
+### Blur
 
-Command: captcha\
-Description: Generate a fake captcha\
-Usage: captcha [user]\
+Command: blur\
+Description: Blur a user's avatar\
+Usage: blur [user]\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
@@ -809,6 +848,39 @@ Aliases:
 Command: changemymind\
 Description: Change my mind canvas\
 Usage: changemymind [user]\
+Aliases: 
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Greyscale
+
+Command: greyscale\
+Description: Apply a gray filter to a user's profile picture\
+Usage: greyscale [user]\
+Aliases: 
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Invert
+
+Command: invert\
+Description: Invert the colors of a user's profile picture\
+Usage: invert [user]\
+Aliases: 
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Silhouette
+
+Command: silhouette\
+Description: Convert the colors of a user's profile picture into a silhouette\
+Usage: silhouette [user]\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)

@@ -17,6 +17,13 @@ module.exports = {
 
     premium: false,
     guildOnly: false,
+    /**
+     * 
+     * @param {Discord.Message} message 
+     * @param {Array} args 
+     * @param {Bot12} client 
+     * @param {object} data 
+     */
     async execute(message, args, client, data) {
         let thesrch = await resolveImage('./assets/TheSearch.png')
 
@@ -32,13 +39,6 @@ module.exports = {
             .setTextFont('15px Sans')
             .printText(text, 60, 350)
             .toBuffer()
-
-        /* let cv = new Canvas(image.width, image.height)
-            .printImage(image, 0, 0, image.width, image.height)
-            .setColor("#000000")
-            .setTextFont("35px Arial")
-            .printText(text, 150, 400)
-            .toBuffer() */
 
         let img = new Discord.MessageAttachment(theSearchImage, "search.png")
         return message.channel.send(img)

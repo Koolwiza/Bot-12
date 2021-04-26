@@ -17,6 +17,13 @@ module.exports = {
 
   premium: false,
   guildOnly: false,
+  /**
+   * 
+   * @param {Discord.Message} message 
+   * @param {Array} args 
+   * @param {Bot12} client 
+   * @param {object} data 
+   */
   async execute(message, args, client, data) {
     let user = await client.resolveUser(args[0]) || message.author
 
@@ -25,13 +32,15 @@ module.exports = {
 
     let embed = new Discord.MessageEmbed()
       .setAuthor(message.author.tag, message.author.displayAvatarURL())
-      .setImage(user.displayAvatarURL({dynamic: true}))
+      .setImage(user.displayAvatarURL({
+        dynamic: true
+      }))
       .setFooter(client.user.username, client.user.displayAvatarURL())
       .setColor(client.colors.sky)
 
-      type.forEach(em => {
-        embed.addField(em.toProperCase(), size.map(s => `[${s}](${user.displayAvatarURL({size: s, format: em})})`).join(" | "))
-      })
+    type.forEach(em => {
+      embed.addField(em.toProperCase(), size.map(s => `[${s}](${user.displayAvatarURL({size: s, format: em})})`).join(" | "))
+    })
 
 
 

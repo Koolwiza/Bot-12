@@ -16,7 +16,14 @@ module.exports = {
 
   premium: false,
   guildOnly: false,
-  async execute(message, args, client, data) {
+  /**
+     * 
+     * @param {Discord.Message} message 
+     * @param {Array} args 
+     * @param {Bot12} client 
+     * @param {object} data 
+     */
+    async execute(message, args, client, data) {
     let text = args.join(" ")
 
     let ascii = await fig(text).catch(e => {

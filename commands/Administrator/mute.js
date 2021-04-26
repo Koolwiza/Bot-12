@@ -14,6 +14,13 @@ module.exports = {
 
     premium: false,
     guildOnly: false,
+    /**
+     * 
+     * @param {Discord.Message} message 
+     * @param {Array} args 
+     * @param {Bot12} client 
+     * @param {object} data 
+     */
     async execute(message, args, client, data) {
         if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_ROLES) || !client.modRole(message, data.guild) ) return client.authorPerms(message, ["MANAGE_ROLES"])
         if (!message.guild.me.permissions.has(Discord.Permissions.FLAGS.MANAGE_ROLES)) return client.clientPerms(message, ["MANAGE_ROLES"])

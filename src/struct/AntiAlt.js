@@ -6,7 +6,12 @@ const client = require('../../bot12')
 module.exports = class AntiAlt {
     constructor(client) {
         this.client = client
-    }
+    } 
+    /**
+     * 
+     * @param {Discord.GuildMember} member 
+     * @returns {*}
+     */
 
     async start(member) { // Can only be used in the guildMemberAdd event
 

@@ -2,8 +2,6 @@ const Discord = require('discord.js'),
     fetch = require('node-fetch'),
     Bot12 = require('../../src/struct/Bot12')
 
-const Bot12 = require('../../src/struct/Bot12.js')
-
 module.exports = {
     name: 'changelog',
     description: 'Get the most recent changes to the bot',
@@ -16,6 +14,13 @@ module.exports = {
     premium: false,
     guildOnly: false,
 
+    /**
+     * 
+     * @param {Discord.Message} message 
+     * @param {Array} args 
+     * @param {Bot12} client 
+     * @param {object} data 
+     */
     /**
      * 
      * @param {Discord.Message} message 

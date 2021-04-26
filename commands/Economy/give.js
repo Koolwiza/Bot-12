@@ -13,7 +13,14 @@ module.exports = {
   
   premium: false,
   guildOnly: false,
-  async execute(message, args, client, data) {
+  /**
+     * 
+     * @param {Discord.Message} message 
+     * @param {Array} args 
+     * @param {Bot12} client 
+     * @param {object} data 
+     */
+    async execute(message, args, client, data) {
     let author = data.user(message.author).balance
     let user = await client.resolveUser(args[0])
     let amount = parseInt(args[1])

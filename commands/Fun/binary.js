@@ -12,6 +12,13 @@ module.exports = {
     category: __dirname.split("commands\\")[1],
     premium: false,
     guildOnly: false,
+    /**
+     * 
+     * @param {Discord.Message} message 
+     * @param {Array} args 
+     * @param {Bot12} client 
+     * @param {object} data 
+     */
     async execute(message, args, client, data) {
         function textToBinary(string) {
             return string.split('').map(char => {

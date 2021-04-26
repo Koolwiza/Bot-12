@@ -17,6 +17,13 @@ module.exports = {
     premium: false,
     guildOnly: false,
     cooldown: 60 * 60 * 24,
+    /**
+     * 
+     * @param {Discord.Message} message 
+     * @param {Array} args 
+     * @param {Bot12} client 
+     * @param {object} data 
+     */
     async execute(message, args, client, data) {
 
         let user = client.userProfiles

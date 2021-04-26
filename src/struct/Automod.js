@@ -10,11 +10,19 @@ module.exports = class AutomodClient {
         }
     }
 
+    /**
+     * 
+     * @param {Discord.Message} message 
+     * @param {Discord.Client} client 
+     */
+
     init(message, client) {
 
         const {
             config
         } = this
+
+        if(message.channel.channel === "dm") return;
 
         if (config.invites) {
 

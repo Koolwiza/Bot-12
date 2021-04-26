@@ -14,7 +14,14 @@ module.exports = {
   premium: false,
   guildOnly: false,
   cooldown: 5 * 60,
-  async execute(message, args, client, data) {
+  /**
+     * 
+     * @param {Discord.Message} message 
+     * @param {Array} args 
+     * @param {Bot12} client 
+     * @param {object} data 
+     */
+    async execute(message, args, client, data) {
     let inventory = data.user(message.author).inventory
     if(inventory.fishing_rod < 1) return message.error("You need a fishing rod to execute this command! Buy it from the shop!")
 

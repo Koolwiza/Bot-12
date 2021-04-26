@@ -14,6 +14,15 @@ module.exports = {
 
   premium: false,
   guildOnly: false,
+
+  /**
+   * 
+   * @param {Discord.Message} message 
+   * @param {Array} args 
+   * @param {Bot12} client 
+   * @param {object} data 
+   */
+
   async execute(message, [type, value, ...args], client, data) {
     if (!type) return message.args("Please provide a type.")
     type = type.toLowerCase()
@@ -44,20 +53,20 @@ module.exports = {
       option = option.toLowerCase()
 
       let alias = args[1]
-    
+
       if (!alias) return message.args("Please provide an alias")
 
 
       if (["add", "create"].includes(value)) {
         if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_GUILD) || !client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_GUILD"])
-    
+
         Tag.alias("add", `${message.guild.id}-${option}`, alias)
 
         return message.sendE("Success", `I have added the alias \`${alias}\` to the tag \`${alias}\``, client.colors.green)
 
       } else if (["remove", "delete"].includes(value)) {
         if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_GUILD) || !client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_GUILD"])
-    
+
         try {
           Tag.alias("remove", `${message.guild.id}-${option}`, alias)
         } catch (e) {
@@ -91,7 +100,7 @@ module.exports = {
     } else {
 
       if (check(type)) {
-        
+
         client.tags.inc(`${message.guild.id}-${check(type).tagName}`, "uses")
         return message.channel.send(check(type).reply)
       } else {

@@ -9,11 +9,14 @@
   "license": "ISC",
   "dependencies": {
     "@discordjs/opus": "^0.4.0",
+    "@favware/zalgo": "^3.1.1",
+    "axios": "^0.21.1",
     "bcrypt": "^5.0.0",
     "bytes": "^3.1.0",
     "canvas": "^2.7.0",
     "canvas-constructor": "^4.1.0",
     "chalk": "^4.1.0",
+    "cheerio": "^1.0.0-rc.6",
     "cpu-stat": "^2.0.1",
     "cron": "^1.8.2",
     "date-fns": "^2.16.1",
@@ -33,6 +36,7 @@
     "request-promise": "^4.2.6",
     "translate": "^1.2.3",
     "twemoji-parser": "^13.0.0",
+    "uwuifier": "^3.0.0",
     "weather-js": "^2.0.0"
   },
   "devDependencies": {},

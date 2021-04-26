@@ -25,7 +25,14 @@ module.exports = {
 
 	premium: false,
 	guildOnly: false,
-	async execute(message, args, client, data) {
+	/**
+     * 
+     * @param {Discord.Message} message 
+     * @param {Array} args 
+     * @param {Bot12} client 
+     * @param {object} data 
+     */
+    async execute(message, args, client, data) {
 		let query = args.join("+")
 		if (!query) return message.args("Please provide a query")
 

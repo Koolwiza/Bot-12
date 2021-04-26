@@ -13,6 +13,15 @@ module.exports = {
 
     premium: false,
     guildOnly: false,
+
+    /**
+     * 
+     * @param {Discord.Message} message 
+     * @param {Array} args 
+     * @param {Bot12} client 
+     * @param {object} data 
+     */
+
     async execute(message, [type, ...args], client, data) {
         if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_GUILD) || !client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_SERVER"])
         let automod = client.autoMod.get(message.guild.id)
@@ -37,7 +46,8 @@ module.exports = {
 
             })
             return message.channel.send(output + "```");
-        } if (type === "enable") {
+        }
+        if (type === "enable") {
             const prop = args[0]
 
             if (!prop) return message.args("No property provided")
@@ -59,7 +69,7 @@ module.exports = {
 
             client.autoMod.set(message.guild.id, false, prop)
             return message.sendE("Success", `Auto mod ${prop} has been disabled`, client.colors.green)
-        } 
+        }
 
 
     }
