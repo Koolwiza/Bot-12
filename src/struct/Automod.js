@@ -22,7 +22,8 @@ module.exports = class AutomodClient {
             config
         } = this
 
-        if(message.channel.channel === "dm") return;
+        if(message.channel.type === "dm") return;
+        if(message.webhookID) return;
 
         if (config.invites) {
 
