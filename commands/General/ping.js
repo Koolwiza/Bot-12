@@ -14,13 +14,22 @@ module.exports = {
 
     premium: false,
     guildOnly: false,
+    /**
+     * 
+     * @param {Discord.Message} message 
+     * @param {Array} args 
+     * @param {Bot12} client 
+     * @param {object} data 
+     */
     async execute(message, args, client, data) {
 
-        return message.sendE("", "```🏓 Pinging...```").then(m => {
-            client.wait(1000)
-            return m.edit(client.baseEmbed(message, {
-                description: `\`\`\`🏓 Pong!\nMessage Latency: ${m.createdTimestamp - message.createdTimestamp}\nAPI Latency: ${client.ws.ping}\`\`\``
-            }))
-        })
+        let msg = await message.sendE("", "```🏓 Pinging...```")
+        await client.wait(1000)
+
+        let embed = new Discord.MessageEmbed()
+            .setDescription(`\`\`\`🏓 Pong!\nMessage Latency: ${msg.createdTimestamp - message.createdTimestamp}\nAPI Latency: ${client.ws.ping}\`\`\``)
+            .default(message.author)
+
+        return msg.edit(embed)
     }
 }
