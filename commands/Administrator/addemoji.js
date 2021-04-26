@@ -14,8 +14,8 @@ module.exports = {
   usage: 'addemoji <emoji> [name]',
   aliases: [],
   category: __dirname.split("commands\\")[1],
-  required: ['SEND_MESSAGES'],
-  user: ['SEND_MESSAGES', 'MANAGE_EMOJIS'],
+  required: [],
+  user: ['MANAGE_EMOJIS'],
   args: true,
   premium: false,
   guildOnly: true,
@@ -28,11 +28,6 @@ module.exports = {
      * @param {object} data 
      */
     async execute(message, args, client, data) {
-    if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_EMOJIS) || !client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_EMOJIS"])
-
-    if (!message.guild.me.hasPermission(Discord.Permissions.FLAGS.MANAGE_EMOJIS)) {
-      return client.noPerms(message, ['MANAGE_EMOJIS'])
-    }
 
     const emoji = args[0];
     if (!emoji) return message.args("Please give me an emoji to add")

@@ -15,7 +15,7 @@ module.exports = {
     user: [],
     category: __dirname.split("commands\\")[1],
     premium: false,
-    guildOnly: false,
+    
     ignore: true,
     /**
      * 
@@ -56,7 +56,7 @@ module.exports = {
             })
 
 
-            let abc = "React with an emoji to see it's following commands!\n\n"
+            let abc = `**${client.commands.size}** Total Commands\nReact with an emoji to see it's following commands!\n\n`
             cat.forEach(element => {
                 abc += `${client.emoji.help[element.toLowerCase()]}: **${element}**\n`
             })
@@ -68,6 +68,8 @@ module.exports = {
             **Additional**:
             <:help_back:818523288686035015>:  **Back to main menu**
             ${client.emoji.misc.xmark}: **Stop menu**
+
+            \`help <command-name> for more detailed info\`
             
             [Invite Me](https://discord.com/oauth2/authorize?client_id=800549820485599272&scope=bot&permissions=2080768255) ● [Support](${client.config.support})`
 

@@ -19,7 +19,7 @@ module.exports = {
 	category: __dirname.split("commands\\")[1],
 
 	premium: false,
-	guildOnly: false,
+	
 	ignore: true,
 	/**
      * 
@@ -29,9 +29,7 @@ module.exports = {
      * @param {object} data 
      */
     async execute(message, args, client, data) {
-		if (!message.member.permissions.has(MANAGE_MESSAGES) || !client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_MESSAGES"])
-		if (!message.guild.me.permissions.has(MANAGE_MESSAGES)) return client.clientPerms(message, ["MANAGE_MESSAGES"])
-
+		
 		let amount = parseInt(args.pop())
 		if (isNaN(amount)) return message.args("Please provide an amount for me to purge")
 		if (amount > 100) return message.error("The amount you provided was over 100, I can only purge 100 messages at a time!")

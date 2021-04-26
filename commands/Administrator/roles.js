@@ -8,11 +8,11 @@ module.exports = {
   usage: 'roles',
   aliases: [],
   required: [],
-  user: [],
+  user: ['MANAGE_ROLES'],
   category: __dirname.split("commands\\")[1],
 
   premium: false,
-  guildOnly: false,
+  
   ignore: true,
   /**
      * 
@@ -22,7 +22,6 @@ module.exports = {
      * @param {object} data 
      */
     async execute(message, args, client, data) {
-    if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_ROLES) || !client.modRole(message, data.guild)) return client.missingArgs(message, ["MANAGE_SERVER"])
     let msg = "```asciidoc\n== ROLES ==\n"
     let names = message.guild.roles.cache.map(c => `${c.name}`)
     let longest = names.reduce((long, str) => Math.max(long, str.length), 0)

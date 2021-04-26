@@ -12,7 +12,7 @@ module.exports = {
     category: __dirname.split("commands\\")[1],
 
     premium: false,
-    guildOnly: false,
+    
     /**
      * 
      * @param {Discord.Message} message 
@@ -21,9 +21,7 @@ module.exports = {
      * @param {object} data 
      */
     async execute(message, args, client, data) {
-        if (!message.member.permissions.has(Discord.Permissions.FLAGS.BAN_MEMBERS) || !client.modRole(message, data.guild)) return client.authorPerms(message, ["BAN_MEMBERS"])
-        if (!message.guild.me.permissions.has(Discord.Permissions.FLAGS.BAN_MEMBERS)) return client.clientPerms(message, ["BAN_MEMBERS"])
-
+        
         let bannedCollection = message.mentions.members
         let banReason = args.slice(1).slice(bannedCollection.size).join(" ")
 

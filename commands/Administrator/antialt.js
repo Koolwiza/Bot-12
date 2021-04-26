@@ -7,13 +7,20 @@ module.exports = {
     usage: 'antialt <type> [value]',
     aliases: [],
     required: [],
-    user: [],
+    user: ['MANAGE_GUILD'],
     category: __dirname.split("commands\\")[1],
-
     premium: false,
-    guildOnly: false,
+    
+
+    /**
+     * 
+     * @param {Discord.Message} message 
+     * @param {Array} args 
+     * @param {Bot12} client 
+     * @param {object} data 
+     */
+
     async execute(message, [type, ...value], client, data) {
-        if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_GUILD) || !client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_SERVER"])
         let ac = client.config.plugins.defaultAntiAlt
         let allowedTypes = Object.keys(ac)
         let options = ['show','enable', 'disable', ...allowedTypes]

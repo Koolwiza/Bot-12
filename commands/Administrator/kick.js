@@ -12,7 +12,7 @@ module.exports = {
     category: __dirname.split("commands\\")[1],
 
     premium: false,
-    guildOnly: false,
+    
     /**
      * 
      * @param {Discord.Message} message 
@@ -21,11 +21,7 @@ module.exports = {
      * @param {object} data 
      */
     async execute(message, args, client, data) {
-        if (!message.member.permissions.has(Discord.Permissions.FLAGS.BAN_MEMBERS) || !client.modRole(message, data.guild) ) return client.authorPerms(message, ["KICK_MEMBERS"])
-        if (!message.guild.me.permissions.has(Discord.Permissions.FLAGS.BAN_MEMBERS)) return client.clientPerms(message, ["KICK_MEMBERS"])
-
-
-        let user = await client.resolveUser(args[0])
+          let user = await client.resolveUser(args[0])
         if (user.id === message.author.id) return message.error("You can't kick yourself")
 
         if (!user) return message.args("Please provide a user to kick!\n```@user or userID```")

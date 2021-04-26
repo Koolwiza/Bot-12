@@ -20,11 +20,11 @@ module.exports = {
     description: 'An advanced poll command able to hold multiple questions',
     usage: 'poll <question> [option1 | option2 | option3 | ...]',
     aliases: [],
-    required: ['MANAGE_GUILD'],
+    required: [],
     user: ['MANAGE_GUILD'],
     category: __dirname.split("commands\\")[1],
     premium: false,
-    guildOnly: false,
+    
     ignore: true,
     /**
      * 
@@ -34,8 +34,6 @@ module.exports = {
      * @param {object} data 
      */
     async execute(message, args, client, data) {
-        if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_GUILD) || !client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_SERVER"])
-
         var questionRe = /"(.*)"/gmi
         let question = args.join(" ").match(questionRe)
 

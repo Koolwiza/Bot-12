@@ -8,12 +8,12 @@ module.exports = {
     description: 'Unmute a user',
     usage: 'unmute',
     aliases: [],
-    required: [],
-    user: [],
+    required: ['MANAGE_ROLES', 'MANAGE_CHANNELS'],
+    user: ['MANAGE_ROLES'],
     category: __dirname.split("commands\\")[1],
 
     premium: false,
-    guildOnly: false,
+    
     /**
      * 
      * @param {Discord.Message} message 
@@ -22,10 +22,6 @@ module.exports = {
      * @param {object} data 
      */
     async execute(message, args, client, data) {
-        if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_ROLES) || !client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_ROLES"])
-        if (!message.guild.me.permissions.has(Discord.Permissions.FLAGS.MANAGE_ROLES)) return client.clientPerms(message, ["MANAGE_ROLES"])
-
-
         let user = await client.resolveUser(args[0])
         if (user.id === message.author.id) return message.error("You can't mute yourself")
 

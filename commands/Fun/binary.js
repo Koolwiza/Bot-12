@@ -11,7 +11,7 @@ module.exports = {
     user: [],
     category: __dirname.split("commands\\")[1],
     premium: false,
-    guildOnly: false,
+    
     /**
      * 
      * @param {Discord.Message} message 

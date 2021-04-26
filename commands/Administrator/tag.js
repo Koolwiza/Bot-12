@@ -9,11 +9,11 @@ module.exports = {
   usage: 'tag <type | tagname> [value] [new value]',
   aliases: [],
   required: [],
-  user: [],
+  user: ['MANAGE_GUILD'],
   category: __dirname.split("commands\\")[1],
 
   premium: false,
-  guildOnly: false,
+  
 
   /**
    * 

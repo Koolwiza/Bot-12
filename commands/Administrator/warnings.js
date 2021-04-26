@@ -8,12 +8,12 @@ module.exports = {
   description: 'Display a user\'s warnings',
   usage: 'warnings <user>',
   aliases: [],
-  required: ['MANAGE_GUILD'],
+  required: [],
   user: ['MANAGE_GUILD'],
   category: __dirname.split("commands\\")[1],
 
   premium: false,
-  guildOnly: false,
+  
   /**
      * 
      * @param {Discord.Message} message 
@@ -22,8 +22,7 @@ module.exports = {
      * @param {object} data 
      */
     async execute(message, args, client, data) {
-    if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_GUILD) || !client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_SERVER"])
-
+    
     let user = await client.resolveUser(args[0])
     if (!user) return message.args("Missing user for warnings")
 

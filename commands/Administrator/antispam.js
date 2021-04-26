@@ -8,11 +8,10 @@ module.exports = {
   usage: '',
   aliases: [],
   required: [],
-  user: [],
+  user: ['MANAGE_GUILD'],
   category: __dirname.split("commands\\")[1],
-
   premium: false,
-  guildOnly: false,
+  
   ignore: true,
 
   /**
@@ -24,7 +23,7 @@ module.exports = {
    */
 
   async execute(message, [type, ...args], client, data) {
-    if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_GUILD) || !client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_SERVER"])
+    
     if (!type) return message.error("Please provide a config option")
     type = type.toLowerCase()
     let antiSpamKeys = Object.keys(client.config.plugins.defaultAntiSpam)

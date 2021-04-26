@@ -11,11 +11,11 @@ module.exports = {
     usage: 'welcome <type> [value]',
     aliases: [],
     required: [],
-    user: [],
+    user: ['MANAGE_GUILD'],
     category: __dirname.split("commands\\")[1],
 
     premium: false,
-    guildOnly: false,
+    
     /**
      * 
      * @param {Discord.Message} message 
@@ -24,7 +24,6 @@ module.exports = {
      * @param {object} data 
      */
     async execute(message, args, client, data) {
-        if (!message.member.permissions.has(Discord.Permissions.FLAGS.MANAGE_GUILD) || !client.modRole(message, data.guild)) return client.authorPerms(message, ["MANAGE_SERVER"])
 
         if (!args[0]) return message.args("Please provide a type.\nchannel | message | show")
 
