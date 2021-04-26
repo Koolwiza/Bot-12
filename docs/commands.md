@@ -3,7 +3,7 @@
 
             
 
-### Administrator [21] 
+### Administrator [22] 
 
 | Name | Description | 
 | ---- | ----------- | 
@@ -17,6 +17,7 @@
 | [kick](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#kick) | Kick a member out of the server | 
 | [massban](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#massban) | Massban users | 
 | [mute](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#mute) | Mute a member | 
+| [nuke](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#nuke) | Nuke a channel | 
 | [plugins](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#plugins) | Enable or show plugins | 
 | [poll](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#poll) | An advanced poll command able to hold multiple questions | 
 | [prefix](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#prefix) | Show or set the prefix for the server | 
@@ -83,11 +84,10 @@
 
             
 
-### General [15] 
+### General [14] 
 
 | Name | Description | 
 | ---- | ----------- | 
-| [badges](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#badges) | Shows all member badges in a server | 
 | [bitcoin](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bitcoin) | See bitcoin values or convert bitcoin to currency | 
 | [botinfo](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#botinfo) | Gives detailed information about the bot | 
 | [changelog](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#changelog) | Get the most recent changes to the bot | 
@@ -119,7 +119,7 @@
 | [thesearch](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#thesearch) | The search continues... | 
 
 # Detailed Command List
-## Administrator | 21 Commands
+## Administrator | 22 Commands
 
 
 
@@ -227,6 +227,17 @@ Aliases:
 Command: mute\
 Description: Mute a member\
 Usage: mute <user> [time] [reason]\
+Aliases: 
+
+[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+
+
+
+### Nuke
+
+Command: nuke\
+Description: Nuke a channel\
+Usage: nuke [channel]\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
@@ -651,18 +662,7 @@ Usage: zalgo <text>\
 Aliases: 
 
 [Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
-## General | 15 Commands
-
-
-
-### Badges
-
-Command: badges\
-Description: Shows all member badges in a server\
-Usage: \
-Aliases: 
-
-[Back to top](https://github.com/Koolwiza/Bot-12/blob/master/docs/commands.md#bot-12-command-list)
+## General | 14 Commands
 
 
 
