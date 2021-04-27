@@ -5,7 +5,8 @@ const Bot12 = require('../../src/struct/Bot12.js')
 module.exports = {
   name: 'antispam',
   description: 'Configure antispam settings for your server',
-  usage: '',
+  usage: 'antispam <type> [value]',
+  
   aliases: [],
   required: [],
   user: ['MANAGE_GUILD'],
