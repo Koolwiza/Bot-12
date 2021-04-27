@@ -29,12 +29,12 @@ module.exports = {
      * @param {object} data 
      */
     async execute(message, args, client, data) {
-        const url = 'https://api.github.com/repos/koolwiza/bot-12/commits'
+        const url = 'https://api.github.com/repos/koolwiza/bot-12/commits?per_page=5&sha=master'
         let body = await fetch(url).then(res => res.json())
-        body = body.slice(0, 5)
+        
         let a = body.map(c => {
             let slicedCommit = c.sha.slice(0, 7)
-            let commitLink = c.commit.url
+            let commitLink = `https://www.github.com/Koolwiza/Bot-12/commit/${c.sha}`
             let author = c.commit.author.name
             let authorLink = `https://www.github.com/${author}`
             let commitMessage = trim(c.commit.message, 20)
