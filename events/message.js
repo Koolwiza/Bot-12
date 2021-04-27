@@ -78,6 +78,24 @@ module.exports = async (client, message) => {
     }
   }
 
+  if(command.user.length) {
+    let perms = command.user.map(c => Discord.Permissions.FLAGS[c])
+    perms = perms.filter(c => c !== undefined)
+    let hasPerm = perms.some(c => message.member.permissions.has(c))
+    if(!hasPerm || !client.modRole(message, data.guild)) {
+      return client.authorPerms(message, command.user)
+    }
+  }
+
+  if(command.required.length) {
+    let perms = command.required.map(c => Discord.Permissions.FLAGS[c])
+    perms = perms.filter(c => c !== undefined)
+    let hasPerms = perms.some(c => message.guild.me.permissions.has(c))
+    if(!hasPerms) {
+      return client.clientPerms(message, command.required)
+    }
+  }
+
   if (!cooldowns.has(command.name)) {
     cooldowns.set(command.name, new Map());
   }

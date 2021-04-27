@@ -1,18 +1,18 @@
-const Discord = require('discord.js'),
-    Timeout = require('../../src/struct/Timeouts')
+const base = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&order=viewCount'
 
-const Bot12 = require('../../src/struct/Bot12.js')
+const Discord = require('discord.js'),
+    Bot12 = require('../../src/struct/Bot12')
 
 module.exports = {
-    name: 'timeout',
-    description: 'adsf',
-    usage: 'asdf',
+    name: 'youtube',
+    description: 'Search for a youtube video',
+    usage: 'youtube',
     aliases: [],
     required: [],
     user: [],
     category: __dirname.split("commands\\")[1],
     premium: false,
-    
+
     /**
      * 
      * @param {Discord.Message} message 
@@ -21,10 +21,6 @@ module.exports = {
      * @param {object} data 
      */
     async execute(message, args, client, data) {
-        let timeout = new Timeout('test1', 10000)
-
-        timeout.add(() => {
-            message.channel.send("Yooooo")
-        })
+       let query = args.join(" ")
     }
 }

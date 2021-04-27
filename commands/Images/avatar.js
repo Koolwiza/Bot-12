@@ -20,7 +20,7 @@ module.exports = {
   /**
    * 
    * @param {Discord.Message} message 
-   * @param {Array} args 
+   * @param {string[]} args 
    * @param {Bot12} client 
    * @param {object} data 
    */

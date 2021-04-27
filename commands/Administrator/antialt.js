@@ -5,6 +5,7 @@ module.exports = {
     name: 'antialt',
     description: 'Configure antialt settings',
     usage: 'antialt <type> [value]',
+    examples: ['antialt show', 'antialt enable', 'antialt disable', 'antialt punishment kick', 'antialt log '],
     aliases: [],
     required: [],
     user: ['MANAGE_GUILD'],
@@ -15,7 +16,7 @@ module.exports = {
     /**
      * 
      * @param {Discord.Message} message 
-     * @param {Array} args 
+     * @param {string[]} args 
      * @param {Bot12} client 
      * @param {object} data 
      */
@@ -56,6 +57,10 @@ module.exports = {
                 if (!['kick', 'ban'].includes(value.join(" "))) return message.error("Punishment can only be kick or ban")
                 client.antiAlt.set(message.guild.id, value.join(" "), "punishment")
                 return message.sendE("Success", `Set \`punishment\` as \`${value.join(" ")}\``, client.colors.green)
+            } else if (type === "log") {
+                let channel = await client.resolveChannel(args[2]) 
+                if(!channel) return message.args("Please provide a channel")
+                client
             }
     
             client.antiAlt.set(message.guild.id, value.join(" "), type)

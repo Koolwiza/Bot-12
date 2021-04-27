@@ -40,44 +40,72 @@ module.exports = class Bot12 extends Client {
      */
 
     this.commands = new Collection()
-
-    /**
-     * Our Enmaps
-     * @property {Enmap} guildData Stores prefixes, modroles, etc . . .
-     * @property {Enmap} plugins Stores enabled plugins of a guild
-     * @property {Enmap} modActions Stores the mod actions that were recorded in a guild
-     * @property {Enmap} userProfiles Stores the user's profiles throughout the bot
-     * @property {Enmap} disabled Stores the disabled commands
-     * @property {Enmap} cooldowns Stores cooldowns for each command by user
-     * @property {Enmap} tags The tags for each guild
-     * @property {Enmap} antiAlt The anti alt settings per guild
-     * @property {Enmap} autoMod The automod settings per guild
-     * @property {Enmap} antiSpam The anti spam settings per guild
-     * @property {Enmap} joins The guild join data
-     */
-
-    let enmaps = {
-      "guildData": "guild",
-      "plugins": "plugin",
-      "modActions": "actions",
-      "userProfiles": "profiles",
-      "disabled": "commands",
-      "cooldowns": "cooldowns",
-      "tags": "tags",
-      "antiAlt": "antialt",
-      "autoMod": "automod",
-      "antiSpam": "antispam",
-      "joins": "joins"
-    }
-
-    for (const [k, v] of Object.entries(enmaps)) {
-      this[k] = new Enmap({
-        name: v,
-        fetchAll: true,
-        autoFetch: true,
-        ensureProps: true
-      })
-    }
+    this.guildData = new Enmap({
+      name: "guildData",
+      fetchAll: true,
+      autoFetch: true,
+      ensureProps: true
+    })
+    this.plugins = new Enmap({
+      name: "plugins",
+      fetchAll: true,
+      autoFetch: true,
+      ensureProps: true
+    })
+    this.modActions = new Enmap({
+      name: "actions",
+      fetchAll: true,
+      autoFetch: true,
+      ensureProps: true
+    })
+    this.userProfiles = new Enmap({
+      name: "profiles",
+      fetchAll: true,
+      autoFetch: true,
+      ensureProps: true
+    })
+    this.disabled = new Enmap({
+      name: "disabled",
+      fetchAll: true,
+      autoFetch: true,
+      ensureProps: true
+    })
+    this.cooldowns = new Enmap({
+      name: "cooldowns",
+      fetchAll: true,
+      autoFetch: true,
+      ensureProps: true
+    })
+    this.tags = new Enmap({
+      name: 'tags',
+      fetchAll: true,
+      autoFetch: true,
+      ensureProps: true
+    })
+    this.antiAlt = new Enmap({
+      name: 'antialt',
+      fetchAll: true,
+      autoFetch: true,
+      ensureProps: true
+    })
+    this.autoMod = new Enmap({
+      name: 'automod',
+      fetchAll: true,
+      autoFetch: true,
+      ensureProps: true
+    })
+    this.antiSpam = new Enmap({
+      name: 'antispam',
+      fetchAll: true,
+      autoFetch: true,
+      ensureProps: true
+    })
+    this.joins = new Enmap({
+      name: 'joins',
+      fetchAll: true,
+      autoFetch: true,
+      ensureProps: true
+    })
   }
 
   /**

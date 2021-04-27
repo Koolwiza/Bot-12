@@ -12,6 +12,7 @@ module.exports = {
   name: 'addemoji',
   description: 'Adds the emoji to the server',
   usage: 'addemoji <emoji> [name]',
+  examples: ['addemoji https://cdn.discordapp.com/emojis/758008689759092805.png?size=64 icongift', 'addemoji :icongift:'],
   aliases: [],
   category: __dirname.split("commands\\")[1],
   required: [],
@@ -23,7 +24,7 @@ module.exports = {
   /**
      * 
      * @param {Discord.Message} message 
-     * @param {Array} args 
+     * @param {string[]} args 
      * @param {Bot12} client 
      * @param {object} data 
      */
