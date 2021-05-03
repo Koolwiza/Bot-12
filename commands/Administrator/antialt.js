@@ -5,7 +5,7 @@ module.exports = {
     name: 'antialt',
     description: 'Configure antialt settings',
     usage: 'antialt <type> [value]',
-    examples: ['antialt show', 'antialt enable', 'antialt disable', 'antialt punishment kick', 'antialt log '],
+    examples: ['antialt show', 'antialt enable', 'antialt disable', 'antialt punishment kick', 'antialt log #channel', 'antialt age 15', 'antialt whitelist @user'],
     aliases: [],
     required: [],
     user: ['MANAGE_GUILD'],
@@ -56,11 +56,14 @@ module.exports = {
             if (type === "punishment") {
                 if (!['kick', 'ban'].includes(value.join(" "))) return message.error("Punishment can only be kick or ban")
                 client.antiAlt.set(message.guild.id, value.join(" "), "punishment")
-                return message.sendE("Success", `Set \`punishment\` as \`${value.join(" ")}\``, client.colors.green)
             } else if (type === "log") {
                 let channel = await client.resolveChannel(args[2]) 
-                if(!channel) return message.args("Please provide a channel")
-                client
+                if(!channel) return message.args("Please provide a valid channel")
+                client.antiAlt.set(message.guild.id, channel.id, "logs")
+            } else if (type === "whitelist") {
+                let user = await client.resolveUser(args[2])
+                if(!user) return message.args("Please provide a valid user")
+                client.antiAlt.push(message.guild.id, user.id, "whitelist")
             }
     
             client.antiAlt.set(message.guild.id, value.join(" "), type)
