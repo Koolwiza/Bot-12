@@ -29,7 +29,7 @@ module.exports = {
     let reason = args.slice(1).join(" ")
     if (!reason) reason = "No reason provided"
 
-    let id = `${client.randomString(7)}-${client.randomString(5)}-${client.randomString(7)}`
+    let id = client.genId()
 
     client.modActions.set(id, {
       user: user.id,
