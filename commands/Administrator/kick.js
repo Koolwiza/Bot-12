@@ -33,14 +33,13 @@ module.exports = {
 
         try {
             let member = await message.guild.members.fetch(user.id).catch(() => {})
-            await user.send(`**${client.emoji.misc.xmark} You have been kicked in ${message.guild.name} for ${reason}**`)
+            await user.send(`**${client.emoji.misc.xmark} You have been kicked in ${message.guild.name} for ${reason}**`).catch(() => {})
             await member.kick(reason)
             return message.sendE("Success", `I have kicked ${user.tag} | ${reason}`, client.colors.green)
 
-            
         } catch (err) {
             client.logger.log(`There was an error kicking ${user.username}.\n${err}`, "error")
-            message.error("There was an error kicking this user, please try again")
+            return message.error("There was an error kicking this user, please try again")
         }
     }
 }
