@@ -13,8 +13,8 @@ Message.prototype.error = function (content) {
 		new MessageEmbed()
 		.setTitle("An error occured")
 		.setDescription(content)
-		.setColor(client.colors.red)
-		.setFooter(client.user.username, client.user.displayAvatarURL())
+		.setColor(this.client.colors.red)
+		.setFooter(this.client.user.username, this.client.user.displayAvatarURL())
 		.setAuthor(this.author.tag, this.author.displayAvatarURL())
 	)
 }
@@ -23,9 +23,9 @@ Message.prototype.args = function (content) {
 	return this.channel.send(
 		new MessageEmbed()
 		.setAuthor(this.author.tag, this.author.displayAvatarURL())
-		.setFooter(client.user.username, client.user.displayAvatarURL())
+		.setFooter(this.client.user.username, this.client.user.displayAvatarURL())
 		.setTitle("Missing Arguments")
-		.setColor(client.colors.red)
+		.setColor(this.client.colors.red)
 		.setDescription(content))
 }
 
