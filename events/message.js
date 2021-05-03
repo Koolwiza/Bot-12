@@ -6,7 +6,7 @@ const Discord = require("discord.js"),
   } = require('../src/data/config.js'),
   humanize = require('humanize-duration'),
   AutomodClient = require('../src/struct/Automod'),
-  AntiSpamClient = require('../src/struct/AntiSpam'),
+  AntiSpamClient = require('../src/struct/AntiSpam/AntiSpam'),
   Bot12 = require('../src/struct/Bot12')
 
   /**
@@ -17,7 +17,7 @@ const Discord = require("discord.js"),
    */
 
 module.exports = async (client, message) => {
-
+  client.giveaway.add(message)
   let cooldowns = client.cooldowns
 
   if (message.author.bot && message.content.startsWith(client.config.prefix)) return
@@ -119,7 +119,7 @@ module.exports = async (client, message) => {
   cooldowns.set(command.name, timestamps)
 
   setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
-  
+
   try {
     let msg = await command.execute(message, args, client, data) // ALL COMMANDS MUST RETURN A PROMISE
     if (command.ignore) return;
