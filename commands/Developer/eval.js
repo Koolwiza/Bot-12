@@ -14,9 +14,9 @@ module.exports = {
     required: [],
     user: [],
     category: __dirname.split("commands\\")[1],
-    
+
     premium: false,
-    
+
     /**
      * 
      * @param {Discord.Message} message 
@@ -29,7 +29,9 @@ module.exports = {
         let code = args.join(" ");
         try {
             const hrStart = process.hrtime();
-            evaled = eval(code);
+            evaled = await eval(`( async () => {
+                ${code}
+              })()`);
 
             if (evaled instanceof Promise) evaled = await evaled;
             const hrStop = process.hrtime(hrStart);
