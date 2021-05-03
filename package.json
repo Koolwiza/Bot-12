@@ -17,6 +17,7 @@
     "canvas-constructor": "^4.1.0",
     "chalk": "^4.1.0",
     "cheerio": "^1.0.0-rc.6",
+    "common-tags": "^1.8.0",
     "cpu-stat": "^2.0.1",
     "cron": "^1.8.2",
     "date-fns": "^2.16.1",
