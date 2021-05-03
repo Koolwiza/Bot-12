@@ -3,7 +3,7 @@ const Discord = require('discord.js'),
     {
         Canvas,
         resolveImage,
-        silhouette
+        threshold
     } = require('canvas-constructor')
 
 module.exports = {
@@ -35,7 +35,7 @@ module.exports = {
 
         let canvas = new Canvas(profilePicture.width, profilePicture.height)
             .printImage(profilePicture, 0, 0)
-            .process(silhouette)
+            .process(threshold, 50)
             .toBuffer()
         let attachment = new Discord.MessageAttachment(canvas, "silhouette.png")
 
