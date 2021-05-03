@@ -9,7 +9,7 @@ module.exports = {
     name: 'execute',
     description: 'Run a shell command',
     usage: '',
-    aliases: ['exec', 'ex'],
+    aliases: ['exec', 'ex', 'sh', 'shell'],
     required: [],
     user: [],
     category: __dirname.split("commands\\")[1],
