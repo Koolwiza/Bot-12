@@ -27,11 +27,15 @@ module.exports = {
     async execute(message, args, client, data) {
         let evaled;
         let code = args.join(" ");
+
+        /*
+        `( async () => {
+                ${code}
+              })()` */
+        
         try {
             const hrStart = process.hrtime();
-            evaled = await eval(`( async () => {
-                ${code}
-              })()`);
+            evaled = await eval(code);
 
             if (evaled instanceof Promise) evaled = await evaled;
             const hrStop = process.hrtime(hrStart);
@@ -43,7 +47,8 @@ module.exports = {
             response += ` • Type: \`${typeof evaled}\`\n`;
             response += ` • Time taken: \`${(((hrStop[0] * 1e9) + hrStop[1])) / 1e6}ms\``;
 
-            return message.sendE("Success", response, client.colors.sky)
+            message.sendE("Success", response, client.colors.sky)
+            
         } catch (err) {
             return message.error(`Error: ${await client.clean(err.message)}`)
         }
