@@ -27,7 +27,7 @@ module.exports = class AntiSpam extends BaseAntiSpam {
         let {
             options
         } = this,
-        baseMsg = new BaseMessage(message, client)
+        baseMsg = new BaseMessage(message)
 
         if (!options.enabled) return;
 
