@@ -15,7 +15,7 @@ A bot to help your server with moderation, utility and more with a global econom
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge" />
   </a>
   <a href="https://github.com/Koolwiza/Bot-12/blob/master/LICENSE" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/github/license/Koolwiza/Bot 12?style=for-the-badge" />
+    <img alt="License: MIT" src="https://img.shields.io/github/license/Koolwiza/Bot-12?style=for-the-badge" />
   </a>
 </p>
 ​
